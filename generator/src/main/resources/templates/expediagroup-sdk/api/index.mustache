@@ -1,0 +1,15 @@
+{{>licenseInfo}}
+
+{{#apiInfo}}
+    {{#operations}}
+        export * from './api/{{classname}}'
+    {{/operations}}
+{{/apiInfo}}
+
+{{#apiInfo}}
+    {{#apis}}
+        {{#operations}}
+            export * from './apis/{{classname}}'
+        {{/operations}}
+    {{/apis}}
+{{/apiInfo}}

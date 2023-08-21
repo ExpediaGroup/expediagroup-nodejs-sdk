@@ -1,0 +1,11 @@
+{{#discriminator}}static subTypes = new Map< string, any>([{{#mappedModels}}[{{#model}}'{{mappingName}}', {{modelName}}{{/model}}]{{^-last}},{{/-last}}{{/mappedModels}}]){{/discriminator}}
+
+static getType({{#discriminator}}property{{/discriminator}}{{^discriminator}}_{{/discriminator}}) {
+    {{#discriminator}}
+        let discriminator = property.{{discriminatorName}}
+        if ({{classname}}Mapper.subTypes.has(discriminator)) {
+            return {{classname}}Mapper.subTypes.get(discriminator)
+        }
+    {{/discriminator}}
+    return {{classname}}
+}

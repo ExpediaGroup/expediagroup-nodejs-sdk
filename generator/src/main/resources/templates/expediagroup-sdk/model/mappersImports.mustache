@@ -1,0 +1,6 @@
+{{^isEnum}}
+    {{#vars}}
+        {{#isModel}}{{>model/mapperImport}}{{/isModel}}
+        {{#items}}{{#isModel}}{{>model/mapperImport}}{{/isModel}}{{/items}}
+    {{/vars}}
+{{/isEnum}}

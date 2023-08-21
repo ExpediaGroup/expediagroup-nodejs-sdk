@@ -1,0 +1,8 @@
+{{>licenseInfo}}
+import {ExpediaGroupServiceError} from '../../core'
+
+export class ExpediaGroupRequestError<E> extends ExpediaGroupServiceError {
+    constructor(readonly error: E, readonly errorCode: number) {
+        super(`Request failed with response [${errorCode}]`)
+    }
+}
