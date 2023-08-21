@@ -1,0 +1,13 @@
+{{>licenseInfo}}
+{{#models}}
+    {{#model}}
+        import { {{classname}} } from './{{classname}}'
+        {{>model/subtypesImports}}
+
+        {{^isEnum}}
+            export class {{classname}}Mapper {
+                {{>model/subtypes}}
+            }
+        {{/isEnum}}
+    {{/model}}
+{{/models}}
