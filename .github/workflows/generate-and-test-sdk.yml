@@ -25,11 +25,11 @@ jobs:
         run: |
           mvn clean install
           mvn exec:java "-Dnamespace=exemplar" "-DsdkVersion=0.0.1-exemplar" "-Dspec=${{ secrets.SPEC_FILE }}"
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: core
           path: core
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: sdk
           path: generator/target/sdk
