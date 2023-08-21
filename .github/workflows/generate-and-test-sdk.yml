@@ -24,7 +24,7 @@ jobs:
         working-directory: ./generator
         run: |
           mvn clean install
-          mvn exec:java "-Dnamespace=exemplar" "-DsdkVersion=0.0.1-exemplar" "-Dspec=${{ secrets.SPEC_FILE }}"
+          mvn exec:java "-Dnamespace=exemplar" "-DsdkVersion=0.0.1-exemplar" "-Dspec=src/test/resources/exemplar.yaml"
       - uses: actions/upload-artifact@v3
         with:
           name: core
