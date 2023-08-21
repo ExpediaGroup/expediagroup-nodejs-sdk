@@ -1,0 +1,8 @@
+{{>licenseInfo}}
+
+{{#models}}
+    {{#model}}
+        export * from './{{classname}}'
+    {{/model}}
+{{/models}}
+export * from './error/ExpediaGroupRequestError'

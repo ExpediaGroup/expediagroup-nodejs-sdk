@@ -1,0 +1,31 @@
+{
+  "entryPoints": [
+    "./client/index.ts",
+    "./models/index.ts"
+  ],
+  "out": "./docs",
+  "cleanOutputDir": true,
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "excludeInternal": true,
+  "excludeExternals": true,
+  "excludeReferences": true,
+  "hideParameterTypesInTitle": true,
+  "hideGenerator": true,
+  "githubPages": false,
+  "readme": "none",
+
+  "hidePageHeader": true,
+  "hideInPageTOC": true,
+  "propertiesFormat": "table",
+  "enumMembersFormat": "table",
+  "typeDeclarationFormat": "table",
+  "entryFileName": "index.md",
+
+  "internalModule": "core",
+
+  "plugin": [
+    "typedoc-plugin-markdown",
+    "typedoc-plugin-missing-exports"
+  ]
+}

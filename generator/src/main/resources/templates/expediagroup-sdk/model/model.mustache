@@ -1,0 +1,63 @@
+{{>licenseInfo}}
+{{#models}}
+    {{#model}}
+        {{#tsImports}}
+            import { {{classname}} } from './{{classname}}'
+        {{/tsImports}}
+        {{>model/mappersImports}}
+        {{>model/parentModelConstructorTypeImport}}
+        import {JsonObject, JsonProperty} from "typescript-json-serializer"
+
+        {{#description}}
+            /**
+            * {{{.}}}
+            */
+        {{/description}}
+        {{^isEnum}}
+            @JsonObject({constructorParams: [{}]})
+            export class {{classname}} {{#parent}}extends {{{.}}} {{/parent}}{
+            {{#vars}}
+                {{^isDiscriminator}}
+                    {{#description}}
+                        /**
+                        * {{{.}}}
+                        */
+                    {{/description}}
+                    @JsonProperty({name: '{{baseName}}' {{>model/typeMapping}} {{>model/uriDeserialization}} })
+                    {{name}}{{^required}}?{{/required}}: {{#isEnum}}{{{datatypeWithEnum}}}{{/isEnum}}{{^isEnum}}{{#isUri}}URL{{/isUri}}{{^isUri}}{{{dataType}}}{{/isUri}}{{/isEnum}}{{#isNullable}} | null{{/isNullable}}
+                {{/isDiscriminator}}
+            {{/vars}}
+
+            {{#assignDiscriminators}}{{/assignDiscriminators}}
+
+                public constructor({{classVarName}}: {{>model/modelConstructorType}}) {
+                    {{#callSuperConstructor}}{{/callSuperConstructor}}
+                    {{#vars}}
+                        {{#isNotDiscriminator}}
+                            this.{{name}} = {{classVarName}}.{{name}}
+                        {{/isNotDiscriminator}}
+                    {{/vars}}
+                }
+            }
+
+            {{#hasEnums}}
+                {{#vars}}
+                    {{#isEnum}}
+                        export type {{classname}}{{enumName}} ={{#allowableValues}}{{#values}} "{{.}}" {{^-last}}|{{/-last}}{{/values}}{{/allowableValues}}
+                    {{/isEnum}}
+                {{/vars}}
+            {{/hasEnums}}
+
+            export interface {{>model/modelConstructorType}} {{#parentModel}} extends {{>model/modelConstructorType}} {{/parentModel}} {
+                {{#vars}}
+                    {{#isNotDiscriminator}}
+                        {{name}}{{^required}}?{{/required}}: {{#isEnum}}{{{datatypeWithEnum}}}{{/isEnum}}{{^isEnum}}{{#isUri}}URL{{/isUri}}{{^isUri}}{{{dataType}}}{{/isUri}}{{/isEnum}}{{#isNullable}} | null{{/isNullable}}{{^-last}},{{/-last}}
+                    {{/isNotDiscriminator}}
+                {{/vars}}
+            }
+        {{/isEnum}}
+        {{#isEnum}}
+            export type {{classname}} ={{#allowableValues}}{{#values}} "{{.}}" {{^-last}}|{{/-last}}{{/values}}{{/allowableValues}}
+        {{/isEnum}}
+    {{/model}}
+{{/models}}

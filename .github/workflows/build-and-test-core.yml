@@ -1,0 +1,35 @@
+name: Build & Test Core
+on:
+  pull_request:
+    branches:
+      - 'main'
+concurrency:
+  group: ${{ github.head_ref }}
+  cancel-in-progress: true
+jobs:
+  lint-core:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.14.1
+      - name: verify core
+        working-directory: ./core
+        run: |
+          npm i
+          npx ts-standard
+  verify-core:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.14.1
+      - name: verify core
+        working-directory: ./core
+        run: |
+          npm i
+          npm test
