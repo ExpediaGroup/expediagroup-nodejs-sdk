@@ -1,2 +1,1 @@
-# openworld-sdk-nodejs
-Open World SDK for NodeJS
+# Expedia Group SDKs for Node.js
