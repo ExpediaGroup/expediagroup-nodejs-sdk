@@ -39,7 +39,7 @@ class Factory {
 
 class Configurations {
   constructor (
-    readonly authEndpoint: string,
+    readonly authEndpoint: string = Constant.AUTH_ENDPOINT,
     readonly key: string,
     readonly secret: string
   ) {

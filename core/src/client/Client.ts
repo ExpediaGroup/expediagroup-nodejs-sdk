@@ -40,8 +40,8 @@ abstract class Client {
 }
 
 interface ClientConfigurations {
-  endpoint: string
-  authEndpoint: string
+  endpoint?: string
+  authEndpoint?: string
   key: string
   secret: string
   requestTimeout?: number
