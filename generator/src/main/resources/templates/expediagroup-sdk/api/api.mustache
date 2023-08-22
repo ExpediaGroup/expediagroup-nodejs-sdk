@@ -44,8 +44,8 @@ export class {{classname}} extends Client {
      * @return Promise<{{{returnType}}}{{^returnType}}void{{/returnType}}>
      {{#throws}}{{/throws}}
      */
-    async {{operationId}}({{>api/apiParamsDecleration}}): Promise<{{{returnType}}}>  {
-        {{#returnProperty}}let response = {{/returnProperty}}await this.axiosClient.request({
+    {{operationId}}({{>api/apiParamsDecleration}}): Promise<{{{returnType}}}>  {
+        {{#returnProperty}}let responsePromise = {{/returnProperty}}this.axiosClient.request({
             method: '{{httpMethod}}',
             url: '{{#removeLeadingSlash}}{{path}}{{/removeLeadingSlash}}'{{#bodyParam}},
             headers: {{classname}}.createHeaders(transactionId),
@@ -57,7 +57,9 @@ export class {{classname}} extends Client {
             throw new ExpediaGroupRequestError<string>(error.response?.data, error.response?.status)
         })
         {{#returnProperty}}
-        return Serializer.deserializeObject<{{{returnType}}}>(response.data, {{{returnType}}}) as {{{returnType}}}
+        return responsePromise.then((response) => {
+            return Serializer.deserializeObject<{{{returnType}}}>(response.data, {{{returnType}}}) as {{{returnType}}}
+        });
         {{/returnProperty}}
     }
     {{/operation}}
