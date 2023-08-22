@@ -9,7 +9,7 @@ export class TestClient extends Client {
 
   constructor (configurations: ClientConfigurations) {
     super(configurations)
-    this._mockAdapter = this.createMockAdapter()
+    this._mockAdapter = this.createMockAdapter(configurations)
   }
 
   static create (): TestClient {
@@ -21,13 +21,13 @@ export class TestClient extends Client {
     })
   }
 
-  private createMockAdapter (): MockAdapter {
+  private createMockAdapter(configurations: ClientConfigurations): MockAdapter {
     const mockAdapter = new MockAdapter(this.axiosClient)
-    mockAdapter.onPost(Constant.AUTH_ENDPOINT).reply(StatusCode.OK, {
+    mockAdapter.onPost(configurations.authEndpoint).reply(StatusCode.OK, {
       access_token: 'token',
       expires_in: 1800
     })
-    mockAdapter.onGet(Constant.ENDPOINT + '/some/endpoint')
+    mockAdapter.onGet(configurations.endpoint + '/some/endpoint')
       .reply(StatusCode.OK, Constant.DATA)
     return mockAdapter
   }
