@@ -82,5 +82,5 @@ val mustacheHelpers = mapOf(
                 writer.write("})")
             }
         }
-    }
+    },
 )
