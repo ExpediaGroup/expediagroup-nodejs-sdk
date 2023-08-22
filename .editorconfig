@@ -15,9 +15,6 @@ indent_size = 2
 [*.md]
 trim_trailing_whitespace = false
 
-[*.{kt,kts}]
-ktlint_disabled_rules = import-ordering
-
 [*.mustache]
 insert_final_newline = false
 

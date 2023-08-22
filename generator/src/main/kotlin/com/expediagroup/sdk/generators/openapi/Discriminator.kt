@@ -20,7 +20,7 @@ import org.openapitools.codegen.CodegenModel
 internal data class Discriminator(
     val originalName: String,
     val name: String,
-    val value: String
+    val value: String,
 )
 
 internal fun getParentDiscriminator(model: CodegenModel): Discriminator? {
@@ -28,7 +28,7 @@ internal fun getParentDiscriminator(model: CodegenModel): Discriminator? {
         Discriminator(
             it.propertyBaseName,
             it.propertyName,
-            it.mappedModels.find { mappedModel -> mappedModel.modelName.equals(model.classname) }!!.mappingName
+            it.mappedModels.find { mappedModel -> mappedModel.modelName.equals(model.classname) }!!.mappingName,
         )
     }
 }

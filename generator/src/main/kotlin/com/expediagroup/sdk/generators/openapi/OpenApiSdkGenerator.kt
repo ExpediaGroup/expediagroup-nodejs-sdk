@@ -39,7 +39,7 @@ class OpenApiSdkGenerator {
         "package.json",
         ".prettierrc",
         "index.ts",
-        "README.md"
+        "README.md",
     )
 
     companion object {
@@ -106,8 +106,8 @@ class OpenApiSdkGenerator {
                         SupportingFile("index.mustache", "index.ts"),
                         SupportingFile("api/index.mustache", "client/index.ts"),
                         SupportingFile("model/index.mustache", "models/index.ts"),
-                        SupportingFile("README.mustache", "README.md")
-                    )
+                        SupportingFile("README.mustache", "README.md"),
+                    ),
                 )
             }
 
