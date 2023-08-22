@@ -8,16 +8,15 @@ describe('Authentication', function () {
   it('should send an authentication request when token is expired', async function () {
     const client = TestClient.create()
 
-    const data = { field: 'some data' }
     client.mockAdapter
       .onGet(Constant.ENDPOINT + '/some/endpoint')
-      .reply(StatusCode.OK, data)
+      .reply(StatusCode.OK, Constant.DATA)
 
     const response = await client.axiosClientInstance.get(
       Constant.ENDPOINT + '/some/endpoint'
     )
     expect(response.status).toEqual(StatusCode.OK)
-    expect(response.data).toEqual(data)
+    expect(response.data).toEqual(Constant.DATA)
 
     expect(client.mockAdapter.history.get.length).toEqual(1)
     expect(client.mockAdapter.history.get[0].headers?.Authorization).toEqual('Bearer token')
@@ -72,6 +71,10 @@ describe('Authentication', function () {
   it('should send only one auth request for multiple requests as long as the auth token is not expired', async function () {
     const client = TestClient.create()
 
+    client.mockAdapter
+      .onGet(Constant.ENDPOINT + '/some/endpoint')
+      .reply(StatusCode.OK, Constant.DATA)
+
     for (let i: number = 0; i < 4; i++) {
       const response = await client.axiosClientInstance.get(
         Constant.ENDPOINT + '/some/endpoint'
@@ -86,6 +89,9 @@ describe('Authentication', function () {
   it('should send auth request when token expires', async function () {
     const client = TestClient.create()
 
+    client.mockAdapter
+      .onGet(Constant.ENDPOINT + '/some/endpoint')
+      .reply(StatusCode.OK, Constant.DATA)
     client.mockAdapter
       .onPost(Constant.AUTH_ENDPOINT)
       .reply(StatusCode.OK, {
