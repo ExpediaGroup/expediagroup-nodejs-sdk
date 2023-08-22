@@ -9,7 +9,7 @@ on:
         description: 'SDK Version'
         required: true
       product_endpoint:
-        description: 'Endpoint to prepend specs' paths with'
+        description: 'Endpoint to prepend specs paths with'
         required: true
         type: string
       specs_url:
