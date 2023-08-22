@@ -44,7 +44,7 @@ export class {{classname}} extends Client {
      * @return Promise<{{{returnType}}}{{^returnType}}void{{/returnType}}>
      {{#throws}}{{/throws}}
      */
-    async {{operationId}}({{>api/apiParamsDecleration}}): Promise<{{{returnType}}}>  {
+    {{operationId}}({{>api/apiParamsDecleration}}): Promise<{{{returnType}}}>  {
         {{#returnProperty}}let responsePromise = {{/returnProperty}}this.axiosClient.request({
             method: '{{httpMethod}}',
             url: '{{#removeLeadingSlash}}{{path}}{{/removeLeadingSlash}}'{{#bodyParam}},
