@@ -19,7 +19,7 @@
  */
 
 export const LoggingMessage = {
-  LOGGING_PREFIX: 'ExpediaSDK:',
+  LOGGING_PREFIX: 'ExpediaGroupSDK:',
   TOKEN_RENEWAL_IN_PROCESS: 'Renewing token',
   TOKEN_RENEWAL_SUCCESSFUL: 'Token renewal successful',
   TOKEN_EXPIRED: 'Token expired or is about to expire. Request will wait until token is renewed',

@@ -12,7 +12,7 @@ describe('LoggerProvider', function () {
     const message: string = 'some message'
     log.info(message)
 
-    expect(customLogSpy).toHaveBeenCalledWith(`Function - ExpediaSDK: ${message}`)
+    expect(customLogSpy).toHaveBeenCalledWith(`Function - ExpediaGroupSDK: ${message}`)
   })
 
   it('should log when custom logger provided after instantiating logger', async function () {
@@ -25,6 +25,6 @@ describe('LoggerProvider', function () {
     const message: string = 'some message'
     log.info(message)
 
-    expect(customLogSpy).toHaveBeenCalledWith(`Function - ExpediaSDK: ${message}`)
+    expect(customLogSpy).toHaveBeenCalledWith(`Function - ExpediaGroupSDK: ${message}`)
   })
 })
