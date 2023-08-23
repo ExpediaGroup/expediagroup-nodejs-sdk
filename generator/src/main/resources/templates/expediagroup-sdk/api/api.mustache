@@ -18,7 +18,7 @@ export class {{classname}} extends Client {
     private static readonly nodeVersion: string = process.version
     private static readonly operatingSystemName: string = platform()
     private static readonly operatingSystemVersion: string = release()
-    private static readonly userAgent: string = `${this.sdkTitle}/{{artifactVersion}} (NodeJS ${this.nodeVersion} ${this.operatingSystemName} ${this.operatingSystemVersion})`
+    private static readonly userAgent: string = `${this.sdkTitle}/{{artifactVersion}} (Node.js ${this.nodeVersion} ${this.operatingSystemName} ${this.operatingSystemVersion})`
 
     constructor(configurations: ClientConfigurations) {
         super({...configurations, userAgent: {{classname}}.userAgent})
