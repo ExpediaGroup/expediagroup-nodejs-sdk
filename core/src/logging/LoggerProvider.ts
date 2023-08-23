@@ -35,7 +35,7 @@ export class ExpediaGroupLogger {
   }
 
   private decorate (message: string, name: string): string {
-    return `${name} - ${LoggingMessage.LOGGING_INFIX} ${mask(message)}`
+    return `${name} - ${LoggingMessage.LOGGING_PREFIX} ${mask(message)}`
   }
 }
 
