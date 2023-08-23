@@ -48,7 +48,7 @@ interface ClientConfigurations {
 }
 
 interface ExtendedClientConfiguration extends ClientConfigurations {
-    userAgent: string
+  userAgent: string
 }
 
 export { Client }
