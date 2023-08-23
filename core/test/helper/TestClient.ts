@@ -8,7 +8,7 @@ export class TestClient extends Client {
   private readonly _mockAdapter: MockAdapter
 
   constructor (configurations: ClientConfigurations) {
-    super(configurations)
+    super({ ...configurations, userAgent: Constant.USER_AGENT })
     this._mockAdapter = this.createMockAdapter(configurations)
   }
 

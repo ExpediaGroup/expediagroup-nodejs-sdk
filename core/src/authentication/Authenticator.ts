@@ -41,7 +41,8 @@ class Configurations {
   constructor (
     readonly authEndpoint: string = Constant.AUTH_ENDPOINT,
     readonly key: string,
-    readonly secret: string
+    readonly secret: string,
+    readonly userAgent: string
   ) {
   }
 }
@@ -81,6 +82,9 @@ class Authenticator {
       .request({
         method: Constant.POST,
         url: configurations.authEndpoint,
+        headers: {
+          'User-Agent': configurations.userAgent
+        },
         auth: {
           username: configurations.key,
           password: configurations.secret
