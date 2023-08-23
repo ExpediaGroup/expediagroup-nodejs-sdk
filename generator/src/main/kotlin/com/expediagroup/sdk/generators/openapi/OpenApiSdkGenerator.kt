@@ -76,7 +76,7 @@ class OpenApiSdkGenerator {
                 setInputSpec(inputFile)
                 setOutputDir(outputDirectory)
                 setArtifactVersion(version)
-                setArtifactId("expediagroup-node-sdk-$namespace")
+                setArtifactId("expediagroup-nodejs-sdk-$lowercaseNamespace")
                 setModelPackage("models")
                 setApiPackage("client")
                 setApiNameSuffix("Client")
