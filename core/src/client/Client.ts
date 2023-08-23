@@ -25,9 +25,9 @@ import { AxiosClientConfigurations } from './AxiosClientConfigurations'
 abstract class Client {
   protected readonly axiosClient: AxiosInstance
 
-  protected constructor ({ key, secret, endpoint, authEndpoint, requestTimeout }: ClientConfigurations) {
+  protected constructor ({ key, secret, endpoint, authEndpoint, requestTimeout, userAgent }: ClientConfigurations & { userAgent: string }) {
     this.axiosClient = this.createInstance(new AxiosClientConfigurations(endpoint, requestTimeout))
-    const authenticationConfigurations: AuthenticationConfigurations = new AuthenticationConfigurations(authEndpoint, key, secret)
+    const authenticationConfigurations: AuthenticationConfigurations = new AuthenticationConfigurations(authEndpoint, key, secret, userAgent)
     AuthenticatorFactory.create(this.axiosClient).use(authenticationConfigurations)
   }
 
