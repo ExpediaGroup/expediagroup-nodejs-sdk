@@ -35,7 +35,7 @@ describe('LoggerProvider', function () {
 
     const levels: LoggingLevel[] = ['info', 'error']
     for (const level of levels) {
-      LoggerProvider.setLoggingLevel(level)
+      LoggerProvider.getLogger().setLoggingLevel(level)
       // eslint-disable-next-line @typescript-eslint/dot-notation
       const loggingLevel: string = (LoggerProvider.getLogger() as WinstonLogger)['logger'].level
       expect(loggingLevel).toEqual(level)

@@ -18,7 +18,7 @@
  * Do not edit the class manually.
  */
 
-import { DefaultLogger, Logger, LoggingLevel } from './Logger'
+import { DefaultLogger, Logger } from './Logger'
 import { mask } from './LogMasker'
 import { LoggingMessage } from '../constant/Logging'
 
@@ -53,9 +53,5 @@ export class LoggerProvider {
 
   static setLogger (logger: Logger): void {
     this.logger = logger
-  }
-
-  static setLoggingLevel (loggingLevel: LoggingLevel): void {
-    this.logger.setLoggingLevel(loggingLevel)
   }
 }
