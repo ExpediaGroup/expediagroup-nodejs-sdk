@@ -25,7 +25,7 @@ import { ErrorMessage } from '../constant/ErrorMessage'
 import { Serializer } from '../serialization/Serializer'
 import { Authentication } from '../constant/Authentication'
 import { JsonObject, JsonProperty } from 'typescript-json-serializer'
-import { getLogger, ExpediaGroupLogger } from '../logging/LoggerProvider'
+import { getLogger, SdkLogger } from '../logging/LoggerProvider'
 import { ExpediaGroupAuthError } from '../model/error/service/ExpediaGroupAuthError'
 import { AxiosInstance, AxiosResponse, InternalAxiosRequestConfig } from 'axios'
 import { LoggingMessageProvider } from '../constant/provider/LoggingMessageProvider'
@@ -48,7 +48,7 @@ class Configurations {
 }
 
 class Authenticator {
-  private readonly log: ExpediaGroupLogger = getLogger(this)
+  private readonly log: SdkLogger = getLogger(this)
   private bearerTokenInfo: TokenExpiryInfo = ExpiredTokenExpiryInfo.getInstance()
 
   constructor (readonly axiosClient: AxiosInstance) {
@@ -57,7 +57,7 @@ class Authenticator {
   use (configurations: Configurations): void {
     this.axiosClient.interceptors.request.use(async (requestConfig) => {
       if (!this.isAuthRequest(requestConfig, configurations) && this.bearerTokenInfo.isAboutToExpire()) {
-        this.log.info(LoggingMessage.TOKEN_EXPIRED)
+        this.log.warn(LoggingMessage.TOKEN_EXPIRED)
         const tokenResponse: TokenResponse = await this.renewToken(configurations)
         const auth: string = `${Authentication.BEARER} ${tokenResponse.accessToken}`
         this.axiosClient.defaults.headers.common[Constant.AUTHORIZATION] = auth

@@ -18,11 +18,11 @@
  * Do not edit the class manually.
  */
 
-import { DefaultLogger, Logger } from './Logger'
 import { mask } from './LogMasker'
+import { ExpediaGroupLogger, Logger } from './Logger'
 import { LoggingMessage } from '../constant/Logging'
 
-export class ExpediaGroupLogger {
+export class SdkLogger {
   constructor (readonly name: string) {
   }
 
@@ -30,22 +30,26 @@ export class ExpediaGroupLogger {
     LoggerProvider.getLogger().info(this.decorate(message, this.name))
   }
 
+  warn (message: string): void {
+    LoggerProvider.getLogger().warn(this.decorate(message, this.name))
+  }
+
   error (message: string): void {
     LoggerProvider.getLogger().error(this.decorate(message, this.name))
   }
 
   private decorate (message: string, name: string): string {
-    return `${name} - ${LoggingMessage.LOGGING_PREFIX} ${mask(message)}`
+    return `${LoggingMessage.LOGGING_PREFIX} - ${name}: ${mask(message)}`
   }
 }
 
-export function getLogger (object: any): ExpediaGroupLogger {
-  return new ExpediaGroupLogger(object.constructor.name)
+export function getLogger (object: any): SdkLogger {
+  return new SdkLogger(object.constructor.name)
 }
 
 // eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export class LoggerProvider {
-  private static logger: Logger = DefaultLogger
+  private static logger: Logger = ExpediaGroupLogger
 
   static getLogger (): Logger {
     return this.logger

@@ -18,7 +18,7 @@
  * Do not edit the class manually.
  */
 
-export { Logger } from './src/logging/Logger'
+export { ExpediaGroupLogger, Logger } from './src/logging/Logger'
 export { Serializer } from './src/serialization/Serializer'
 export { LoggerProvider } from './src/logging/LoggerProvider'
 export { ExpediaGroupError } from './src/model/error/ExpediaGroupError'

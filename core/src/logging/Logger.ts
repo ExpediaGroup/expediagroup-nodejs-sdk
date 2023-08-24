@@ -18,20 +18,39 @@
  * Do not edit the class manually.
  */
 
+import winston from 'winston'
+
 export interface Logger {
   info: (message: string) => void
+
+  warn: (message: string) => void
 
   error: (message: string) => void
 }
 
-export class ConsoleLogger implements Logger {
+export class DefaultLogger implements Logger {
+  private readonly logger: winston.Logger = winston.createLogger({
+    level: 'info',
+    format: winston.format.combine(winston.format.timestamp(), winston.format.json()),
+    transports: [new winston.transports.Console()]
+  })
+
   info (message: string): void {
-    console.info(message)
+    this.logger.info(message)
+  }
+
+  warn (message: string): void {
+    this.logger.warn(message)
   }
 
   error (message: string): void {
-    console.error(message)
+    this.logger.error(message)
+  }
+
+  setLoggingLevel (loggingLevel: LoggingLevel): void {
+    this.logger.level = loggingLevel
   }
 }
 
-export const DefaultLogger: Logger = new ConsoleLogger()
+export declare type LoggingLevel = 'info' | 'warn' | 'error'
+export const ExpediaGroupLogger: DefaultLogger = new DefaultLogger()
