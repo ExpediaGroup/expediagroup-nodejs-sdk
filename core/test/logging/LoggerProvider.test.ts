@@ -1,5 +1,6 @@
-import { getLogger, LoggerProvider, ExpediaGroupLogger } from '../../src/logging/LoggerProvider'
+import { ExpediaGroupLogger, getLogger, LoggerProvider } from '../../src/logging/LoggerProvider'
 import { CustomLogger } from '../helper/CustomLogger'
+import { DefaultLogger, LoggingLevel, WinstonLogger } from '../../src/logging/Logger'
 
 describe('LoggerProvider', function () {
   it('should log when custom logger provided before instantiating logger', async function () {
@@ -26,5 +27,19 @@ describe('LoggerProvider', function () {
     log.info(message)
 
     expect(customLogSpy).toHaveBeenCalledWith(`Function - ExpediaGroupSDK: ${message}`)
+  })
+
+  it('should change logging level when prompted', () => {
+    LoggerProvider.setLogger(DefaultLogger)
+    const defaultLogSpy = jest.spyOn(DefaultLogger, 'setLoggingLevel')
+
+    const levels: LoggingLevel[] = ['info', 'error']
+    for (const level of levels) {
+      LoggerProvider.setLoggingLevel(level)
+      // eslint-disable-next-line @typescript-eslint/dot-notation
+      const loggingLevel: string = (LoggerProvider.getLogger() as WinstonLogger)['logger'].level
+      expect(loggingLevel).toEqual(level)
+      expect(defaultLogSpy).toHaveBeenCalledWith(level)
+    }
   })
 })

@@ -1,4 +1,4 @@
-import { Logger } from '../../src/logging/Logger'
+import { Logger, LoggingLevel } from '../../src/logging/Logger'
 
 export class CustomLogger implements Logger {
   info (message: string): void {
@@ -6,6 +6,10 @@ export class CustomLogger implements Logger {
   }
 
   error (message: string): void {
+
+  }
+
+  setLoggingLevel (level: LoggingLevel): void {
 
   }
 }

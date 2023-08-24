@@ -18,20 +18,34 @@
  * Do not edit the class manually.
  */
 
+import winston from 'winston'
+
 export interface Logger {
   info: (message: string) => void
 
   error: (message: string) => void
+
+  setLoggingLevel: (level: LoggingLevel) => void
 }
 
-export class ConsoleLogger implements Logger {
-  info (message: string): void {
-    console.info(message)
-  }
+export class WinstonLogger implements Logger {
+  private readonly logger: winston.Logger = winston.createLogger({
+    level: 'info',
+    transports: [new winston.transports.Console()]
+  })
 
   error (message: string): void {
-    console.error(message)
+    this.logger.info(message)
+  }
+
+  info (message: string): void {
+    this.logger.error(message)
+  }
+
+  setLoggingLevel (loggingLevel: LoggingLevel): void {
+    this.logger.level = loggingLevel
   }
 }
 
-export const DefaultLogger: Logger = new ConsoleLogger()
+export const DefaultLogger: Logger = new WinstonLogger()
+export declare type LoggingLevel = 'info' | 'error'
