@@ -35,11 +35,11 @@ export class WinstonLogger implements Logger {
     transports: [new winston.transports.Console()]
   })
 
-  error (message: string): void {
+  info (message: string): void {
     this.logger.info(message)
   }
 
-  info (message: string): void {
+  error (message: string): void {
     this.logger.error(message)
   }
 
