@@ -25,7 +25,7 @@ import { ErrorMessage } from '../constant/ErrorMessage'
 import { Serializer } from '../serialization/Serializer'
 import { Authentication } from '../constant/Authentication'
 import { JsonObject, JsonProperty } from 'typescript-json-serializer'
-import { getLogger, ExpediaGroupLogger } from '../logging/LoggerProvider'
+import { getLogger, SdkLogger } from '../logging/LoggerProvider'
 import { ExpediaGroupAuthError } from '../model/error/service/ExpediaGroupAuthError'
 import { AxiosInstance, AxiosResponse, InternalAxiosRequestConfig } from 'axios'
 import { LoggingMessageProvider } from '../constant/provider/LoggingMessageProvider'
@@ -48,7 +48,7 @@ class Configurations {
 }
 
 class Authenticator {
-  private readonly log: ExpediaGroupLogger = getLogger(this)
+  private readonly log: SdkLogger = getLogger(this)
   private bearerTokenInfo: TokenExpiryInfo = ExpiredTokenExpiryInfo.getInstance()
 
   constructor (readonly axiosClient: AxiosInstance) {

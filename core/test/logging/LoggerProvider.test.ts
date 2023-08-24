@@ -1,6 +1,6 @@
-import { ExpediaGroupLogger, getLogger, LoggerProvider } from '../../src/logging/LoggerProvider'
+import { SdkLogger, getLogger, LoggerProvider } from '../../src/logging/LoggerProvider'
 import { CustomLogger } from '../helper/CustomLogger'
-import { DefaultLogger, LoggingLevel, WinstonLogger } from '../../src/logging/Logger'
+import { ExpediaGroupLogger, LoggingLevel, DefaultExpediaGroupLogger } from '../../src/logging/Logger'
 
 describe('LoggerProvider', function () {
   it('should log when custom logger provided before instantiating logger', async function () {
@@ -8,7 +8,7 @@ describe('LoggerProvider', function () {
     LoggerProvider.setLogger(customLogger)
     const customLogSpy = jest.spyOn(customLogger, 'info')
 
-    const log: ExpediaGroupLogger = getLogger(ExpediaGroupLogger)
+    const log: SdkLogger = getLogger(SdkLogger)
 
     const message: string = 'some message'
     log.info(message)
@@ -17,7 +17,7 @@ describe('LoggerProvider', function () {
   })
 
   it('should log when custom logger provided after instantiating logger', async function () {
-    const log: ExpediaGroupLogger = getLogger(ExpediaGroupLogger)
+    const log: SdkLogger = getLogger(SdkLogger)
 
     const customLogger: CustomLogger = new CustomLogger()
     LoggerProvider.setLogger(customLogger)
@@ -30,14 +30,14 @@ describe('LoggerProvider', function () {
   })
 
   it('should change logging level when prompted', () => {
-    LoggerProvider.setLogger(DefaultLogger)
-    const defaultLogSpy = jest.spyOn(DefaultLogger, 'setLoggingLevel')
+    LoggerProvider.setLogger(ExpediaGroupLogger)
+    const defaultLogSpy = jest.spyOn(ExpediaGroupLogger, 'setLoggingLevel')
 
     const levels: LoggingLevel[] = ['info', 'error']
     for (const level of levels) {
-      LoggerProvider.getLogger().setLoggingLevel(level)
+      ExpediaGroupLogger.setLoggingLevel(level)
       // eslint-disable-next-line @typescript-eslint/dot-notation
-      const loggingLevel: string = (LoggerProvider.getLogger() as WinstonLogger)['logger'].level
+      const loggingLevel: string = (LoggerProvider.getLogger() as DefaultExpediaGroupLogger)['logger'].level
       expect(loggingLevel).toEqual(level)
       expect(defaultLogSpy).toHaveBeenCalledWith(level)
     }
