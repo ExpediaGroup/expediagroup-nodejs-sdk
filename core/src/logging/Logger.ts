@@ -28,7 +28,7 @@ export interface Logger {
   error: (message: string) => void
 }
 
-export class DefaultExpediaGroupLogger implements Logger {
+export class DefaultLogger implements Logger {
   private readonly logger: winston.Logger = winston.createLogger({
     level: 'info',
     format: winston.format.combine(winston.format.timestamp(), winston.format.json()),
@@ -53,4 +53,4 @@ export class DefaultExpediaGroupLogger implements Logger {
 }
 
 export declare type LoggingLevel = 'info' | 'warn' | 'error'
-export const ExpediaGroupLogger: DefaultExpediaGroupLogger = new DefaultExpediaGroupLogger()
+export const ExpediaGroupLogger: DefaultLogger = new DefaultLogger()

@@ -1,6 +1,6 @@
 import { SdkLogger, getLogger, LoggerProvider } from '../../src/logging/LoggerProvider'
 import { CustomLogger } from '../helper/CustomLogger'
-import { ExpediaGroupLogger, LoggingLevel, DefaultExpediaGroupLogger } from '../../src/logging/Logger'
+import { ExpediaGroupLogger, LoggingLevel, DefaultLogger } from '../../src/logging/Logger'
 
 describe('LoggerProvider', function () {
   it('should log when custom logger provided before instantiating logger', async function () {
@@ -37,7 +37,7 @@ describe('LoggerProvider', function () {
     for (const level of levels) {
       ExpediaGroupLogger.setLoggingLevel(level)
       // eslint-disable-next-line @typescript-eslint/dot-notation
-      const loggingLevel: string = (LoggerProvider.getLogger() as DefaultExpediaGroupLogger)['logger'].level
+      const loggingLevel: string = (LoggerProvider.getLogger() as DefaultLogger)['logger'].level
       expect(loggingLevel).toEqual(level)
       expect(defaultLogSpy).toHaveBeenCalledWith(level)
     }
