@@ -23,6 +23,8 @@ import winston from 'winston'
 export interface Logger {
   info: (message: string) => void
 
+  warn: (message: string) => void
+
   error: (message: string) => void
 }
 
@@ -37,6 +39,10 @@ export class DefaultExpediaGroupLogger implements Logger {
     this.logger.info(message)
   }
 
+  warn (message: string): void {
+    this.logger.warn(message)
+  }
+
   error (message: string): void {
     this.logger.error(message)
   }
@@ -46,5 +52,5 @@ export class DefaultExpediaGroupLogger implements Logger {
   }
 }
 
-export declare type LoggingLevel = 'info' | 'error'
+export declare type LoggingLevel = 'info' | 'warn' | 'error'
 export const ExpediaGroupLogger: DefaultExpediaGroupLogger = new DefaultExpediaGroupLogger()

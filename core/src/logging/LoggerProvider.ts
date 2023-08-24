@@ -30,6 +30,10 @@ export class SdkLogger {
     LoggerProvider.getLogger().info(this.decorate(message, this.name))
   }
 
+  warn (message: string): void {
+    LoggerProvider.getLogger().warn(this.decorate(message, this.name))
+  }
+
   error (message: string): void {
     LoggerProvider.getLogger().error(this.decorate(message, this.name))
   }

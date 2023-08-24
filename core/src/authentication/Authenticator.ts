@@ -57,7 +57,7 @@ class Authenticator {
   use (configurations: Configurations): void {
     this.axiosClient.interceptors.request.use(async (requestConfig) => {
       if (!this.isAuthRequest(requestConfig, configurations) && this.bearerTokenInfo.isAboutToExpire()) {
-        this.log.info(LoggingMessage.TOKEN_EXPIRED)
+        this.log.warn(LoggingMessage.TOKEN_EXPIRED)
         const tokenResponse: TokenResponse = await this.renewToken(configurations)
         const auth: string = `${Authentication.BEARER} ${tokenResponse.accessToken}`
         this.axiosClient.defaults.headers.common[Constant.AUTHORIZATION] = auth

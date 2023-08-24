@@ -33,7 +33,7 @@ describe('LoggerProvider', function () {
     LoggerProvider.setLogger(ExpediaGroupLogger)
     const defaultLogSpy = jest.spyOn(ExpediaGroupLogger, 'setLoggingLevel')
 
-    const levels: LoggingLevel[] = ['info', 'error']
+    const levels: LoggingLevel[] = ['info', 'warn', 'error']
     for (const level of levels) {
       ExpediaGroupLogger.setLoggingLevel(level)
       // eslint-disable-next-line @typescript-eslint/dot-notation
