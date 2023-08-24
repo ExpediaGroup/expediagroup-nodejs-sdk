@@ -11,7 +11,7 @@ describe('ExpediaGroupLogger', function () {
     log.info(message)
 
     expect(logSpy).toHaveBeenCalledWith(message)
-    expect(defaultLogSpy).toHaveBeenCalledWith(`Function - ExpediaGroupSDK: ${message}`)
+    expect(defaultLogSpy).toHaveBeenCalledWith(`ExpediaGroupSDK - Function: ${message}`)
   })
 
   it('should prepend error logging', async function () {
@@ -23,6 +23,6 @@ describe('ExpediaGroupLogger', function () {
     log.error(message)
 
     expect(logSpy).toHaveBeenCalledWith(message)
-    expect(defaultLogSpy).toHaveBeenCalledWith(`Function - ExpediaGroupSDK: ${message}`)
+    expect(defaultLogSpy).toHaveBeenCalledWith(`ExpediaGroupSDK - Function: ${message}`)
   })
 })
