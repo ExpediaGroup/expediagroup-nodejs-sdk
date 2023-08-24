@@ -31,7 +31,7 @@ export interface Logger {
 export class WinstonLogger implements Logger {
   private readonly logger: winston.Logger = winston.createLogger({
     level: 'info',
-    format: winston.format.combine(winston.format.timestamp(), winston.format.simple()),
+    format: winston.format.combine(winston.format.timestamp(), winston.format.json()),
     transports: [new winston.transports.Console()]
   })
 
