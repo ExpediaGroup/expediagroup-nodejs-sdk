@@ -3,9 +3,13 @@
 import { ExpediaGroupApiError, Serializer } from "../../core";
 {{#apiInfo}}
     {{#apis}}
-        {{#imports}}
-            import { {{classname}} } from '../{{classname}}'
-        {{/imports}}
+        {{#operations}}
+            {{#operation}}
+                {{#responses}}
+                    import { {{#processErrorType}}{{dataType}}{{/processErrorType}} } from '../{{#processErrorType}}{{dataType}}{{/processErrorType}}'
+                {{/responses}}
+            {{/operation}}
+        {{/operations}}
     {{/apis}}
 {{/apiInfo}}
 

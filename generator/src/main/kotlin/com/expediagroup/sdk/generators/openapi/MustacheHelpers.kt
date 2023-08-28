@@ -18,6 +18,7 @@ package com.expediagroup.sdk.generators.openapi
 import com.samskivert.mustache.Mustache
 import org.openapitools.codegen.CodegenModel
 import org.openapitools.codegen.CodegenProperty
+import org.openapitools.codegen.CodegenResponse
 import org.openapitools.codegen.model.OperationsMap
 
 val mustacheHelpers = mapOf(
@@ -27,11 +28,17 @@ val mustacheHelpers = mapOf(
     "processMapperType" to {
         Mustache.Lambda { fragment, writer ->
             val codegenProperty: CodegenProperty = fragment.context() as CodegenProperty
-            if ("Error" == codegenProperty.dataType) {
+            if (codegenProperty.dataType == Constant.ERROR) {
                 writer.write("ModelErrorMapper")
             } else {
                 writer.write(fragment.execute())
             }
+        }
+    },
+    "processErrorType" to {
+        Mustache.Lambda { fragment, writer ->
+            val response: CodegenResponse = fragment.context() as CodegenResponse
+            writer.write(if (response.dataType == Constant.ERROR) Constant.MODEL_ERROR else fragment.execute())
         }
     },
     "assignDiscriminators" to {
@@ -73,7 +80,7 @@ val mustacheHelpers = mapOf(
             val operationsMap: OperationsMap = fragment.context() as OperationsMap
             operationsMap.operations.operation.forEach { operation ->
                 operation.responses.forEach { response ->
-                    response.takeIf { !it.is2xx && !dataTypes.contains(it.dataType) }?.dataType?.also {
+                    response.takeIf { !it.is2xx }?.dataType?.let { if (it == Constant.ERROR) Constant.MODEL_ERROR else it }?.takeIf { !dataTypes.contains(it) }?.also {
                         writer.write("export class ExpediaGroupApi$it extends ExpediaGroupApiError ")
                         writer.write("{constructor(readonly statusCode: number, readonly errorObject: $it) {super(statusCode, errorObject);}}\n")
                         dataTypes.add(it)
@@ -89,8 +96,9 @@ val mustacheHelpers = mapOf(
             operationsMap.operations.operation.forEach { operation ->
                 operation.responses.forEach { response ->
                     response.takeIf { !it.is2xx && !errorCodes.contains(it.code) }?.also {
-                        writer.write("new HttpStatusCodeRange('${it.code}', (error: ErrorResponse) => new ExpediaGroupApi${it.dataType}")
-                        writer.write("(error.response.status, Serializer.deserializeObject(error.response.data, ${it.dataType}) as ${it.dataType})),\n")
+                        val dataType = if (it.dataType == Constant.ERROR) Constant.MODEL_ERROR else it.dataType
+                        writer.write("new HttpStatusCodeRange('${it.code}', (error: ErrorResponse) => new ExpediaGroupApi$dataType")
+                        writer.write("(error.response.status, Serializer.deserializeObject(error.response.data, $dataType) as $dataType)),\n")
                         errorCodes.add(it.code)
                     }
                 }
