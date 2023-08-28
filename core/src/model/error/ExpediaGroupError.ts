@@ -19,8 +19,8 @@
  */
 
 export class ExpediaGroupError extends Error {
-  constructor(message?: string) {
-    super(message);
+  constructor (message?: string) {
+    super(message)
     Object.setPrototypeOf(this, new.target.prototype)
   }
 }
