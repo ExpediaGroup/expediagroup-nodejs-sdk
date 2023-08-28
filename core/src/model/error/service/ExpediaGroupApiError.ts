@@ -17,10 +17,11 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { ExpediaGroupServiceError } from './ExpediaGroupServiceError'
 
-export class ExpediaGroupError extends Error {
-  constructor (message?: string) {
-    super(message)
-    Object.setPrototypeOf(this, new.target.prototype)
+/* istanbul ignore file */
+export class ExpediaGroupApiError extends ExpediaGroupServiceError {
+  constructor (readonly statusCode: number, readonly errorObject: any) {
+    super(`Request failed with response [${statusCode}]`)
   }
 }

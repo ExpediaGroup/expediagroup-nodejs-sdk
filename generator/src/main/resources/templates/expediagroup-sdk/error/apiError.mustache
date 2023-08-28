@@ -1,0 +1,66 @@
+{{>licenseInfo}}
+
+import { ExpediaGroupApiError, Serializer } from "../../core";
+{{#apiInfo}}
+    {{#apis}}
+        {{#operations}}
+            {{#operation}}
+                {{#responses}}
+                    import { {{#processErrorType}}{{dataType}}{{/processErrorType}} } from '../{{#processErrorType}}{{dataType}}{{/processErrorType}}'
+                {{/responses}}
+            {{/operation}}
+        {{/operations}}
+    {{/apis}}
+{{/apiInfo}}
+
+interface ErrorResponse {
+    response: {
+        status: number,
+        data: string
+    }
+}
+
+class HttpStatusCodeRange {
+    constructor(private readonly statusCode: string, readonly getFunction: (error: ErrorResponse) => ExpediaGroupApiError) {}
+
+    matches = (statusCode?: string): boolean => statusCode !== undefined && (this.isRangeDefinition() ? this.statusCode[0] === statusCode[0] : this.statusCode === statusCode);
+
+    isRangeDefinition = (): boolean => /^[1-5]XX$/g.test(this.statusCode);
+
+    static compareFn = (a: HttpStatusCodeRange, b: HttpStatusCodeRange): number => (a.isRangeDefinition() ? 1 : 0) - (b.isRangeDefinition() ? 1 : 0);
+}
+
+{{#apiInfo}}
+    {{#apis}}
+        {{#defineApiExceptions}}{{/defineApiExceptions}}
+    {{/apis}}
+{{/apiInfo}}
+
+export class ExpediaGroupDefaultApiError extends ExpediaGroupApiError {
+    constructor(readonly statusCode: number, readonly errorObject: any) {
+        super(statusCode, errorObject);
+    }
+}
+
+class DefaultHttpStatusCodeRange extends HttpStatusCodeRange {
+    constructor() {
+        super('DefaultHttpStatusCodeRange', (error: ErrorResponse) => new ExpediaGroupDefaultApiError(error.response.status, error.response.data));
+    }
+    override matches = (_?: string): boolean => true;
+    override isRangeDefinition = (): boolean => true;
+}
+
+const httpStatusCodeRanges: HttpStatusCodeRange[] = [
+    {{#apiInfo}}
+        {{#apis}}
+            {{#listApiExceptionsRanges}}{{/listApiExceptionsRanges}}
+        {{/apis}}
+    {{/apiInfo}}
+    new DefaultHttpStatusCodeRange()
+]
+
+const process = (error: ErrorResponse): ExpediaGroupApiError =>
+    httpStatusCodeRanges.filter((httpStatusCodeRange: HttpStatusCodeRange) => httpStatusCodeRange.matches(error.response.status.toString()))
+        .sort(HttpStatusCodeRange.compareFn)[0].getFunction(error);
+
+export const ErrorObjectMapper = { process }

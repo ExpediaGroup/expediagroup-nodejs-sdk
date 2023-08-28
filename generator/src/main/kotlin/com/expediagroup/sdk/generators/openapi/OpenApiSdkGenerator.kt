@@ -31,7 +31,7 @@ import org.openapitools.codegen.config.CodegenConfigurator
 @Command(name = "generate", description = "Let's build an EG Travel SDK!")
 class OpenApiSdkGenerator {
     private val supportingFiles = listOf(
-        "ExpediaGroupRequestError.ts",
+        "ApiError.ts",
         "client/index.ts",
         "models/index.ts",
         "tsconfig.json",
@@ -98,7 +98,7 @@ class OpenApiSdkGenerator {
                 userDefinedTemplates(
                     listOf(
                         ModelTemplate("model/modelMapper.mustache", "Mapper.ts"),
-                        SupportingFile("error/expediaGroupRequestError.mustache", "models/error", "ExpediaGroupRequestError.ts"),
+                        SupportingFile("error/apiError.mustache", "models/error/", "ApiError.ts"),
                         SupportingFile("package.mustache", "package.json"),
                         SupportingFile("typedoc.mustache", "typedoc.json"),
                         SupportingFile("tsconfig.mustache", "tsconfig.json"),

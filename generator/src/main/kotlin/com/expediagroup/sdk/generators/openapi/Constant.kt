@@ -18,4 +18,6 @@ package com.expediagroup.sdk.generators.openapi
 internal object Constant {
     const val EMPTY_STRING = ""
     val NON_ALPHANUMERIC_REGEX = Regex("[^a-zA-Z0-9]")
+    const val ERROR = "Error"
+    const val MODEL_ERROR = "ModelError"
 }

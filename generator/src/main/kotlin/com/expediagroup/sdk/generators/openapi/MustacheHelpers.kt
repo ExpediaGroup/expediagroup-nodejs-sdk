@@ -17,37 +17,28 @@ package com.expediagroup.sdk.generators.openapi
 
 import com.samskivert.mustache.Mustache
 import org.openapitools.codegen.CodegenModel
-import org.openapitools.codegen.CodegenOperation
 import org.openapitools.codegen.CodegenProperty
+import org.openapitools.codegen.CodegenResponse
+import org.openapitools.codegen.model.OperationsMap
 
 val mustacheHelpers = mapOf(
     "removeLeadingSlash" to {
         Mustache.Lambda { fragment, writer -> writer.write(fragment.execute().removePrefix("/")) }
     },
-    "throwBadRequestError" to {
-        Mustache.Lambda { fragment, writer ->
-            (fragment.context() as CodegenOperation).responses.find { response -> response.code == "400" }?.let {
-                val errorType: String = it.baseType
-                writer.write("throw new ExpediaGroupRequestError<$errorType>(Serializer.deserializeObject<$errorType>(error.response.data, $errorType) as $errorType, error.response.status)")
-            } ?: run { writer.write("throw new ExpediaGroupRequestError<string>('Bad Request', error.response.status)") }
-        }
-    },
-    "throws" to {
-        Mustache.Lambda { fragment, writer ->
-            (fragment.context() as CodegenOperation).responses.find { response -> response.code == "400" }?.let {
-                val errorType: String = it.baseType
-                writer.write("* @throws ExpediaGroupRequestError<$errorType>")
-            } ?: run { writer.write("* @throws new ExpediaGroupRequestError<string>") }
-        }
-    },
     "processMapperType" to {
         Mustache.Lambda { fragment, writer ->
             val codegenProperty: CodegenProperty = fragment.context() as CodegenProperty
-            if ("Error" == codegenProperty.dataType) {
+            if (codegenProperty.dataType == Constant.ERROR) {
                 writer.write("ModelErrorMapper")
             } else {
                 writer.write(fragment.execute())
             }
+        }
+    },
+    "processErrorType" to {
+        Mustache.Lambda { fragment, writer ->
+            val response: CodegenResponse = fragment.context() as CodegenResponse
+            writer.write(if (response.dataType == Constant.ERROR) Constant.MODEL_ERROR else fragment.execute())
         }
     },
     "assignDiscriminators" to {
@@ -80,6 +71,37 @@ val mustacheHelpers = mapOf(
                     writer.write("${variable.name}: ${model.classVarName}.${variable.name},\n")
                 }
                 writer.write("})")
+            }
+        }
+    },
+    "defineApiExceptions" to {
+        Mustache.Lambda { fragment, writer ->
+            val dataTypes: MutableSet<String> = mutableSetOf()
+            val operationsMap: OperationsMap = fragment.context() as OperationsMap
+            operationsMap.operations.operation.forEach { operation ->
+                operation.responses.forEach { response ->
+                    response.takeIf { !it.is2xx }?.dataType?.let { if (it == Constant.ERROR) Constant.MODEL_ERROR else it }?.takeIf { !dataTypes.contains(it) }?.also {
+                        writer.write("export class ExpediaGroupApi$it extends ExpediaGroupApiError ")
+                        writer.write("{constructor(readonly statusCode: number, readonly errorObject: $it) {super(statusCode, errorObject);}}\n")
+                        dataTypes.add(it)
+                    }
+                }
+            }
+        }
+    },
+    "listApiExceptionsRanges" to {
+        Mustache.Lambda { fragment, writer ->
+            val errorCodes: MutableSet<String> = mutableSetOf()
+            val operationsMap: OperationsMap = fragment.context() as OperationsMap
+            operationsMap.operations.operation.forEach { operation ->
+                operation.responses.forEach { response ->
+                    response.takeIf { !it.is2xx && !errorCodes.contains(it.code) }?.also {
+                        val dataType = if (it.dataType == Constant.ERROR) Constant.MODEL_ERROR else it.dataType
+                        writer.write("new HttpStatusCodeRange('${it.code}', (error: ErrorResponse) => new ExpediaGroupApi$dataType")
+                        writer.write("(error.response.status, Serializer.deserializeObject(error.response.data, $dataType) as $dataType)),\n")
+                        errorCodes.add(it.code)
+                    }
+                }
             }
         }
     },
