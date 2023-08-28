@@ -1,13 +1,13 @@
 {{>licenseInfo}}
 
 {{#imports}}
-import { {{classname}} } from '../../models/{{classname}}'
+import { {{classname}} } from '../../models'
 {{/imports}}
 
 import { v4 as uuid } from 'uuid'
 import {platform, release} from 'os'
-import { Client, ClientConfigurations, Serializer, ExpediaGroupError } from '../../core'
-import { ExpediaGroupRequestError } from '../../models/error/ExpediaGroupRequestError'
+import { Client, ClientConfigurations, Serializer, ExpediaGroupServiceError, ExpediaGroupError } from '../../core'
+import { ErrorObjectMapper } from "../../models/error/ApiError";
 
 /**
  * {{{description}}}
@@ -41,8 +41,8 @@ export class {{classname}} extends Client {
      {{/queryParams}}{{#bodyParams}}* @param {{{paramName}}} {{description}}{{^required}} (optional{{#defaultValue}}, defaults to {{{.}}}{{/defaultValue}}){{/required}}{{#required}}{{#defaultValue}} (defaults to {{{.}}}){{/defaultValue}}{{/required}}
      {{/bodyParams}}{{#formParams}}* @param {{{paramName}}} {{description}}{{^required}} (optional{{#defaultValue}}, defaults to {{{.}}}{{/defaultValue}}){{/required}}{{#required}}{{#defaultValue}} (defaults to {{{.}}}){{/defaultValue}}{{/required}}
      {{/formParams}}* @param transactionId A unique ID to uniquely identify a request/response cycle (optional, defaults to a random generated UUID)
-     * @return Promise<{{{returnType}}}{{^returnType}}void{{/returnType}}>
-     {{#throws}}{{/throws}}
+     * @return Promise<{{{returnType}}}{{^returnType}}void{{/returnType}}>{{#responses}}{{^is2xx}}
+     * @throws ExpediaGroupService{{{dataType}}}{{/is2xx}}{{/responses}}
      */
     {{operationId}}({{>api/apiParamsDecleration}}): Promise<{{{returnType}}}>  {
         {{#returnProperty}}let responsePromise = {{/returnProperty}}this.axiosClient.request({
@@ -51,10 +51,9 @@ export class {{classname}} extends Client {
             headers: {{classname}}.createHeaders(transactionId),
             data: Serializer.serialize({{{paramName}}}){{/bodyParam}}
         }).catch(error => {
-            if (error instanceof ExpediaGroupError) {
-                throw error
-            }
-            throw new ExpediaGroupRequestError<string>(error.response?.data, error.response?.status)
+            if (error instanceof ExpediaGroupError) throw error
+            if (error.response?.status) throw ErrorObjectMapper.process(error)
+            throw new ExpediaGroupServiceError(error)
         })
         {{#returnProperty}}
         return responsePromise.then((response) => {
