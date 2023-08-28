@@ -17,28 +17,12 @@ package com.expediagroup.sdk.generators.openapi
 
 import com.samskivert.mustache.Mustache
 import org.openapitools.codegen.CodegenModel
-import org.openapitools.codegen.CodegenOperation
 import org.openapitools.codegen.CodegenProperty
+import org.openapitools.codegen.model.OperationsMap
 
 val mustacheHelpers = mapOf(
     "removeLeadingSlash" to {
         Mustache.Lambda { fragment, writer -> writer.write(fragment.execute().removePrefix("/")) }
-    },
-    "throwBadRequestError" to {
-        Mustache.Lambda { fragment, writer ->
-            (fragment.context() as CodegenOperation).responses.find { response -> response.code == "400" }?.let {
-                val errorType: String = it.baseType
-                writer.write("throw new ExpediaGroupRequestError<$errorType>(Serializer.deserializeObject<$errorType>(error.response.data, $errorType) as $errorType, error.response.status)")
-            } ?: run { writer.write("throw new ExpediaGroupRequestError<string>('Bad Request', error.response.status)") }
-        }
-    },
-    "throws" to {
-        Mustache.Lambda { fragment, writer ->
-            (fragment.context() as CodegenOperation).responses.find { response -> response.code == "400" }?.let {
-                val errorType: String = it.baseType
-                writer.write("* @throws ExpediaGroupRequestError<$errorType>")
-            } ?: run { writer.write("* @throws new ExpediaGroupRequestError<string>") }
-        }
     },
     "processMapperType" to {
         Mustache.Lambda { fragment, writer ->
@@ -80,6 +64,36 @@ val mustacheHelpers = mapOf(
                     writer.write("${variable.name}: ${model.classVarName}.${variable.name},\n")
                 }
                 writer.write("})")
+            }
+        }
+    },
+    "defineApiExceptions" to {
+        Mustache.Lambda { fragment, writer ->
+            val dataTypes: MutableSet<String> = mutableSetOf()
+            val operationsMap: OperationsMap = fragment.context() as OperationsMap
+            operationsMap.operations.operation.forEach { operation ->
+                operation.responses.forEach { response ->
+                    response.takeIf { !it.is2xx && !dataTypes.contains(it.dataType) }?.dataType?.also {
+                        writer.write("export class ExpediaGroupService$it extends ExpediaGroupUnsuccessfulStatusCodeError ")
+                        writer.write("{constructor(readonly statusCode: number, readonly errorObject: $it) {super(statusCode, errorObject);}}\n")
+                        dataTypes.add(it)
+                    }
+                }
+            }
+        }
+    },
+    "listApiExceptionsRanges" to {
+        Mustache.Lambda { fragment, writer ->
+            val errorCodes: MutableSet<String> = mutableSetOf()
+            val operationsMap: OperationsMap = fragment.context() as OperationsMap
+            operationsMap.operations.operation.forEach { operation ->
+                operation.responses.forEach { response ->
+                    response.takeIf { !it.is2xx && !errorCodes.contains(it.code) }?.also {
+                        writer.write("new HttpStatusCodeRange('${it.code}', (error: ErrorResponse) => new ExpediaGroupService${it.dataType}")
+                        writer.write("(error.response.status, Serializer.deserializeObject(error.response.data, ${it.dataType}) as ${it.dataType})),\n")
+                        errorCodes.add(it.code)
+                    }
+                }
             }
         }
     },
