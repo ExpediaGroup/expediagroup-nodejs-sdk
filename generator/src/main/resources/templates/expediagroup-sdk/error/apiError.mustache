@@ -1,6 +1,6 @@
 {{>licenseInfo}}
 
-import { ExpediaGroupUnsuccessfulStatusCodeError, Serializer } from "../../core";
+import { ExpediaGroupApiError, Serializer } from "../../core";
 {{#apiInfo}}
     {{#apis}}
         {{#imports}}
@@ -17,7 +17,7 @@ interface ErrorResponse {
 }
 
 class HttpStatusCodeRange {
-    constructor(private readonly statusCode: string, readonly getFunction: (error: ErrorResponse) => ExpediaGroupUnsuccessfulStatusCodeError) {}
+    constructor(private readonly statusCode: string, readonly getFunction: (error: ErrorResponse) => ExpediaGroupApiError) {}
 
     matches = (statusCode?: string): boolean => statusCode !== undefined && (this.isRangeDefinition() ? this.statusCode[0] === statusCode[0] : this.statusCode === statusCode);
 
@@ -32,7 +32,7 @@ class HttpStatusCodeRange {
     {{/apis}}
 {{/apiInfo}}
 
-export class ExpediaGroupServiceDefaultError extends ExpediaGroupUnsuccessfulStatusCodeError {
+export class ExpediaGroupDefaultApiError extends ExpediaGroupApiError {
     constructor(readonly statusCode: number, readonly errorObject: any) {
         super(statusCode, errorObject);
     }
@@ -40,7 +40,7 @@ export class ExpediaGroupServiceDefaultError extends ExpediaGroupUnsuccessfulSta
 
 class DefaultHttpStatusCodeRange extends HttpStatusCodeRange {
     constructor() {
-        super('DefaultHttpStatusCodeRange', (error: ErrorResponse) => new ExpediaGroupServiceDefaultError(error.response.status, error.response.data));
+        super('DefaultHttpStatusCodeRange', (error: ErrorResponse) => new ExpediaGroupDefaultApiError(error.response.status, error.response.data));
     }
     override matches = (_?: string): boolean => true;
     override isRangeDefinition = (): boolean => true;
@@ -55,7 +55,7 @@ const httpStatusCodeRanges: HttpStatusCodeRange[] = [
     new DefaultHttpStatusCodeRange()
 ]
 
-const process = (error: ErrorResponse): ExpediaGroupUnsuccessfulStatusCodeError =>
+const process = (error: ErrorResponse): ExpediaGroupApiError =>
     httpStatusCodeRanges.filter((httpStatusCodeRange: HttpStatusCodeRange) => httpStatusCodeRange.matches(error.response.status.toString()))
         .sort(HttpStatusCodeRange.compareFn)[0].getFunction(error);
 

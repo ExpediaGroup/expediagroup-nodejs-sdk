@@ -20,7 +20,7 @@
 import { ExpediaGroupServiceError } from './ExpediaGroupServiceError'
 
 /* istanbul ignore file */
-export class ExpediaGroupUnsuccessfulStatusCodeError extends ExpediaGroupServiceError {
+export class ExpediaGroupApiError extends ExpediaGroupServiceError {
   constructor (readonly statusCode: number, readonly errorObject: any) {
     super(`Request failed with response [${statusCode}]`)
   }

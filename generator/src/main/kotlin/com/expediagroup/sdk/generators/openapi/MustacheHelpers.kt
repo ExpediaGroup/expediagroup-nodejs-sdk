@@ -74,7 +74,7 @@ val mustacheHelpers = mapOf(
             operationsMap.operations.operation.forEach { operation ->
                 operation.responses.forEach { response ->
                     response.takeIf { !it.is2xx && !dataTypes.contains(it.dataType) }?.dataType?.also {
-                        writer.write("export class ExpediaGroupService$it extends ExpediaGroupUnsuccessfulStatusCodeError ")
+                        writer.write("export class ExpediaGroupApi$it extends ExpediaGroupApiError ")
                         writer.write("{constructor(readonly statusCode: number, readonly errorObject: $it) {super(statusCode, errorObject);}}\n")
                         dataTypes.add(it)
                     }
@@ -89,7 +89,7 @@ val mustacheHelpers = mapOf(
             operationsMap.operations.operation.forEach { operation ->
                 operation.responses.forEach { response ->
                     response.takeIf { !it.is2xx && !errorCodes.contains(it.code) }?.also {
-                        writer.write("new HttpStatusCodeRange('${it.code}', (error: ErrorResponse) => new ExpediaGroupService${it.dataType}")
+                        writer.write("new HttpStatusCodeRange('${it.code}', (error: ErrorResponse) => new ExpediaGroupApi${it.dataType}")
                         writer.write("(error.response.status, Serializer.deserializeObject(error.response.data, ${it.dataType}) as ${it.dataType})),\n")
                         errorCodes.add(it.code)
                     }
