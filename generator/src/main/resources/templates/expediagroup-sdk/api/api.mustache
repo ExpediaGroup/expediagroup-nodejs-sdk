@@ -40,9 +40,9 @@ export class {{classname}} extends Client {
      {{#queryParams}}* @param {{{paramName}}} {{description}}{{^required}} (optional{{#defaultValue}}, defaults to {{{.}}}{{/defaultValue}}){{/required}}{{#required}}{{#defaultValue}} (defaults to {{{.}}}){{/defaultValue}}{{/required}}
      {{/queryParams}}{{#bodyParams}}* @param {{{paramName}}} {{description}}{{^required}} (optional{{#defaultValue}}, defaults to {{{.}}}{{/defaultValue}}){{/required}}{{#required}}{{#defaultValue}} (defaults to {{{.}}}){{/defaultValue}}{{/required}}
      {{/bodyParams}}{{#formParams}}* @param {{{paramName}}} {{description}}{{^required}} (optional{{#defaultValue}}, defaults to {{{.}}}{{/defaultValue}}){{/required}}{{#required}}{{#defaultValue}} (defaults to {{{.}}}){{/defaultValue}}{{/required}}
-     {{/formParams}}* @param transactionId A unique ID to uniquely identify a request/response cycle (optional, defaults to a random generated UUID)
-     * @return Promise<{{{returnType}}}{{^returnType}}void{{/returnType}}>{{#responses}}{{^is2xx}}
-     * @throws ExpediaGroupService{{{dataType}}}{{/is2xx}}{{/responses}}
+     {{/formParams}}* @param transactionId A unique ID to uniquely identify a request/response cycle (optional, defaults to a random generated UUID)<{{{returnType}}}{{^returnType}}void{{/returnType}}>{{#responses}}{{^is2xx}}
+     * @throws ExpediaGroupApi{{{dataType}}}{{/is2xx}}{{/responses}}
+     * @return Promise
      */
     {{operationId}}({{>api/apiParamsDecleration}}): Promise<{{{returnType}}}>  {
         {{#returnProperty}}let responsePromise = {{/returnProperty}}this.axiosClient.request({
