@@ -27,9 +27,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          if [[ false ]]; then
-            exit 0;
-          fi
           if [[ "${{github.event.inputs.production_release}}" == "Yes" ]]; then
             npm i
             npx tsc
