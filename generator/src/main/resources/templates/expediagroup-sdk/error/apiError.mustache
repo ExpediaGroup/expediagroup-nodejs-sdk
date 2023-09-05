@@ -50,17 +50,26 @@ class DefaultHttpStatusCodeRange extends HttpStatusCodeRange {
     override isRangeDefinition = (): boolean => true;
 }
 
-const httpStatusCodeRanges: HttpStatusCodeRange[] = [
+const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<string, HttpStatusCodeRange[]>([
     {{#apiInfo}}
         {{#apis}}
-            {{#listApiExceptionsRanges}}{{/listApiExceptionsRanges}}
+            {{#operations}}
+                {{#operation}}
+                    ['{{operationId}}', [
+                    {{#responses}}
+                        {{^is2xx}}
+                            new HttpStatusCodeRange('{{code}}', (error: ErrorResponse) => new ExpediaGroupApi{{dataType}}(error.response.status, Serializer.deserializeObject(error.response.data, {{dataType}}) as {{dataType}})),
+                        {{/is2xx}}
+                    {{/responses}}
+                    new DefaultHttpStatusCodeRange()]]{{^-last}},{{/-last}}
+                {{/operation}}
+            {{/operations}}
         {{/apis}}
     {{/apiInfo}}
-    new DefaultHttpStatusCodeRange()
-]
+])
 
-const process = (error: ErrorResponse): ExpediaGroupApiError =>
-    httpStatusCodeRanges.filter((httpStatusCodeRange: HttpStatusCodeRange) => httpStatusCodeRange.matches(error.response.status.toString()))
+const process = (error: ErrorResponse, operationId: string): ExpediaGroupApiError =>
+    httpStatusCodeRanges[operationId].filter((httpStatusCodeRange: HttpStatusCodeRange) => httpStatusCodeRange.matches(error.response.status.toString()))
         .sort(HttpStatusCodeRange.compareFn)[0].getFunction(error);
 
 export const ErrorObjectMapper = { process }
