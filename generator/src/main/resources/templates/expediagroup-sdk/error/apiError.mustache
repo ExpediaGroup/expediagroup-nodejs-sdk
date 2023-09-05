@@ -69,7 +69,7 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<string,
 ])
 
 const process = (error: ErrorResponse, operationId: string): ExpediaGroupApiError =>
-    httpStatusCodeRanges[operationId].filter((httpStatusCodeRange: HttpStatusCodeRange) => httpStatusCodeRange.matches(error.response.status.toString()))
+    httpStatusCodeRanges.get(operationId).filter((httpStatusCodeRange: HttpStatusCodeRange) => httpStatusCodeRange.matches(error.response.status.toString()))
         .sort(HttpStatusCodeRange.compareFn)[0].getFunction(error);
 
 export const ErrorObjectMapper = { process }
