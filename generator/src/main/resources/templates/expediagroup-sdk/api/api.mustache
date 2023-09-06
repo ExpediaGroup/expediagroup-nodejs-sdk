@@ -52,7 +52,7 @@ export class {{classname}} extends Client {
             data: Serializer.serialize({{{paramName}}}){{/bodyParam}}
         }).catch(error => {
             if (error instanceof ExpediaGroupError) throw error
-            if (error.response?.status) throw ErrorObjectMapper.process(error)
+            if (error.response?.status) throw ErrorObjectMapper.process(error, '{{operationId}}')
             throw new ExpediaGroupServiceError(error)
         })
         {{#returnProperty}}
