@@ -89,20 +89,4 @@ val mustacheHelpers = mapOf(
             }
         }
     },
-    "listApiExceptionsRanges" to {
-        Mustache.Lambda { fragment, writer ->
-            val errorCodes: MutableSet<String> = mutableSetOf()
-            val operationsMap: OperationsMap = fragment.context() as OperationsMap
-            operationsMap.operations.operation.forEach { operation ->
-                operation.responses.forEach { response ->
-                    response.takeIf { !it.is2xx && !errorCodes.contains(it.code) }?.also {
-                        val dataType = if (it.dataType == Constant.ERROR) Constant.MODEL_ERROR else it.dataType
-                        writer.write("new HttpStatusCodeRange('${it.code}', (error: ErrorResponse) => new ExpediaGroupApi$dataType")
-                        writer.write("(error.response.status, Serializer.deserializeObject(error.response.data, $dataType) as $dataType)),\n")
-                        errorCodes.add(it.code)
-                    }
-                }
-            }
-        }
-    },
 )
