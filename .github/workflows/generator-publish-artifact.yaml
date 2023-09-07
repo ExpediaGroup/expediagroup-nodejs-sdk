@@ -30,6 +30,7 @@ jobs:
           if [[ ${{github.event.inputs.production_release}} == 'true' ]]; then
             npm i
             npx tsc
+            npm publish
           else
             version_input="$(npm pkg get version | sed "s/\"//g")"
 
@@ -45,5 +46,6 @@ jobs:
 
             npm i
             npx tsc
+            npm publish --tag alpha
           fi
           echo "version=$(npm pkg get version)" >> $GITHUB_OUTPUT
