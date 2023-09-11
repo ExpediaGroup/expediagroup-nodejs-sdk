@@ -3,8 +3,8 @@ on:
   workflow_call:
     inputs:
       production_release:
-        description: 'Release to Production? (Yes/No)'
-        type: string
+        description: 'Release to Production'
+        type: boolean
         required: true
 jobs:
   publish:
@@ -27,7 +27,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          if [[ "${{github.event.inputs.production_release}}" == "Yes" ]]; then
+          if [[ ${{github.event.inputs.production_release}} == 'true' ]]; then
             npm i
             npx tsc
             npm publish
