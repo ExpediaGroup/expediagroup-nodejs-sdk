@@ -19,6 +19,10 @@
  */
 
 import {
+    AccountScreenRequest,
+    AccountScreenResponse,
+    AccountUpdateRequest,
+    AccountUpdateResponse,
     OrderPurchaseScreenRequest,
     OrderPurchaseScreenResponse,
     OrderPurchaseUpdateRequest,
@@ -45,7 +49,7 @@ export class FraudPreventionV2Client extends Client {
     private static readonly nodeVersion: string = process.version
     private static readonly operatingSystemName: string = platform()
     private static readonly operatingSystemVersion: string = release()
-    private static readonly userAgent: string = `${this.sdkTitle}/1.0.0 (Node.js ${this.nodeVersion} ${this.operatingSystemName} ${this.operatingSystemVersion})`
+    private static readonly userAgent: string = `${this.sdkTitle}/2.0.0 (Node.js ${this.nodeVersion} ${this.operatingSystemName} ${this.operatingSystemVersion})`
 
     constructor(configurations: ClientConfigurations) {
         super({
@@ -64,43 +68,46 @@ export class FraudPreventionV2Client extends Client {
     }
 
     /**
-     * Run fraud screening for one transaction
-     * The Order Purchase API gives a Fraud recommendation for a transaction. A recommendation can be Accept, Reject, or Review. A transaction is marked as Review whenever there are insufficient signals to recommend Accept or Reject. These incidents are manually reviewed, and a corrected recommendation is made asynchronously.
-     * @param orderPurchaseScreenRequest
-     * @param transactionId A unique ID to uniquely identify a request/response cycle (optional, defaults to a random generated UUID)<OrderPurchaseScreenResponse>
-     * @throws ExpediaGroupApiBadRequestError
-     * @throws ExpediaGroupApiUnauthorizedError
+     * Send an update as a result of an account screen transaction
+     * The Account Update API is called when there is an account lifecycle transition such as a challenge outcome, account restoration, or remediation action completion. For example, if a user\&#39;s account is disabled, deleted, or restored, the Account Update API is called to notify Expedia Group about the change. The Account Update API is also called when a user responds to a login Multi-Factor Authentication based on a Fraud recommendation.
+     * @param accountUpdateRequest An AccountUpdate request may be of one of the following types &#x60;MULTI_FACTOR_AUTHENTICATION_UPDATE&#x60;, &#x60;REMEDIATION_UPDATE&#x60;.
+     * @param transactionId A unique ID to uniquely identify a request/response cycle (optional, defaults to a random generated UUID)<AccountUpdateResponse>
+     * @throws ExpediaGroupApiAccountTakeoverBadRequestError
+     * @throws ExpediaGroupApiAccountTakeoverUnauthorizedError
      * @throws ExpediaGroupApiForbiddenError
-     * @throws ExpediaGroupApiNotFoundError
+     * @throws ExpediaGroupApiAccountUpdateNotFoundError
      * @throws ExpediaGroupApiTooManyRequestsError
      * @throws ExpediaGroupApiInternalServerError
      * @throws ExpediaGroupApiBadGatewayError
-     * @throws ExpediaGroupApiServiceUnavailableError
+     * @throws ExpediaGroupApiAccountTakeoverServiceUnavailableError
      * @throws ExpediaGroupApiGatewayTimeoutError
      * @return Promise
      */
-    screen(
-        orderPurchaseScreenRequest: OrderPurchaseScreenRequest,
+    notifyWithAccountUpdate(
+        accountUpdateRequest: AccountUpdateRequest,
         transactionId: string = uuid()
-    ): Promise<OrderPurchaseScreenResponse> {
+    ): Promise<AccountUpdateResponse> {
         let responsePromise = this.axiosClient
             .request({
                 method: 'POST',
-                url: 'fraud-prevention/v2/order/purchase/screen',
+                url: 'fraud-prevention/v2/account/update',
                 headers: FraudPreventionV2Client.createHeaders(transactionId),
-                data: Serializer.serialize(orderPurchaseScreenRequest),
+                data: Serializer.serialize(accountUpdateRequest),
             })
             .catch((error) => {
                 if (error instanceof ExpediaGroupError) throw error
                 if (error.response?.status)
-                    throw ErrorObjectMapper.process(error)
+                    throw ErrorObjectMapper.process(
+                        error,
+                        'notifyWithAccountUpdate'
+                    )
                 throw new ExpediaGroupServiceError(error)
             })
         return responsePromise.then((response) => {
-            return Serializer.deserializeObject<OrderPurchaseScreenResponse>(
+            return Serializer.deserializeObject<AccountUpdateResponse>(
                 response.data,
-                OrderPurchaseScreenResponse
-            ) as OrderPurchaseScreenResponse
+                AccountUpdateResponse
+            ) as AccountUpdateResponse
         })
     }
     /**
@@ -119,7 +126,7 @@ export class FraudPreventionV2Client extends Client {
      * @throws ExpediaGroupApiGatewayTimeoutError
      * @return Promise
      */
-    update(
+    notifyWithOrderUpdate(
         orderPurchaseUpdateRequest: OrderPurchaseUpdateRequest,
         transactionId: string = uuid()
     ): Promise<OrderPurchaseUpdateResponse> {
@@ -133,7 +140,10 @@ export class FraudPreventionV2Client extends Client {
             .catch((error) => {
                 if (error instanceof ExpediaGroupError) throw error
                 if (error.response?.status)
-                    throw ErrorObjectMapper.process(error)
+                    throw ErrorObjectMapper.process(
+                        error,
+                        'notifyWithOrderUpdate'
+                    )
                 throw new ExpediaGroupServiceError(error)
             })
         return responsePromise.then((response) => {
@@ -141,6 +151,86 @@ export class FraudPreventionV2Client extends Client {
                 response.data,
                 OrderPurchaseUpdateResponse
             ) as OrderPurchaseUpdateResponse
+        })
+    }
+    /**
+     * Run fraud screening for one transaction
+     * The Account Screen API gives a Fraud recommendation for an account transaction. A recommendation can be ACCEPT, CHALLENGE, or REJECT. A transaction is marked as CHALLENGE whenever there are insufficient signals to recommend ACCEPT or REJECT. These CHALLENGE incidents are manually reviewed, and a corrected recommendation is made asynchronously.
+     * @param accountScreenRequest
+     * @param transactionId A unique ID to uniquely identify a request/response cycle (optional, defaults to a random generated UUID)<AccountScreenResponse>
+     * @throws ExpediaGroupApiAccountTakeoverBadRequestError
+     * @throws ExpediaGroupApiAccountTakeoverUnauthorizedError
+     * @throws ExpediaGroupApiForbiddenError
+     * @throws ExpediaGroupApiNotFoundError
+     * @throws ExpediaGroupApiTooManyRequestsError
+     * @throws ExpediaGroupApiInternalServerError
+     * @throws ExpediaGroupApiBadGatewayError
+     * @throws ExpediaGroupApiAccountTakeoverServiceUnavailableError
+     * @throws ExpediaGroupApiGatewayTimeoutError
+     * @return Promise
+     */
+    screenAccount(
+        accountScreenRequest: AccountScreenRequest,
+        transactionId: string = uuid()
+    ): Promise<AccountScreenResponse> {
+        let responsePromise = this.axiosClient
+            .request({
+                method: 'POST',
+                url: 'fraud-prevention/v2/account/screen',
+                headers: FraudPreventionV2Client.createHeaders(transactionId),
+                data: Serializer.serialize(accountScreenRequest),
+            })
+            .catch((error) => {
+                if (error instanceof ExpediaGroupError) throw error
+                if (error.response?.status)
+                    throw ErrorObjectMapper.process(error, 'screenAccount')
+                throw new ExpediaGroupServiceError(error)
+            })
+        return responsePromise.then((response) => {
+            return Serializer.deserializeObject<AccountScreenResponse>(
+                response.data,
+                AccountScreenResponse
+            ) as AccountScreenResponse
+        })
+    }
+    /**
+     * Run fraud screening for one transaction
+     * The Order Purchase API gives a Fraud recommendation for a transaction. A recommendation can be Accept, Reject, or Review. A transaction is marked as Review whenever there are insufficient signals to recommend Accept or Reject. These incidents are manually reviewed, and a corrected recommendation is made asynchronously.
+     * @param orderPurchaseScreenRequest
+     * @param transactionId A unique ID to uniquely identify a request/response cycle (optional, defaults to a random generated UUID)<OrderPurchaseScreenResponse>
+     * @throws ExpediaGroupApiBadRequestError
+     * @throws ExpediaGroupApiUnauthorizedError
+     * @throws ExpediaGroupApiForbiddenError
+     * @throws ExpediaGroupApiNotFoundError
+     * @throws ExpediaGroupApiTooManyRequestsError
+     * @throws ExpediaGroupApiInternalServerError
+     * @throws ExpediaGroupApiBadGatewayError
+     * @throws ExpediaGroupApiServiceUnavailableError
+     * @throws ExpediaGroupApiGatewayTimeoutError
+     * @return Promise
+     */
+    screenOrder(
+        orderPurchaseScreenRequest: OrderPurchaseScreenRequest,
+        transactionId: string = uuid()
+    ): Promise<OrderPurchaseScreenResponse> {
+        let responsePromise = this.axiosClient
+            .request({
+                method: 'POST',
+                url: 'fraud-prevention/v2/order/purchase/screen',
+                headers: FraudPreventionV2Client.createHeaders(transactionId),
+                data: Serializer.serialize(orderPurchaseScreenRequest),
+            })
+            .catch((error) => {
+                if (error instanceof ExpediaGroupError) throw error
+                if (error.response?.status)
+                    throw ErrorObjectMapper.process(error, 'screenOrder')
+                throw new ExpediaGroupServiceError(error)
+            })
+        return responsePromise.then((response) => {
+            return Serializer.deserializeObject<OrderPurchaseScreenResponse>(
+                response.data,
+                OrderPurchaseScreenResponse
+            ) as OrderPurchaseScreenResponse
         })
     }
 }

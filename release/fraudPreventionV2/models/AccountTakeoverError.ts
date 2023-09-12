@@ -21,28 +21,28 @@
 import { JsonObject, JsonProperty } from 'typescript-json-serializer'
 
 /**
- * Indicates that the API cannot fulfill the request because while the client is correctly authenticated, the client doesn\'t have the permission to execute the specified operation. This error type does not imply that the request is valid, or that the resource against which the operation being performed exists or satisfies other pre-conditions.
+ * The object used to describe an error, containing both human-readable and machine-readable information.
  */
 @JsonObject({ constructorParams: [{}] })
-export class ForbiddenError {
+export class AccountTakeoverError {
     /**
      * Snake cased all caps error code interpreted from the HTTP status code that can programmatically be acted upon.
      */
     @JsonProperty({ name: 'code' })
-    code: ForbiddenErrorCodeEnum
+    code: AccountTakeoverErrorCodeEnum
     /**
      * A human-readable explanation of the error, specific to this error occurrence.
      */
     @JsonProperty({ name: 'message' })
     message: string
 
-    public constructor(forbiddenError: ForbiddenErrorProperties) {
-        this.code = forbiddenError.code
-        this.message = forbiddenError.message
+    public constructor(accountTakeoverError: AccountTakeoverErrorProperties) {
+        this.code = accountTakeoverError.code
+        this.message = accountTakeoverError.message
     }
 }
 
-export type ForbiddenErrorCodeEnum =
+export type AccountTakeoverErrorCodeEnum =
     | 'UNAUTHORIZED'
     | 'FORBIDDEN'
     | 'NOT_FOUND'
@@ -55,7 +55,7 @@ export type ForbiddenErrorCodeEnum =
     | 'GATEWAY_TIMEOUT'
     | 'BAD_REQUEST'
 
-export interface ForbiddenErrorProperties {
-    code: ForbiddenErrorCodeEnum
+export interface AccountTakeoverErrorProperties {
+    code: AccountTakeoverErrorCodeEnum
     message: string
 }
