@@ -21,28 +21,30 @@
 import { JsonObject, JsonProperty } from 'typescript-json-serializer'
 
 /**
- * Indicates that the API cannot fulfill the request because while the client is correctly authenticated, the client doesn\'t have the permission to execute the specified operation. This error type does not imply that the request is valid, or that the resource against which the operation being performed exists or satisfies other pre-conditions.
+ * Indicates that the API cannot find the resource that is either being requested or against which the operation is being performed.
  */
 @JsonObject({ constructorParams: [{}] })
-export class ForbiddenError {
+export class AccountUpdateNotFoundError {
     /**
      * Snake cased all caps error code interpreted from the HTTP status code that can programmatically be acted upon.
      */
     @JsonProperty({ name: 'code' })
-    code: ForbiddenErrorCodeEnum
+    code: AccountUpdateNotFoundErrorCodeEnum
     /**
      * A human-readable explanation of the error, specific to this error occurrence.
      */
     @JsonProperty({ name: 'message' })
     message: string
 
-    public constructor(forbiddenError: ForbiddenErrorProperties) {
-        this.code = forbiddenError.code
-        this.message = forbiddenError.message
+    public constructor(
+        accountUpdateNotFoundError: AccountUpdateNotFoundErrorProperties
+    ) {
+        this.code = accountUpdateNotFoundError.code
+        this.message = accountUpdateNotFoundError.message
     }
 }
 
-export type ForbiddenErrorCodeEnum =
+export type AccountUpdateNotFoundErrorCodeEnum =
     | 'UNAUTHORIZED'
     | 'FORBIDDEN'
     | 'NOT_FOUND'
@@ -55,7 +57,7 @@ export type ForbiddenErrorCodeEnum =
     | 'GATEWAY_TIMEOUT'
     | 'BAD_REQUEST'
 
-export interface ForbiddenErrorProperties {
-    code: ForbiddenErrorCodeEnum
+export interface AccountUpdateNotFoundErrorProperties {
+    code: AccountUpdateNotFoundErrorCodeEnum
     message: string
 }

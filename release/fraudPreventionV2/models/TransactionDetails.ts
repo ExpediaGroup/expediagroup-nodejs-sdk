@@ -60,7 +60,7 @@ export class TransactionDetails {
     })
     travelers: Array<Traveler>
     /**
-     * List of the form(s) of payment being used to purchase the order.  One or more forms of payment can be used within an order. Information gathered will be specific to the form of payment.
+     * List of the form(s) of payment being used to purchase the order. One or more forms of payment can be used within an order. Information gathered will be specific to the form of payment.
      */
     @JsonProperty({
         name: 'payments',

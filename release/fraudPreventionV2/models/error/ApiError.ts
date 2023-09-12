@@ -19,6 +19,10 @@
  */
 
 import { ExpediaGroupApiError, Serializer } from '../../core'
+import { AccountTakeoverBadRequestError } from '../AccountTakeoverBadRequestError'
+import { AccountTakeoverServiceUnavailableError } from '../AccountTakeoverServiceUnavailableError'
+import { AccountTakeoverUnauthorizedError } from '../AccountTakeoverUnauthorizedError'
+import { AccountUpdateNotFoundError } from '../AccountUpdateNotFoundError'
 import { BadGatewayError } from '../BadGatewayError'
 import { BadRequestError } from '../BadRequestError'
 import { ForbiddenError } from '../ForbiddenError'
@@ -58,18 +62,18 @@ class HttpStatusCodeRange {
         (a.isRangeDefinition() ? 1 : 0) - (b.isRangeDefinition() ? 1 : 0)
 }
 
-export class ExpediaGroupApiBadRequestError extends ExpediaGroupApiError {
+export class ExpediaGroupApiAccountTakeoverBadRequestError extends ExpediaGroupApiError {
     constructor(
         readonly statusCode: number,
-        readonly errorObject: BadRequestError
+        readonly errorObject: AccountTakeoverBadRequestError
     ) {
         super(statusCode, errorObject)
     }
 }
-export class ExpediaGroupApiUnauthorizedError extends ExpediaGroupApiError {
+export class ExpediaGroupApiAccountTakeoverUnauthorizedError extends ExpediaGroupApiError {
     constructor(
         readonly statusCode: number,
-        readonly errorObject: UnauthorizedError
+        readonly errorObject: AccountTakeoverUnauthorizedError
     ) {
         super(statusCode, errorObject)
     }
@@ -82,10 +86,10 @@ export class ExpediaGroupApiForbiddenError extends ExpediaGroupApiError {
         super(statusCode, errorObject)
     }
 }
-export class ExpediaGroupApiNotFoundError extends ExpediaGroupApiError {
+export class ExpediaGroupApiAccountUpdateNotFoundError extends ExpediaGroupApiError {
     constructor(
         readonly statusCode: number,
-        readonly errorObject: NotFoundError
+        readonly errorObject: AccountUpdateNotFoundError
     ) {
         super(statusCode, errorObject)
     }
@@ -114,10 +118,10 @@ export class ExpediaGroupApiBadGatewayError extends ExpediaGroupApiError {
         super(statusCode, errorObject)
     }
 }
-export class ExpediaGroupApiServiceUnavailableError extends ExpediaGroupApiError {
+export class ExpediaGroupApiAccountTakeoverServiceUnavailableError extends ExpediaGroupApiError {
     constructor(
         readonly statusCode: number,
-        readonly errorObject: ServiceUnavailableError
+        readonly errorObject: AccountTakeoverServiceUnavailableError
     ) {
         super(statusCode, errorObject)
     }
@@ -130,10 +134,42 @@ export class ExpediaGroupApiGatewayTimeoutError extends ExpediaGroupApiError {
         super(statusCode, errorObject)
     }
 }
+export class ExpediaGroupApiBadRequestError extends ExpediaGroupApiError {
+    constructor(
+        readonly statusCode: number,
+        readonly errorObject: BadRequestError
+    ) {
+        super(statusCode, errorObject)
+    }
+}
+export class ExpediaGroupApiUnauthorizedError extends ExpediaGroupApiError {
+    constructor(
+        readonly statusCode: number,
+        readonly errorObject: UnauthorizedError
+    ) {
+        super(statusCode, errorObject)
+    }
+}
 export class ExpediaGroupApiOrderPurchaseUpdateNotFoundError extends ExpediaGroupApiError {
     constructor(
         readonly statusCode: number,
         readonly errorObject: OrderPurchaseUpdateNotFoundError
+    ) {
+        super(statusCode, errorObject)
+    }
+}
+export class ExpediaGroupApiServiceUnavailableError extends ExpediaGroupApiError {
+    constructor(
+        readonly statusCode: number,
+        readonly errorObject: ServiceUnavailableError
+    ) {
+        super(statusCode, errorObject)
+    }
+}
+export class ExpediaGroupApiNotFoundError extends ExpediaGroupApiError {
+    constructor(
+        readonly statusCode: number,
+        readonly errorObject: NotFoundError
     ) {
         super(statusCode, errorObject)
     }
@@ -160,112 +196,440 @@ class DefaultHttpStatusCodeRange extends HttpStatusCodeRange {
     override isRangeDefinition = (): boolean => true
 }
 
-const httpStatusCodeRanges: HttpStatusCodeRange[] = [
-    new HttpStatusCodeRange(
-        '400',
-        (error: ErrorResponse) =>
-            new ExpediaGroupApiBadRequestError(
-                error.response.status,
-                Serializer.deserializeObject(
-                    error.response.data,
-                    BadRequestError
-                ) as BadRequestError
-            )
-    ),
-    new HttpStatusCodeRange(
-        '401',
-        (error: ErrorResponse) =>
-            new ExpediaGroupApiUnauthorizedError(
-                error.response.status,
-                Serializer.deserializeObject(
-                    error.response.data,
-                    UnauthorizedError
-                ) as UnauthorizedError
-            )
-    ),
-    new HttpStatusCodeRange(
-        '403',
-        (error: ErrorResponse) =>
-            new ExpediaGroupApiForbiddenError(
-                error.response.status,
-                Serializer.deserializeObject(
-                    error.response.data,
-                    ForbiddenError
-                ) as ForbiddenError
-            )
-    ),
-    new HttpStatusCodeRange(
-        '404',
-        (error: ErrorResponse) =>
-            new ExpediaGroupApiNotFoundError(
-                error.response.status,
-                Serializer.deserializeObject(
-                    error.response.data,
-                    NotFoundError
-                ) as NotFoundError
-            )
-    ),
-    new HttpStatusCodeRange(
-        '429',
-        (error: ErrorResponse) =>
-            new ExpediaGroupApiTooManyRequestsError(
-                error.response.status,
-                Serializer.deserializeObject(
-                    error.response.data,
-                    TooManyRequestsError
-                ) as TooManyRequestsError
-            )
-    ),
-    new HttpStatusCodeRange(
-        '500',
-        (error: ErrorResponse) =>
-            new ExpediaGroupApiInternalServerError(
-                error.response.status,
-                Serializer.deserializeObject(
-                    error.response.data,
-                    InternalServerError
-                ) as InternalServerError
-            )
-    ),
-    new HttpStatusCodeRange(
-        '502',
-        (error: ErrorResponse) =>
-            new ExpediaGroupApiBadGatewayError(
-                error.response.status,
-                Serializer.deserializeObject(
-                    error.response.data,
-                    BadGatewayError
-                ) as BadGatewayError
-            )
-    ),
-    new HttpStatusCodeRange(
-        '503',
-        (error: ErrorResponse) =>
-            new ExpediaGroupApiServiceUnavailableError(
-                error.response.status,
-                Serializer.deserializeObject(
-                    error.response.data,
-                    ServiceUnavailableError
-                ) as ServiceUnavailableError
-            )
-    ),
-    new HttpStatusCodeRange(
-        '504',
-        (error: ErrorResponse) =>
-            new ExpediaGroupApiGatewayTimeoutError(
-                error.response.status,
-                Serializer.deserializeObject(
-                    error.response.data,
-                    GatewayTimeoutError
-                ) as GatewayTimeoutError
-            )
-    ),
+const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
+    string,
+    HttpStatusCodeRange[]
+>([
+    [
+        'notifyWithAccountUpdate',
+        [
+            new HttpStatusCodeRange(
+                '400',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiAccountTakeoverBadRequestError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            AccountTakeoverBadRequestError
+                        ) as AccountTakeoverBadRequestError
+                    )
+            ),
+            new HttpStatusCodeRange(
+                '401',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiAccountTakeoverUnauthorizedError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            AccountTakeoverUnauthorizedError
+                        ) as AccountTakeoverUnauthorizedError
+                    )
+            ),
+            new HttpStatusCodeRange(
+                '403',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiForbiddenError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            ForbiddenError
+                        ) as ForbiddenError
+                    )
+            ),
+            new HttpStatusCodeRange(
+                '404',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiAccountUpdateNotFoundError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            AccountUpdateNotFoundError
+                        ) as AccountUpdateNotFoundError
+                    )
+            ),
+            new HttpStatusCodeRange(
+                '429',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiTooManyRequestsError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            TooManyRequestsError
+                        ) as TooManyRequestsError
+                    )
+            ),
+            new HttpStatusCodeRange(
+                '500',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiInternalServerError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            InternalServerError
+                        ) as InternalServerError
+                    )
+            ),
+            new HttpStatusCodeRange(
+                '502',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiBadGatewayError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            BadGatewayError
+                        ) as BadGatewayError
+                    )
+            ),
+            new HttpStatusCodeRange(
+                '503',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiAccountTakeoverServiceUnavailableError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            AccountTakeoverServiceUnavailableError
+                        ) as AccountTakeoverServiceUnavailableError
+                    )
+            ),
+            new HttpStatusCodeRange(
+                '504',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiGatewayTimeoutError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            GatewayTimeoutError
+                        ) as GatewayTimeoutError
+                    )
+            ),
+            new DefaultHttpStatusCodeRange(),
+        ],
+    ],
+    [
+        'notifyWithOrderUpdate',
+        [
+            new HttpStatusCodeRange(
+                '400',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiBadRequestError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            BadRequestError
+                        ) as BadRequestError
+                    )
+            ),
+            new HttpStatusCodeRange(
+                '401',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiUnauthorizedError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            UnauthorizedError
+                        ) as UnauthorizedError
+                    )
+            ),
+            new HttpStatusCodeRange(
+                '403',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiForbiddenError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            ForbiddenError
+                        ) as ForbiddenError
+                    )
+            ),
+            new HttpStatusCodeRange(
+                '404',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiOrderPurchaseUpdateNotFoundError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            OrderPurchaseUpdateNotFoundError
+                        ) as OrderPurchaseUpdateNotFoundError
+                    )
+            ),
+            new HttpStatusCodeRange(
+                '429',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiTooManyRequestsError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            TooManyRequestsError
+                        ) as TooManyRequestsError
+                    )
+            ),
+            new HttpStatusCodeRange(
+                '500',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiInternalServerError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            InternalServerError
+                        ) as InternalServerError
+                    )
+            ),
+            new HttpStatusCodeRange(
+                '502',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiBadGatewayError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            BadGatewayError
+                        ) as BadGatewayError
+                    )
+            ),
+            new HttpStatusCodeRange(
+                '503',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiServiceUnavailableError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            ServiceUnavailableError
+                        ) as ServiceUnavailableError
+                    )
+            ),
+            new HttpStatusCodeRange(
+                '504',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiGatewayTimeoutError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            GatewayTimeoutError
+                        ) as GatewayTimeoutError
+                    )
+            ),
+            new DefaultHttpStatusCodeRange(),
+        ],
+    ],
+    [
+        'screenAccount',
+        [
+            new HttpStatusCodeRange(
+                '400',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiAccountTakeoverBadRequestError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            AccountTakeoverBadRequestError
+                        ) as AccountTakeoverBadRequestError
+                    )
+            ),
+            new HttpStatusCodeRange(
+                '401',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiAccountTakeoverUnauthorizedError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            AccountTakeoverUnauthorizedError
+                        ) as AccountTakeoverUnauthorizedError
+                    )
+            ),
+            new HttpStatusCodeRange(
+                '403',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiForbiddenError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            ForbiddenError
+                        ) as ForbiddenError
+                    )
+            ),
+            new HttpStatusCodeRange(
+                '404',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiNotFoundError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            NotFoundError
+                        ) as NotFoundError
+                    )
+            ),
+            new HttpStatusCodeRange(
+                '429',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiTooManyRequestsError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            TooManyRequestsError
+                        ) as TooManyRequestsError
+                    )
+            ),
+            new HttpStatusCodeRange(
+                '500',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiInternalServerError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            InternalServerError
+                        ) as InternalServerError
+                    )
+            ),
+            new HttpStatusCodeRange(
+                '502',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiBadGatewayError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            BadGatewayError
+                        ) as BadGatewayError
+                    )
+            ),
+            new HttpStatusCodeRange(
+                '503',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiAccountTakeoverServiceUnavailableError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            AccountTakeoverServiceUnavailableError
+                        ) as AccountTakeoverServiceUnavailableError
+                    )
+            ),
+            new HttpStatusCodeRange(
+                '504',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiGatewayTimeoutError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            GatewayTimeoutError
+                        ) as GatewayTimeoutError
+                    )
+            ),
+            new DefaultHttpStatusCodeRange(),
+        ],
+    ],
+    [
+        'screenOrder',
+        [
+            new HttpStatusCodeRange(
+                '400',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiBadRequestError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            BadRequestError
+                        ) as BadRequestError
+                    )
+            ),
+            new HttpStatusCodeRange(
+                '401',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiUnauthorizedError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            UnauthorizedError
+                        ) as UnauthorizedError
+                    )
+            ),
+            new HttpStatusCodeRange(
+                '403',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiForbiddenError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            ForbiddenError
+                        ) as ForbiddenError
+                    )
+            ),
+            new HttpStatusCodeRange(
+                '404',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiNotFoundError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            NotFoundError
+                        ) as NotFoundError
+                    )
+            ),
+            new HttpStatusCodeRange(
+                '429',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiTooManyRequestsError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            TooManyRequestsError
+                        ) as TooManyRequestsError
+                    )
+            ),
+            new HttpStatusCodeRange(
+                '500',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiInternalServerError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            InternalServerError
+                        ) as InternalServerError
+                    )
+            ),
+            new HttpStatusCodeRange(
+                '502',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiBadGatewayError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            BadGatewayError
+                        ) as BadGatewayError
+                    )
+            ),
+            new HttpStatusCodeRange(
+                '503',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiServiceUnavailableError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            ServiceUnavailableError
+                        ) as ServiceUnavailableError
+                    )
+            ),
+            new HttpStatusCodeRange(
+                '504',
+                (error: ErrorResponse) =>
+                    new ExpediaGroupApiGatewayTimeoutError(
+                        error.response.status,
+                        Serializer.deserializeObject(
+                            error.response.data,
+                            GatewayTimeoutError
+                        ) as GatewayTimeoutError
+                    )
+            ),
+            new DefaultHttpStatusCodeRange(),
+        ],
+    ],
+])
 
-    new DefaultHttpStatusCodeRange(),
-]
-
-const process = (error: ErrorResponse): ExpediaGroupApiError =>
-    httpStatusCodeRanges
+const process = (
+    error: ErrorResponse,
+    operationId: string
+): ExpediaGroupApiError =>
+    (httpStatusCodeRanges.has(operationId)
+        ? httpStatusCodeRanges.get(operationId)!!
+        : [new DefaultHttpStatusCodeRange()]
+    )
         .filter((httpStatusCodeRange: HttpStatusCodeRange) =>
             httpStatusCodeRange.matches(error.response.status.toString())
         )

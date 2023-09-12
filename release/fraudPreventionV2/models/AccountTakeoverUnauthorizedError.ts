@@ -21,28 +21,30 @@
 import { JsonObject, JsonProperty } from 'typescript-json-serializer'
 
 /**
- * Indicates that the API cannot fulfill the request because while the client is correctly authenticated, the client doesn\'t have the permission to execute the specified operation. This error type does not imply that the request is valid, or that the resource against which the operation being performed exists or satisfies other pre-conditions.
+ * Indicates that the token sent in the \'Authorization\' header is either invalid or missing. Please check the value in the token field along with the token expiration time before retrying.
  */
 @JsonObject({ constructorParams: [{}] })
-export class ForbiddenError {
+export class AccountTakeoverUnauthorizedError {
     /**
      * Snake cased all caps error code interpreted from the HTTP status code that can programmatically be acted upon.
      */
     @JsonProperty({ name: 'code' })
-    code: ForbiddenErrorCodeEnum
+    code: AccountTakeoverUnauthorizedErrorCodeEnum
     /**
      * A human-readable explanation of the error, specific to this error occurrence.
      */
     @JsonProperty({ name: 'message' })
     message: string
 
-    public constructor(forbiddenError: ForbiddenErrorProperties) {
-        this.code = forbiddenError.code
-        this.message = forbiddenError.message
+    public constructor(
+        accountTakeoverUnauthorizedError: AccountTakeoverUnauthorizedErrorProperties
+    ) {
+        this.code = accountTakeoverUnauthorizedError.code
+        this.message = accountTakeoverUnauthorizedError.message
     }
 }
 
-export type ForbiddenErrorCodeEnum =
+export type AccountTakeoverUnauthorizedErrorCodeEnum =
     | 'UNAUTHORIZED'
     | 'FORBIDDEN'
     | 'NOT_FOUND'
@@ -55,7 +57,7 @@ export type ForbiddenErrorCodeEnum =
     | 'GATEWAY_TIMEOUT'
     | 'BAD_REQUEST'
 
-export interface ForbiddenErrorProperties {
-    code: ForbiddenErrorCodeEnum
+export interface AccountTakeoverUnauthorizedErrorProperties {
+    code: AccountTakeoverUnauthorizedErrorCodeEnum
     message: string
 }
