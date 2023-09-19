@@ -16,36 +16,3 @@ jobs:
         with:
           name: sdk
           path: generator/sdk
-      - name: Set up Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18.14.1
-          registry-url: 'https://registry.npmjs.org'
-      - name: Release
-        working-directory: generator/sdk
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          if [[ ${{github.event.inputs.production_release}} == 'true' ]]; then
-            npm i
-            npx tsc
-            npm publish
-          else
-            version_input="$(npm pkg get version | sed "s/\"//g")"
-
-            suffix_pattern="-alpha.[0-9]+"
-
-            if [[ ! "$version_input" =~ $suffix_pattern$ ]]; then
-              version="$version_input-alpha.$(date +%s)"
-            else
-              version="$version_input"
-            fi
-
-            npm version "$version" --allow-same-version
-
-            npm i
-            npx tsc
-            npm publish --tag alpha
-          fi
-          echo "version=$(npm pkg get version)" >> $GITHUB_OUTPUT
