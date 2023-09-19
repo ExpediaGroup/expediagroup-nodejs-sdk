@@ -8,7 +8,7 @@
     "build": "prettier --write '**/*.ts'",
     "fetch-core": "mkdir -p core/src && cp -r ../../../core/src ./core/ && cp -r ../../../core/index.ts ./core/index.ts",
     "merge-packages": "npm install -g merge-packages && npx merge-packages -o package.json package.json ../../../core/package.json",
-    "generate-docs": "npx typedoc && mv ./docs/API.md ./docs/index.md",
+    "generate-docs": "npx typedoc",
     "prepare-sdk": "npm run merge-packages && npm run fetch-core && npm run clean && npm i && npm run build"
   },
   "publishConfig": {
