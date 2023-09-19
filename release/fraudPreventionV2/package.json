@@ -1,14 +1,14 @@
 {
   "name": "@expediagroup/fraudpreventionv2-sdk",
-  "version": "2.0.0",
-  "description": "ExpediaGroup FraudPreventionV2 SDK v2.0.0 Core Modules of EG Travel SDK",
+  "version": "0.0.1",
+  "description": "ExpediaGroup FraudPreventionV2 SDK v0.0.1 Core Modules of EG Travel SDK",
   "main": "lib/index.js",
   "types": "index.ts",
   "scripts": {
     "build": "prettier --write '**/*.ts'",
     "clean": "rm -rf .openapi-generator apis auth http types",
     "fetch-core": "mkdir -p core/src && cp -r ../../../core/src ./core/ && cp -r ../../../core/index.ts ./core/index.ts",
-    "generate-docs": "npx typedoc && mv ./docs/API.md ./docs/index.md",
+    "generate-docs": "npx typedoc",
     "merge-packages": "npm install -g merge-packages && npx merge-packages -o package.json package.json ../../../core/package.json",
     "prepare-sdk": "npm run merge-packages && npm run fetch-core && npm run clean && npm i && npm run build",
     "test": "jest"
