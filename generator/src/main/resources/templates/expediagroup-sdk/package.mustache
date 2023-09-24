@@ -3,9 +3,6 @@
   "version": "{{artifactVersion}}",
   "description": "ExpediaGroup {{#apiInfo}}{{#apis}}{{#operations}}{{baseName}}{{/operations}}{{/apis}}{{/apiInfo}} SDK v{{artifactVersion}}",
   "main": "lib/index.js",
-  "workspaces": [
-    "dependencies"
-  ],
   "scripts": {
     "clean": "rm -rf .openapi-generator apis auth http types",
     "build": "prettier --write '**/*.ts'",
