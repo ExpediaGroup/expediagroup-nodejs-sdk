@@ -28,19 +28,19 @@ jobs:
         working-directory: generator/sdk
         run: |
           rm -rf ../../release/"${{github.event.inputs.name}}"
-          mkdir -p ../../release/"${{github.event.inputs.name}}"
+          mkdir -p ../../release/"${{github.event.inputs.name}}"/src
 
-          cp -r ./client ../../release/"${{github.event.inputs.name}}"/
-          cp -r ./core ../../release/"${{github.event.inputs.name}}"/
-          cp -r ./models ../../release/"${{github.event.inputs.name}}"/
-          cp -r ./docs ../../release/"${{github.event.inputs.name}}"/
+          cp -r ./client ../../release/"${{github.event.inputs.name}}"/src/
+          cp -r ./core ../../release/"${{github.event.inputs.name}}"/src/
+          cp -r ./models ../../release/"${{github.event.inputs.name}}"/src/
+          cp -r ./docs ../../release/"${{github.event.inputs.name}}"/src/
 
-          cp ./.prettierrc ../../release/"${{github.event.inputs.name}}"/
-          cp ./index.ts ../../release/"${{github.event.inputs.name}}"/
-          cp ./README.md ../../release/"${{github.event.inputs.name}}"/
-          cp ./package.json ../../release/"${{github.event.inputs.name}}"/
-          cp ./tsconfig.json ../../release/"${{github.event.inputs.name}}"/
-          cp ./specs.yaml ../../release/"${{github.event.inputs.name}}"/specs.yaml
+          cp ./.prettierrc ../../release/"${{github.event.inputs.name}}"/src/
+          cp ./index.ts ../../release/"${{github.event.inputs.name}}"/src/
+          cp ./README.md ../../release/"${{github.event.inputs.name}}"/src/
+          cp ./package.json ../../release/"${{github.event.inputs.name}}"/src/
+          cp ./tsconfig.json ../../release/"${{github.event.inputs.name}}"/src/
+          cp ./specs.yaml ../../release/"${{github.event.inputs.name}}"/src/
       - name: Create PR
         uses: peter-evans/create-pull-request@v5
         with:
