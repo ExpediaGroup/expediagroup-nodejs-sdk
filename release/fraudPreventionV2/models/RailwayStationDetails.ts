@@ -17,9 +17,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { Address } from './Address'
+import { CustomerAccountAddress } from './CustomerAccountAddress'
 
-import { AddressMapper } from './AddressMapper'
+import { CustomerAccountAddressMapper } from './CustomerAccountAddressMapper'
 
 import { JsonObject, JsonProperty } from 'typescript-json-serializer'
 
@@ -42,9 +42,9 @@ export class RailwayStationDetails {
     stationCode: string
     @JsonProperty({
         name: 'address',
-        type: (property) => AddressMapper.getType(property),
+        type: (property) => CustomerAccountAddressMapper.getType(property),
     })
-    address: Address
+    address: CustomerAccountAddress
     /**
      * The timezone associated with the location of the station, specifying the local time offset from Coordinated Universal Time (UTC).
      */
@@ -66,6 +66,6 @@ export interface RailwayStationDetailsProperties {
     name: string
     type?: RailwayStationDetailsTypeEnum
     stationCode: string
-    address: Address
+    address: CustomerAccountAddress
     timezone?: string
 }

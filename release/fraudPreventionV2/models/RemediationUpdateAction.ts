@@ -36,7 +36,7 @@ export class RemediationUpdateAction {
     @JsonProperty({ name: 'status' })
     status: RemediationUpdateActionStatusEnum
     /**
-     * The local date and time the remediation action to a user ended in the Partner\'s system, in ISO-8061 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
+     * The local date and time the remediation action to a user ended in the Partner\'s system, in ISO-8601 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
      */
     @JsonProperty({ name: 'update_end_date_time' })
     updateEndDateTime?: Date

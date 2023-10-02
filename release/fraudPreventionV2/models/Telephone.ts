@@ -57,7 +57,7 @@ export class Telephone {
     @JsonProperty({ name: 'preference_rank' })
     preferenceRank?: number
     /**
-     * Local date and time user validated possession of their phone number via a text or voice multi factor authentication challenge, in ISO-8061 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
+     * Local date and time user validated possession of their phone number via a text or voice multi factor authentication challenge, in ISO-8601 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
      */
     @JsonProperty({ name: 'last_verified_date_time' })
     lastVerifiedDateTime?: Date

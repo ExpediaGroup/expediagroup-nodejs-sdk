@@ -54,12 +54,12 @@ export class MultiFactorAuthenticationAttempt {
     @JsonProperty({ name: 'attempt_count' })
     attemptCount: number
     /**
-     * The local date and time the Multi-Factor Authentication was initiated to a user from the Partner\'s system, in ISO-8061 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
+     * The local date and time the Multi-Factor Authentication was initiated to a user from the Partner\'s system, in ISO-8601 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
      */
     @JsonProperty({ name: 'update_start_date_time' })
     updateStartDateTime?: Date
     /**
-     * The local date and time the Multi-Factor Authentication to a user ended in the Partner\'s system, in ISO-8061 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
+     * The local date and time the Multi-Factor Authentication to a user ended in the Partner\'s system, in ISO-8601 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
      */
     @JsonProperty({ name: 'update_end_date_time' })
     updateEndDateTime?: Date

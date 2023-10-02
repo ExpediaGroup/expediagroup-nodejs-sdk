@@ -28,12 +28,12 @@ import { TravelProductProperties } from './TravelProduct'
 @JsonObject({ constructorParams: [{}] })
 export class Air extends TravelProduct {
     /**
-     * Local date and time of departure from original departure location, in ISO-8061 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
+     * Local date and time of departure from original departure location, in ISO-8601 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
      */
     @JsonProperty({ name: 'departure_time' })
     departureTime: Date
     /**
-     * Local date and time of arrival to final destination location, in ISO-8061 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
+     * Local date and time of arrival to final destination location, in ISO-8601 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
      */
     @JsonProperty({ name: 'arrival_time' })
     arrivalTime: Date
@@ -70,6 +70,7 @@ export class Air extends TravelProduct {
             inventoryType: air.inventoryType,
             inventorySource: air.inventorySource,
             travelersReferences: air.travelersReferences,
+            payLater: air.payLater,
         })
         this.departureTime = air.departureTime
         this.arrivalTime = air.arrivalTime

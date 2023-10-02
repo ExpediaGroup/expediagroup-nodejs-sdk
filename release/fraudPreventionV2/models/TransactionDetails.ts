@@ -60,13 +60,13 @@ export class TransactionDetails {
     })
     travelers: Array<Traveler>
     /**
-     * List of the form(s) of payment being used to purchase the order. One or more forms of payment can be used within an order. Information gathered will be specific to the form of payment.
+     * List of the form(s) of payment being used to purchase the order.  One or more forms of payment can be used within an order. Information gathered will be specific to the form of payment.
      */
     @JsonProperty({
         name: 'payments',
         type: (property) => PaymentMapper.getType(property),
     })
-    payments: Array<Payment>
+    payments?: Array<Payment>
 
     public constructor(transactionDetails: TransactionDetailsProperties) {
         this.orderId = transactionDetails.orderId
@@ -89,5 +89,5 @@ export interface TransactionDetailsProperties {
     orderType: TransactionDetailsOrderTypeEnum
     travelProducts: Array<TravelProduct>
     travelers: Array<Traveler>
-    payments: Array<Payment>
+    payments?: Array<Payment>
 }

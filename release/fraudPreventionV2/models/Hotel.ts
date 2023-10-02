@@ -17,10 +17,10 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { HotelAddress } from './HotelAddress'
+import { HotelAllOfAddress } from './HotelAllOfAddress'
 import { TravelProduct } from './TravelProduct'
 
-import { HotelAddressMapper } from './HotelAddressMapper'
+import { HotelAllOfAddressMapper } from './HotelAllOfAddressMapper'
 
 import { JsonObject, JsonProperty } from 'typescript-json-serializer'
 import { TravelProductProperties } from './TravelProduct'
@@ -49,16 +49,16 @@ export class Hotel extends TravelProduct {
     roomCount?: number
     @JsonProperty({
         name: 'address',
-        type: (property) => HotelAddressMapper.getType(property),
+        type: (property) => HotelAllOfAddressMapper.getType(property),
     })
-    address: HotelAddress
+    address: HotelAllOfAddress
     /**
-     * Local date and time of the hotel check-in, in ISO-8061 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
+     * Local date and time of the hotel check-in, in ISO-8601 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
      */
     @JsonProperty({ name: 'checkin_time' })
     checkinTime: Date
     /**
-     * Local date and time of the hotel check-out, in ISO-8061 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
+     * Local date and time of the hotel check-out, in ISO-8601 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
      */
     @JsonProperty({ name: 'checkout_time' })
     checkoutTime: Date
@@ -72,6 +72,7 @@ export class Hotel extends TravelProduct {
             inventoryType: hotel.inventoryType,
             inventorySource: hotel.inventorySource,
             travelersReferences: hotel.travelersReferences,
+            payLater: hotel.payLater,
         })
         this.hotelId = hotel.hotelId
         this.priceWithheld = hotel.priceWithheld
@@ -88,7 +89,7 @@ export interface HotelProperties extends TravelProductProperties {
     priceWithheld?: boolean
     hotelName: string
     roomCount?: number
-    address: HotelAddress
+    address: HotelAllOfAddress
     checkinTime: Date
     checkoutTime: Date
 }

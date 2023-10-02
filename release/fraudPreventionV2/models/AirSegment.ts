@@ -38,12 +38,12 @@ export class AirSegment {
     @JsonProperty({ name: 'arrival_airport_code' })
     arrivalAirportCode: string
     /**
-     * Local date and time of departure from departure location, in ISO-8061 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
+     * Local date and time of departure from departure location, in ISO-8601 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
      */
     @JsonProperty({ name: 'departure_time' })
     departureTime?: Date
     /**
-     * Local date and time of arrival to destination location, in ISO-8061 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
+     * Local date and time of arrival to destination location, in ISO-8601 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
      */
     @JsonProperty({ name: 'arrival_time' })
     arrivalTime?: Date

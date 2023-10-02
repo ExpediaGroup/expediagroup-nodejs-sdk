@@ -35,12 +35,12 @@ export class Car extends TravelProduct {
     @JsonProperty({ name: 'drop_off_location' })
     dropOffLocation: string
     /**
-     * Local date and time the automobile will be picked-up, in ISO-8061 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
+     * Local date and time the automobile will be picked-up, in ISO-8601 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
      */
     @JsonProperty({ name: 'pickup_time' })
     pickupTime: Date
     /**
-     * Local date and time the automobile will be returned, in ISO-8061 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
+     * Local date and time the automobile will be returned, in ISO-8601 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
      */
     @JsonProperty({ name: 'return_time' })
     returnTime: Date
@@ -54,6 +54,7 @@ export class Car extends TravelProduct {
             inventoryType: car.inventoryType,
             inventorySource: car.inventorySource,
             travelersReferences: car.travelersReferences,
+            payLater: car.payLater,
         })
         this.pickUpLocation = car.pickUpLocation
         this.dropOffLocation = car.dropOffLocation
