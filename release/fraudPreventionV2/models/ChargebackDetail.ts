@@ -49,7 +49,7 @@ export class ChargebackDetail {
     @JsonProperty({ name: 'bank_reason_code' })
     bankReasonCode?: string
     /**
-     * Date and time when the chargeback was reported to the partner, in ISO-8061 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
+     * Date and time when the chargeback was reported to the partner, in ISO-8601 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
      */
     @JsonProperty({ name: 'chargeback_reported_date_time' })
     chargebackReportedDateTime?: Date

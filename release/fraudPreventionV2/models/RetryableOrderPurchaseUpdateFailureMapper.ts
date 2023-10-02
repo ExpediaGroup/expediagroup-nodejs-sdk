@@ -17,10 +17,10 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { AccountTakeoverServiceUnavailableError } from './AccountTakeoverServiceUnavailableError'
+import { RetryableOrderPurchaseUpdateFailure } from './RetryableOrderPurchaseUpdateFailure'
 
-export class AccountTakeoverServiceUnavailableErrorMapper {
+export class RetryableOrderPurchaseUpdateFailureMapper {
     static getType(_) {
-        return AccountTakeoverServiceUnavailableError
+        return RetryableOrderPurchaseUpdateFailure
     }
 }

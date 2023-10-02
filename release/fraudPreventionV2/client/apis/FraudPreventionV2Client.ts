@@ -49,7 +49,7 @@ export class FraudPreventionV2Client extends Client {
     private static readonly nodeVersion: string = process.version
     private static readonly operatingSystemName: string = platform()
     private static readonly operatingSystemVersion: string = release()
-    private static readonly userAgent: string = `${this.sdkTitle}/2.0.0 (Node.js ${this.nodeVersion} ${this.operatingSystemName} ${this.operatingSystemVersion})`
+    private static readonly userAgent: string = `${this.sdkTitle}/2.1.0 (Node.js ${this.nodeVersion} ${this.operatingSystemName} ${this.operatingSystemVersion})`
 
     constructor(configurations: ClientConfigurations) {
         super({
@@ -79,7 +79,7 @@ export class FraudPreventionV2Client extends Client {
      * @throws ExpediaGroupApiTooManyRequestsError
      * @throws ExpediaGroupApiInternalServerError
      * @throws ExpediaGroupApiBadGatewayError
-     * @throws ExpediaGroupApiAccountTakeoverServiceUnavailableError
+     * @throws ExpediaGroupApiServiceUnavailableError
      * @throws ExpediaGroupApiGatewayTimeoutError
      * @return Promise
      */
@@ -122,7 +122,7 @@ export class FraudPreventionV2Client extends Client {
      * @throws ExpediaGroupApiTooManyRequestsError
      * @throws ExpediaGroupApiInternalServerError
      * @throws ExpediaGroupApiBadGatewayError
-     * @throws ExpediaGroupApiServiceUnavailableError
+     * @throws ExpediaGroupApiRetryableOrderPurchaseUpdateFailure
      * @throws ExpediaGroupApiGatewayTimeoutError
      * @return Promise
      */
@@ -165,7 +165,7 @@ export class FraudPreventionV2Client extends Client {
      * @throws ExpediaGroupApiTooManyRequestsError
      * @throws ExpediaGroupApiInternalServerError
      * @throws ExpediaGroupApiBadGatewayError
-     * @throws ExpediaGroupApiAccountTakeoverServiceUnavailableError
+     * @throws ExpediaGroupApiServiceUnavailableError
      * @throws ExpediaGroupApiGatewayTimeoutError
      * @return Promise
      */
@@ -205,7 +205,7 @@ export class FraudPreventionV2Client extends Client {
      * @throws ExpediaGroupApiTooManyRequestsError
      * @throws ExpediaGroupApiInternalServerError
      * @throws ExpediaGroupApiBadGatewayError
-     * @throws ExpediaGroupApiServiceUnavailableError
+     * @throws ExpediaGroupApiRetryableOrderPurchaseScreenFailure
      * @throws ExpediaGroupApiGatewayTimeoutError
      * @return Promise
      */

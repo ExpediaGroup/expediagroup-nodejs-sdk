@@ -34,7 +34,7 @@ export class CurrentUserSession {
     @JsonProperty({ name: 'session_id' })
     sessionId?: string
     /**
-     * The local date and time a user\'s session started, in ISO-8061 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
+     * The local date and time a user\'s session started, in ISO-8601 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
      */
     @JsonProperty({ name: 'start_date_time' })
     startDateTime?: Date

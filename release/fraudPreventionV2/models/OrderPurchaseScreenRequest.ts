@@ -28,7 +28,7 @@ export class OrderPurchaseScreenRequest {
         name: 'transaction',
         type: (property) => OrderPurchaseTransactionMapper.getType(property),
     })
-    transaction?: OrderPurchaseTransaction
+    transaction: OrderPurchaseTransaction
 
     public constructor(
         orderPurchaseScreenRequest: OrderPurchaseScreenRequestProperties
@@ -38,5 +38,5 @@ export class OrderPurchaseScreenRequest {
 }
 
 export interface OrderPurchaseScreenRequestProperties {
-    transaction?: OrderPurchaseTransaction
+    transaction: OrderPurchaseTransaction
 }

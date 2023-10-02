@@ -62,7 +62,7 @@ export class CustomerAccount {
     })
     address?: CustomerAccountAddress
     /**
-     * The local date and time that the customer first registered on the client site, in ISO-8061 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
+     * The local date and time that the customer first registered on the client site, in ISO-8601 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
      */
     @JsonProperty({ name: 'registered_time' })
     registeredTime?: Date

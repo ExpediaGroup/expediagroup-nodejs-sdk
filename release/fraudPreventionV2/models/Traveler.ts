@@ -53,7 +53,7 @@ export class Traveler {
     @JsonProperty({ name: 'age' })
     age?: number
     /**
-     * Date of birth for traveler, in ISO-8061 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
+     * Date of birth for traveler, in ISO-8601 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
      */
     @JsonProperty({ name: 'birth_date' })
     birthDate?: Date

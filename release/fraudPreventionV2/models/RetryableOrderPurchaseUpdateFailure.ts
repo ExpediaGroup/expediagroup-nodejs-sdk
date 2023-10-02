@@ -24,12 +24,12 @@ import { JsonObject, JsonProperty } from 'typescript-json-serializer'
  * Indicates that the API is either down for maintenance or overloaded and cannot fulfill the request at the current time. This is a temporary error and retrying the same request after a certain delay could eventually result in success. There will be a Retry-After HTTP header in API response specifying how long to wait to retry the request. If there is no Retry-After HTTP header then retry can happen immediately. If the error persists after retrying with delay, please reach out to <support team>.\"
  */
 @JsonObject({ constructorParams: [{}] })
-export class AccountTakeoverServiceUnavailableError {
+export class RetryableOrderPurchaseUpdateFailure {
     /**
      * Snake cased all caps error code interpreted from the HTTP status code that can programmatically be acted upon.
      */
     @JsonProperty({ name: 'code' })
-    code: AccountTakeoverServiceUnavailableErrorCodeEnum
+    code: RetryableOrderPurchaseUpdateFailureCodeEnum
     /**
      * A human-readable explanation of the error, specific to this error occurrence.
      */
@@ -37,27 +37,27 @@ export class AccountTakeoverServiceUnavailableError {
     message: string
 
     public constructor(
-        accountTakeoverServiceUnavailableError: AccountTakeoverServiceUnavailableErrorProperties
+        retryableOrderPurchaseUpdateFailure: RetryableOrderPurchaseUpdateFailureProperties
     ) {
-        this.code = accountTakeoverServiceUnavailableError.code
-        this.message = accountTakeoverServiceUnavailableError.message
+        this.code = retryableOrderPurchaseUpdateFailure.code
+        this.message = retryableOrderPurchaseUpdateFailure.message
     }
 }
 
-export type AccountTakeoverServiceUnavailableErrorCodeEnum =
+export type RetryableOrderPurchaseUpdateFailureCodeEnum =
     | 'UNAUTHORIZED'
     | 'FORBIDDEN'
     | 'NOT_FOUND'
-    | 'ACCOUNT_UPDATE_NOT_FOUND'
+    | 'ORDER_PURCHASE_UPDATE_NOT_FOUND'
     | 'TOO_MANY_REQUESTS'
     | 'INTERNAL_SERVER_ERROR'
     | 'BAD_GATEWAY'
-    | 'RETRYABLE_ACCOUNT_SCREEN_FAILURE'
-    | 'RETRYABLE_ACCOUNT_UPDATE_FAILURE'
+    | 'RETRYABLE_ORDER_PURCHASE_SCREEN_FAILURE'
+    | 'RETRYABLE_ORDER_PURCHASE_UPDATE_FAILURE'
     | 'GATEWAY_TIMEOUT'
     | 'BAD_REQUEST'
 
-export interface AccountTakeoverServiceUnavailableErrorProperties {
-    code: AccountTakeoverServiceUnavailableErrorCodeEnum
+export interface RetryableOrderPurchaseUpdateFailureProperties {
+    code: RetryableOrderPurchaseUpdateFailureCodeEnum
     message: string
 }

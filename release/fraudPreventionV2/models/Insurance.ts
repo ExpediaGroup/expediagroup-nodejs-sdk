@@ -33,6 +33,7 @@ export class Insurance extends TravelProduct {
             inventoryType: insurance.inventoryType,
             inventorySource: insurance.inventorySource,
             travelersReferences: insurance.travelersReferences,
+            payLater: insurance.payLater,
         })
     }
 }

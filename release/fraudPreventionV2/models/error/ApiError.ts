@@ -20,7 +20,6 @@
 
 import { ExpediaGroupApiError, Serializer } from '../../core'
 import { AccountTakeoverBadRequestError } from '../AccountTakeoverBadRequestError'
-import { AccountTakeoverServiceUnavailableError } from '../AccountTakeoverServiceUnavailableError'
 import { AccountTakeoverUnauthorizedError } from '../AccountTakeoverUnauthorizedError'
 import { AccountUpdateNotFoundError } from '../AccountUpdateNotFoundError'
 import { BadGatewayError } from '../BadGatewayError'
@@ -30,6 +29,8 @@ import { GatewayTimeoutError } from '../GatewayTimeoutError'
 import { InternalServerError } from '../InternalServerError'
 import { NotFoundError } from '../NotFoundError'
 import { OrderPurchaseUpdateNotFoundError } from '../OrderPurchaseUpdateNotFoundError'
+import { RetryableOrderPurchaseScreenFailure } from '../RetryableOrderPurchaseScreenFailure'
+import { RetryableOrderPurchaseUpdateFailure } from '../RetryableOrderPurchaseUpdateFailure'
 import { ServiceUnavailableError } from '../ServiceUnavailableError'
 import { TooManyRequestsError } from '../TooManyRequestsError'
 import { UnauthorizedError } from '../UnauthorizedError'
@@ -118,10 +119,10 @@ export class ExpediaGroupApiBadGatewayError extends ExpediaGroupApiError {
         super(statusCode, errorObject)
     }
 }
-export class ExpediaGroupApiAccountTakeoverServiceUnavailableError extends ExpediaGroupApiError {
+export class ExpediaGroupApiServiceUnavailableError extends ExpediaGroupApiError {
     constructor(
         readonly statusCode: number,
-        readonly errorObject: AccountTakeoverServiceUnavailableError
+        readonly errorObject: ServiceUnavailableError
     ) {
         super(statusCode, errorObject)
     }
@@ -158,10 +159,10 @@ export class ExpediaGroupApiOrderPurchaseUpdateNotFoundError extends ExpediaGrou
         super(statusCode, errorObject)
     }
 }
-export class ExpediaGroupApiServiceUnavailableError extends ExpediaGroupApiError {
+export class ExpediaGroupApiRetryableOrderPurchaseUpdateFailure extends ExpediaGroupApiError {
     constructor(
         readonly statusCode: number,
-        readonly errorObject: ServiceUnavailableError
+        readonly errorObject: RetryableOrderPurchaseUpdateFailure
     ) {
         super(statusCode, errorObject)
     }
@@ -170,6 +171,14 @@ export class ExpediaGroupApiNotFoundError extends ExpediaGroupApiError {
     constructor(
         readonly statusCode: number,
         readonly errorObject: NotFoundError
+    ) {
+        super(statusCode, errorObject)
+    }
+}
+export class ExpediaGroupApiRetryableOrderPurchaseScreenFailure extends ExpediaGroupApiError {
+    constructor(
+        readonly statusCode: number,
+        readonly errorObject: RetryableOrderPurchaseScreenFailure
     ) {
         super(statusCode, errorObject)
     }
@@ -283,12 +292,12 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
             new HttpStatusCodeRange(
                 '503',
                 (error: ErrorResponse) =>
-                    new ExpediaGroupApiAccountTakeoverServiceUnavailableError(
+                    new ExpediaGroupApiServiceUnavailableError(
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            AccountTakeoverServiceUnavailableError
-                        ) as AccountTakeoverServiceUnavailableError
+                            ServiceUnavailableError
+                        ) as ServiceUnavailableError
                     )
             ),
             new HttpStatusCodeRange(
@@ -388,12 +397,12 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
             new HttpStatusCodeRange(
                 '503',
                 (error: ErrorResponse) =>
-                    new ExpediaGroupApiServiceUnavailableError(
+                    new ExpediaGroupApiRetryableOrderPurchaseUpdateFailure(
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            ServiceUnavailableError
-                        ) as ServiceUnavailableError
+                            RetryableOrderPurchaseUpdateFailure
+                        ) as RetryableOrderPurchaseUpdateFailure
                     )
             ),
             new HttpStatusCodeRange(
@@ -493,12 +502,12 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
             new HttpStatusCodeRange(
                 '503',
                 (error: ErrorResponse) =>
-                    new ExpediaGroupApiAccountTakeoverServiceUnavailableError(
+                    new ExpediaGroupApiServiceUnavailableError(
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            AccountTakeoverServiceUnavailableError
-                        ) as AccountTakeoverServiceUnavailableError
+                            ServiceUnavailableError
+                        ) as ServiceUnavailableError
                     )
             ),
             new HttpStatusCodeRange(
@@ -598,12 +607,12 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
             new HttpStatusCodeRange(
                 '503',
                 (error: ErrorResponse) =>
-                    new ExpediaGroupApiServiceUnavailableError(
+                    new ExpediaGroupApiRetryableOrderPurchaseScreenFailure(
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            ServiceUnavailableError
-                        ) as ServiceUnavailableError
+                            RetryableOrderPurchaseScreenFailure
+                        ) as RetryableOrderPurchaseScreenFailure
                     )
             ),
             new HttpStatusCodeRange(

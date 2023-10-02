@@ -47,6 +47,7 @@ export class Rail extends TravelProduct {
             inventoryType: rail.inventoryType,
             inventorySource: rail.inventorySource,
             travelersReferences: rail.travelersReferences,
+            payLater: rail.payLater,
         })
         this.routeType = rail.routeType
         this.railSegments = rail.railSegments

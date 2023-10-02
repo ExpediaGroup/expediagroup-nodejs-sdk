@@ -38,7 +38,7 @@ export class CreditCard extends Payment {
     @JsonProperty({ name: 'card_number' })
     cardNumber: string
     /**
-     * Expiration date of the credit card used for payment, in ISO-8061 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
+     * Expiration date of the credit card used for payment, in ISO-8601 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
      */
     @JsonProperty({ name: 'expiry_date' })
     expiryDate: Date
