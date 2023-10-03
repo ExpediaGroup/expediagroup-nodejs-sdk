@@ -1,0 +1,33 @@
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > RemediationUpdateAction
+
+# Class: RemediationUpdateAction
+
+Information specific to the remediation action initiated by the Partner\'s system to a user.
+
+## Constructors
+
+### constructor()
+
+> **new RemediationUpdateAction**(`remediationUpdateAction`): [`RemediationUpdateAction`](class.RemediationUpdateAction.md)
+
+#### Parameters
+
+| Parameter                 | Type                                                                                                |
+| :------------------------ | :-------------------------------------------------------------------------------------------------- |
+| `remediationUpdateAction` | [`RemediationUpdateActionProperties`](../interfaces/interface.RemediationUpdateActionProperties.md) |
+
+#### Returns
+
+[`RemediationUpdateAction`](class.RemediationUpdateAction.md)
+
+#### Source
+
+models/RemediationUpdateAction.ts:44
+
+## Properties
+
+| Property             | Type                                                                                                           | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| :------------------- | :------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `actionName`         | [`RemediationUpdateActionActionNameEnum`](../type-aliases/type-alias.RemediationUpdateActionActionNameEnum.md) | The categorized remediation action initiated by the Partner\'\'s system to a user. Possible values are: - `PASSWORD_RESET` - Applicable if this event is the result of a password reset by the Partner\'\'s system. - `DISABLE_ACCOUNT` - Applicable if this event is the result of disabling an account by the Partner\'\'s system. - `TERMINATE_ALL_SESSIONS` - Applicable if this event is the result of terminating all active user sessions of an account by the Partner\'\'s system. |
+| `status`             | [`RemediationUpdateActionStatusEnum`](../type-aliases/type-alias.RemediationUpdateActionStatusEnum.md)         | The status of the remediation action. - `SUCCESS` - Applicable if the Partner\'\'s system was successfully able to perform the remediation action. - `FAILED` - Applicable if the Partner\'\'s system failed to perform the remediation action.                                                                                                                                                                                                                                            |
+| `updateEndDateTime`? | `Date`                                                                                                         | The local date and time the remediation action to a user ended in the Partner\'s system, in ISO-8601 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.                                                                                                                                                                                                                                                                                                                                      |
