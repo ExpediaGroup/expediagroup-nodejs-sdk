@@ -30,17 +30,18 @@ import org.openapitools.codegen.config.CodegenConfigurator
  */
 @Command(name = "generate", description = "Let's build an EG Travel SDK!")
 class OpenApiSdkGenerator {
-    private val supportingFiles = listOf(
-        "ApiError.ts",
-        "client/index.ts",
-        "models/index.ts",
-        "tsconfig.json",
-        "typedoc.json",
-        "package.json",
-        ".prettierrc",
-        "index.ts",
-        "README.md",
-    )
+    private val supportingFiles =
+        listOf(
+            "ApiError.ts",
+            "client/index.ts",
+            "models/index.ts",
+            "tsconfig.json",
+            "typedoc.json",
+            "package.json",
+            ".prettierrc",
+            "index.ts",
+            "README.md",
+        )
 
     companion object {
         /**
@@ -70,46 +71,48 @@ class OpenApiSdkGenerator {
     fun run() {
         try {
             val lowercaseNamespace: String = namespace.replace(Constant.NON_ALPHANUMERIC_REGEX, Constant.EMPTY_STRING).lowercase()
-            val config = CodegenConfigurator().apply {
-                setGeneratorName("typescript")
-                setTemplateDir("templates/expediagroup-sdk")
-                setInputSpec(inputFile)
-                setOutputDir(outputDirectory)
-                setArtifactVersion(version)
-                setArtifactId("expediagroup-nodejs-sdk-$lowercaseNamespace")
-                setModelPackage("models")
-                setApiPackage("client")
-                setApiNameSuffix("Client")
+            val config =
+                CodegenConfigurator().apply {
+                    setGeneratorName("typescript")
+                    setTemplateDir("templates/expediagroup-sdk")
+                    setInputSpec(inputFile)
+                    setOutputDir(outputDirectory)
+                    setArtifactVersion(version)
+                    setArtifactId("expediagroup-nodejs-sdk-$lowercaseNamespace")
+                    setModelPackage("models")
+                    setApiPackage("client")
+                    setApiNameSuffix("Client")
 
-                addGlobalProperty(CodegenConstants.APIS, "")
-                addGlobalProperty(CodegenConstants.MODELS, "")
-                addGlobalProperty(CodegenConstants.SUPPORTING_FILES, supportingFiles.joinToString(","))
+                    addGlobalProperty(CodegenConstants.APIS, "")
+                    addGlobalProperty(CodegenConstants.MODELS, "")
+                    addGlobalProperty(CodegenConstants.SUPPORTING_FILES, supportingFiles.joinToString(","))
 
-                addAdditionalProperty(CodegenConstants.ENUM_PROPERTY_NAMING, "UPPERCASE")
-                addAdditionalProperty(CodegenConstants.SORT_PARAMS_BY_REQUIRED_FLAG, true)
+                    addAdditionalProperty(CodegenConstants.ENUM_PROPERTY_NAMING, "UPPERCASE")
+                    addAdditionalProperty(CodegenConstants.SORT_PARAMS_BY_REQUIRED_FLAG, true)
 
-                // Template specific properties
-                addAdditionalProperty("namespace", lowercaseNamespace)
+                    // Template specific properties
+                    addAdditionalProperty("namespace", lowercaseNamespace)
 
-                // Mustache Helpers
-                mustacheHelpers.forEach { (name, function) -> addAdditionalProperty(name, function()) }
-            }
-            val generatorInput = config.toClientOptInput().apply {
-                userDefinedTemplates(
-                    listOf(
-                        ModelTemplate("model/modelMapper.mustache", "Mapper.ts"),
-                        SupportingFile("error/apiError.mustache", "models/error/", "ApiError.ts"),
-                        SupportingFile("package.mustache", "package.json"),
-                        SupportingFile("typedoc.mustache", "typedoc.json"),
-                        SupportingFile("tsconfig.mustache", "tsconfig.json"),
-                        SupportingFile("prettierrc.mustache", ".prettierrc"),
-                        SupportingFile("index.mustache", "index.ts"),
-                        SupportingFile("api/index.mustache", "client/index.ts"),
-                        SupportingFile("model/index.mustache", "models/index.ts"),
-                        SupportingFile("README.mustache", "README.md"),
-                    ),
-                )
-            }
+                    // Mustache Helpers
+                    mustacheHelpers.forEach { (name, function) -> addAdditionalProperty(name, function()) }
+                }
+            val generatorInput =
+                config.toClientOptInput().apply {
+                    userDefinedTemplates(
+                        listOf(
+                            ModelTemplate("model/modelMapper.mustache", "Mapper.ts"),
+                            SupportingFile("error/apiError.mustache", "models/error/", "ApiError.ts"),
+                            SupportingFile("package.mustache", "package.json"),
+                            SupportingFile("typedoc.mustache", "typedoc.json"),
+                            SupportingFile("tsconfig.mustache", "tsconfig.json"),
+                            SupportingFile("prettierrc.mustache", ".prettierrc"),
+                            SupportingFile("index.mustache", "index.ts"),
+                            SupportingFile("api/index.mustache", "client/index.ts"),
+                            SupportingFile("model/index.mustache", "models/index.ts"),
+                            SupportingFile("README.mustache", "README.md"),
+                        ),
+                    )
+                }
 
             val generator = DefaultGenerator(false).apply { opts(generatorInput) }
             generator.generate()
