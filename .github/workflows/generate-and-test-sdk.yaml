@@ -31,6 +31,10 @@ jobs:
           path: core
       - uses: actions/upload-artifact@v3
         with:
+          name: dependencies
+          path: generator/src/main/resources/dependencies/package.json
+      - uses: actions/upload-artifact@v3
+        with:
           name: sdk
           path: generator/target/sdk
   verify-generated-sdk:
@@ -41,6 +45,10 @@ jobs:
         with:
           name: sdk
           path: generator/target/sdk
+      - uses: actions/download-artifact@v3
+        with:
+          name: dependencies
+          path: generator/src/main/resources/dependencies/package.json
       - uses: actions/download-artifact@v3
         with:
           name: core
