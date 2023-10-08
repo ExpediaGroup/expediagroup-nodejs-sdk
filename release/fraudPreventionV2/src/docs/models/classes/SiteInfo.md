@@ -1,0 +1,24 @@
+[API](../../index.md) > [models](../index.md) > SiteInfo
+
+# Class: SiteInfo
+
+## Constructors
+
+### new SiteInfo(siteInfo)
+
+> **new SiteInfo**(`siteInfo`): [`SiteInfo`](SiteInfo.md)
+
+#### Parameters
+
+▪ **siteInfo**: [`SiteInfoProperties`](../interfaces/SiteInfoProperties.md)
+
+#### Source
+
+models/SiteInfo.ts:36
+
+## Properties
+
+| Property | Type | Description | Source |
+| :------ | :------ | :------ | :------ |
+| `agentAssisted` | `boolean` | Identifies if an agent assisted in booking travel for the customer. `False` if the order was directly booked by customer. | models/SiteInfo.ts:34 |
+| `countryCode` | `string` | The alpha-3 ISO code that represents a country name. | models/SiteInfo.ts:29 |

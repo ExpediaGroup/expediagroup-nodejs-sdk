@@ -56,7 +56,7 @@ export class CustomerAccountAddress {
     countryCode: string
 
     public constructor(
-        customerAccountAddress: CustomerAccountAddressProperties
+        customerAccountAddress: CustomerAccountAddressProperties,
     ) {
         this.addressType = customerAccountAddress.addressType
         this.addressLine1 = customerAccountAddress.addressLine1

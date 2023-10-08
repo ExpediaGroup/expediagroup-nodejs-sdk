@@ -23,6 +23,6 @@ import { Constant } from '../constant/Constant'
 export class AxiosClientConfigurations {
     constructor(
         readonly endpoint: string = Constant.ENDPOINT,
-        readonly requestTimeout: number = Constant.TEN_SECONDS_IN_MILLIS
+        readonly requestTimeout: number = Constant.TEN_SECONDS_IN_MILLIS,
     ) {}
 }

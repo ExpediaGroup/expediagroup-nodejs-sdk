@@ -37,7 +37,7 @@ export class AccountUpdateNotFoundError {
     message: string
 
     public constructor(
-        accountUpdateNotFoundError: AccountUpdateNotFoundErrorProperties
+        accountUpdateNotFoundError: AccountUpdateNotFoundErrorProperties,
     ) {
         this.code = accountUpdateNotFoundError.code
         this.message = accountUpdateNotFoundError.message

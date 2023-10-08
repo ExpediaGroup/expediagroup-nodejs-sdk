@@ -32,7 +32,7 @@ export class OrderPurchaseScreenResponse {
     decision?: FraudDecision
 
     public constructor(
-        orderPurchaseScreenResponse: OrderPurchaseScreenResponseProperties
+        orderPurchaseScreenResponse: OrderPurchaseScreenResponseProperties,
     ) {
         this.riskId = orderPurchaseScreenResponse.riskId
         this.decision = orderPurchaseScreenResponse.decision

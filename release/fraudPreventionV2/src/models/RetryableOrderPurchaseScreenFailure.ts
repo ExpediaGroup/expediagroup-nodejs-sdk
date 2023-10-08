@@ -37,7 +37,7 @@ export class RetryableOrderPurchaseScreenFailure {
     message: string
 
     public constructor(
-        retryableOrderPurchaseScreenFailure: RetryableOrderPurchaseScreenFailureProperties
+        retryableOrderPurchaseScreenFailure: RetryableOrderPurchaseScreenFailureProperties,
     ) {
         this.code = retryableOrderPurchaseScreenFailure.code
         this.message = retryableOrderPurchaseScreenFailure.message

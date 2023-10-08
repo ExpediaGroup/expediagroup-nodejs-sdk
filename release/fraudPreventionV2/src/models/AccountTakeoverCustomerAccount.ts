@@ -91,7 +91,7 @@ export class AccountTakeoverCustomerAccount {
     loyaltyMemberId?: string
 
     public constructor(
-        accountTakeoverCustomerAccount: AccountTakeoverCustomerAccountProperties
+        accountTakeoverCustomerAccount: AccountTakeoverCustomerAccountProperties,
     ) {
         this.userId = accountTakeoverCustomerAccount.userId
         this.accountType = accountTakeoverCustomerAccount.accountType

@@ -29,7 +29,7 @@ export class OrderPurchaseUpdateResponse {
     riskId?: string
 
     public constructor(
-        orderPurchaseUpdateResponse: OrderPurchaseUpdateResponseProperties
+        orderPurchaseUpdateResponse: OrderPurchaseUpdateResponseProperties,
     ) {
         this.riskId = orderPurchaseUpdateResponse.riskId
     }

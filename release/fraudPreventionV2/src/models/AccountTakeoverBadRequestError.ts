@@ -46,7 +46,7 @@ export class AccountTakeoverBadRequestError {
     causes?: Array<AccountTakeoverBadRequestErrorAllOfCauses>
 
     public constructor(
-        accountTakeoverBadRequestError: AccountTakeoverBadRequestErrorProperties
+        accountTakeoverBadRequestError: AccountTakeoverBadRequestErrorProperties,
     ) {
         this.code = accountTakeoverBadRequestError.code
         this.message = accountTakeoverBadRequestError.message

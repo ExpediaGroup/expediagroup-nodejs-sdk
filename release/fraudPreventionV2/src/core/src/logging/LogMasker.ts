@@ -26,7 +26,7 @@ export function mask(message: string): string {
         (currentMessage: string, mask: Mask): string => {
             return mask.mask(currentMessage)
         },
-        message
+        message,
     )
 }
 
@@ -35,21 +35,23 @@ abstract class Mask {
 
     mask(stringMessage: string): string {
         while (stringMessage.match(this.regex) != null) {
-            stringMessage = stringMessage.replace(this.regex, (substring) =>
-                this.maskSubstring(substring)
+            stringMessage = stringMessage.replace(this.regex, (_) =>
+                this.maskSubstring(),
             )
         }
         return stringMessage
     }
 
-    protected abstract maskSubstring(substring: string): string
+    protected maskSubstring(): string {
+        return LoggingMessage.OMITTED
+    }
 }
 
 class AuthTokenMask extends Mask {
     private static readonly _instance: AuthTokenMask = new AuthTokenMask()
 
     protected readonly regex: RegExp = new RegExp(
-        LogMaskingRegex.AUTHORIZATION_REGEX
+        LogMaskingRegex.AUTHORIZATION_REGEX,
     )
 
     static get instance(): AuthTokenMask {
@@ -59,25 +61,17 @@ class AuthTokenMask extends Mask {
     private constructor() {
         super()
     }
-
-    protected maskSubstring(substring: string): string {
-        return LoggingMessage.OMITTED
-    }
 }
 
 class AuthUsernameMask extends Mask {
     private static readonly _instance: AuthUsernameMask = new AuthUsernameMask()
 
     protected readonly regex: RegExp = new RegExp(
-        LogMaskingRegex.AUTH_USERNAME_REGEX
+        LogMaskingRegex.AUTH_USERNAME_REGEX,
     )
 
     static get instance(): AuthUsernameMask {
         return this._instance
-    }
-
-    protected maskSubstring(substring: string): string {
-        return LoggingMessage.OMITTED
     }
 }
 
@@ -85,15 +79,11 @@ class AuthPasswordMask extends Mask {
     private static readonly _instance: AuthPasswordMask = new AuthPasswordMask()
 
     protected readonly regex: RegExp = new RegExp(
-        LogMaskingRegex.AUTH_PASSWORD_REGEX
+        LogMaskingRegex.AUTH_PASSWORD_REGEX,
     )
 
     static get instance(): AuthPasswordMask {
         return this._instance
-    }
-
-    protected maskSubstring(substring: string): string {
-        return LoggingMessage.OMITTED
     }
 }
 
@@ -101,15 +91,35 @@ class AccessTokenMask extends Mask {
     private static readonly _instance: AccessTokenMask = new AccessTokenMask()
 
     protected readonly regex: RegExp = new RegExp(
-        LogMaskingRegex.ACCESS_TOKEN_REGEX
+        LogMaskingRegex.ACCESS_TOKEN_REGEX,
     )
 
     static get instance(): AccessTokenMask {
         return this._instance
     }
+}
 
-    protected maskSubstring(substring: string): string {
-        return LoggingMessage.OMITTED
+class NumberFieldMask extends Mask {
+    private static readonly _instance: NumberFieldMask = new NumberFieldMask()
+
+    protected readonly regex: RegExp = new RegExp(
+        LogMaskingRegex.NUMBER_FIELD_REGEX,
+    )
+
+    static get instance(): NumberFieldMask {
+        return this._instance
+    }
+}
+
+class PCIFieldsMask extends Mask {
+    private static readonly _instance: PCIFieldsMask = new PCIFieldsMask()
+
+    protected readonly regex: RegExp = new RegExp(
+        LogMaskingRegex.PCI_FIELDS_REGEX,
+    )
+
+    static get instance(): PCIFieldsMask {
+        return this._instance
     }
 }
 
@@ -120,6 +130,8 @@ class MaskProvider {
         AuthUsernameMask.instance,
         AuthPasswordMask.instance,
         AccessTokenMask.instance,
+        NumberFieldMask.instance,
+        PCIFieldsMask.instance,
     ]
 
     static get masks(): Mask[] {

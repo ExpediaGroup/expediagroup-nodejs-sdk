@@ -55,7 +55,7 @@ export class SettledRefundUpdateDetails {
     refundSettledAmount: Amount
 
     public constructor(
-        settledRefundUpdateDetails: SettledRefundUpdateDetailsProperties
+        settledRefundUpdateDetails: SettledRefundUpdateDetailsProperties,
     ) {
         this.refundSettlementDateTime =
             settledRefundUpdateDetails.refundSettlementDateTime

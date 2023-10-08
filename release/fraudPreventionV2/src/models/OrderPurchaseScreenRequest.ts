@@ -31,7 +31,7 @@ export class OrderPurchaseScreenRequest {
     transaction: OrderPurchaseTransaction
 
     public constructor(
-        orderPurchaseScreenRequest: OrderPurchaseScreenRequestProperties
+        orderPurchaseScreenRequest: OrderPurchaseScreenRequestProperties,
     ) {
         this.transaction = orderPurchaseScreenRequest.transaction
     }

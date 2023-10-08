@@ -45,7 +45,7 @@ export class AccountTakeoverTransactionDetails {
     currentUserSession?: CurrentUserSession
 
     public constructor(
-        accountTakeoverTransactionDetails: AccountTakeoverTransactionDetailsProperties
+        accountTakeoverTransactionDetails: AccountTakeoverTransactionDetailsProperties,
     ) {
         this.transactionDateTime =
             accountTakeoverTransactionDetails.transactionDateTime

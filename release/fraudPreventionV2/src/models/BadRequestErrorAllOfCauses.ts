@@ -33,7 +33,7 @@ export class BadRequestErrorAllOfCauses {
     message?: string
 
     public constructor(
-        badRequestErrorAllOfCauses: BadRequestErrorAllOfCausesProperties
+        badRequestErrorAllOfCauses: BadRequestErrorAllOfCausesProperties,
     ) {
         this.code = badRequestErrorAllOfCauses.code
         this.field = badRequestErrorAllOfCauses.field

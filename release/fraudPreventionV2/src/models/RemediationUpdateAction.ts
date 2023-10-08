@@ -42,7 +42,7 @@ export class RemediationUpdateAction {
     updateEndDateTime?: Date
 
     public constructor(
-        remediationUpdateAction: RemediationUpdateActionProperties
+        remediationUpdateAction: RemediationUpdateActionProperties,
     ) {
         this.actionName = remediationUpdateAction.actionName
         this.status = remediationUpdateAction.status

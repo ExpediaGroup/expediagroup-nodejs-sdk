@@ -75,7 +75,7 @@ export class MultiFactorAuthenticationAttempt {
     emailAddress?: string
 
     public constructor(
-        multiFactorAuthenticationAttempt: MultiFactorAuthenticationAttemptProperties
+        multiFactorAuthenticationAttempt: MultiFactorAuthenticationAttemptProperties,
     ) {
         this.deliveryMethod = multiFactorAuthenticationAttempt.deliveryMethod
         this.status = multiFactorAuthenticationAttempt.status

@@ -37,7 +37,7 @@ export class OrderPurchaseUpdateNotFoundError {
     message: string
 
     public constructor(
-        orderPurchaseUpdateNotFoundError: OrderPurchaseUpdateNotFoundErrorProperties
+        orderPurchaseUpdateNotFoundError: OrderPurchaseUpdateNotFoundErrorProperties,
     ) {
         this.code = orderPurchaseUpdateNotFoundError.code
         this.message = orderPurchaseUpdateNotFoundError.message

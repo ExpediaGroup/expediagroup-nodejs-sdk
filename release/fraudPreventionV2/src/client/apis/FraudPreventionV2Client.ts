@@ -49,7 +49,7 @@ export class FraudPreventionV2Client extends Client {
     private static readonly nodeVersion: string = process.version
     private static readonly operatingSystemName: string = platform()
     private static readonly operatingSystemVersion: string = release()
-    private static readonly userAgent: string = `${this.sdkTitle}/2.1.0 (Node.js ${this.nodeVersion} ${this.operatingSystemName} ${this.operatingSystemVersion})`
+    private static readonly userAgent: string = `${this.sdkTitle}/2.2.0 (Node.js ${this.nodeVersion} ${this.operatingSystemName} ${this.operatingSystemVersion})`
 
     constructor(configurations: ClientConfigurations) {
         super({
@@ -85,7 +85,7 @@ export class FraudPreventionV2Client extends Client {
      */
     notifyWithAccountUpdate(
         accountUpdateRequest: AccountUpdateRequest,
-        transactionId: string = uuid()
+        transactionId: string = uuid(),
     ): Promise<AccountUpdateResponse> {
         let responsePromise = this.axiosClient
             .request({
@@ -99,14 +99,14 @@ export class FraudPreventionV2Client extends Client {
                 if (error.response?.status)
                     throw ErrorObjectMapper.process(
                         error,
-                        'notifyWithAccountUpdate'
+                        'notifyWithAccountUpdate',
                     )
                 throw new ExpediaGroupServiceError(error)
             })
         return responsePromise.then((response) => {
             return Serializer.deserializeObject<AccountUpdateResponse>(
                 response.data,
-                AccountUpdateResponse
+                AccountUpdateResponse,
             ) as AccountUpdateResponse
         })
     }
@@ -128,7 +128,7 @@ export class FraudPreventionV2Client extends Client {
      */
     notifyWithOrderUpdate(
         orderPurchaseUpdateRequest: OrderPurchaseUpdateRequest,
-        transactionId: string = uuid()
+        transactionId: string = uuid(),
     ): Promise<OrderPurchaseUpdateResponse> {
         let responsePromise = this.axiosClient
             .request({
@@ -142,14 +142,14 @@ export class FraudPreventionV2Client extends Client {
                 if (error.response?.status)
                     throw ErrorObjectMapper.process(
                         error,
-                        'notifyWithOrderUpdate'
+                        'notifyWithOrderUpdate',
                     )
                 throw new ExpediaGroupServiceError(error)
             })
         return responsePromise.then((response) => {
             return Serializer.deserializeObject<OrderPurchaseUpdateResponse>(
                 response.data,
-                OrderPurchaseUpdateResponse
+                OrderPurchaseUpdateResponse,
             ) as OrderPurchaseUpdateResponse
         })
     }
@@ -171,7 +171,7 @@ export class FraudPreventionV2Client extends Client {
      */
     screenAccount(
         accountScreenRequest: AccountScreenRequest,
-        transactionId: string = uuid()
+        transactionId: string = uuid(),
     ): Promise<AccountScreenResponse> {
         let responsePromise = this.axiosClient
             .request({
@@ -189,7 +189,7 @@ export class FraudPreventionV2Client extends Client {
         return responsePromise.then((response) => {
             return Serializer.deserializeObject<AccountScreenResponse>(
                 response.data,
-                AccountScreenResponse
+                AccountScreenResponse,
             ) as AccountScreenResponse
         })
     }
@@ -211,7 +211,7 @@ export class FraudPreventionV2Client extends Client {
      */
     screenOrder(
         orderPurchaseScreenRequest: OrderPurchaseScreenRequest,
-        transactionId: string = uuid()
+        transactionId: string = uuid(),
     ): Promise<OrderPurchaseScreenResponse> {
         let responsePromise = this.axiosClient
             .request({
@@ -229,7 +229,7 @@ export class FraudPreventionV2Client extends Client {
         return responsePromise.then((response) => {
             return Serializer.deserializeObject<OrderPurchaseScreenResponse>(
                 response.data,
-                OrderPurchaseScreenResponse
+                OrderPurchaseScreenResponse,
             ) as OrderPurchaseScreenResponse
         })
     }
