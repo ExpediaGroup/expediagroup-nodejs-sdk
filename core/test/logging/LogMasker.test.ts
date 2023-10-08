@@ -36,4 +36,56 @@ describe('LogMasker', function () {
 
     expect(mask(text)).toEqual(`access_token: '${LoggingMessage.OMITTED}'`)
   })
+
+  it('given (15-16)-digit numbers apply number field mask', async function () {
+    const text: string = '\'number\': \'012345678912345\', "number": \'0123456789123456\''
+
+    expect(mask(text)).toEqual(`'number': '${LoggingMessage.OMITTED}', "number": '${LoggingMessage.OMITTED}'`)
+  })
+
+  it('given non-(15-16)-digit numbers apply no masks', async function () {
+    const text: string = '\'number\': \'01234567891234\',"number": \'01234567891234567\', \'number\': \'12345\''
+
+    expect(mask(text)).toEqual(text)
+  })
+
+  it('given PCI-related fields apply PCI fields mask', async function () {
+    const text: string = '"pin": \'123456\',' +
+      '\'card_number\': \'123456ABCDabcd\', ' +
+      '"security_code": "123",' +
+      '\'account_number\': "123456ABCDabcd", ' +
+      '"card_avs_response": \'1234\',' +
+      '\'card_cvv_response\': \'123\''
+
+    const expectedText: string = `"pin": '${LoggingMessage.OMITTED}',` +
+      `'card_number': '${LoggingMessage.OMITTED}', ` +
+      `"security_code": "${LoggingMessage.OMITTED}",` +
+      `'account_number': "${LoggingMessage.OMITTED}", ` +
+      `"card_avs_response": '${LoggingMessage.OMITTED}',` +
+      `'card_cvv_response': '${LoggingMessage.OMITTED}'`
+
+    expect(mask(text)).toEqual(expectedText)
+  })
+
+  it('masks all possible cases of PCI fields', async function () {
+    const text: string = '"card_number": \'0123456789123456\',' + ' ' +
+      '"card_number": \' 0123456789123456\',' +
+      '"card_number": \'0123456789123456 \',' +
+      '"card_number": \' 0123456789123456 \',' +
+      '"card_number": "0123456789123456",' +
+      '\'card_number\': "0123456789123456",' +
+      '\'card_number\': \'0123456789123456\',' +
+      'card_number: \'0123456789123456\','
+
+    const expectedText: string = `"card_number": '${LoggingMessage.OMITTED}',` + ' ' +
+      `"card_number": '${LoggingMessage.OMITTED}',` +
+      `"card_number": '${LoggingMessage.OMITTED}',` +
+      `"card_number": '${LoggingMessage.OMITTED}',` +
+      `"card_number": "${LoggingMessage.OMITTED}",` +
+      `'card_number': "${LoggingMessage.OMITTED}",` +
+      `'card_number': '${LoggingMessage.OMITTED}',` +
+      `card_number: '${LoggingMessage.OMITTED}',`
+
+    expect(mask(text)).toEqual(expectedText)
+  })
 })

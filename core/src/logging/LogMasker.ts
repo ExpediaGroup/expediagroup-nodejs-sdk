@@ -32,12 +32,14 @@ abstract class Mask {
 
   mask (stringMessage: string): string {
     while (stringMessage.match(this.regex) != null) {
-      stringMessage = stringMessage.replace(this.regex, substring => this.maskSubstring(substring))
+      stringMessage = stringMessage.replace(this.regex, _ => this.maskSubstring())
     }
     return stringMessage
   }
 
-  protected abstract maskSubstring (substring: string): string
+  protected maskSubstring (): string {
+    return LoggingMessage.OMITTED
+  }
 }
 
 class AuthTokenMask extends Mask {
@@ -52,10 +54,6 @@ class AuthTokenMask extends Mask {
   private constructor () {
     super()
   }
-
-  protected maskSubstring (substring: string): string {
-    return LoggingMessage.OMITTED
-  }
 }
 
 class AuthUsernameMask extends Mask {
@@ -65,10 +63,6 @@ class AuthUsernameMask extends Mask {
 
   static get instance (): AuthUsernameMask {
     return this._instance
-  }
-
-  protected maskSubstring (substring: string): string {
-    return LoggingMessage.OMITTED
   }
 }
 
@@ -80,10 +74,6 @@ class AuthPasswordMask extends Mask {
   static get instance (): AuthPasswordMask {
     return this._instance
   }
-
-  protected maskSubstring (substring: string): string {
-    return LoggingMessage.OMITTED
-  }
 }
 
 class AccessTokenMask extends Mask {
@@ -94,15 +84,31 @@ class AccessTokenMask extends Mask {
   static get instance (): AccessTokenMask {
     return this._instance
   }
+}
 
-  protected maskSubstring (substring: string): string {
-    return LoggingMessage.OMITTED
+class NumberFieldMask extends Mask {
+  private static readonly _instance: NumberFieldMask = new NumberFieldMask()
+
+  protected readonly regex: RegExp = new RegExp(LogMaskingRegex.NUMBER_FIELD_REGEX)
+
+  static get instance (): NumberFieldMask {
+    return this._instance
+  }
+}
+
+class PCIFieldsMask extends Mask {
+  private static readonly _instance: PCIFieldsMask = new PCIFieldsMask()
+
+  protected readonly regex: RegExp = new RegExp(LogMaskingRegex.PCI_FIELDS_REGEX)
+
+  static get instance (): PCIFieldsMask {
+    return this._instance
   }
 }
 
 // eslint-disable-next-line @typescript-eslint/no-extraneous-class
 class MaskProvider {
-  private static readonly _masks: Mask[] = [AuthTokenMask.instance, AuthUsernameMask.instance, AuthPasswordMask.instance, AccessTokenMask.instance]
+  private static readonly _masks: Mask[] = [AuthTokenMask.instance, AuthUsernameMask.instance, AuthPasswordMask.instance, AccessTokenMask.instance, NumberFieldMask.instance, PCIFieldsMask.instance]
 
   static get masks (): Mask[] {
     return this._masks
