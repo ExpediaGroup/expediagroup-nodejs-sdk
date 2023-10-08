@@ -50,12 +50,12 @@ describe('LogMasker', function () {
   })
 
   it('given PCI-related fields apply PCI fields mask', async function () {
-    const text: string = '"pin": \'pin_value\',' +
-      '\'card_number\': \'card_number_value\', ' +
-      '"security_code": "security_code_value",' +
-      '\'account_number\': "account_number_value", ' +
-      '"card_avs_response": \'card_avs_response_value\',' +
-      '\'card_cvv_response\': \'card_cvv_response_value\''
+    const text: string = '"pin": \'123456\',' +
+      '\'card_number\': \'123456ABCDabcd\', ' +
+      '"security_code": "123",' +
+      '\'account_number\': "123456ABCDabcd", ' +
+      '"card_avs_response": \'1234\',' +
+      '\'card_cvv_response\': \'123\''
 
     const expectedText: string = `"pin": '${LoggingMessage.OMITTED}',` +
       `'card_number': '${LoggingMessage.OMITTED}', ` +
