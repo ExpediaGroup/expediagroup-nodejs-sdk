@@ -66,4 +66,26 @@ describe('LogMasker', function () {
 
     expect(mask(text)).toEqual(expectedText)
   })
+
+  it('masks all possible cases of PCI fields', async function () {
+    const text: string = `"card_number": '0123456789123456',` + ` ` +
+      `"card_number": ' 0123456789123456',` +
+      `"card_number": '0123456789123456 ',` +
+      `"card_number": ' 0123456789123456 ',`+
+      `"card_number": "0123456789123456",` +
+      `'card_number': "0123456789123456",` +
+      `'card_number': '0123456789123456',` +
+      `card_number: '0123456789123456',`
+
+    const expectedText: string =`"card_number": '${LoggingMessage.OMITTED}',` + ` ` +
+      `"card_number": '${LoggingMessage.OMITTED}',` +
+      `"card_number": '${LoggingMessage.OMITTED}',` +
+      `"card_number": '${LoggingMessage.OMITTED}',`+
+      `"card_number": "${LoggingMessage.OMITTED}",` +
+      `'card_number': "${LoggingMessage.OMITTED}",` +
+      `'card_number': '${LoggingMessage.OMITTED}',` +
+      `card_number: '${LoggingMessage.OMITTED}',`
+
+    expect(mask(text)).toEqual(expectedText)
+  })
 })
