@@ -34,6 +34,6 @@ export const LogMaskingRegex = {
   AUTH_USERNAME_REGEX: `(?<=${Authentication.USERNAME}:\\s('|"))\\S+(?=('|"))`,
   AUTH_PASSWORD_REGEX: `(?<=${Authentication.PASSWORD}:\\s('|"))\\S+(?=('|"))`,
   ACCESS_TOKEN_REGEX: '(?<=access_token: (\'|"))\\S+(?=(\'|"))',
-  NUMBER_FIELD_REGEX: `(?<=['"]number['"]:\\s*['"])[^\\s'"]{15,16}(?=(['"]))`,
-  PCI_FIELDS_REGEX: `(?<=['"](${PCIRelatedFields.join('|')})['"]:\\s*['"])[^\\s'"]+(?=(['"]))`
+  NUMBER_FIELD_REGEX: `(?<=['"]number['"]:\\s*['"])\\s*[^\\s'"]{15,16}\\s*(?=(['"]))`,
+  PCI_FIELDS_REGEX: `(?<=['"](${PCIRelatedFields.join('|')})['"]:\\s*['"])\\s*[^\\s'"]+\\s*(?=(['"]))`
 } as const
