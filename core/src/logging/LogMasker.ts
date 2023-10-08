@@ -53,7 +53,7 @@ class AuthTokenMask extends Mask {
     super()
   }
 
-  protected maskSubstring (substring: string): string {
+  protected maskSubstring (_: string): string {
     return LoggingMessage.OMITTED
   }
 }
@@ -67,7 +67,7 @@ class AuthUsernameMask extends Mask {
     return this._instance
   }
 
-  protected maskSubstring (substring: string): string {
+  protected maskSubstring (_: string): string {
     return LoggingMessage.OMITTED
   }
 }
@@ -81,7 +81,7 @@ class AuthPasswordMask extends Mask {
     return this._instance
   }
 
-  protected maskSubstring (substring: string): string {
+  protected maskSubstring (_: string): string {
     return LoggingMessage.OMITTED
   }
 }
@@ -95,7 +95,7 @@ class AccessTokenMask extends Mask {
     return this._instance
   }
 
-  protected maskSubstring (substring: string): string {
+  protected maskSubstring (_: string): string {
     return LoggingMessage.OMITTED
   }
 }
@@ -109,7 +109,7 @@ class NumberFieldMask extends Mask {
     return this._instance
   }
 
-  protected maskSubstring(substring: string): string {
+  protected maskSubstring(_: string): string {
     return LoggingMessage.OMITTED
   }
 }
@@ -123,7 +123,7 @@ class PCIFieldsMask extends Mask {
     return this._instance
   }
 
-  protected maskSubstring(substring: string): string {
+  protected maskSubstring(_: string): string {
     return LoggingMessage.OMITTED
   }
 }
