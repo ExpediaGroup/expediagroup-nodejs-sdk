@@ -101,29 +101,29 @@ class AccessTokenMask extends Mask {
 }
 
 class NumberFieldMask extends Mask {
-  private static readonly _instance: NumberFieldMask = new NumberFieldMask();
+  private static readonly _instance: NumberFieldMask = new NumberFieldMask()
 
   protected readonly regex: RegExp = new RegExp(LogMaskingRegex.NUMBER_FIELD_REGEX)
 
-  static get instance(): NumberFieldMask {
+  static get instance (): NumberFieldMask {
     return this._instance
   }
 
-  protected maskSubstring(_: string): string {
+  protected maskSubstring (_: string): string {
     return LoggingMessage.OMITTED
   }
 }
 
 class PCIFieldsMask extends Mask {
-  private static readonly _instance: PCIFieldsMask = new PCIFieldsMask();
+  private static readonly _instance: PCIFieldsMask = new PCIFieldsMask()
 
   protected readonly regex: RegExp = new RegExp(LogMaskingRegex.PCI_FIELDS_REGEX)
 
-  static get instance(): PCIFieldsMask {
+  static get instance (): PCIFieldsMask {
     return this._instance
   }
 
-  protected maskSubstring(_: string): string {
+  protected maskSubstring (_: string): string {
     return LoggingMessage.OMITTED
   }
 }
