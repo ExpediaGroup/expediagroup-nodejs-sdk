@@ -40,7 +40,7 @@ export class IssuedRefundUpdateDetails {
     refundIssuedAmount: Amount
 
     public constructor(
-        issuedRefundUpdateDetails: IssuedRefundUpdateDetailsProperties
+        issuedRefundUpdateDetails: IssuedRefundUpdateDetailsProperties,
     ) {
         this.refundIssuedDateTime =
             issuedRefundUpdateDetails.refundIssuedDateTime

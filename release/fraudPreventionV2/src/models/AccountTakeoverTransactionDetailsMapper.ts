@@ -29,7 +29,7 @@ export class AccountTakeoverTransactionDetailsMapper {
             AccountTakeoverTransactionDetailsMapper.subTypes.has(discriminator)
         ) {
             return AccountTakeoverTransactionDetailsMapper.subTypes.get(
-                discriminator
+                discriminator,
             )
         }
         return AccountTakeoverTransactionDetails

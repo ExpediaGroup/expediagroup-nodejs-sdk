@@ -45,7 +45,7 @@ interface ErrorResponse {
 class HttpStatusCodeRange {
     constructor(
         private readonly statusCode: string,
-        readonly getFunction: (error: ErrorResponse) => ExpediaGroupApiError
+        readonly getFunction: (error: ErrorResponse) => ExpediaGroupApiError,
     ) {}
 
     matches = (statusCode?: string): boolean =>
@@ -58,7 +58,7 @@ class HttpStatusCodeRange {
 
     static compareFn = (
         a: HttpStatusCodeRange,
-        b: HttpStatusCodeRange
+        b: HttpStatusCodeRange,
     ): number =>
         (a.isRangeDefinition() ? 1 : 0) - (b.isRangeDefinition() ? 1 : 0)
 }
@@ -66,7 +66,7 @@ class HttpStatusCodeRange {
 export class ExpediaGroupApiAccountTakeoverBadRequestError extends ExpediaGroupApiError {
     constructor(
         readonly statusCode: number,
-        readonly errorObject: AccountTakeoverBadRequestError
+        readonly errorObject: AccountTakeoverBadRequestError,
     ) {
         super(statusCode, errorObject)
     }
@@ -74,7 +74,7 @@ export class ExpediaGroupApiAccountTakeoverBadRequestError extends ExpediaGroupA
 export class ExpediaGroupApiAccountTakeoverUnauthorizedError extends ExpediaGroupApiError {
     constructor(
         readonly statusCode: number,
-        readonly errorObject: AccountTakeoverUnauthorizedError
+        readonly errorObject: AccountTakeoverUnauthorizedError,
     ) {
         super(statusCode, errorObject)
     }
@@ -82,7 +82,7 @@ export class ExpediaGroupApiAccountTakeoverUnauthorizedError extends ExpediaGrou
 export class ExpediaGroupApiForbiddenError extends ExpediaGroupApiError {
     constructor(
         readonly statusCode: number,
-        readonly errorObject: ForbiddenError
+        readonly errorObject: ForbiddenError,
     ) {
         super(statusCode, errorObject)
     }
@@ -90,7 +90,7 @@ export class ExpediaGroupApiForbiddenError extends ExpediaGroupApiError {
 export class ExpediaGroupApiAccountUpdateNotFoundError extends ExpediaGroupApiError {
     constructor(
         readonly statusCode: number,
-        readonly errorObject: AccountUpdateNotFoundError
+        readonly errorObject: AccountUpdateNotFoundError,
     ) {
         super(statusCode, errorObject)
     }
@@ -98,7 +98,7 @@ export class ExpediaGroupApiAccountUpdateNotFoundError extends ExpediaGroupApiEr
 export class ExpediaGroupApiTooManyRequestsError extends ExpediaGroupApiError {
     constructor(
         readonly statusCode: number,
-        readonly errorObject: TooManyRequestsError
+        readonly errorObject: TooManyRequestsError,
     ) {
         super(statusCode, errorObject)
     }
@@ -106,7 +106,7 @@ export class ExpediaGroupApiTooManyRequestsError extends ExpediaGroupApiError {
 export class ExpediaGroupApiInternalServerError extends ExpediaGroupApiError {
     constructor(
         readonly statusCode: number,
-        readonly errorObject: InternalServerError
+        readonly errorObject: InternalServerError,
     ) {
         super(statusCode, errorObject)
     }
@@ -114,7 +114,7 @@ export class ExpediaGroupApiInternalServerError extends ExpediaGroupApiError {
 export class ExpediaGroupApiBadGatewayError extends ExpediaGroupApiError {
     constructor(
         readonly statusCode: number,
-        readonly errorObject: BadGatewayError
+        readonly errorObject: BadGatewayError,
     ) {
         super(statusCode, errorObject)
     }
@@ -122,7 +122,7 @@ export class ExpediaGroupApiBadGatewayError extends ExpediaGroupApiError {
 export class ExpediaGroupApiServiceUnavailableError extends ExpediaGroupApiError {
     constructor(
         readonly statusCode: number,
-        readonly errorObject: ServiceUnavailableError
+        readonly errorObject: ServiceUnavailableError,
     ) {
         super(statusCode, errorObject)
     }
@@ -130,7 +130,7 @@ export class ExpediaGroupApiServiceUnavailableError extends ExpediaGroupApiError
 export class ExpediaGroupApiGatewayTimeoutError extends ExpediaGroupApiError {
     constructor(
         readonly statusCode: number,
-        readonly errorObject: GatewayTimeoutError
+        readonly errorObject: GatewayTimeoutError,
     ) {
         super(statusCode, errorObject)
     }
@@ -138,7 +138,7 @@ export class ExpediaGroupApiGatewayTimeoutError extends ExpediaGroupApiError {
 export class ExpediaGroupApiBadRequestError extends ExpediaGroupApiError {
     constructor(
         readonly statusCode: number,
-        readonly errorObject: BadRequestError
+        readonly errorObject: BadRequestError,
     ) {
         super(statusCode, errorObject)
     }
@@ -146,7 +146,7 @@ export class ExpediaGroupApiBadRequestError extends ExpediaGroupApiError {
 export class ExpediaGroupApiUnauthorizedError extends ExpediaGroupApiError {
     constructor(
         readonly statusCode: number,
-        readonly errorObject: UnauthorizedError
+        readonly errorObject: UnauthorizedError,
     ) {
         super(statusCode, errorObject)
     }
@@ -154,7 +154,7 @@ export class ExpediaGroupApiUnauthorizedError extends ExpediaGroupApiError {
 export class ExpediaGroupApiOrderPurchaseUpdateNotFoundError extends ExpediaGroupApiError {
     constructor(
         readonly statusCode: number,
-        readonly errorObject: OrderPurchaseUpdateNotFoundError
+        readonly errorObject: OrderPurchaseUpdateNotFoundError,
     ) {
         super(statusCode, errorObject)
     }
@@ -162,7 +162,7 @@ export class ExpediaGroupApiOrderPurchaseUpdateNotFoundError extends ExpediaGrou
 export class ExpediaGroupApiRetryableOrderPurchaseUpdateFailure extends ExpediaGroupApiError {
     constructor(
         readonly statusCode: number,
-        readonly errorObject: RetryableOrderPurchaseUpdateFailure
+        readonly errorObject: RetryableOrderPurchaseUpdateFailure,
     ) {
         super(statusCode, errorObject)
     }
@@ -170,7 +170,7 @@ export class ExpediaGroupApiRetryableOrderPurchaseUpdateFailure extends ExpediaG
 export class ExpediaGroupApiNotFoundError extends ExpediaGroupApiError {
     constructor(
         readonly statusCode: number,
-        readonly errorObject: NotFoundError
+        readonly errorObject: NotFoundError,
     ) {
         super(statusCode, errorObject)
     }
@@ -178,14 +178,17 @@ export class ExpediaGroupApiNotFoundError extends ExpediaGroupApiError {
 export class ExpediaGroupApiRetryableOrderPurchaseScreenFailure extends ExpediaGroupApiError {
     constructor(
         readonly statusCode: number,
-        readonly errorObject: RetryableOrderPurchaseScreenFailure
+        readonly errorObject: RetryableOrderPurchaseScreenFailure,
     ) {
         super(statusCode, errorObject)
     }
 }
 
 export class ExpediaGroupDefaultApiError extends ExpediaGroupApiError {
-    constructor(readonly statusCode: number, readonly errorObject: any) {
+    constructor(
+        readonly statusCode: number,
+        readonly errorObject: any,
+    ) {
         super(statusCode, errorObject)
     }
 }
@@ -197,8 +200,8 @@ class DefaultHttpStatusCodeRange extends HttpStatusCodeRange {
             (error: ErrorResponse) =>
                 new ExpediaGroupDefaultApiError(
                     error.response.status,
-                    error.response.data
-                )
+                    error.response.data,
+                ),
         )
     }
     override matches = (_?: string): boolean => true
@@ -219,9 +222,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            AccountTakeoverBadRequestError
-                        ) as AccountTakeoverBadRequestError
-                    )
+                            AccountTakeoverBadRequestError,
+                        ) as AccountTakeoverBadRequestError,
+                    ),
             ),
             new HttpStatusCodeRange(
                 '401',
@@ -230,9 +233,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            AccountTakeoverUnauthorizedError
-                        ) as AccountTakeoverUnauthorizedError
-                    )
+                            AccountTakeoverUnauthorizedError,
+                        ) as AccountTakeoverUnauthorizedError,
+                    ),
             ),
             new HttpStatusCodeRange(
                 '403',
@@ -241,9 +244,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            ForbiddenError
-                        ) as ForbiddenError
-                    )
+                            ForbiddenError,
+                        ) as ForbiddenError,
+                    ),
             ),
             new HttpStatusCodeRange(
                 '404',
@@ -252,9 +255,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            AccountUpdateNotFoundError
-                        ) as AccountUpdateNotFoundError
-                    )
+                            AccountUpdateNotFoundError,
+                        ) as AccountUpdateNotFoundError,
+                    ),
             ),
             new HttpStatusCodeRange(
                 '429',
@@ -263,9 +266,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            TooManyRequestsError
-                        ) as TooManyRequestsError
-                    )
+                            TooManyRequestsError,
+                        ) as TooManyRequestsError,
+                    ),
             ),
             new HttpStatusCodeRange(
                 '500',
@@ -274,9 +277,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            InternalServerError
-                        ) as InternalServerError
-                    )
+                            InternalServerError,
+                        ) as InternalServerError,
+                    ),
             ),
             new HttpStatusCodeRange(
                 '502',
@@ -285,9 +288,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            BadGatewayError
-                        ) as BadGatewayError
-                    )
+                            BadGatewayError,
+                        ) as BadGatewayError,
+                    ),
             ),
             new HttpStatusCodeRange(
                 '503',
@@ -296,9 +299,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            ServiceUnavailableError
-                        ) as ServiceUnavailableError
-                    )
+                            ServiceUnavailableError,
+                        ) as ServiceUnavailableError,
+                    ),
             ),
             new HttpStatusCodeRange(
                 '504',
@@ -307,9 +310,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            GatewayTimeoutError
-                        ) as GatewayTimeoutError
-                    )
+                            GatewayTimeoutError,
+                        ) as GatewayTimeoutError,
+                    ),
             ),
             new DefaultHttpStatusCodeRange(),
         ],
@@ -324,9 +327,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            BadRequestError
-                        ) as BadRequestError
-                    )
+                            BadRequestError,
+                        ) as BadRequestError,
+                    ),
             ),
             new HttpStatusCodeRange(
                 '401',
@@ -335,9 +338,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            UnauthorizedError
-                        ) as UnauthorizedError
-                    )
+                            UnauthorizedError,
+                        ) as UnauthorizedError,
+                    ),
             ),
             new HttpStatusCodeRange(
                 '403',
@@ -346,9 +349,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            ForbiddenError
-                        ) as ForbiddenError
-                    )
+                            ForbiddenError,
+                        ) as ForbiddenError,
+                    ),
             ),
             new HttpStatusCodeRange(
                 '404',
@@ -357,9 +360,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            OrderPurchaseUpdateNotFoundError
-                        ) as OrderPurchaseUpdateNotFoundError
-                    )
+                            OrderPurchaseUpdateNotFoundError,
+                        ) as OrderPurchaseUpdateNotFoundError,
+                    ),
             ),
             new HttpStatusCodeRange(
                 '429',
@@ -368,9 +371,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            TooManyRequestsError
-                        ) as TooManyRequestsError
-                    )
+                            TooManyRequestsError,
+                        ) as TooManyRequestsError,
+                    ),
             ),
             new HttpStatusCodeRange(
                 '500',
@@ -379,9 +382,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            InternalServerError
-                        ) as InternalServerError
-                    )
+                            InternalServerError,
+                        ) as InternalServerError,
+                    ),
             ),
             new HttpStatusCodeRange(
                 '502',
@@ -390,9 +393,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            BadGatewayError
-                        ) as BadGatewayError
-                    )
+                            BadGatewayError,
+                        ) as BadGatewayError,
+                    ),
             ),
             new HttpStatusCodeRange(
                 '503',
@@ -401,9 +404,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            RetryableOrderPurchaseUpdateFailure
-                        ) as RetryableOrderPurchaseUpdateFailure
-                    )
+                            RetryableOrderPurchaseUpdateFailure,
+                        ) as RetryableOrderPurchaseUpdateFailure,
+                    ),
             ),
             new HttpStatusCodeRange(
                 '504',
@@ -412,9 +415,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            GatewayTimeoutError
-                        ) as GatewayTimeoutError
-                    )
+                            GatewayTimeoutError,
+                        ) as GatewayTimeoutError,
+                    ),
             ),
             new DefaultHttpStatusCodeRange(),
         ],
@@ -429,9 +432,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            AccountTakeoverBadRequestError
-                        ) as AccountTakeoverBadRequestError
-                    )
+                            AccountTakeoverBadRequestError,
+                        ) as AccountTakeoverBadRequestError,
+                    ),
             ),
             new HttpStatusCodeRange(
                 '401',
@@ -440,9 +443,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            AccountTakeoverUnauthorizedError
-                        ) as AccountTakeoverUnauthorizedError
-                    )
+                            AccountTakeoverUnauthorizedError,
+                        ) as AccountTakeoverUnauthorizedError,
+                    ),
             ),
             new HttpStatusCodeRange(
                 '403',
@@ -451,9 +454,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            ForbiddenError
-                        ) as ForbiddenError
-                    )
+                            ForbiddenError,
+                        ) as ForbiddenError,
+                    ),
             ),
             new HttpStatusCodeRange(
                 '404',
@@ -462,9 +465,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            NotFoundError
-                        ) as NotFoundError
-                    )
+                            NotFoundError,
+                        ) as NotFoundError,
+                    ),
             ),
             new HttpStatusCodeRange(
                 '429',
@@ -473,9 +476,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            TooManyRequestsError
-                        ) as TooManyRequestsError
-                    )
+                            TooManyRequestsError,
+                        ) as TooManyRequestsError,
+                    ),
             ),
             new HttpStatusCodeRange(
                 '500',
@@ -484,9 +487,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            InternalServerError
-                        ) as InternalServerError
-                    )
+                            InternalServerError,
+                        ) as InternalServerError,
+                    ),
             ),
             new HttpStatusCodeRange(
                 '502',
@@ -495,9 +498,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            BadGatewayError
-                        ) as BadGatewayError
-                    )
+                            BadGatewayError,
+                        ) as BadGatewayError,
+                    ),
             ),
             new HttpStatusCodeRange(
                 '503',
@@ -506,9 +509,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            ServiceUnavailableError
-                        ) as ServiceUnavailableError
-                    )
+                            ServiceUnavailableError,
+                        ) as ServiceUnavailableError,
+                    ),
             ),
             new HttpStatusCodeRange(
                 '504',
@@ -517,9 +520,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            GatewayTimeoutError
-                        ) as GatewayTimeoutError
-                    )
+                            GatewayTimeoutError,
+                        ) as GatewayTimeoutError,
+                    ),
             ),
             new DefaultHttpStatusCodeRange(),
         ],
@@ -534,9 +537,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            BadRequestError
-                        ) as BadRequestError
-                    )
+                            BadRequestError,
+                        ) as BadRequestError,
+                    ),
             ),
             new HttpStatusCodeRange(
                 '401',
@@ -545,9 +548,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            UnauthorizedError
-                        ) as UnauthorizedError
-                    )
+                            UnauthorizedError,
+                        ) as UnauthorizedError,
+                    ),
             ),
             new HttpStatusCodeRange(
                 '403',
@@ -556,9 +559,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            ForbiddenError
-                        ) as ForbiddenError
-                    )
+                            ForbiddenError,
+                        ) as ForbiddenError,
+                    ),
             ),
             new HttpStatusCodeRange(
                 '404',
@@ -567,9 +570,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            NotFoundError
-                        ) as NotFoundError
-                    )
+                            NotFoundError,
+                        ) as NotFoundError,
+                    ),
             ),
             new HttpStatusCodeRange(
                 '429',
@@ -578,9 +581,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            TooManyRequestsError
-                        ) as TooManyRequestsError
-                    )
+                            TooManyRequestsError,
+                        ) as TooManyRequestsError,
+                    ),
             ),
             new HttpStatusCodeRange(
                 '500',
@@ -589,9 +592,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            InternalServerError
-                        ) as InternalServerError
-                    )
+                            InternalServerError,
+                        ) as InternalServerError,
+                    ),
             ),
             new HttpStatusCodeRange(
                 '502',
@@ -600,9 +603,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            BadGatewayError
-                        ) as BadGatewayError
-                    )
+                            BadGatewayError,
+                        ) as BadGatewayError,
+                    ),
             ),
             new HttpStatusCodeRange(
                 '503',
@@ -611,9 +614,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            RetryableOrderPurchaseScreenFailure
-                        ) as RetryableOrderPurchaseScreenFailure
-                    )
+                            RetryableOrderPurchaseScreenFailure,
+                        ) as RetryableOrderPurchaseScreenFailure,
+                    ),
             ),
             new HttpStatusCodeRange(
                 '504',
@@ -622,9 +625,9 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
                         error.response.status,
                         Serializer.deserializeObject(
                             error.response.data,
-                            GatewayTimeoutError
-                        ) as GatewayTimeoutError
-                    )
+                            GatewayTimeoutError,
+                        ) as GatewayTimeoutError,
+                    ),
             ),
             new DefaultHttpStatusCodeRange(),
         ],
@@ -633,14 +636,14 @@ const httpStatusCodeRanges: Map<string, HttpStatusCodeRange[]> = new Map<
 
 const process = (
     error: ErrorResponse,
-    operationId: string
+    operationId: string,
 ): ExpediaGroupApiError =>
     (httpStatusCodeRanges.has(operationId)
         ? httpStatusCodeRanges.get(operationId)!!
         : [new DefaultHttpStatusCodeRange()]
     )
         .filter((httpStatusCodeRange: HttpStatusCodeRange) =>
-            httpStatusCodeRange.matches(error.response.status.toString())
+            httpStatusCodeRange.matches(error.response.status.toString()),
         )
         .sort(HttpStatusCodeRange.compareFn)[0]
         .getFunction(error)

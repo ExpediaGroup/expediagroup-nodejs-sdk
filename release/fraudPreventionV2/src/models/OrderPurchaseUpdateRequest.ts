@@ -32,7 +32,7 @@ export class OrderPurchaseUpdateRequest {
     riskId: string
 
     public constructor(
-        orderPurchaseUpdateRequest: OrderPurchaseUpdateRequestProperties
+        orderPurchaseUpdateRequest: OrderPurchaseUpdateRequestProperties,
     ) {
         this.riskId = orderPurchaseUpdateRequest.riskId
     }

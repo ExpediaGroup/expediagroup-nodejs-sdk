@@ -37,7 +37,7 @@ export class RetryableOrderPurchaseUpdateFailure {
     message: string
 
     public constructor(
-        retryableOrderPurchaseUpdateFailure: RetryableOrderPurchaseUpdateFailureProperties
+        retryableOrderPurchaseUpdateFailure: RetryableOrderPurchaseUpdateFailureProperties,
     ) {
         this.code = retryableOrderPurchaseUpdateFailure.code
         this.message = retryableOrderPurchaseUpdateFailure.message

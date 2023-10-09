@@ -41,7 +41,7 @@ export class MultiFactorAuthenticationUpdate extends AccountUpdateRequest {
     readonly type = 'MULTI_FACTOR_AUTHENTICATION_UPDATE'
 
     public constructor(
-        multiFactorAuthenticationUpdate: MultiFactorAuthenticationUpdateProperties
+        multiFactorAuthenticationUpdate: MultiFactorAuthenticationUpdateProperties,
     ) {
         super({
             riskId: multiFactorAuthenticationUpdate.riskId,

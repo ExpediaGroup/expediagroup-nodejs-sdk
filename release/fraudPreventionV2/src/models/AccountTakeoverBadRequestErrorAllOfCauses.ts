@@ -33,7 +33,7 @@ export class AccountTakeoverBadRequestErrorAllOfCauses {
     message?: string
 
     public constructor(
-        accountTakeoverBadRequestErrorAllOfCauses: AccountTakeoverBadRequestErrorAllOfCausesProperties
+        accountTakeoverBadRequestErrorAllOfCauses: AccountTakeoverBadRequestErrorAllOfCausesProperties,
     ) {
         this.code = accountTakeoverBadRequestErrorAllOfCauses.code
         this.field = accountTakeoverBadRequestErrorAllOfCauses.field

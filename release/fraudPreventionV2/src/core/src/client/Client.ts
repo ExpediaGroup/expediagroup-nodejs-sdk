@@ -37,22 +37,22 @@ abstract class Client {
         userAgent,
     }: ClientConfigurations & { userAgent: string }) {
         this.axiosClient = this.createInstance(
-            new AxiosClientConfigurations(endpoint, requestTimeout)
+            new AxiosClientConfigurations(endpoint, requestTimeout),
         )
         const authenticationConfigurations: AuthenticationConfigurations =
             new AuthenticationConfigurations(
                 authEndpoint,
                 key,
                 secret,
-                userAgent
+                userAgent,
             )
         AuthenticatorFactory.create(this.axiosClient).use(
-            authenticationConfigurations
+            authenticationConfigurations,
         )
     }
 
     private createInstance(
-        clientConfigurations: AxiosClientConfigurations
+        clientConfigurations: AxiosClientConfigurations,
     ): AxiosInstance {
         return axios.create({
             baseURL: clientConfigurations.endpoint,

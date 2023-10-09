@@ -37,7 +37,7 @@ export class ServiceUnavailableError {
     message: string
 
     public constructor(
-        serviceUnavailableError: ServiceUnavailableErrorProperties
+        serviceUnavailableError: ServiceUnavailableErrorProperties,
     ) {
         this.code = serviceUnavailableError.code
         this.message = serviceUnavailableError.message

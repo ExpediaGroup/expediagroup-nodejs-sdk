@@ -37,7 +37,7 @@ export class PaymentThreeDSCriteria {
     transactionModel?: string
 
     public constructor(
-        paymentThreeDSCriteria: PaymentThreeDSCriteriaProperties
+        paymentThreeDSCriteria: PaymentThreeDSCriteriaProperties,
     ) {
         this.probableFlag = paymentThreeDSCriteria.probableFlag
         this.transactionModel = paymentThreeDSCriteria.transactionModel

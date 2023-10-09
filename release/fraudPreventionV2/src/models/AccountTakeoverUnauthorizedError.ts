@@ -37,7 +37,7 @@ export class AccountTakeoverUnauthorizedError {
     message: string
 
     public constructor(
-        accountTakeoverUnauthorizedError: AccountTakeoverUnauthorizedErrorProperties
+        accountTakeoverUnauthorizedError: AccountTakeoverUnauthorizedErrorProperties,
     ) {
         this.code = accountTakeoverUnauthorizedError.code
         this.message = accountTakeoverUnauthorizedError.message

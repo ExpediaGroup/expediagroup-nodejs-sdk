@@ -47,7 +47,7 @@ export class AccountTakeoverSiteInfo {
     placementName?: AccountTakeoverSiteInfoPlacementNameEnum
 
     public constructor(
-        accountTakeoverSiteInfo: AccountTakeoverSiteInfoProperties
+        accountTakeoverSiteInfo: AccountTakeoverSiteInfoProperties,
     ) {
         this.locale = accountTakeoverSiteInfo.locale
         this.name = accountTakeoverSiteInfo.name

@@ -49,7 +49,7 @@ export class LoginTransactionDetails extends AccountTakeoverTransactionDetails {
     readonly type = 'LOGIN'
 
     public constructor(
-        loginTransactionDetails: LoginTransactionDetailsProperties
+        loginTransactionDetails: LoginTransactionDetailsProperties,
     ) {
         super({
             transactionDateTime: loginTransactionDetails.transactionDateTime,

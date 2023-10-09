@@ -52,7 +52,7 @@ export class AccountTakeoverDeviceDetails {
     type?: AccountTakeoverDeviceDetailsTypeEnum
 
     public constructor(
-        accountTakeoverDeviceDetails: AccountTakeoverDeviceDetailsProperties
+        accountTakeoverDeviceDetails: AccountTakeoverDeviceDetailsProperties,
     ) {
         this.source = accountTakeoverDeviceDetails.source
         this.deviceBox = accountTakeoverDeviceDetails.deviceBox

@@ -55,7 +55,7 @@ export class OrderPurchaseTransaction {
     transactionDetails: TransactionDetails
 
     public constructor(
-        orderPurchaseTransaction: OrderPurchaseTransactionProperties
+        orderPurchaseTransaction: OrderPurchaseTransactionProperties,
     ) {
         this.siteInfo = orderPurchaseTransaction.siteInfo
         this.deviceDetails = orderPurchaseTransaction.deviceDetails

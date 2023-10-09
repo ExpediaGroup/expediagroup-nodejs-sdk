@@ -32,7 +32,7 @@ export class RailSegmentsOperatingCompany {
     marketingName?: string
 
     public constructor(
-        railSegmentsOperatingCompany: RailSegmentsOperatingCompanyProperties
+        railSegmentsOperatingCompany: RailSegmentsOperatingCompanyProperties,
     ) {
         this.marketingName = railSegmentsOperatingCompany.marketingName
     }

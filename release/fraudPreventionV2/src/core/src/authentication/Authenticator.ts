@@ -42,7 +42,7 @@ class Configurations {
         readonly authEndpoint: string = Constant.AUTH_ENDPOINT,
         readonly key: string,
         readonly secret: string,
-        readonly userAgent: string
+        readonly userAgent: string,
     ) {}
 }
 
@@ -60,9 +60,8 @@ class Authenticator {
                 this.bearerTokenInfo.isAboutToExpire()
             ) {
                 this.log.warn(LoggingMessage.TOKEN_EXPIRED)
-                const tokenResponse: TokenResponse = await this.renewToken(
-                    configurations
-                )
+                const tokenResponse: TokenResponse =
+                    await this.renewToken(configurations)
                 const auth: string = `${Authentication.BEARER} ${tokenResponse.accessToken}`
                 this.axiosClient.defaults.headers.common[
                     Constant.AUTHORIZATION
@@ -76,19 +75,19 @@ class Authenticator {
             (response: AxiosResponse<any, any>) => {
                 this.log.info(inspect(response))
                 return response
-            }
+            },
         )
     }
 
     private isAuthRequest(
         requestConfig: InternalAxiosRequestConfig,
-        configurations: Configurations
+        configurations: Configurations,
     ): boolean {
         return configurations.authEndpoint === requestConfig.url
     }
 
     private async renewToken(
-        configurations: Configurations
+        configurations: Configurations,
     ): Promise<TokenResponse> {
         this.log.info(LoggingMessage.TOKEN_RENEWAL_IN_PROCESS)
         const response: AxiosResponse<any, any> = await this.axiosClient
@@ -106,13 +105,13 @@ class Authenticator {
             .catch((error) => {
                 throw new ExpediaGroupAuthError(
                     error.response.status,
-                    ErrorMessage.AUTHENTICATION_FAILURE
+                    ErrorMessage.AUTHENTICATION_FAILURE,
                 )
             })
         const tokenResponse: TokenResponse =
             Serializer.deserializeObject<TokenResponse>(
                 response.data,
-                TokenResponse
+                TokenResponse,
             ) as TokenResponse
         if (
             tokenResponse.accessToken === undefined ||
@@ -120,14 +119,14 @@ class Authenticator {
         ) {
             throw new ExpediaGroupAuthError(
                 response.status,
-                ErrorMessage.TOKEN_DESERIALIZATION_FAILURE
+                ErrorMessage.TOKEN_DESERIALIZATION_FAILURE,
             )
         }
         this.log.info(LoggingMessage.TOKEN_RENEWAL_SUCCESSFUL)
         this.log.info(
             LoggingMessageProvider.getTokenExpiresInMessage(
-                tokenResponse.expiresIn
-            )
+                tokenResponse.expiresIn,
+            ),
         )
         this.bearerTokenInfo = new TokenExpiryInfo(tokenResponse.expiresIn)
         return tokenResponse
