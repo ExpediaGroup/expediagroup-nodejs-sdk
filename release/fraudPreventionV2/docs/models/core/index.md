@@ -1,4 +1,4 @@
-[API](../../index.md) > [models](../index.md) > core
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > core
 
 # Module: core
 
@@ -6,9 +6,9 @@
 
 ### Classes
 
-- [AxiosClientConfigurations](classes/AxiosClientConfigurations.md)
-- [Client](classes/Client.md)
+-   [AxiosClientConfigurations](classes/class.AxiosClientConfigurations.md)
+-   [Client](classes/class.Client.md)
 
 ### Interfaces
 
-- [ClientConfigurations](interfaces/ClientConfigurations.md)
+-   [ClientConfigurations](interfaces/interface.ClientConfigurations.md)
