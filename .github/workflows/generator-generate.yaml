@@ -38,6 +38,9 @@ jobs:
         run: |
           npm run prepare-sdk
           npm run generate-docs
+          cd docs
+          ls
+          cd ..
           rm -r node_modules
       - uses: actions/upload-artifact@v3
         with:
