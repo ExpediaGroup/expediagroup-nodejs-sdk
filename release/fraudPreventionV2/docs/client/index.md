@@ -6,4 +6,4 @@
 
 ### Classes
 
--   [FraudPreventionV2Client](classes/class.FraudPreventionV2Client.md)
+- [FraudPreventionV2Client](classes/FraudPreventionV2Client.md)

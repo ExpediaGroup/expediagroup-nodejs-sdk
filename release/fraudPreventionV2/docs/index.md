@@ -1,6 +1,8 @@
 # @expediagroup/fraudpreventionv2-sdk
 
-## Modules
+## Index
 
--   [client](client/index.md)
--   [models](models/index.md)
+### Modules
+
+- [client](client/index.md)
+- [models](models/index.md)

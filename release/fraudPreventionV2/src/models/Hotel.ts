@@ -17,10 +17,10 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { HotelAllOfAddress } from './HotelAllOfAddress'
+import { HotelAddress } from './HotelAddress'
 import { TravelProduct } from './TravelProduct'
 
-import { HotelAllOfAddressMapper } from './HotelAllOfAddressMapper'
+import { HotelAddressMapper } from './HotelAddressMapper'
 
 import { JsonObject, JsonProperty } from 'typescript-json-serializer'
 import { TravelProductProperties } from './TravelProduct'
@@ -49,9 +49,9 @@ export class Hotel extends TravelProduct {
     roomCount?: number
     @JsonProperty({
         name: 'address',
-        type: (property) => HotelAllOfAddressMapper.getType(property),
+        type: (property) => HotelAddressMapper.getType(property),
     })
-    address: HotelAllOfAddress
+    address: HotelAddress
     /**
      * Local date and time of the hotel check-in, in ISO-8601 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`.
      */
@@ -89,7 +89,7 @@ export interface HotelProperties extends TravelProductProperties {
     priceWithheld?: boolean
     hotelName: string
     roomCount?: number
-    address: HotelAllOfAddress
+    address: HotelAddress
     checkinTime: Date
     checkoutTime: Date
 }

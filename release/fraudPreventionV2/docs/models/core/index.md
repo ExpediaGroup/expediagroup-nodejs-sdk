@@ -6,9 +6,9 @@
 
 ### Classes
 
--   [AxiosClientConfigurations](classes/class.AxiosClientConfigurations.md)
--   [Client](classes/class.Client.md)
+- [AxiosClientConfigurations](classes/AxiosClientConfigurations.md)
+- [Client](classes/Client.md)
 
 ### Interfaces
 
--   [ClientConfigurations](interfaces/interface.ClientConfigurations.md)
+- [ClientConfigurations](interfaces/ClientConfigurations.md)
