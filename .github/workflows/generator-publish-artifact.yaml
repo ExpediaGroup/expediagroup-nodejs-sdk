@@ -17,7 +17,7 @@ jobs:
           name: sdk
           path: generator/sdk
       - name: Set up Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18.14.1
           registry-url: 'https://registry.npmjs.org'
