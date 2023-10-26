@@ -22,8 +22,8 @@ models/Operations.ts:68
 
 | Property | Type | Description | Source |
 | :------ | :------ | :------ | :------ |
-| `authorize?` | [`Authorize`](Authorize.md) | - | models/Operations.ts:51 |
-| `authorizeReversal?` | [`AuthorizeReversal`](AuthorizeReversal.md) | - | models/Operations.ts:56 |
-| `capture?` | [`Capture`](Capture.md) | - | models/Operations.ts:61 |
-| `refunds?` | [`Refund`](Refund.md)[] | - | models/Operations.ts:66 |
-| `verify?` | [`Verify`](Verify.md) | - | models/Operations.ts:46 |
+| `authorize`? | [`Authorize`](Authorize.md) | - | models/Operations.ts:51 |
+| `authorizeReversal`? | [`AuthorizeReversal`](AuthorizeReversal.md) | - | models/Operations.ts:56 |
+| `capture`? | [`Capture`](Capture.md) | - | models/Operations.ts:61 |
+| `refunds`? | [`Refund`](Refund.md)[] | - | models/Operations.ts:66 |
+| `verify`? | [`Verify`](Verify.md) | - | models/Operations.ts:46 |

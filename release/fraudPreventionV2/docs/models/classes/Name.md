@@ -24,6 +24,6 @@ models/Name.ts:54
 | :------ | :------ | :------ | :------ |
 | `firstName` | `string` | Given, or first name, of the person. | models/Name.ts:37 |
 | `lastName` | `string` | Surname, or last name, of the person. | models/Name.ts:32 |
-| `middleName?` | `string` | Middle name of the person. | models/Name.ts:42 |
-| `suffix?` | `string` | Generational designations (e.g. Sr, Jr, III) or values that indicate the individual holds a position, educational degree, accreditation, office, or honor (e.g. PhD, CCNA, OBE). | models/Name.ts:52 |
-| `title?` | `string` | Title of the person for name (e.g. Mr., Ms. etc). | models/Name.ts:47 |
+| `middleName`? | `string` | Middle name of the person. | models/Name.ts:42 |
+| `suffix`? | `string` | Generational designations (e.g. Sr, Jr, III) or values that indicate the individual holds a position, educational degree, accreditation, office, or honor (e.g. PhD, CCNA, OBE). | models/Name.ts:52 |
+| `title`? | `string` | Title of the person for name (e.g. Mr., Ms. etc). | models/Name.ts:47 |

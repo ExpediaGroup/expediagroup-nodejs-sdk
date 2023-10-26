@@ -22,6 +22,6 @@ models/BadRequestError.ts:47
 
 | Property | Type | Description | Source |
 | :------ | :------ | :------ | :------ |
-| `causes?` | [`BadRequestErrorAllOfCauses`](BadRequestErrorAllOfCauses.md)[] | - | models/BadRequestError.ts:45 |
+| `causes`? | [`BadRequestErrorAllOfCauses`](BadRequestErrorAllOfCauses.md)[] | - | models/BadRequestError.ts:45 |
 | `code` | [`BadRequestErrorCodeEnum`](../type-aliases/BadRequestErrorCodeEnum.md) | Snake cased all caps error code interpreted from the HTTP status code that can programmatically be acted upon. | models/BadRequestError.ts:35 |
 | `message` | `string` | A human-readable explanation of the error, specific to this error occurrence. | models/BadRequestError.ts:40 |

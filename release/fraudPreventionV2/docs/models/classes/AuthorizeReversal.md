@@ -22,6 +22,6 @@ models/AuthorizeReversal.ts:47
 
 | Property | Type | Description | Source |
 | :------ | :------ | :------ | :------ |
-| `amount?` | [`Amount`](Amount.md) | - | models/AuthorizeReversal.ts:40 |
-| `id?` | `string` | - | models/AuthorizeReversal.ts:35 |
-| `outcome?` | [`PaymentOutcome`](PaymentOutcome.md) | - | models/AuthorizeReversal.ts:45 |
+| `amount`? | [`Amount`](Amount.md) | - | models/AuthorizeReversal.ts:40 |
+| `id`? | `string` | - | models/AuthorizeReversal.ts:35 |
+| `outcome`? | [`PaymentOutcome`](PaymentOutcome.md) | - | models/AuthorizeReversal.ts:45 |

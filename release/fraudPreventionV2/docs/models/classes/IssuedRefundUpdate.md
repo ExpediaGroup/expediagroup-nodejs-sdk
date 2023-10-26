@@ -30,7 +30,7 @@ models/IssuedRefundUpdate.ts:41
 
 | Modifier | Property | Type | Description | Inheritance | Source |
 | :------ | :------ | :------ | :------ | :------ | :------ |
-| `public` | `refundDetails?` | [`IssuedRefundUpdateDetails`](IssuedRefundUpdateDetails.md) | - | - | models/IssuedRefundUpdate.ts:36 |
+| `public` | `refundDetails`? | [`IssuedRefundUpdateDetails`](IssuedRefundUpdateDetails.md) | - | - | models/IssuedRefundUpdate.ts:36 |
 | `readonly` | `refundStatus` | `"ISSUED"` | - | - | models/IssuedRefundUpdate.ts:39 |
 | `public` | `riskId` | `string` | The `risk_id` provided by Expedia\'s Fraud Prevention Service in the `OrderPurchaseScreenResponse`. | [`RefundUpdate`](RefundUpdate.md).`riskId` | models/OrderPurchaseUpdateRequest.ts:32 |
 | `readonly` | `type` | `"REFUND_UPDATE"` | - | [`RefundUpdate`](RefundUpdate.md).`type` | models/RefundUpdate.ts:31 |

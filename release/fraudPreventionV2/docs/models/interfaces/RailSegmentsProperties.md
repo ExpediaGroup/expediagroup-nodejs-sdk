@@ -10,5 +10,5 @@
 | `arrivalTime` | `Date` | - | models/RailSegments.ts:84 |
 | `departureStation` | [`RailwayStationDetails`](../classes/RailwayStationDetails.md) | - | models/RailSegments.ts:85 |
 | `departureTime` | `Date` | - | models/RailSegments.ts:83 |
-| `operatingCompany?` | [`RailSegmentsOperatingCompany`](../classes/RailSegmentsOperatingCompany.md) | - | models/RailSegments.ts:88 |
+| `operatingCompany`? | [`RailSegmentsOperatingCompany`](../classes/RailSegmentsOperatingCompany.md) | - | models/RailSegments.ts:88 |
 | `transportationMethod` | [`RailSegmentsTransportationMethodEnum`](../type-aliases/RailSegmentsTransportationMethodEnum.md) | - | models/RailSegments.ts:87 |

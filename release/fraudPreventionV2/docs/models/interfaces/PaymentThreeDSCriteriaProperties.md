@@ -6,5 +6,5 @@
 
 | Property | Type | Description | Source |
 | :------ | :------ | :------ | :------ |
-| `probableFlag?` | `boolean` | - | models/PaymentThreeDSCriteria.ts:48 |
-| `transactionModel?` | `string` | - | models/PaymentThreeDSCriteria.ts:49 |
+| `probableFlag`? | `boolean` | - | models/PaymentThreeDSCriteria.ts:48 |
+| `transactionModel`? | `string` | - | models/PaymentThreeDSCriteria.ts:49 |

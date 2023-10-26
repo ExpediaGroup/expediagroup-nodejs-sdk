@@ -6,6 +6,6 @@
 
 | Property | Type | Description | Source |
 | :------ | :------ | :------ | :------ |
-| `code?` | `string` | - | models/PaymentOutcome.ts:48 |
-| `description?` | `string` | - | models/PaymentOutcome.ts:49 |
-| `status?` | [`PaymentStatus`](../type-aliases/PaymentStatus.md) | - | models/PaymentOutcome.ts:47 |
+| `code`? | `string` | - | models/PaymentOutcome.ts:48 |
+| `description`? | `string` | - | models/PaymentOutcome.ts:49 |
+| `status`? | [`PaymentStatus`](../type-aliases/PaymentStatus.md) | - | models/PaymentOutcome.ts:47 |

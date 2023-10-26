@@ -22,4 +22,4 @@ models/Email.ts:34
 
 | Property | Type | Description | Source |
 | :------ | :------ | :------ | :------ |
-| `emailAddress?` | `string` | Full email address including the alias, @ symbol, domain, and root domain. | models/Email.ts:32 |
+| `emailAddress`? | `string` | Full email address including the alias, @ symbol, domain, and root domain. | models/Email.ts:32 |

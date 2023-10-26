@@ -6,4 +6,4 @@
 
 | Property | Type | Description | Source |
 | :------ | :------ | :------ | :------ |
-| `riskId?` | `string` | - | models/AccountUpdateResponse.ts:37 |
+| `riskId`? | `string` | - | models/AccountUpdateResponse.ts:37 |

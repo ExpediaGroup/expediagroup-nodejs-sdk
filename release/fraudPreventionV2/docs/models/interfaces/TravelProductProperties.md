@@ -17,6 +17,6 @@
 | :------ | :------ | :------ | :------ |
 | `inventorySource` | [`TravelProductInventorySourceEnum`](../type-aliases/TravelProductInventorySourceEnum.md) | - | models/TravelProduct.ts:70 |
 | `inventoryType` | `string` | - | models/TravelProduct.ts:69 |
-| `payLater?` | `boolean` | - | models/TravelProduct.ts:72 |
+| `payLater`? | `boolean` | - | models/TravelProduct.ts:72 |
 | `price` | [`Amount`](../classes/Amount.md) | - | models/TravelProduct.ts:68 |
-| `travelersReferences?` | `string`[] | - | models/TravelProduct.ts:71 |
+| `travelersReferences`? | `string`[] | - | models/TravelProduct.ts:71 |

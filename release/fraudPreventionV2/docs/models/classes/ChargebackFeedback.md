@@ -30,6 +30,6 @@ models/ChargebackFeedback.ts:41
 
 | Modifier | Property | Type | Description | Inheritance | Source |
 | :------ | :------ | :------ | :------ | :------ | :------ |
-| `public` | `chargebackDetail?` | [`ChargebackDetail`](ChargebackDetail.md) | - | - | models/ChargebackFeedback.ts:36 |
+| `public` | `chargebackDetail`? | [`ChargebackDetail`](ChargebackDetail.md) | - | - | models/ChargebackFeedback.ts:36 |
 | `public` | `riskId` | `string` | The `risk_id` provided by Expedia\'s Fraud Prevention Service in the `OrderPurchaseScreenResponse`. | [`OrderPurchaseUpdateRequest`](OrderPurchaseUpdateRequest.md).`riskId` | models/OrderPurchaseUpdateRequest.ts:32 |
 | `readonly` | `type` | `"CHARGEBACK_FEEDBACK"` | - | - | models/ChargebackFeedback.ts:39 |

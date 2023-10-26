@@ -2,7 +2,7 @@
 
 # Type alias: CreditCardCardTypeEnum
 
-> **CreditCardCardTypeEnum**: `"AMERICAN_EXPRESS"` \| `"DINERS_CLUB"` \| `"DISCOVER"` \| `"JCB"` \| `"MASTER_CARD"` \| `"SOLO"` \| `"SWITCH"` \| `"MAESTRO"` \| `"CHINA_UNION_PAY"` \| `"VISA"`
+> **CreditCardCardTypeEnum**: `"AMERICAN_EXPRESS"` \| `"DINERS_CLUB"` \| `"DISCOVER"` \| `"JCB"` \| `"MASTER_CARD"` \| `"SOLO"` \| `"SWITCH"` \| `"MAESTRO"` \| `"CHINA_UNION_PAY"` \| `"UATP"` \| `"VISA"`
 
 ## Source
 

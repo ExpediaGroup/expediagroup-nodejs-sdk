@@ -6,4 +6,4 @@
 
 | Property | Type | Description | Source |
 | :------ | :------ | :------ | :------ |
-| `emailAddress?` | `string` | - | models/Email.ts:40 |
+| `emailAddress`? | `string` | - | models/Email.ts:40 |

@@ -20,6 +20,6 @@ models/AccountTakeoverBadRequestErrorAllOfCauses.ts:35
 
 | Property | Type | Description | Source |
 | :------ | :------ | :------ | :------ |
-| `code?` | [`AccountTakeoverBadRequestErrorAllOfCausesCodeEnum`](../type-aliases/AccountTakeoverBadRequestErrorAllOfCausesCodeEnum.md) | - | models/AccountTakeoverBadRequestErrorAllOfCauses.ts:26 |
-| `field?` | `string` | A JSON Path expression indicating which field, in the request body, caused the error. | models/AccountTakeoverBadRequestErrorAllOfCauses.ts:31 |
-| `message?` | `string` | - | models/AccountTakeoverBadRequestErrorAllOfCauses.ts:33 |
+| `code`? | [`AccountTakeoverBadRequestErrorAllOfCausesCodeEnum`](../type-aliases/AccountTakeoverBadRequestErrorAllOfCausesCodeEnum.md) | - | models/AccountTakeoverBadRequestErrorAllOfCauses.ts:26 |
+| `field`? | `string` | A JSON Path expression indicating which field, in the request body, caused the error. | models/AccountTakeoverBadRequestErrorAllOfCauses.ts:31 |
+| `message`? | `string` | - | models/AccountTakeoverBadRequestErrorAllOfCauses.ts:33 |

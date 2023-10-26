@@ -20,6 +20,6 @@ models/PaymentOperation.ts:44
 
 | Property | Type | Description | Source |
 | :------ | :------ | :------ | :------ |
-| `amount?` | [`Amount`](Amount.md) | - | models/PaymentOperation.ts:37 |
-| `id?` | `string` | - | models/PaymentOperation.ts:32 |
-| `outcome?` | [`PaymentOutcome`](PaymentOutcome.md) | - | models/PaymentOperation.ts:42 |
+| `amount`? | [`Amount`](Amount.md) | - | models/PaymentOperation.ts:37 |
+| `id`? | `string` | - | models/PaymentOperation.ts:32 |
+| `outcome`? | [`PaymentOutcome`](PaymentOutcome.md) | - | models/PaymentOperation.ts:42 |

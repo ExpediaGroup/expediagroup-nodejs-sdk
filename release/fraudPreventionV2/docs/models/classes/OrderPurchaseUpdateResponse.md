@@ -20,4 +20,4 @@ models/OrderPurchaseUpdateResponse.ts:31
 
 | Property | Type | Description | Source |
 | :------ | :------ | :------ | :------ |
-| `riskId?` | `string` | Unique identifier of transaction that was updated. | models/OrderPurchaseUpdateResponse.ts:29 |
+| `riskId`? | `string` | Unique identifier of transaction that was updated. | models/OrderPurchaseUpdateResponse.ts:29 |

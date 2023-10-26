@@ -24,6 +24,6 @@ models/AccountTakeoverName.ts:54
 | :------ | :------ | :------ | :------ |
 | `firstName` | `string` | Given, or first name, of the person. | models/AccountTakeoverName.ts:37 |
 | `lastName` | `string` | Surname, or last name, of the person. | models/AccountTakeoverName.ts:32 |
-| `middleName?` | `string` | Middle name of the person. | models/AccountTakeoverName.ts:42 |
-| `suffix?` | `string` | Generational designations (e.g. Sr, Jr, III) or values indicate that the individual holds a position, educational degree, accreditation, office, or honor (e.g. PhD, CCNA, OBE). | models/AccountTakeoverName.ts:52 |
-| `title?` | `string` | Title of the person for name (e.g. Mr., Ms. etc). | models/AccountTakeoverName.ts:47 |
+| `middleName`? | `string` | Middle name of the person. | models/AccountTakeoverName.ts:42 |
+| `suffix`? | `string` | Generational designations (e.g. Sr, Jr, III) or values indicate that the individual holds a position, educational degree, accreditation, office, or honor (e.g. PhD, CCNA, OBE). | models/AccountTakeoverName.ts:52 |
+| `title`? | `string` | Title of the person for name (e.g. Mr., Ms. etc). | models/AccountTakeoverName.ts:47 |

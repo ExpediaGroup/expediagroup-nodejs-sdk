@@ -8,6 +8,6 @@
 | :------ | :------ | :------ | :------ |
 | `firstName` | `string` | - | models/AccountTakeoverName.ts:65 |
 | `lastName` | `string` | - | models/AccountTakeoverName.ts:64 |
-| `middleName?` | `string` | - | models/AccountTakeoverName.ts:66 |
-| `suffix?` | `string` | - | models/AccountTakeoverName.ts:68 |
-| `title?` | `string` | - | models/AccountTakeoverName.ts:67 |
+| `middleName`? | `string` | - | models/AccountTakeoverName.ts:66 |
+| `suffix`? | `string` | - | models/AccountTakeoverName.ts:68 |
+| `title`? | `string` | - | models/AccountTakeoverName.ts:67 |

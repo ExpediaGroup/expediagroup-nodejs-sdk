@@ -6,4 +6,4 @@
 
 | Property | Type | Description | Source |
 | :------ | :------ | :------ | :------ |
-| `riskId?` | `string` | - | models/OrderPurchaseUpdateResponse.ts:39 |
+| `riskId`? | `string` | - | models/OrderPurchaseUpdateResponse.ts:39 |

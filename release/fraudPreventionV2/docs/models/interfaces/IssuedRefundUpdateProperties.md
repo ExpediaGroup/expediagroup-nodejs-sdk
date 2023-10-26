@@ -10,5 +10,5 @@
 
 | Property | Type | Description | Inheritance | Source |
 | :------ | :------ | :------ | :------ | :------ |
-| `refundDetails?` | [`IssuedRefundUpdateDetails`](../classes/IssuedRefundUpdateDetails.md) | - | - | models/IssuedRefundUpdate.ts:50 |
+| `refundDetails`? | [`IssuedRefundUpdateDetails`](../classes/IssuedRefundUpdateDetails.md) | - | - | models/IssuedRefundUpdate.ts:50 |
 | `riskId` | `string` | - | [`RefundUpdateProperties`](RefundUpdateProperties.md).`riskId` | models/OrderPurchaseUpdateRequest.ts:42 |

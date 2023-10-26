@@ -26,6 +26,6 @@ models/AccountTakeoverTransactionDetails.ts:47
 
 | Property | Type | Description | Source |
 | :------ | :------ | :------ | :------ |
-| `currentUserSession?` | [`CurrentUserSession`](CurrentUserSession.md) | - | models/AccountTakeoverTransactionDetails.ts:45 |
+| `currentUserSession`? | [`CurrentUserSession`](CurrentUserSession.md) | - | models/AccountTakeoverTransactionDetails.ts:45 |
 | `transactionDateTime` | `Date` | The local date and time the transaction occured in the Partner\'s system, in ISO-8601 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`. | models/AccountTakeoverTransactionDetails.ts:35 |
 | `transactionId` | `string` | Unique identifier to identify a transaction attempt in the Partner\'s system. | models/AccountTakeoverTransactionDetails.ts:40 |

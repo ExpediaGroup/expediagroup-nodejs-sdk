@@ -22,7 +22,7 @@ models/Verify.ts:50
 
 | Property | Type | Description | Source |
 | :------ | :------ | :------ | :------ |
-| `amount?` | [`Amount`](Amount.md) | - | models/Verify.ts:41 |
-| `id?` | `string` | - | models/Verify.ts:36 |
-| `outcome?` | [`PaymentOutcome`](PaymentOutcome.md) | - | models/Verify.ts:46 |
-| `type?` | [`VerificationType`](../type-aliases/VerificationType.md) | - | models/Verify.ts:48 |
+| `amount`? | [`Amount`](Amount.md) | - | models/Verify.ts:41 |
+| `id`? | `string` | - | models/Verify.ts:36 |
+| `outcome`? | [`PaymentOutcome`](PaymentOutcome.md) | - | models/Verify.ts:46 |
+| `type`? | [`VerificationType`](../type-aliases/VerificationType.md) | - | models/Verify.ts:48 |

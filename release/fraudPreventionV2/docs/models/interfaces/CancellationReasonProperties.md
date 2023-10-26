@@ -6,7 +6,7 @@
 
 | Property | Type | Description | Source |
 | :------ | :------ | :------ | :------ |
-| `primaryReasonCode?` | `string` | - | models/CancellationReason.ts:59 |
-| `primaryReasonDescription?` | `string` | - | models/CancellationReason.ts:61 |
-| `subReasonCode?` | `string` | - | models/CancellationReason.ts:60 |
-| `subReasonDescription?` | `string` | - | models/CancellationReason.ts:62 |
+| `primaryReasonCode`? | `string` | - | models/CancellationReason.ts:59 |
+| `primaryReasonDescription`? | `string` | - | models/CancellationReason.ts:61 |
+| `subReasonCode`? | `string` | - | models/CancellationReason.ts:60 |
+| `subReasonDescription`? | `string` | - | models/CancellationReason.ts:62 |

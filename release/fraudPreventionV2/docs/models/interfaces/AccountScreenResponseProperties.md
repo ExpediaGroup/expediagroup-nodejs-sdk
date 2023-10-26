@@ -6,5 +6,5 @@
 
 | Property | Type | Description | Source |
 | :------ | :------ | :------ | :------ |
-| `decision?` | [`AccountTakeoverFraudDecision`](../type-aliases/AccountTakeoverFraudDecision.md) | - | models/AccountScreenResponse.ts:45 |
-| `riskId?` | `string` | - | models/AccountScreenResponse.ts:44 |
+| `decision`? | [`AccountTakeoverFraudDecision`](../type-aliases/AccountTakeoverFraudDecision.md) | - | models/AccountScreenResponse.ts:45 |
+| `riskId`? | `string` | - | models/AccountScreenResponse.ts:44 |

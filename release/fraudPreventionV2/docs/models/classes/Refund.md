@@ -22,6 +22,6 @@ models/Refund.ts:47
 
 | Property | Type | Description | Source |
 | :------ | :------ | :------ | :------ |
-| `amount?` | [`Amount`](Amount.md) | - | models/Refund.ts:40 |
-| `id?` | `string` | - | models/Refund.ts:35 |
-| `outcome?` | [`PaymentOutcome`](PaymentOutcome.md) | - | models/Refund.ts:45 |
+| `amount`? | [`Amount`](Amount.md) | - | models/Refund.ts:40 |
+| `id`? | `string` | - | models/Refund.ts:35 |
+| `outcome`? | [`PaymentOutcome`](PaymentOutcome.md) | - | models/Refund.ts:45 |

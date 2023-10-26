@@ -20,4 +20,4 @@ models/AccountUpdateResponse.ts:31
 
 | Property | Type | Description | Source |
 | :------ | :------ | :------ | :------ |
-| `riskId?` | `string` | Unique identifier of transaction that was updated. | models/AccountUpdateResponse.ts:29 |
+| `riskId`? | `string` | Unique identifier of transaction that was updated. | models/AccountUpdateResponse.ts:29 |

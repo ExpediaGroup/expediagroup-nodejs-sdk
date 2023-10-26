@@ -22,4 +22,4 @@ models/InsultDetail.ts:34
 
 | Property | Type | Description | Source |
 | :------ | :------ | :------ | :------ |
-| `insultReportedDateTime?` | `Date` | Date and time when the insult was reported to the partner, in ISO-8601 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`. | models/InsultDetail.ts:32 |
+| `insultReportedDateTime`? | `Date` | Date and time when the insult was reported to the partner, in ISO-8601 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`. | models/InsultDetail.ts:32 |

@@ -22,4 +22,4 @@ models/RailSegmentsOperatingCompany.ts:34
 
 | Property | Type | Description | Source |
 | :------ | :------ | :------ | :------ |
-| `marketingName?` | `string` | The name used by the transportation carrier for marketing purposes in the travel segment. Example: ARX, AMTRAC, ARRIVA | models/RailSegmentsOperatingCompany.ts:32 |
+| `marketingName`? | `string` | The name used by the transportation carrier for marketing purposes in the travel segment. Example: ARX, AMTRAC, ARRIVA | models/RailSegmentsOperatingCompany.ts:32 |

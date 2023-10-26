@@ -22,5 +22,5 @@ models/AccountScreenResponse.ts:37
 
 | Property | Type | Description | Source |
 | :------ | :------ | :------ | :------ |
-| `decision?` | [`AccountTakeoverFraudDecision`](../type-aliases/AccountTakeoverFraudDecision.md) | - | models/AccountScreenResponse.ts:35 |
-| `riskId?` | `string` | Unique identifier assigned to the transaction by Expedia\'s Fraud Prevention Service. | models/AccountScreenResponse.ts:33 |
+| `decision`? | [`AccountTakeoverFraudDecision`](../type-aliases/AccountTakeoverFraudDecision.md) | - | models/AccountScreenResponse.ts:35 |
+| `riskId`? | `string` | Unique identifier assigned to the transaction by Expedia\'s Fraud Prevention Service. | models/AccountScreenResponse.ts:33 |

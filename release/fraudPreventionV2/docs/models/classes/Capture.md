@@ -22,6 +22,6 @@ models/Capture.ts:47
 
 | Property | Type | Description | Source |
 | :------ | :------ | :------ | :------ |
-| `amount?` | [`Amount`](Amount.md) | - | models/Capture.ts:40 |
-| `id?` | `string` | - | models/Capture.ts:35 |
-| `outcome?` | [`PaymentOutcome`](PaymentOutcome.md) | - | models/Capture.ts:45 |
+| `amount`? | [`Amount`](Amount.md) | - | models/Capture.ts:40 |
+| `id`? | `string` | - | models/Capture.ts:35 |
+| `outcome`? | [`PaymentOutcome`](PaymentOutcome.md) | - | models/Capture.ts:45 |

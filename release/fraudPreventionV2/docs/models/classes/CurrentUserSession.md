@@ -22,6 +22,6 @@ models/CurrentUserSession.ts:47
 
 | Property | Type | Description | Source |
 | :------ | :------ | :------ | :------ |
-| `challengeDetail?` | [`ChallengeDetail`](ChallengeDetail.md) | - | models/CurrentUserSession.ts:45 |
-| `sessionId?` | `string` | Unique identifier for a user\'s session on their device | models/CurrentUserSession.ts:35 |
-| `startDateTime?` | `Date` | The local date and time a user\'s session started, in ISO-8601 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`. | models/CurrentUserSession.ts:40 |
+| `challengeDetail`? | [`ChallengeDetail`](ChallengeDetail.md) | - | models/CurrentUserSession.ts:45 |
+| `sessionId`? | `string` | Unique identifier for a user\'s session on their device | models/CurrentUserSession.ts:35 |
+| `startDateTime`? | `Date` | The local date and time a user\'s session started, in ISO-8601 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`. | models/CurrentUserSession.ts:40 |

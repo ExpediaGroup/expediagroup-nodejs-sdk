@@ -22,6 +22,6 @@ models/Authorize.ts:47
 
 | Property | Type | Description | Source |
 | :------ | :------ | :------ | :------ |
-| `amount?` | [`Amount`](Amount.md) | - | models/Authorize.ts:40 |
-| `id?` | `string` | - | models/Authorize.ts:35 |
-| `outcome?` | [`PaymentOutcome`](PaymentOutcome.md) | - | models/Authorize.ts:45 |
+| `amount`? | [`Amount`](Amount.md) | - | models/Authorize.ts:40 |
+| `id`? | `string` | - | models/Authorize.ts:35 |
+| `outcome`? | [`PaymentOutcome`](PaymentOutcome.md) | - | models/Authorize.ts:45 |

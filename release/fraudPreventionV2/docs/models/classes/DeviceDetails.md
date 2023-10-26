@@ -20,6 +20,6 @@ models/DeviceDetails.ts:41
 
 | Property | Type | Description | Source |
 | :------ | :------ | :------ | :------ |
-| `deviceBox?` | `string` | Device related information retrieved from TrustWidget. | models/DeviceDetails.ts:34 |
+| `deviceBox`? | `string` | Device related information retrieved from TrustWidget. | models/DeviceDetails.ts:34 |
 | `ipAddress` | `string` | IP address of the device used for booking. | models/DeviceDetails.ts:39 |
-| `source?` | `string` | Source of the device_box. Default value is `TrustWidget`. | models/DeviceDetails.ts:29 |
+| `source`? | `string` | Source of the device_box. Default value is `TrustWidget`. | models/DeviceDetails.ts:29 |

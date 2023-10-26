@@ -22,7 +22,7 @@ models/CancellationReason.ts:49
 
 | Property | Type | Description | Source |
 | :------ | :------ | :------ | :------ |
-| `primaryReasonCode?` | `string` | Primary cancellation reason code. | models/CancellationReason.ts:32 |
-| `primaryReasonDescription?` | `string` | Primary cancellation reason code. Required if `order_status = CANCELLED`. | models/CancellationReason.ts:42 |
-| `subReasonCode?` | `string` | Substitute cancellation reason code. | models/CancellationReason.ts:37 |
-| `subReasonDescription?` | `string` | Substitute cancellation reason description. | models/CancellationReason.ts:47 |
+| `primaryReasonCode`? | `string` | Primary cancellation reason code. | models/CancellationReason.ts:32 |
+| `primaryReasonDescription`? | `string` | Primary cancellation reason code. Required if `order_status = CANCELLED`. | models/CancellationReason.ts:42 |
+| `subReasonCode`? | `string` | Substitute cancellation reason code. | models/CancellationReason.ts:37 |
+| `subReasonDescription`? | `string` | Substitute cancellation reason description. | models/CancellationReason.ts:47 |

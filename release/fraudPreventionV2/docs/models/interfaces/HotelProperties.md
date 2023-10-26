@@ -17,8 +17,8 @@
 | `hotelName` | `string` | - | - | models/Hotel.ts:90 |
 | `inventorySource` | [`TravelProductInventorySourceEnum`](../type-aliases/TravelProductInventorySourceEnum.md) | - | [`TravelProductProperties`](TravelProductProperties.md).`inventorySource` | models/TravelProduct.ts:70 |
 | `inventoryType` | `string` | - | [`TravelProductProperties`](TravelProductProperties.md).`inventoryType` | models/TravelProduct.ts:69 |
-| `payLater?` | `boolean` | - | [`TravelProductProperties`](TravelProductProperties.md).`payLater` | models/TravelProduct.ts:72 |
+| `payLater`? | `boolean` | - | [`TravelProductProperties`](TravelProductProperties.md).`payLater` | models/TravelProduct.ts:72 |
 | `price` | [`Amount`](../classes/Amount.md) | - | [`TravelProductProperties`](TravelProductProperties.md).`price` | models/TravelProduct.ts:68 |
-| `priceWithheld?` | `boolean` | - | - | models/Hotel.ts:89 |
-| `roomCount?` | `number` | - | - | models/Hotel.ts:91 |
-| `travelersReferences?` | `string`[] | - | [`TravelProductProperties`](TravelProductProperties.md).`travelersReferences` | models/TravelProduct.ts:71 |
+| `priceWithheld`? | `boolean` | - | - | models/Hotel.ts:89 |
+| `roomCount`? | `number` | - | - | models/Hotel.ts:91 |
+| `travelersReferences`? | `string`[] | - | [`TravelProductProperties`](TravelProductProperties.md).`travelersReferences` | models/TravelProduct.ts:71 |

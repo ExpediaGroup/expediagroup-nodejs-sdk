@@ -8,6 +8,6 @@
 | :------ | :------ | :------ | :------ |
 | `airlineCode` | `string` | - | models/AirSegment.ts:61 |
 | `arrivalAirportCode` | `string` | - | models/AirSegment.ts:63 |
-| `arrivalTime?` | `Date` | - | models/AirSegment.ts:65 |
+| `arrivalTime`? | `Date` | - | models/AirSegment.ts:65 |
 | `departureAirportCode` | `string` | - | models/AirSegment.ts:62 |
-| `departureTime?` | `Date` | - | models/AirSegment.ts:64 |
+| `departureTime`? | `Date` | - | models/AirSegment.ts:64 |

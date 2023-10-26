@@ -6,4 +6,4 @@
 
 | Property | Type | Description | Source |
 | :------ | :------ | :------ | :------ |
-| `marketingName?` | `string` | - | models/RailSegmentsOperatingCompany.ts:42 |
+| `marketingName`? | `string` | - | models/RailSegmentsOperatingCompany.ts:42 |

@@ -30,6 +30,6 @@ models/InsultFeedback.ts:41
 
 | Modifier | Property | Type | Description | Inheritance | Source |
 | :------ | :------ | :------ | :------ | :------ | :------ |
-| `public` | `insultDetail?` | [`InsultDetail`](InsultDetail.md) | - | - | models/InsultFeedback.ts:36 |
+| `public` | `insultDetail`? | [`InsultDetail`](InsultDetail.md) | - | - | models/InsultFeedback.ts:36 |
 | `public` | `riskId` | `string` | The `risk_id` provided by Expedia\'s Fraud Prevention Service in the `OrderPurchaseScreenResponse`. | [`OrderPurchaseUpdateRequest`](OrderPurchaseUpdateRequest.md).`riskId` | models/OrderPurchaseUpdateRequest.ts:32 |
 | `readonly` | `type` | `"INSULT_FEEDBACK"` | - | - | models/InsultFeedback.ts:39 |
