@@ -33,7 +33,7 @@ jobs:
           cp -r ./client ../../release/"${{github.event.inputs.name}}"/src/
           cp -r ./core ../../release/"${{github.event.inputs.name}}"/src/
           cp -r ./models ../../release/"${{github.event.inputs.name}}"/src/
-          cp -r ./docs ../../release/"${{github.event.inputs.name}}"/src/
+          cp -r ./docs ../../release/"${{github.event.inputs.name}}"/
 
           cp ./.prettierrc ../../release/"${{github.event.inputs.name}}"/src/
           cp ./index.ts ../../release/"${{github.event.inputs.name}}"/src/
