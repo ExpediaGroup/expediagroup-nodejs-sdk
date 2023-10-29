@@ -63,10 +63,9 @@ jobs:
           npm run prepare-sdk
           npx tsc
       - name: verify generated docs
-        working-directory: ./generator/target/sdk
         run: |
           npm run generate-docs
-          git diff --exit-code ./docs ../../src/test/resources/exemplar-docs
+          git diff --exit-code ./generator/target/sdk/docs ./generator/src/test/resources/exemplar-docs
           if [ $? -eq 0 ]; then
             exit 0
           else
