@@ -62,3 +62,8 @@ jobs:
         run: |
           npm run prepare-sdk
           npx tsc
+      - name: verify generated docs
+        working-directory: ./generator/target/sdk
+        run: |
+          npm run generate-docs
+          git diff --no-index ./docs/ ../../src/test/resources/exemplar-docs
