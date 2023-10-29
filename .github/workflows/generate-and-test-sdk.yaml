@@ -66,4 +66,10 @@ jobs:
         working-directory: ./generator/target/sdk
         run: |
           npm run generate-docs
-          git diff --no-index ./docs/ ../../src/test/resources/exemplar-docs
+          if [ git diff --no-index --quiet ./docs/ ../../src/test/resources/exemplar-docs ]; then
+            echo "No docs changes detected."
+            exit 0
+          else
+            echo "Docs changes detected. Please update docs or fix docs-generation issues."
+            exit 1
+          fi
