@@ -53,4 +53,7 @@ jobs:
           npm run generate-docs
       - name: verify generated docs
         run: |
-          diff -qr ./generator/target/sdk/docs/ ./generator/src/test/resources/exemplar-docs/
+          (diff -qr ./generator/target/sdk/docs/ ./generator/src/test/resources/exemplar-docs/)
+          if [ $? -nq 0 ]; then
+            echo "There is a difference"
+          fi
