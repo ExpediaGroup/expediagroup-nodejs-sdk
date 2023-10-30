@@ -53,7 +53,6 @@ jobs:
           npm run generate-docs
       - name: verify generated docs
         run: |
-          cd generator/src/test/resources
           tree
           diff -qr ./generator/target/sdk/docs/ ./generator/src/test/resources/exemplar-docs/
           if [ $? -eq 0 ]; then
