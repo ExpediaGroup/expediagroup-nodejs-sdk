@@ -68,8 +68,8 @@ jobs:
           npm run generate-docs
       - name: verify generated docs
         run: |
-          pwd
-          ls
+          cd generator/target/sdk
+          tree
           diff -qr ./generator/target/sdk/docs/ ./generator/src/test/resources/exemplar-docs/
           if [ $? -eq 0 ]; then
             exit 0
