@@ -54,9 +54,3 @@ jobs:
       - name: verify generated docs
         run: |
           diff -qr ./generator/target/sdk/docs/ ./generator/src/test/resources/exemplar-docs/
-          if [ $? -eq 0 ]; then
-            exit 0
-          else
-            echo "Docs changes detected. Please update docs or fix docs-generation issues."
-            exit 1
-          fi
