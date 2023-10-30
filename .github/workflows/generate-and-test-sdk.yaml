@@ -51,10 +51,10 @@ jobs:
         working-directory: ./generator/target/sdk
         run: |
           npm run generate-docs
-      - name: verify generated docs
+      - name: update generated docs
         run: |
           rm -rf ./generator/src/test/resources/exemplar-docs/*
           cp -r ./generator/target/sdk/docs/* ./generator/src/test/resources/exemplar-docs/
-          git add /generator/src/test/resources/exemplar-docs/
+          git add ./generator/src/test/resources/exemplar-docs/
           git commit -m "Update docs"
           git push
