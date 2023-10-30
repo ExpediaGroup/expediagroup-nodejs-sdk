@@ -2,5 +2,5 @@
 
 ## Modules
 
-- [client](client/index.md)f
+- [client](client/index.md)
 - [models](models/index.md)
