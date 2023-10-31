@@ -64,3 +64,5 @@ jobs:
           git commit -m "chore(docs): update docs" || echo "No changes"
           git push
       - uses: actions/labeler@v4
+        with:
+          sync-labels: true
