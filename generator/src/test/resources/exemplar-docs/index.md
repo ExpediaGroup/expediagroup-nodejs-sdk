@@ -2,5 +2,5 @@
 
 ## Modules
 
-- [client](client/index.md) change
+- [client](client/index.md)
 - [models](models/index.md)
