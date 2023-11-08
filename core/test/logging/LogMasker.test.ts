@@ -1,91 +1,103 @@
-import { Authentication } from '../../src/constant/Authentication'
-import { mask } from '../../src/logging/LogMasker'
+import { AxiosHeaders } from 'axios'
 import { LoggingMessage } from '../../src/constant/Logging'
+import { AxiosConfig, maskFields } from '../../src/logging/LogMasker'
 
-describe('LogMasker', function () {
-  it.each(
-    [Authentication.BASIC, Authentication.BEARER, Authentication.EAN]
-  )('given text apply all masks available', async function (authType: string) {
-    const text: string = `'${Authentication.AUTHORIZATION}: ${authType} token'\n${Authentication.USERNAME}: 'token'\n${Authentication.PASSWORD}: 'token'\naccess_token: 'token'`
+describe('LogMasker', function (): void {
+  it('should do nothing when there is no body', () => {
+    const config: AxiosConfig = {
+      headers: new AxiosHeaders({
+        'Content-Type': 'application/json'
+      })
+    }
 
-    expect(mask(text)).toEqual(`'${Authentication.AUTHORIZATION}: ${authType} ${LoggingMessage.OMITTED}'\n${Authentication.USERNAME}: '${LoggingMessage.OMITTED}'\n${Authentication.PASSWORD}: '${LoggingMessage.OMITTED}'\naccess_token: '${LoggingMessage.OMITTED}'`)
+    expect(maskFields(config)).toMatchObject(config)
   })
 
-  it.each(
-    [Authentication.BASIC, Authentication.BEARER, Authentication.EAN]
-  )('given text apply auth token mask', async function (authType: string) {
-    const text: string = `'${Authentication.AUTHORIZATION}: ${authType} token'`
+  it('should mask authorization headers', (): void => {
+    const config: AxiosConfig = {
+      headers: new AxiosHeaders({
+        Authorization: 'Bearer token',
+        'Content-Type': 'application/json',
+        auth: 'auth_value'
+      }),
+      data: {
+        field: 'some value'
+      }
+    }
 
-    expect(mask(text)).toEqual(`'${Authentication.AUTHORIZATION}: ${authType} ${LoggingMessage.OMITTED}'`)
+    const expectedConfig = {
+      headers: {
+        Authorization: LoggingMessage.OMITTED,
+        auth: LoggingMessage.OMITTED,
+        'Content-Type': 'application/json'
+      },
+      data: {
+        field: 'some value'
+      }
+    }
+
+    expect(maskFields(config)).toMatchObject(expectedConfig)
   })
 
-  it('given text apply auth username mask', async function () {
-    const text: string = `${Authentication.USERNAME}: 'token'`
+  it('should mask PCI-related body fields', () => {
+    const config: AxiosConfig = {
+      headers: new AxiosHeaders({
+        'Content-Type': 'application/json'
+      }),
+      data: {
+        field1: {
+          pin: 'pin value',
+          number: 'number value',
+          access_token: 'access_token value',
+          card_number: 'card_number value',
+          security_code: 'security_code value',
+          account_number: 'account_number value',
+          card_avs_response: 'card_avs_response value',
+          card_cvv_response: 'card_cvv_response value'
+        },
+        field2: {
+          access_token: 'access_token value',
+          card_number: 'card_number value',
+          security_code: 'security_code value',
+          field3: {
+            account_number: 'account_number value',
+            card_avs_response: 'card_avs_response value',
+            card_cvv_response: 'card_cvv_response value',
+            some_field: 'some_field value'
+          }
+        }
+      }
+    }
 
-    expect(mask(text)).toEqual(`${Authentication.USERNAME}: '${LoggingMessage.OMITTED}'`)
-  })
+    const expectedConfig = {
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      data: {
+        field1: {
+          pin: LoggingMessage.OMITTED,
+          number: LoggingMessage.OMITTED,
+          access_token: LoggingMessage.OMITTED,
+          card_number: LoggingMessage.OMITTED,
+          security_code: LoggingMessage.OMITTED,
+          account_number: LoggingMessage.OMITTED,
+          card_avs_response: LoggingMessage.OMITTED,
+          card_cvv_response: LoggingMessage.OMITTED
+        },
+        field2: {
+          access_token: LoggingMessage.OMITTED,
+          card_number: LoggingMessage.OMITTED,
+          security_code: LoggingMessage.OMITTED,
+          field3: {
+            account_number: LoggingMessage.OMITTED,
+            card_avs_response: LoggingMessage.OMITTED,
+            card_cvv_response: LoggingMessage.OMITTED,
+            some_field: 'some_field value'
+          }
+        }
+      }
+    }
 
-  it('given text apply auth password mask', async function () {
-    const text: string = `${Authentication.PASSWORD}: 'token'`
-
-    expect(mask(text)).toEqual(`${Authentication.PASSWORD}: '${LoggingMessage.OMITTED}'`)
-  })
-
-  it('given text apply access token mask', async function () {
-    const text: string = 'access_token: \'token\''
-
-    expect(mask(text)).toEqual(`access_token: '${LoggingMessage.OMITTED}'`)
-  })
-
-  it('given (15-16)-digit numbers apply number field mask', async function () {
-    const text: string = '\'number\': \'012345678912345\', "number": \'0123456789123456\''
-
-    expect(mask(text)).toEqual(`'number': '${LoggingMessage.OMITTED}', "number": '${LoggingMessage.OMITTED}'`)
-  })
-
-  it('given non-(15-16)-digit numbers apply no masks', async function () {
-    const text: string = '\'number\': \'01234567891234\',"number": \'01234567891234567\', \'number\': \'12345\''
-
-    expect(mask(text)).toEqual(text)
-  })
-
-  it('given PCI-related fields apply PCI fields mask', async function () {
-    const text: string = '"pin": \'123456\',' +
-      '\'card_number\': \'123456ABCDabcd\', ' +
-      '"security_code": "123",' +
-      '\'account_number\': "123456ABCDabcd", ' +
-      '"card_avs_response": \'1234\',' +
-      '\'card_cvv_response\': \'123\''
-
-    const expectedText: string = `"pin": '${LoggingMessage.OMITTED}',` +
-      `'card_number': '${LoggingMessage.OMITTED}', ` +
-      `"security_code": "${LoggingMessage.OMITTED}",` +
-      `'account_number': "${LoggingMessage.OMITTED}", ` +
-      `"card_avs_response": '${LoggingMessage.OMITTED}',` +
-      `'card_cvv_response': '${LoggingMessage.OMITTED}'`
-
-    expect(mask(text)).toEqual(expectedText)
-  })
-
-  it('masks all possible cases of PCI fields', async function () {
-    const text: string = '"card_number": \'0123456789123456\',' + ' ' +
-      '"card_number": \' 0123456789123456\',' +
-      '"card_number": \'0123456789123456 \',' +
-      '"card_number": \' 0123456789123456 \',' +
-      '"card_number": "0123456789123456",' +
-      '\'card_number\': "0123456789123456",' +
-      '\'card_number\': \'0123456789123456\',' +
-      'card_number: \'0123456789123456\','
-
-    const expectedText: string = `"card_number": '${LoggingMessage.OMITTED}',` + ' ' +
-      `"card_number": '${LoggingMessage.OMITTED}',` +
-      `"card_number": '${LoggingMessage.OMITTED}',` +
-      `"card_number": '${LoggingMessage.OMITTED}',` +
-      `"card_number": "${LoggingMessage.OMITTED}",` +
-      `'card_number': "${LoggingMessage.OMITTED}",` +
-      `'card_number': '${LoggingMessage.OMITTED}',` +
-      `card_number: '${LoggingMessage.OMITTED}',`
-
-    expect(mask(text)).toEqual(expectedText)
+    expect(maskFields(config)).toMatchObject(expectedConfig)
   })
 })

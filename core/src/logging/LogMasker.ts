@@ -18,99 +18,46 @@
  * Do not edit the class manually.
  */
 
+import _ from 'lodash'
 import { LoggingMessage } from '../constant/Logging'
-import { LogMaskingRegex } from '../constant/LogMaskingRegex'
+import { LOG_MASKING_BODY_FIELDS, LOG_MASKING_HEADERS } from '../constant/LogMaskingFields'
+import {
+  AxiosRequestHeaders,
+  AxiosResponse,
+  AxiosResponseHeaders,
+  InternalAxiosRequestConfig,
+  RawAxiosResponseHeaders
+} from 'axios'
 
-export function mask (message: string): string {
-  return MaskProvider.masks.reduce((currentMessage: string, mask: Mask): string => {
-    return mask.mask(currentMessage)
-  }, message)
+export function maskFields (config: AxiosConfig): AxiosConfig {
+  const clone: AxiosConfig = _.cloneDeep(config)
+  clone.headers = maskHeaders(clone.headers)
+  clone.data = maskBodyFields(clone.data)
+  return clone
 }
 
-abstract class Mask {
-  protected readonly abstract regex: RegExp
-
-  mask (stringMessage: string): string {
-    while (stringMessage.match(this.regex) != null) {
-      stringMessage = stringMessage.replace(this.regex, _ => this.maskSubstring())
-    }
-    return stringMessage
+function maskHeaders (headers: Headers): Headers {
+  const clonedHeaders: Headers = {}
+  for (const header in headers) {
+    clonedHeaders[header] = LOG_MASKING_HEADERS.includes(header.toLowerCase())
+      ? LoggingMessage.OMITTED
+      : headers[header]
   }
-
-  protected maskSubstring (): string {
-    return LoggingMessage.OMITTED
-  }
+  return clonedHeaders
 }
 
-class AuthTokenMask extends Mask {
-  private static readonly _instance: AuthTokenMask = new AuthTokenMask()
-
-  protected readonly regex: RegExp = new RegExp(LogMaskingRegex.AUTHORIZATION_REGEX)
-
-  static get instance (): AuthTokenMask {
-    return this._instance
+function maskBodyFields (body: object): object {
+  if (typeof body !== 'object') {
+    return body
   }
-
-  private constructor () {
-    super()
+  for (const field in body) {
+    body[field] = LOG_MASKING_BODY_FIELDS.includes(field.toLowerCase())
+      ? LoggingMessage.OMITTED
+      : maskBodyFields(body[field])
   }
+  return body
 }
 
-class AuthUsernameMask extends Mask {
-  private static readonly _instance: AuthUsernameMask = new AuthUsernameMask()
+declare type Headers = RawAxiosResponseHeaders | AxiosResponseHeaders | AxiosRequestHeaders
 
-  protected readonly regex: RegExp = new RegExp(LogMaskingRegex.AUTH_USERNAME_REGEX)
-
-  static get instance (): AuthUsernameMask {
-    return this._instance
-  }
-}
-
-class AuthPasswordMask extends Mask {
-  private static readonly _instance: AuthPasswordMask = new AuthPasswordMask()
-
-  protected readonly regex: RegExp = new RegExp(LogMaskingRegex.AUTH_PASSWORD_REGEX)
-
-  static get instance (): AuthPasswordMask {
-    return this._instance
-  }
-}
-
-class AccessTokenMask extends Mask {
-  private static readonly _instance: AccessTokenMask = new AccessTokenMask()
-
-  protected readonly regex: RegExp = new RegExp(LogMaskingRegex.ACCESS_TOKEN_REGEX)
-
-  static get instance (): AccessTokenMask {
-    return this._instance
-  }
-}
-
-class NumberFieldMask extends Mask {
-  private static readonly _instance: NumberFieldMask = new NumberFieldMask()
-
-  protected readonly regex: RegExp = new RegExp(LogMaskingRegex.NUMBER_FIELD_REGEX)
-
-  static get instance (): NumberFieldMask {
-    return this._instance
-  }
-}
-
-class PCIFieldsMask extends Mask {
-  private static readonly _instance: PCIFieldsMask = new PCIFieldsMask()
-
-  protected readonly regex: RegExp = new RegExp(LogMaskingRegex.PCI_FIELDS_REGEX)
-
-  static get instance (): PCIFieldsMask {
-    return this._instance
-  }
-}
-
-// eslint-disable-next-line @typescript-eslint/no-extraneous-class
-class MaskProvider {
-  private static readonly _masks: Mask[] = [AuthTokenMask.instance, AuthUsernameMask.instance, AuthPasswordMask.instance, AccessTokenMask.instance, NumberFieldMask.instance, PCIFieldsMask.instance]
-
-  static get masks (): Mask[] {
-    return this._masks
-  }
-}
+export declare type AxiosConfig = InternalAxiosRequestConfig<any> | AxiosResponse<any, any>
