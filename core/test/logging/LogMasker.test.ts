@@ -47,7 +47,6 @@ describe('LogMasker', function (): void {
       data: {
         field1: {
           pin: 'pin value',
-          number: 'number value',
           access_token: 'access_token value',
           card_number: 'card_number value',
           security_code: 'security_code value',
@@ -76,7 +75,6 @@ describe('LogMasker', function (): void {
       data: {
         field1: {
           pin: LoggingMessage.OMITTED,
-          number: LoggingMessage.OMITTED,
           access_token: LoggingMessage.OMITTED,
           card_number: LoggingMessage.OMITTED,
           security_code: LoggingMessage.OMITTED,
@@ -94,6 +92,68 @@ describe('LogMasker', function (): void {
             card_cvv_response: LoggingMessage.OMITTED,
             some_field: 'some_field value'
           }
+        }
+      }
+    }
+
+    expect(maskFields(config)).toMatchObject(expectedConfig)
+  })
+
+  it('should mask number fields', () => {
+    const config: AxiosConfig = {
+      headers: new AxiosHeaders({
+        'Content-Type': 'application/json'
+      }),
+      data: {
+        field1: {
+          number: 12345678901234
+        },
+        field2: {
+          number: 123456789012345
+        },
+        field3: {
+          number: 123456789012346
+        },
+        field4: {
+          number: '123456789012346'
+        },
+        field5: {
+          number: '12345678901234567'
+        },
+        field6: {
+          number: undefined
+        },
+        field7: {
+          number: null
+        }
+      }
+    }
+
+    const expectedConfig = {
+      headers: new AxiosHeaders({
+        'Content-Type': 'application/json'
+      }),
+      data: {
+        field1: {
+          number: 12345678901234
+        },
+        field2: {
+          number: LoggingMessage.OMITTED
+        },
+        field3: {
+          number: LoggingMessage.OMITTED
+        },
+        field4: {
+          number: LoggingMessage.OMITTED
+        },
+        field5: {
+          number: '12345678901234567'
+        },
+        field6: {
+          number: undefined
+        },
+        field7: {
+          number: null
         }
       }
     }

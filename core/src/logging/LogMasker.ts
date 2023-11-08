@@ -51,11 +51,20 @@ function maskBodyFields (body: object): object {
     return body
   }
   for (const field in body) {
-    body[field] = LOG_MASKING_BODY_FIELDS.includes(field.toLowerCase())
+    body[field] = (LOG_MASKING_BODY_FIELDS.includes(field.toLowerCase()) || isNumberField(field, body[field]))
       ? LoggingMessage.OMITTED
       : maskBodyFields(body[field])
   }
   return body
+}
+
+function isNumberField (field: string, value: any): boolean {
+  if (value === undefined || value === null) {
+    return false
+  }
+  const s = value.toString()
+  const numberOfDigits = s.length
+  return field.toLowerCase() === 'number' && numberOfDigits >= 15 && numberOfDigits <= 16
 }
 
 declare type Headers = RawAxiosResponseHeaders | AxiosResponseHeaders | AxiosRequestHeaders

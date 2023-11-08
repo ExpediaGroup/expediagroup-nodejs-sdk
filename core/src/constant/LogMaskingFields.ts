@@ -25,7 +25,6 @@ export const LOG_MASKING_HEADERS: string[] = [
 
 export const LOG_MASKING_BODY_FIELDS: string[] = [
   'pin',
-  'number',
   'access_token',
   'card_number',
   'security_code',
