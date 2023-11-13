@@ -21,23 +21,19 @@
 import _ from 'lodash'
 import { LoggingMessage } from '../constant/Logging'
 import { LOG_MASKING_BODY_FIELDS, LOG_MASKING_HEADERS } from '../constant/LogMaskingFields'
-import {
-  AxiosRequestHeaders,
-  AxiosResponse,
-  AxiosResponseHeaders,
-  InternalAxiosRequestConfig,
-  RawAxiosResponseHeaders
-} from 'axios'
+import { AxiosBasicCredentials, AxiosHeaders, AxiosRequestHeaders, AxiosResponse, AxiosResponseHeaders, InternalAxiosRequestConfig, RawAxiosResponseHeaders } from 'axios'
+import { Serializer } from "../serialization/Serializer";
 
-export function maskFields (config: AxiosConfig): AxiosConfig {
-  const clone: AxiosConfig = _.cloneDeep(config)
-  clone.headers = maskHeaders(clone.headers)
-  clone.data = maskBodyFields(clone.data)
+export function maskRequestConfig(config: InternalAxiosRequestConfig<any>): InternalAxiosRequestConfig<any> {
+  const clone: InternalAxiosRequestConfig<any> = _.cloneDeep(config)
+  clone.headers = maskRequestConfigHeaders(clone.headers)
+  clone.data = JSON.stringify(Serializer.serialize(maskBodyFields(clone.data)))
+  clone.auth = maskedAuthCredentials(clone.auth)
   return clone
 }
 
-function maskHeaders (headers: Headers): Headers {
-  const clonedHeaders: Headers = {}
+function maskRequestConfigHeaders(headers: AxiosRequestHeaders): AxiosRequestHeaders {
+  const clonedHeaders: AxiosRequestHeaders = new AxiosHeaders()
   for (const header in headers) {
     clonedHeaders[header] = LOG_MASKING_HEADERS.includes(header.toLowerCase())
       ? LoggingMessage.OMITTED
@@ -46,7 +42,37 @@ function maskHeaders (headers: Headers): Headers {
   return clonedHeaders
 }
 
-function maskBodyFields (body: object): object {
+function maskedAuthCredentials(auth: AxiosBasicCredentials | undefined): AxiosBasicCredentials | undefined {
+  if (auth === undefined) {
+    return auth
+  }
+  return {
+    username: LoggingMessage.OMITTED,
+    password: LoggingMessage.OMITTED
+  };
+}
+
+export function maskResponse(config: AxiosResponse<any, any>): AxiosResponse<any, any> {
+  const clone: AxiosResponse<any, any> = _.cloneDeep(config)
+  clone.headers = maskResponseHeaders(clone.headers)
+  clone.data = maskBodyFields(clone.data)
+  clone.config.auth = maskedAuthCredentials(clone.config.auth)
+  clone.config.data = LoggingMessage.OMITTED
+  delete clone.request
+  return clone
+}
+
+function maskResponseHeaders(headers: ResponseHeaders): ResponseHeaders {
+  const clonedHeaders: ResponseHeaders = {}
+  for (const header in headers) {
+    clonedHeaders[header] = LOG_MASKING_HEADERS.includes(header.toLowerCase())
+      ? LoggingMessage.OMITTED
+      : headers[header]
+  }
+  return clonedHeaders
+}
+
+function maskBodyFields(body: any): any {
   if (typeof body !== 'object') {
     return body
   }
@@ -58,7 +84,7 @@ function maskBodyFields (body: object): object {
   return body
 }
 
-function isNumberField (field: string, value: any): boolean {
+function isNumberField(field: string, value: any): boolean {
   if (value === undefined || value === null) {
     return false
   }
@@ -67,6 +93,4 @@ function isNumberField (field: string, value: any): boolean {
   return field.toLowerCase() === 'number' && numberOfDigits >= 15 && numberOfDigits <= 16
 }
 
-declare type Headers = RawAxiosResponseHeaders | AxiosResponseHeaders | AxiosRequestHeaders
-
-export declare type AxiosConfig = InternalAxiosRequestConfig<any> | AxiosResponse<any, any>
+declare type ResponseHeaders = RawAxiosResponseHeaders | AxiosResponseHeaders

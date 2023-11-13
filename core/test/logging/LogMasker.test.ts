@@ -1,6 +1,6 @@
 import { AxiosHeaders } from 'axios'
 import { LoggingMessage } from '../../src/constant/Logging'
-import { AxiosConfig, maskFields } from '../../src/logging/LogMasker'
+import { AxiosConfig, maskResponse } from '../../src/logging/LogMasker'
 
 describe('LogMasker', function (): void {
   it('should do nothing when there is no body', () => {
@@ -10,7 +10,7 @@ describe('LogMasker', function (): void {
       })
     }
 
-    expect(maskFields(config)).toMatchObject(config)
+    expect(maskResponse(config)).toMatchObject(config)
   })
 
   it('should mask authorization headers', (): void => {
@@ -36,7 +36,7 @@ describe('LogMasker', function (): void {
       }
     }
 
-    expect(maskFields(config)).toMatchObject(expectedConfig)
+    expect(maskResponse(config)).toMatchObject(expectedConfig)
   })
 
   it('should mask PCI-related body fields', () => {
@@ -96,7 +96,7 @@ describe('LogMasker', function (): void {
       }
     }
 
-    expect(maskFields(config)).toMatchObject(expectedConfig)
+    expect(maskResponse(config)).toMatchObject(expectedConfig)
   })
 
   it('should mask number fields', () => {
@@ -158,6 +158,6 @@ describe('LogMasker', function (): void {
       }
     }
 
-    expect(maskFields(config)).toMatchObject(expectedConfig)
+    expect(maskResponse(config)).toMatchObject(expectedConfig)
   })
 })

@@ -20,26 +20,26 @@
 
 import { inspect } from 'util'
 import { Constant } from '../constant/Constant'
-import { maskFields } from '../logging/LogMasker'
 import { LoggingMessage } from '../constant/Logging'
 import { ErrorMessage } from '../constant/ErrorMessage'
 import { Serializer } from '../serialization/Serializer'
 import { Authentication } from '../constant/Authentication'
 import { getLogger, SdkLogger } from '../logging/LoggerProvider'
 import { JsonObject, JsonProperty } from 'typescript-json-serializer'
+import { maskRequestConfig, maskResponse } from '../logging/LogMasker'
 import { AxiosInstance, AxiosResponse, InternalAxiosRequestConfig } from 'axios'
 import { ExpediaGroupAuthError } from '../model/error/service/ExpediaGroupAuthError'
 import { LoggingMessageProvider } from '../constant/provider/LoggingMessageProvider'
 
 // eslint-disable-next-line @typescript-eslint/no-extraneous-class
 class Factory {
-  static create (axiosClient: AxiosInstance): Authenticator {
+  static create(axiosClient: AxiosInstance): Authenticator {
     return new Authenticator(axiosClient)
   }
 }
 
 class Configurations {
-  constructor (
+  constructor(
     readonly authEndpoint: string = Constant.AUTH_ENDPOINT,
     readonly key: string,
     readonly secret: string,
@@ -52,10 +52,10 @@ class Authenticator {
   private readonly log: SdkLogger = getLogger(this)
   private bearerTokenInfo: TokenExpiryInfo = ExpiredTokenExpiryInfo.getInstance()
 
-  constructor (readonly axiosClient: AxiosInstance) {
+  constructor(readonly axiosClient: AxiosInstance) {
   }
 
-  use (configurations: Configurations): void {
+  use(configurations: Configurations): void {
     this.axiosClient.interceptors.request.use(async (requestConfig: InternalAxiosRequestConfig<any>) => {
       if (!this.isAuthRequest(requestConfig, configurations) && this.bearerTokenInfo.isAboutToExpire()) {
         this.log.warn(LoggingMessage.TOKEN_EXPIRED)
@@ -64,20 +64,20 @@ class Authenticator {
         this.axiosClient.defaults.headers.common[Constant.AUTHORIZATION] = auth
         requestConfig.headers.setAuthorization(auth)
       }
-      this.log.info(inspect(maskFields(requestConfig)))
+      this.log.info(inspect(maskRequestConfig(requestConfig)))
       return requestConfig
     })
     this.axiosClient.interceptors.response.use((response: AxiosResponse<any, any>) => {
-      this.log.info(inspect(maskFields(response)))
+      this.log.info(inspect(maskResponse(response)))
       return response
     })
   }
 
-  private isAuthRequest (requestConfig: InternalAxiosRequestConfig, configurations: Configurations): boolean {
+  private isAuthRequest(requestConfig: InternalAxiosRequestConfig, configurations: Configurations): boolean {
     return configurations.authEndpoint === requestConfig.url
   }
 
-  private async renewToken (configurations: Configurations): Promise<TokenResponse> {
+  private async renewToken(configurations: Configurations): Promise<TokenResponse> {
     this.log.info(LoggingMessage.TOKEN_RENEWAL_IN_PROCESS)
     const response: AxiosResponse<any, any> = await this.axiosClient
       .request({
@@ -107,19 +107,19 @@ class Authenticator {
 class TokenExpiryInfo {
   private readonly expiryDate: Date
 
-  constructor (expiresIn: number) {
+  constructor(expiresIn: number) {
     this.expiryDate = this.calculateExpiryDate(expiresIn)
   }
 
-  private calculateExpiryDate (expiresIn: number): Date {
+  private calculateExpiryDate(expiresIn: number): Date {
     return new Date(Date.now() + this.millisToSeconds(expiresIn))
   }
 
-  private millisToSeconds (expiresIn: number): number {
+  private millisToSeconds(expiresIn: number): number {
     return expiresIn * 1_000
   }
 
-  isAboutToExpire (): boolean {
+  isAboutToExpire(): boolean {
     return (Date.now() - (this.expiryDate.getTime() - Authentication.BEARER_EXPIRY_DATE_MARGIN)) > 0
   }
 }
@@ -127,15 +127,15 @@ class TokenExpiryInfo {
 class ExpiredTokenExpiryInfo extends TokenExpiryInfo {
   private static readonly instance: ExpiredTokenExpiryInfo = new ExpiredTokenExpiryInfo()
 
-  private constructor () {
+  private constructor() {
     super(-1)
   }
 
-  isAboutToExpire (): boolean {
+  isAboutToExpire(): boolean {
     return true
   }
 
-  static getInstance (): ExpiredTokenExpiryInfo {
+  static getInstance(): ExpiredTokenExpiryInfo {
     return this.instance
   }
 }
@@ -148,16 +148,16 @@ class TokenResponse {
   @JsonProperty({ name: 'expires_in' })
   private readonly _expiresIn: number
 
-  constructor (accessToken: string, expiresIn: number) {
+  constructor(accessToken: string, expiresIn: number) {
     this._accessToken = accessToken
     this._expiresIn = expiresIn
   }
 
-  get accessToken (): string {
+  get accessToken(): string {
     return this._accessToken
   }
 
-  get expiresIn (): number {
+  get expiresIn(): number {
     return this._expiresIn
   }
 }
