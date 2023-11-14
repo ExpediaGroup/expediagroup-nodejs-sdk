@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > LoginTransactionDetailsAuthenticationTypeEnum
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / LoginTransactionDetailsAuthenticationTypeEnum
 
 # Type alias: LoginTransactionDetailsAuthenticationTypeEnum
 

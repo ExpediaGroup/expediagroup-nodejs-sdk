@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > InsultFeedback
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / InsultFeedback
 
 # Class: InsultFeedback
 
@@ -17,6 +17,10 @@ Feedback from EG external partners regarding a false positive recommendation tha
 #### Parameters
 
 ▪ **insultFeedback**: [`InsultFeedbackProperties`](../interfaces/InsultFeedbackProperties.md)
+
+#### Returns
+
+[`InsultFeedback`](InsultFeedback.md)
 
 #### Overrides
 

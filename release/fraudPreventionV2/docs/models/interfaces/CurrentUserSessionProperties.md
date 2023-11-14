@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > CurrentUserSessionProperties
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / CurrentUserSessionProperties
 
 # Interface: CurrentUserSessionProperties
 

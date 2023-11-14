@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > AccountUpdateResponse
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / AccountUpdateResponse
 
 # Class: AccountUpdateResponse
 
@@ -11,6 +11,10 @@
 #### Parameters
 
 ▪ **accountUpdateResponse**: [`AccountUpdateResponseProperties`](../interfaces/AccountUpdateResponseProperties.md)
+
+#### Returns
+
+[`AccountUpdateResponse`](AccountUpdateResponse.md)
 
 #### Source
 

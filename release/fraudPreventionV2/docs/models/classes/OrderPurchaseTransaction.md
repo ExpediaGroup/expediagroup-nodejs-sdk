@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > OrderPurchaseTransaction
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / OrderPurchaseTransaction
 
 # Class: OrderPurchaseTransaction
 
@@ -11,6 +11,10 @@
 #### Parameters
 
 ▪ **orderPurchaseTransaction**: [`OrderPurchaseTransactionProperties`](../interfaces/OrderPurchaseTransactionProperties.md)
+
+#### Returns
+
+[`OrderPurchaseTransaction`](OrderPurchaseTransaction.md)
 
 #### Source
 

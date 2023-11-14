@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > AccountTakeoverSiteInfo
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / AccountTakeoverSiteInfo
 
 # Class: AccountTakeoverSiteInfo
 
@@ -13,6 +13,10 @@ Information specific to the Partner\'s website through which a transaction was m
 #### Parameters
 
 ▪ **accountTakeoverSiteInfo**: [`AccountTakeoverSiteInfoProperties`](../interfaces/AccountTakeoverSiteInfoProperties.md)
+
+#### Returns
+
+[`AccountTakeoverSiteInfo`](AccountTakeoverSiteInfo.md)
 
 #### Source
 

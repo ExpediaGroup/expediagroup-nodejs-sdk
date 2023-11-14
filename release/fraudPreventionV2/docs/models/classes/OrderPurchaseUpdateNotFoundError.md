@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > OrderPurchaseUpdateNotFoundError
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / OrderPurchaseUpdateNotFoundError
 
 # Class: OrderPurchaseUpdateNotFoundError
 
@@ -13,6 +13,10 @@ Indicates that the API cannot find the resource that is either being requested o
 #### Parameters
 
 ▪ **orderPurchaseUpdateNotFoundError**: [`OrderPurchaseUpdateNotFoundErrorProperties`](../interfaces/OrderPurchaseUpdateNotFoundErrorProperties.md)
+
+#### Returns
+
+[`OrderPurchaseUpdateNotFoundError`](OrderPurchaseUpdateNotFoundError.md)
 
 #### Source
 

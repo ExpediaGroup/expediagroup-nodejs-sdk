@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > Email
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / Email
 
 # Class: Email
 
@@ -13,6 +13,10 @@ Group of attributes intended to hold information about email address associated 
 #### Parameters
 
 ▪ **email**: [`EmailProperties`](../interfaces/EmailProperties.md)
+
+#### Returns
+
+[`Email`](Email.md)
 
 #### Source
 

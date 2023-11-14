@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > CancellationReasonProperties
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / CancellationReasonProperties
 
 # Interface: CancellationReasonProperties
 

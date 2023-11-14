@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > Telephone
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / Telephone
 
 # Class: Telephone
 
@@ -13,6 +13,10 @@ Group of attributes intended to hold information about phone number associated w
 #### Parameters
 
 ▪ **telephone**: [`TelephoneProperties`](../interfaces/TelephoneProperties.md)
+
+#### Returns
+
+[`Telephone`](Telephone.md)
 
 #### Source
 

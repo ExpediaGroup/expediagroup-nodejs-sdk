@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > Address
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / Address
 
 # Class: Address
 
@@ -11,6 +11,10 @@
 #### Parameters
 
 ▪ **address**: [`AddressProperties`](../interfaces/AddressProperties.md)
+
+#### Returns
+
+[`Address`](Address.md)
 
 #### Source
 
