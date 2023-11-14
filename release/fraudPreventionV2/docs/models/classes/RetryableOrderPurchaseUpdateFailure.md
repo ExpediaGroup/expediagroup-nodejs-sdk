@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > RetryableOrderPurchaseUpdateFailure
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / RetryableOrderPurchaseUpdateFailure
 
 # Class: RetryableOrderPurchaseUpdateFailure
 
@@ -13,6 +13,10 @@ Indicates that the API is either down for maintenance or overloaded and cannot f
 #### Parameters
 
 ▪ **retryableOrderPurchaseUpdateFailure**: [`RetryableOrderPurchaseUpdateFailureProperties`](../interfaces/RetryableOrderPurchaseUpdateFailureProperties.md)
+
+#### Returns
+
+[`RetryableOrderPurchaseUpdateFailure`](RetryableOrderPurchaseUpdateFailure.md)
 
 #### Source
 

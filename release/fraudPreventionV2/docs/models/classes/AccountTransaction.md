@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > AccountTransaction
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / AccountTransaction
 
 # Class: AccountTransaction
 
@@ -13,6 +13,10 @@ Information for an account transaction.
 #### Parameters
 
 ▪ **accountTransaction**: [`AccountTransactionProperties`](../interfaces/AccountTransactionProperties.md)
+
+#### Returns
+
+[`AccountTransaction`](AccountTransaction.md)
 
 #### Source
 

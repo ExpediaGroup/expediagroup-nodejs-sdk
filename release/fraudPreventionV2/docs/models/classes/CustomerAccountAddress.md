@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > CustomerAccountAddress
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / CustomerAccountAddress
 
 # Class: CustomerAccountAddress
 
@@ -11,6 +11,10 @@
 #### Parameters
 
 ▪ **customerAccountAddress**: [`CustomerAccountAddressProperties`](../interfaces/CustomerAccountAddressProperties.md)
+
+#### Returns
+
+[`CustomerAccountAddress`](CustomerAccountAddress.md)
 
 #### Source
 

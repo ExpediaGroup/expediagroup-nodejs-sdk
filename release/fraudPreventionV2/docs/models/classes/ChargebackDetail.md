@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > ChargebackDetail
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / ChargebackDetail
 
 # Class: ChargebackDetail
 
@@ -13,6 +13,10 @@ Details related to the chargeback.
 #### Parameters
 
 ▪ **chargebackDetail**: [`ChargebackDetailProperties`](../interfaces/ChargebackDetailProperties.md)
+
+#### Returns
+
+[`ChargebackDetail`](ChargebackDetail.md)
 
 #### Source
 

@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > UpdateType
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / UpdateType
 
 # Type alias: UpdateType
 

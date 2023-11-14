@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > ModelErrorProperties
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / ModelErrorProperties
 
 # Interface: ModelErrorProperties
 

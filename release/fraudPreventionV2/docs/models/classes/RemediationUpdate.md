@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > RemediationUpdate
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / RemediationUpdate
 
 # Class: RemediationUpdate
 
@@ -17,6 +17,10 @@ Information specific to remediation actions initiated by the Partner\'s system t
 #### Parameters
 
 ▪ **remediationUpdate**: [`RemediationUpdateProperties`](../interfaces/RemediationUpdateProperties.md)
+
+#### Returns
+
+[`RemediationUpdate`](RemediationUpdate.md)
 
 #### Overrides
 

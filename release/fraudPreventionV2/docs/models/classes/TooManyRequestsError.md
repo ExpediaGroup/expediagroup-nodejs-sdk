@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > TooManyRequestsError
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / TooManyRequestsError
 
 # Class: TooManyRequestsError
 
@@ -13,6 +13,10 @@ Indicates that the API cannot fulfill the request because server resources have 
 #### Parameters
 
 ▪ **tooManyRequestsError**: [`TooManyRequestsErrorProperties`](../interfaces/TooManyRequestsErrorProperties.md)
+
+#### Returns
+
+[`TooManyRequestsError`](TooManyRequestsError.md)
 
 #### Source
 

@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > Authorize
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / Authorize
 
 # Class: Authorize
 
@@ -13,6 +13,10 @@ Authorize operation on the payment. An authorize operation represents placing th
 #### Parameters
 
 ▪ **authorize**: [`AuthorizeProperties`](../interfaces/AuthorizeProperties.md)
+
+#### Returns
+
+[`Authorize`](Authorize.md)
 
 #### Source
 

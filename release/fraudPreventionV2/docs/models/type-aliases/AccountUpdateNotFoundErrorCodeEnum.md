@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > AccountUpdateNotFoundErrorCodeEnum
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / AccountUpdateNotFoundErrorCodeEnum
 
 # Type alias: AccountUpdateNotFoundErrorCodeEnum
 

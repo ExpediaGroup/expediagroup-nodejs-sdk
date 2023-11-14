@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > TelephoneProperties
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / TelephoneProperties
 
 # Interface: TelephoneProperties
 

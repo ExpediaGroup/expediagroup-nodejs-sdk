@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > SiteInfo
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / SiteInfo
 
 # Class: SiteInfo
 
@@ -11,6 +11,10 @@
 #### Parameters
 
 ▪ **siteInfo**: [`SiteInfoProperties`](../interfaces/SiteInfoProperties.md)
+
+#### Returns
+
+[`SiteInfo`](SiteInfo.md)
 
 #### Source
 

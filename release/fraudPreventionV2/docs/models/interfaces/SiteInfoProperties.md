@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > SiteInfoProperties
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / SiteInfoProperties
 
 # Interface: SiteInfoProperties
 

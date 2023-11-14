@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > GatewayTimeoutError
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / GatewayTimeoutError
 
 # Class: GatewayTimeoutError
 
@@ -13,6 +13,10 @@ Indicates that the API gateway has issues completing the request on time. Reques
 #### Parameters
 
 ▪ **gatewayTimeoutError**: [`GatewayTimeoutErrorProperties`](../interfaces/GatewayTimeoutErrorProperties.md)
+
+#### Returns
+
+[`GatewayTimeoutError`](GatewayTimeoutError.md)
 
 #### Source
 

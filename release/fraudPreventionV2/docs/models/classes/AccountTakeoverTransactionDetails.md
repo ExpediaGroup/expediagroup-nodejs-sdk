@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > AccountTakeoverTransactionDetails
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / AccountTakeoverTransactionDetails
 
 # Class: AccountTakeoverTransactionDetails
 
@@ -17,6 +17,10 @@ The `transaction_type` field value is used as a discriminator, with the followin
 #### Parameters
 
 ▪ **accountTakeoverTransactionDetails**: [`AccountTakeoverTransactionDetailsProperties`](../interfaces/AccountTakeoverTransactionDetailsProperties.md)
+
+#### Returns
+
+[`AccountTakeoverTransactionDetails`](AccountTakeoverTransactionDetails.md)
 
 #### Source
 

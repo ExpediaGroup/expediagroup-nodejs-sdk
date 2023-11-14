@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > AccountTakeoverUnauthorizedError
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / AccountTakeoverUnauthorizedError
 
 # Class: AccountTakeoverUnauthorizedError
 
@@ -13,6 +13,10 @@ Indicates that the token sent in the \'Authorization\' header is either invalid 
 #### Parameters
 
 ▪ **accountTakeoverUnauthorizedError**: [`AccountTakeoverUnauthorizedErrorProperties`](../interfaces/AccountTakeoverUnauthorizedErrorProperties.md)
+
+#### Returns
+
+[`AccountTakeoverUnauthorizedError`](AccountTakeoverUnauthorizedError.md)
 
 #### Source
 

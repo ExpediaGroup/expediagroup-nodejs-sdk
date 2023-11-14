@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > BadRequestError
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / BadRequestError
 
 # Class: BadRequestError
 
@@ -13,6 +13,10 @@ Indicates that a bad request occurred. Typically it is an invalid parameter.
 #### Parameters
 
 ▪ **badRequestError**: [`BadRequestErrorProperties`](../interfaces/BadRequestErrorProperties.md)
+
+#### Returns
+
+[`BadRequestError`](BadRequestError.md)
 
 #### Source
 

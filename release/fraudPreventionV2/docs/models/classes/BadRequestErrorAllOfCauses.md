@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > BadRequestErrorAllOfCauses
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / BadRequestErrorAllOfCauses
 
 # Class: BadRequestErrorAllOfCauses
 
@@ -11,6 +11,10 @@
 #### Parameters
 
 ▪ **badRequestErrorAllOfCauses**: [`BadRequestErrorAllOfCausesProperties`](../interfaces/BadRequestErrorAllOfCausesProperties.md)
+
+#### Returns
+
+[`BadRequestErrorAllOfCauses`](BadRequestErrorAllOfCauses.md)
 
 #### Source
 

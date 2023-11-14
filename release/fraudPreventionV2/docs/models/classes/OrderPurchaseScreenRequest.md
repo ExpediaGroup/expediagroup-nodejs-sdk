@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > OrderPurchaseScreenRequest
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / OrderPurchaseScreenRequest
 
 # Class: OrderPurchaseScreenRequest
 
@@ -11,6 +11,10 @@
 #### Parameters
 
 ▪ **orderPurchaseScreenRequest**: [`OrderPurchaseScreenRequestProperties`](../interfaces/OrderPurchaseScreenRequestProperties.md)
+
+#### Returns
+
+[`OrderPurchaseScreenRequest`](OrderPurchaseScreenRequest.md)
 
 #### Source
 
