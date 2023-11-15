@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > Rail
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / Rail
 
 # Class: Rail
 
@@ -17,6 +17,10 @@ The `type` field value is used as a discriminator, with the following mapping: *
 #### Parameters
 
 ▪ **rail**: [`RailProperties`](../interfaces/RailProperties.md)
+
+#### Returns
+
+[`Rail`](Rail.md)
 
 #### Overrides
 

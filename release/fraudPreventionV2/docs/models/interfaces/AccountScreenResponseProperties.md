@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > AccountScreenResponseProperties
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / AccountScreenResponseProperties
 
 # Interface: AccountScreenResponseProperties
 

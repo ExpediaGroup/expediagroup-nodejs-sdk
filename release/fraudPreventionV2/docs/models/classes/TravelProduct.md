@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > TravelProduct
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / TravelProduct
 
 # Class: TravelProduct
 
@@ -22,6 +22,10 @@ The `type` field value is used as a discriminator, with the following mapping: *
 #### Parameters
 
 ▪ **travelProduct**: [`TravelProductProperties`](../interfaces/TravelProductProperties.md)
+
+#### Returns
+
+[`TravelProduct`](TravelProduct.md)
 
 #### Source
 

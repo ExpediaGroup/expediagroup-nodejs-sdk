@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../../index.md) > [models](../../index.md) > [core](../index.md) > Client
+[@expediagroup/fraudpreventionv2-sdk](../../../index.md) / [models](../../index.md) / [core](../index.md) / Client
 
 # Class: `abstract` Client
 

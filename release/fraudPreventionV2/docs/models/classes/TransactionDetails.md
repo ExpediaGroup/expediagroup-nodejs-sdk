@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > TransactionDetails
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / TransactionDetails
 
 # Class: TransactionDetails
 
@@ -11,6 +11,10 @@
 #### Parameters
 
 ▪ **transactionDetails**: [`TransactionDetailsProperties`](../interfaces/TransactionDetailsProperties.md)
+
+#### Returns
+
+[`TransactionDetails`](TransactionDetails.md)
 
 #### Source
 

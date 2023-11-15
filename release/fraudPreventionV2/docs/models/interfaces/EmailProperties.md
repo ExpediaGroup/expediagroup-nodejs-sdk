@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > EmailProperties
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / EmailProperties
 
 # Interface: EmailProperties
 

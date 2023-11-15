@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > AccountTakeoverCustomerAccountProperties
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / AccountTakeoverCustomerAccountProperties
 
 # Interface: AccountTakeoverCustomerAccountProperties
 

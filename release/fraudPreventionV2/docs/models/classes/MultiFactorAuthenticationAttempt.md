@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > MultiFactorAuthenticationAttempt
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / MultiFactorAuthenticationAttempt
 
 # Class: MultiFactorAuthenticationAttempt
 
@@ -13,6 +13,10 @@ Information specific to the update event by a user.
 #### Parameters
 
 ▪ **multiFactorAuthenticationAttempt**: [`MultiFactorAuthenticationAttemptProperties`](../interfaces/MultiFactorAuthenticationAttemptProperties.md)
+
+#### Returns
+
+[`MultiFactorAuthenticationAttempt`](MultiFactorAuthenticationAttempt.md)
 
 #### Source
 

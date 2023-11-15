@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > CurrentUserSession
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / CurrentUserSession
 
 # Class: CurrentUserSession
 
@@ -13,6 +13,10 @@ The current user session prior to this transaction, which contains details relat
 #### Parameters
 
 ▪ **currentUserSession**: [`CurrentUserSessionProperties`](../interfaces/CurrentUserSessionProperties.md)
+
+#### Returns
+
+[`CurrentUserSession`](CurrentUserSession.md)
 
 #### Source
 

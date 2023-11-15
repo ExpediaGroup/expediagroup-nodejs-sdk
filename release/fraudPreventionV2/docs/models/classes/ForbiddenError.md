@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > ForbiddenError
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / ForbiddenError
 
 # Class: ForbiddenError
 
@@ -13,6 +13,10 @@ Indicates that the API cannot fulfill the request because while the client is co
 #### Parameters
 
 ▪ **forbiddenError**: [`ForbiddenErrorProperties`](../interfaces/ForbiddenErrorProperties.md)
+
+#### Returns
+
+[`ForbiddenError`](ForbiddenError.md)
 
 #### Source
 
