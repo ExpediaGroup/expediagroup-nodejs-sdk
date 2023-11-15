@@ -178,22 +178,39 @@ describe('LogMasker', function (): void {
 
   it('should mask response headers', () => {
     const response: AxiosResponse = {
+
       headers: new AxiosHeaders({
         Authorization: 'Bearer token',
         'Content-Type': 'application/json',
         auth: 'auth_value'
       }),
+      status: 200,
+      statusText: 'OK',
+      config: {
+        headers: new AxiosHeaders(),
+        auth: {
+          username: 'some username',
+          password: 'some pass'
+        }
+      },
       data: {
         field: 'some value'
-      },
-      config: {}
-    } as AxiosResponse
+      }
+    }
 
     const expectedResponse = {
       headers: {
         Authorization: LoggingMessage.OMITTED,
         auth: LoggingMessage.OMITTED,
         'Content-Type': 'application/json'
+      },
+      status: 200,
+      statusText: 'OK',
+      config: {
+        auth: {
+          username: LoggingMessage.OMITTED,
+          password: LoggingMessage.OMITTED
+        }
       },
       data: {
         field: 'some value'
@@ -208,10 +225,33 @@ describe('LogMasker', function (): void {
       headers: new AxiosHeaders({
         'Content-Type': 'application/json'
       }),
-      config: {}
-    } as AxiosResponse
+      status: 200,
+      statusText: 'OK',
+      config: {
+        headers: new AxiosHeaders(),
+        auth: {
+          username: 'some username',
+          password: 'some pass'
+        }
+      },
+      data: {}
+    }
 
-    expect(maskResponse(response)).toMatchObject(response)
+    const expectedResponse = {
+      headers: new AxiosHeaders({
+        'Content-Type': 'application/json'
+      }),
+      status: 200,
+      statusText: 'OK',
+      config: {
+        auth: {
+          username: LoggingMessage.OMITTED,
+          password: LoggingMessage.OMITTED
+        }
+      }
+    }
+
+    expect(maskResponse(response)).toMatchObject(expectedResponse)
   })
 
   it('should response mask auth data', (): void => {
@@ -219,18 +259,24 @@ describe('LogMasker', function (): void {
       headers: new AxiosHeaders({
         'Content-Type': 'application/json'
       }),
+      status: 200,
+      statusText: 'OK',
       config: {
+        headers: new AxiosHeaders(),
         auth: {
           username: 'some username',
           password: 'some pass'
         }
-      }
-    } as AxiosResponse
+      },
+      data: undefined
+    }
 
     const expectedResponse = {
       headers: {
         'Content-Type': 'application/json'
       },
+      status: 200,
+      statusText: 'OK',
       config: {
         auth: {
           username: LoggingMessage.OMITTED,
@@ -247,7 +293,15 @@ describe('LogMasker', function (): void {
       headers: new AxiosHeaders({
         'Content-Type': 'application/json'
       }),
-      config: {},
+      status: 200,
+      statusText: 'OK',
+      config: {
+        headers: new AxiosHeaders(),
+        auth: {
+          username: 'some username',
+          password: 'some pass'
+        }
+      },
       data: {
         field1: {
           pin: 'pin value',
@@ -270,11 +324,19 @@ describe('LogMasker', function (): void {
           }
         }
       }
-    } as AxiosResponse
+    }
 
     const expectedResponse = {
       headers: {
         'Content-Type': 'application/json'
+      },
+      status: 200,
+      statusText: 'OK',
+      config: {
+        auth: {
+          username: LoggingMessage.OMITTED,
+          password: LoggingMessage.OMITTED
+        }
       },
       data: {
         field1: {
@@ -308,7 +370,15 @@ describe('LogMasker', function (): void {
       headers: new AxiosHeaders({
         'Content-Type': 'application/json'
       }),
-      config: {},
+      status: 200,
+      statusText: 'OK',
+      config: {
+        headers: new AxiosHeaders(),
+        auth: {
+          username: 'some username',
+          password: 'some pass'
+        }
+      },
       data: {
         field1: {
           number: 12345678901234
@@ -332,12 +402,20 @@ describe('LogMasker', function (): void {
           number: null
         }
       }
-    } as AxiosResponse
+    }
 
     const expectedResponse = {
       headers: new AxiosHeaders({
         'Content-Type': 'application/json'
       }),
+      status: 200,
+      statusText: 'OK',
+      config: {
+        auth: {
+          username: LoggingMessage.OMITTED,
+          password: LoggingMessage.OMITTED
+        }
+      },
       data: {
         field1: {
           number: 12345678901234
@@ -371,18 +449,32 @@ describe('LogMasker', function (): void {
       headers: new AxiosHeaders({
         'Content-Type': 'application/json'
       }),
+      status: 200,
+      statusText: 'OK',
       config: {
+        headers: new AxiosHeaders(),
+        auth: {
+          username: 'some username',
+          password: 'some pass'
+        },
         data: {
           field: 'some value'
         }
-      }
-    } as AxiosResponse
+      },
+      data: {}
+    }
 
     const expectedResponse = {
       headers: new AxiosHeaders({
         'Content-Type': 'application/json'
       }),
+      status: 200,
+      statusText: 'OK',
       config: {
+        auth: {
+          username: LoggingMessage.OMITTED,
+          password: LoggingMessage.OMITTED
+        },
         data: LoggingMessage.OMITTED
       }
     }
@@ -395,18 +487,35 @@ describe('LogMasker', function (): void {
       headers: new AxiosHeaders({
         'Content-Type': 'application/json'
       }),
-      config: {},
+      status: 200,
+      statusText: 'OK',
+      config: {
+        headers: new AxiosHeaders(),
+        auth: {
+          username: 'some username',
+          password: 'some pass'
+        }
+      },
+      data: {},
       request: {
         data: {
           field: 'some value'
         }
       }
-    } as AxiosResponse
+    }
 
     const expectedResponse = {
       headers: new AxiosHeaders({
         'Content-Type': 'application/json'
-      })
+      }),
+      status: 200,
+      statusText: 'OK',
+      config: {
+        auth: {
+          username: LoggingMessage.OMITTED,
+          password: LoggingMessage.OMITTED
+        }
+      }
     }
 
     expect(maskResponse(response)).toMatchObject(expectedResponse)

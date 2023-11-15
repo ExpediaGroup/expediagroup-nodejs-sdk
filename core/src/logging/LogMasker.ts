@@ -42,7 +42,7 @@ export function maskResponse (config: AxiosResponse<any, any>): AxiosResponse<an
   return clone
 }
 
-function stringifyData (data: any) {
+function stringifyData (data: any): any {
   if (data === undefined) {
     return data
   }
