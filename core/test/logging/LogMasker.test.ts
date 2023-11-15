@@ -1,20 +1,11 @@
 import { AxiosHeaders } from 'axios'
 import { LoggingMessage } from '../../src/constant/Logging'
-import { AxiosConfig, maskResponse } from '../../src/logging/LogMasker'
+import { maskRequestConfig } from '../../src/logging/LogMasker'
+import { InternalAxiosRequestConfig } from "axios/index";
 
 describe('LogMasker', function (): void {
-  it('should do nothing when there is no body', () => {
-    const config: AxiosConfig = {
-      headers: new AxiosHeaders({
-        'Content-Type': 'application/json'
-      })
-    }
-
-    expect(maskResponse(config)).toMatchObject(config)
-  })
-
-  it('should mask authorization headers', (): void => {
-    const config: AxiosConfig = {
+  it('should mask request config headers', () => {
+    const config: InternalAxiosRequestConfig = {
       headers: new AxiosHeaders({
         Authorization: 'Bearer token',
         'Content-Type': 'application/json',
@@ -31,16 +22,48 @@ describe('LogMasker', function (): void {
         auth: LoggingMessage.OMITTED,
         'Content-Type': 'application/json'
       },
-      data: {
-        field: 'some value'
+      data: "{\"field\":\"some value\"}"
+    }
+
+    expect(maskRequestConfig(config)).toMatchObject(expectedConfig)
+  });
+
+  it('should do nothing when there is no body', () => {
+    const config: InternalAxiosRequestConfig = {
+      headers: new AxiosHeaders({
+        'Content-Type': 'application/json'
+      })
+    }
+
+    expect(maskRequestConfig(config)).toMatchObject(config)
+  })
+
+  it('should mask auth data', (): void => {
+    const config: InternalAxiosRequestConfig = {
+      headers: new AxiosHeaders({
+        'Content-Type': 'application/json',
+      }),
+      auth: {
+        username: 'some username',
+        password: 'some pass'
       }
     }
 
-    expect(maskResponse(config)).toMatchObject(expectedConfig)
+    const expectedConfig = {
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      auth: {
+        username: LoggingMessage.OMITTED,
+        password: LoggingMessage.OMITTED
+      }
+    }
+
+    expect(maskRequestConfig(config)).toMatchObject(expectedConfig)
   })
 
   it('should mask PCI-related body fields', () => {
-    const config: AxiosConfig = {
+    const config: InternalAxiosRequestConfig = {
       headers: new AxiosHeaders({
         'Content-Type': 'application/json'
       }),
@@ -72,35 +95,34 @@ describe('LogMasker', function (): void {
       headers: {
         'Content-Type': 'application/json'
       },
-      data: {
-        field1: {
-          pin: LoggingMessage.OMITTED,
-          access_token: LoggingMessage.OMITTED,
-          card_number: LoggingMessage.OMITTED,
-          security_code: LoggingMessage.OMITTED,
-          account_number: LoggingMessage.OMITTED,
-          card_avs_response: LoggingMessage.OMITTED,
-          card_cvv_response: LoggingMessage.OMITTED
-        },
-        field2: {
-          access_token: LoggingMessage.OMITTED,
-          card_number: LoggingMessage.OMITTED,
-          security_code: LoggingMessage.OMITTED,
-          field3: {
-            account_number: LoggingMessage.OMITTED,
-            card_avs_response: LoggingMessage.OMITTED,
-            card_cvv_response: LoggingMessage.OMITTED,
-            some_field: 'some_field value'
-          }
-        }
-      }
+      data: "{" +
+        "\"field1\":{" +
+        "\"pin\":\"<-- omitted -->\"," +
+        "\"access_token\":\"<-- omitted -->\"," +
+        "\"card_number\":\"<-- omitted -->\"," +
+        "\"security_code\":\"<-- omitted -->\"," +
+        "\"account_number\":\"<-- omitted -->\"," +
+        "\"card_avs_response\":\"<-- omitted -->\"," +
+        "\"card_cvv_response\":\"<-- omitted -->\"}," +
+        "\"field2\":{" +
+        "\"access_token\":\"<-- omitted -->\"," +
+        "\"card_number\":\"<-- omitted -->\"," +
+        "\"security_code\":\"<-- omitted -->\"," +
+        "\"field3\":{" +
+        "\"account_number\":\"<-- omitted -->\"," +
+        "\"card_avs_response\":\"<-- omitted -->\"," +
+        "\"card_cvv_response\":\"<-- omitted -->\"," +
+        "\"some_field\":\"some_field value\"" +
+        "}" +
+        "}" +
+        "}"
     }
 
-    expect(maskResponse(config)).toMatchObject(expectedConfig)
+    expect(maskRequestConfig(config)).toMatchObject(expectedConfig)
   })
 
   it('should mask number fields', () => {
-    const config: AxiosConfig = {
+    const config: InternalAxiosRequestConfig = {
       headers: new AxiosHeaders({
         'Content-Type': 'application/json'
       }),
@@ -133,31 +155,25 @@ describe('LogMasker', function (): void {
       headers: new AxiosHeaders({
         'Content-Type': 'application/json'
       }),
-      data: {
-        field1: {
-          number: 12345678901234
-        },
-        field2: {
-          number: LoggingMessage.OMITTED
-        },
-        field3: {
-          number: LoggingMessage.OMITTED
-        },
-        field4: {
-          number: LoggingMessage.OMITTED
-        },
-        field5: {
-          number: '12345678901234567'
-        },
-        field6: {
-          number: undefined
-        },
-        field7: {
-          number: null
-        }
-      }
+      data: "{" +
+        "\"field1\":{" +
+        "\"number\":12345678901234}," +
+        "\"field2\":{" +
+        "\"number\":\"<-- omitted -->\"" +
+        "},\"field3\":{" +
+        "\"number\":\"<-- omitted -->\"" +
+        "},\"field4\":{" +
+        "\"number\":\"<-- omitted -->\"" +
+        "},\"field5\":{" +
+        "\"number\":\"12345678901234567\"" +
+        "},\"field6\":{" +
+        "}," +
+        "\"field7\":{" +
+        "\"number\":null" +
+        "}" +
+        "}"
     }
 
-    expect(maskResponse(config)).toMatchObject(expectedConfig)
+    expect(maskRequestConfig(config)).toMatchObject(expectedConfig)
   })
 })
