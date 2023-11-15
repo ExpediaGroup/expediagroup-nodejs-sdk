@@ -365,4 +365,50 @@ describe('LogMasker', function (): void {
 
     expect(maskResponse(response)).toMatchObject(expectedResponse)
   })
+
+  it('should mask response config data', () => {
+    const response: AxiosResponse = {
+      headers: new AxiosHeaders({
+        'Content-Type': 'application/json'
+      }),
+      config: {
+        data: {
+          field: 'some value'
+        }
+      }
+    } as AxiosResponse
+
+    const expectedResponse = {
+      headers: new AxiosHeaders({
+        'Content-Type': 'application/json'
+      }),
+      config: {
+        data: LoggingMessage.OMITTED
+      }
+    }
+
+    expect(maskResponse(response)).toMatchObject(expectedResponse)
+  });
+
+  it('should remove request field in response', () => {
+    const response: AxiosResponse = {
+      headers: new AxiosHeaders({
+        'Content-Type': 'application/json'
+      }),
+      config: {},
+      request: {
+        data: {
+          field: 'some value'
+        }
+      }
+    } as AxiosResponse
+
+    const expectedResponse = {
+      headers: new AxiosHeaders({
+        'Content-Type': 'application/json'
+      })
+    }
+
+    expect(maskResponse(response)).toMatchObject(expectedResponse)
+  });
 })
