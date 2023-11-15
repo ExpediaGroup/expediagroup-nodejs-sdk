@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > AuthorizeProperties
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / AuthorizeProperties
 
 # Interface: AuthorizeProperties
 

@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > PaymentUpdate
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / PaymentUpdate
 
 # Class: PaymentUpdate
 
@@ -17,6 +17,10 @@ Payment related data that should be updated.
 #### Parameters
 
 ▪ **paymentUpdate**: [`PaymentUpdateProperties`](../interfaces/PaymentUpdateProperties.md)
+
+#### Returns
+
+[`PaymentUpdate`](PaymentUpdate.md)
 
 #### Overrides
 

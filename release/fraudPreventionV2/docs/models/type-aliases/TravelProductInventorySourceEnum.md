@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > TravelProductInventorySourceEnum
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / TravelProductInventorySourceEnum
 
 # Type alias: TravelProductInventorySourceEnum
 

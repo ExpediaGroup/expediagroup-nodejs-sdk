@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > RailwayStationDetails
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / RailwayStationDetails
 
 # Class: RailwayStationDetails
 
@@ -11,6 +11,10 @@
 #### Parameters
 
 ▪ **railwayStationDetails**: [`RailwayStationDetailsProperties`](../interfaces/RailwayStationDetailsProperties.md)
+
+#### Returns
+
+[`RailwayStationDetails`](RailwayStationDetails.md)
 
 #### Source
 

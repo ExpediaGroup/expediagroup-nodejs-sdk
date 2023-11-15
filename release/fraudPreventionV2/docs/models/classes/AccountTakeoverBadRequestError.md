@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > AccountTakeoverBadRequestError
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / AccountTakeoverBadRequestError
 
 # Class: AccountTakeoverBadRequestError
 
@@ -13,6 +13,10 @@ Indicates that a bad request occurred. Typically it is an invalid parameter.
 #### Parameters
 
 ▪ **accountTakeoverBadRequestError**: [`AccountTakeoverBadRequestErrorProperties`](../interfaces/AccountTakeoverBadRequestErrorProperties.md)
+
+#### Returns
+
+[`AccountTakeoverBadRequestError`](AccountTakeoverBadRequestError.md)
 
 #### Source
 

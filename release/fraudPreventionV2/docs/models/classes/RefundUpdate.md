@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > RefundUpdate
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / RefundUpdate
 
 # Class: RefundUpdate
 
@@ -17,6 +17,10 @@ Refund related data. Update should be sent when refund is issued or settled. Amo
 #### Parameters
 
 ▪ **refundUpdate**: [`RefundUpdateProperties`](../interfaces/RefundUpdateProperties.md)
+
+#### Returns
+
+[`RefundUpdate`](RefundUpdate.md)
 
 #### Overrides
 

@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../../index.md) > [models](../../index.md) > [core](../index.md) > AxiosClientConfigurations
+[@expediagroup/fraudpreventionv2-sdk](../../../index.md) / [models](../../index.md) / [core](../index.md) / AxiosClientConfigurations
 
 # Class: AxiosClientConfigurations
 
@@ -13,6 +13,10 @@
 ▪ **endpoint**: `string`= `Constant.ENDPOINT`
 
 ▪ **requestTimeout**: `number`= `Constant.TEN_SECONDS_IN_MILLIS`
+
+#### Returns
+
+[`AxiosClientConfigurations`](AxiosClientConfigurations.md)
 
 #### Source
 

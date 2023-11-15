@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > Amount
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / Amount
 
 # Class: Amount
 
@@ -11,6 +11,10 @@
 #### Parameters
 
 ▪ **amount**: [`AmountProperties`](../interfaces/AmountProperties.md)
+
+#### Returns
+
+[`Amount`](Amount.md)
 
 #### Source
 

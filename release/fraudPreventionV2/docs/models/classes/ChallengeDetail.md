@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > ChallengeDetail
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / ChallengeDetail
 
 # Class: ChallengeDetail
 
@@ -13,6 +13,10 @@ Information related to challenges initiated by the Partner\'s system to a user b
 #### Parameters
 
 ▪ **challengeDetail**: [`ChallengeDetailProperties`](../interfaces/ChallengeDetailProperties.md)
+
+#### Returns
+
+[`ChallengeDetail`](ChallengeDetail.md)
 
 #### Source
 

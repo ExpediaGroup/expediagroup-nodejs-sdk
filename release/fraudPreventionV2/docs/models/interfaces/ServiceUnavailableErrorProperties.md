@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > ServiceUnavailableErrorProperties
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / ServiceUnavailableErrorProperties
 
 # Interface: ServiceUnavailableErrorProperties
 

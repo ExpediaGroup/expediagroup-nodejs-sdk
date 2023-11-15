@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > CancellationReason
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / CancellationReason
 
 # Class: CancellationReason
 
@@ -13,6 +13,10 @@ Reason of order update cancellation.
 #### Parameters
 
 ▪ **cancellationReason**: [`CancellationReasonProperties`](../interfaces/CancellationReasonProperties.md)
+
+#### Returns
+
+[`CancellationReason`](CancellationReason.md)
 
 #### Source
 

@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > NotFoundError
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / NotFoundError
 
 # Class: NotFoundError
 
@@ -13,6 +13,10 @@ Indicates that the API cannot find the resource that is either being requested o
 #### Parameters
 
 ▪ **notFoundError**: [`NotFoundErrorProperties`](../interfaces/NotFoundErrorProperties.md)
+
+#### Returns
+
+[`NotFoundError`](NotFoundError.md)
 
 #### Source
 
