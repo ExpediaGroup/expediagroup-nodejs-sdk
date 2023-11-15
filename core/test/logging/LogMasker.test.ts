@@ -21,11 +21,11 @@ describe('LogMasker', function (): void {
         auth: LoggingMessage.OMITTED,
         'Content-Type': 'application/json'
       },
-      data: "{\"field\":\"some value\"}"
+      data: '{"field":"some value"}'
     }
 
     expect(maskRequestConfig(config)).toMatchObject(expectedConfig)
-  });
+  })
 
   it('should do nothing when there is no body', () => {
     const config: InternalAxiosRequestConfig = {
@@ -40,7 +40,7 @@ describe('LogMasker', function (): void {
   it('should mask auth data', (): void => {
     const config: InternalAxiosRequestConfig = {
       headers: new AxiosHeaders({
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       }),
       auth: {
         username: 'some username',
@@ -94,27 +94,27 @@ describe('LogMasker', function (): void {
       headers: {
         'Content-Type': 'application/json'
       },
-      data: "{" +
-        "\"field1\":{" +
-        "\"pin\":\"<-- omitted -->\"," +
-        "\"access_token\":\"<-- omitted -->\"," +
-        "\"card_number\":\"<-- omitted -->\"," +
-        "\"security_code\":\"<-- omitted -->\"," +
-        "\"account_number\":\"<-- omitted -->\"," +
-        "\"card_avs_response\":\"<-- omitted -->\"," +
-        "\"card_cvv_response\":\"<-- omitted -->\"}," +
-        "\"field2\":{" +
-        "\"access_token\":\"<-- omitted -->\"," +
-        "\"card_number\":\"<-- omitted -->\"," +
-        "\"security_code\":\"<-- omitted -->\"," +
-        "\"field3\":{" +
-        "\"account_number\":\"<-- omitted -->\"," +
-        "\"card_avs_response\":\"<-- omitted -->\"," +
-        "\"card_cvv_response\":\"<-- omitted -->\"," +
-        "\"some_field\":\"some_field value\"" +
-        "}" +
-        "}" +
-        "}"
+      data: '{' +
+        '"field1":{' +
+        '"pin":"<-- omitted -->",' +
+        '"access_token":"<-- omitted -->",' +
+        '"card_number":"<-- omitted -->",' +
+        '"security_code":"<-- omitted -->",' +
+        '"account_number":"<-- omitted -->",' +
+        '"card_avs_response":"<-- omitted -->",' +
+        '"card_cvv_response":"<-- omitted -->"},' +
+        '"field2":{' +
+        '"access_token":"<-- omitted -->",' +
+        '"card_number":"<-- omitted -->",' +
+        '"security_code":"<-- omitted -->",' +
+        '"field3":{' +
+        '"account_number":"<-- omitted -->",' +
+        '"card_avs_response":"<-- omitted -->",' +
+        '"card_cvv_response":"<-- omitted -->",' +
+        '"some_field":"some_field value"' +
+        '}' +
+        '}' +
+        '}'
     }
 
     expect(maskRequestConfig(config)).toMatchObject(expectedConfig)
@@ -154,23 +154,23 @@ describe('LogMasker', function (): void {
       headers: new AxiosHeaders({
         'Content-Type': 'application/json'
       }),
-      data: "{" +
-        "\"field1\":{" +
-        "\"number\":12345678901234}," +
-        "\"field2\":{" +
-        "\"number\":\"<-- omitted -->\"" +
-        "},\"field3\":{" +
-        "\"number\":\"<-- omitted -->\"" +
-        "},\"field4\":{" +
-        "\"number\":\"<-- omitted -->\"" +
-        "},\"field5\":{" +
-        "\"number\":\"12345678901234567\"" +
-        "},\"field6\":{" +
-        "}," +
-        "\"field7\":{" +
-        "\"number\":null" +
-        "}" +
-        "}"
+      data: '{' +
+        '"field1":{' +
+        '"number":12345678901234},' +
+        '"field2":{' +
+        '"number":"<-- omitted -->"' +
+        '},"field3":{' +
+        '"number":"<-- omitted -->"' +
+        '},"field4":{' +
+        '"number":"<-- omitted -->"' +
+        '},"field5":{' +
+        '"number":"12345678901234567"' +
+        '},"field6":{' +
+        '},' +
+        '"field7":{' +
+        '"number":null' +
+        '}' +
+        '}'
     }
 
     expect(maskRequestConfig(config)).toMatchObject(expectedConfig)
@@ -201,7 +201,7 @@ describe('LogMasker', function (): void {
     }
 
     expect(maskResponse(response)).toMatchObject(expectedResponse)
-  });
+  })
 
   it('should do nothing when there is no body', () => {
     const response: AxiosResponse = {
@@ -217,7 +217,7 @@ describe('LogMasker', function (): void {
   it('should response mask auth data', (): void => {
     const response: AxiosResponse = {
       headers: new AxiosHeaders({
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       }),
       config: {
         auth: {
@@ -388,7 +388,7 @@ describe('LogMasker', function (): void {
     }
 
     expect(maskResponse(response)).toMatchObject(expectedResponse)
-  });
+  })
 
   it('should remove request field in response', () => {
     const response: AxiosResponse = {
@@ -410,5 +410,5 @@ describe('LogMasker', function (): void {
     }
 
     expect(maskResponse(response)).toMatchObject(expectedResponse)
-  });
+  })
 })

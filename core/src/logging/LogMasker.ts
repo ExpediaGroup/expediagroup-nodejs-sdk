@@ -24,7 +24,7 @@ import { Serializer } from '../serialization/Serializer'
 import { LOG_MASKING_BODY_FIELDS, LOG_MASKING_HEADERS } from '../constant/LogMaskingFields'
 import { AxiosBasicCredentials, AxiosHeaders, AxiosRequestHeaders, AxiosResponse, AxiosResponseHeaders, InternalAxiosRequestConfig, RawAxiosResponseHeaders } from 'axios'
 
-export function maskRequestConfig(config: InternalAxiosRequestConfig<any>): InternalAxiosRequestConfig<any> {
+export function maskRequestConfig (config: InternalAxiosRequestConfig<any>): InternalAxiosRequestConfig<any> {
   const clone: InternalAxiosRequestConfig<any> = _.cloneDeep(config)
   clone.headers = maskRequestConfigHeaders(clone.headers)
   clone.data = stringifyData(maskBodyFields(clone.data))
@@ -32,7 +32,7 @@ export function maskRequestConfig(config: InternalAxiosRequestConfig<any>): Inte
   return clone
 }
 
-export function maskResponse(config: AxiosResponse<any, any>): AxiosResponse<any, any> {
+export function maskResponse (config: AxiosResponse<any, any>): AxiosResponse<any, any> {
   const clone: AxiosResponse<any, any> = _.cloneDeep(config)
   clone.headers = maskResponseHeaders(clone.headers)
   clone.data = maskBodyFields(clone.data)
@@ -42,14 +42,14 @@ export function maskResponse(config: AxiosResponse<any, any>): AxiosResponse<any
   return clone
 }
 
-function stringifyData(data: any) {
+function stringifyData (data: any) {
   if (data === undefined) {
     return data
   }
-  return JSON.stringify(Serializer.serialize(data));
+  return JSON.stringify(Serializer.serialize(data))
 }
 
-function maskRequestConfigHeaders(headers: AxiosRequestHeaders): AxiosRequestHeaders {
+function maskRequestConfigHeaders (headers: AxiosRequestHeaders): AxiosRequestHeaders {
   const clonedHeaders: AxiosRequestHeaders = new AxiosHeaders()
   for (const header in headers) {
     clonedHeaders[header] = LOG_MASKING_HEADERS.includes(header.toLowerCase())
@@ -59,7 +59,7 @@ function maskRequestConfigHeaders(headers: AxiosRequestHeaders): AxiosRequestHea
   return clonedHeaders
 }
 
-function maskAuthCredentials(auth: AxiosBasicCredentials | undefined): AxiosBasicCredentials | undefined {
+function maskAuthCredentials (auth: AxiosBasicCredentials | undefined): AxiosBasicCredentials | undefined {
   if (auth === undefined) {
     return auth
   }
@@ -69,7 +69,7 @@ function maskAuthCredentials(auth: AxiosBasicCredentials | undefined): AxiosBasi
   }
 }
 
-function maskResponseHeaders(headers: ResponseHeaders): ResponseHeaders {
+function maskResponseHeaders (headers: ResponseHeaders): ResponseHeaders {
   const clonedHeaders: ResponseHeaders = {}
   for (const header in headers) {
     clonedHeaders[header] = LOG_MASKING_HEADERS.includes(header.toLowerCase())
@@ -79,7 +79,7 @@ function maskResponseHeaders(headers: ResponseHeaders): ResponseHeaders {
   return clonedHeaders
 }
 
-function maskBodyFields(body: any): any {
+function maskBodyFields (body: any): any {
   if (typeof body !== 'object') {
     return body
   }
@@ -91,7 +91,7 @@ function maskBodyFields(body: any): any {
   return body
 }
 
-function isNumberField(field: string, value: any): boolean {
+function isNumberField (field: string, value: any): boolean {
   if (value === undefined || value === null) {
     return false
   }
