@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > PaymentOutcomeProperties
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / PaymentOutcomeProperties
 
 # Interface: PaymentOutcomeProperties
 

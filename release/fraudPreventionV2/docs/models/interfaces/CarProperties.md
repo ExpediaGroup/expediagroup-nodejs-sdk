@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > CarProperties
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / CarProperties
 
 # Interface: CarProperties
 

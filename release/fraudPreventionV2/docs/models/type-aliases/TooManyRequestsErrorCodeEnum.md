@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > TooManyRequestsErrorCodeEnum
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / TooManyRequestsErrorCodeEnum
 
 # Type alias: TooManyRequestsErrorCodeEnum
 

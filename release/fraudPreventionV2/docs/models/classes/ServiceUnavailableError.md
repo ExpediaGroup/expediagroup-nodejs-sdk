@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > ServiceUnavailableError
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / ServiceUnavailableError
 
 # Class: ServiceUnavailableError
 
@@ -13,6 +13,10 @@ Indicates that the API is either down for maintenance or overloaded and cannot f
 #### Parameters
 
 ▪ **serviceUnavailableError**: [`ServiceUnavailableErrorProperties`](../interfaces/ServiceUnavailableErrorProperties.md)
+
+#### Returns
+
+[`ServiceUnavailableError`](ServiceUnavailableError.md)
 
 #### Source
 

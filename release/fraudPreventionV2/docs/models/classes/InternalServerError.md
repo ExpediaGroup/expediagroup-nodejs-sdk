@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > InternalServerError
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / InternalServerError
 
 # Class: InternalServerError
 
@@ -13,6 +13,10 @@ Indicates that the API encountered an unexpected condition that prevented it fro
 #### Parameters
 
 ▪ **internalServerError**: [`InternalServerErrorProperties`](../interfaces/InternalServerErrorProperties.md)
+
+#### Returns
+
+[`InternalServerError`](InternalServerError.md)
 
 #### Source
 

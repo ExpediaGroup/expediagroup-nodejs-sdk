@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > UnauthorizedErrorProperties
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / UnauthorizedErrorProperties
 
 # Interface: UnauthorizedErrorProperties
 

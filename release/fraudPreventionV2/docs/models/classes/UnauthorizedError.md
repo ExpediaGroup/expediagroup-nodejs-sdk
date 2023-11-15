@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > UnauthorizedError
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / UnauthorizedError
 
 # Class: UnauthorizedError
 
@@ -13,6 +13,10 @@ Indicates that the token sent in the \'Authorization\' header is either invalid 
 #### Parameters
 
 ▪ **unauthorizedError**: [`UnauthorizedErrorProperties`](../interfaces/UnauthorizedErrorProperties.md)
+
+#### Returns
+
+[`UnauthorizedError`](UnauthorizedError.md)
 
 #### Source
 

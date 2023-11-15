@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > FraudDecision
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / FraudDecision
 
 # Type alias: FraudDecision
 

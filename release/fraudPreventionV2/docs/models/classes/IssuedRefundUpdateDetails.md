@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > IssuedRefundUpdateDetails
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / IssuedRefundUpdateDetails
 
 # Class: IssuedRefundUpdateDetails
 
@@ -13,6 +13,10 @@ Data that describes issued refund that should be updated.
 #### Parameters
 
 ▪ **issuedRefundUpdateDetails**: [`IssuedRefundUpdateDetailsProperties`](../interfaces/IssuedRefundUpdateDetailsProperties.md)
+
+#### Returns
+
+[`IssuedRefundUpdateDetails`](IssuedRefundUpdateDetails.md)
 
 #### Source
 

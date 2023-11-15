@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > ChallengeDetailTypeEnum
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / ChallengeDetailTypeEnum
 
 # Type alias: ChallengeDetailTypeEnum
 

@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > MultiFactorAuthenticationAttemptStatusEnum
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / MultiFactorAuthenticationAttemptStatusEnum
 
 # Type alias: MultiFactorAuthenticationAttemptStatusEnum
 

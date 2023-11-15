@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > AccountTakeoverUnauthorizedErrorProperties
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / AccountTakeoverUnauthorizedErrorProperties
 
 # Interface: AccountTakeoverUnauthorizedErrorProperties
 

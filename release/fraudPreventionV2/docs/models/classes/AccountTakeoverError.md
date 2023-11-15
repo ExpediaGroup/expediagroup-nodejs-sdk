@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > AccountTakeoverError
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / AccountTakeoverError
 
 # Class: AccountTakeoverError
 
@@ -13,6 +13,10 @@ The object used to describe an error, containing both human-readable and machine
 #### Parameters
 
 ▪ **accountTakeoverError**: [`AccountTakeoverErrorProperties`](../interfaces/AccountTakeoverErrorProperties.md)
+
+#### Returns
+
+[`AccountTakeoverError`](AccountTakeoverError.md)
 
 #### Source
 
