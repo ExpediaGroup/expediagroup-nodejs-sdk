@@ -1,7 +1,7 @@
-import { AxiosHeaders } from 'axios'
 import { LoggingMessage } from '../../src/constant/Logging'
-import { maskRequestConfig } from '../../src/logging/LogMasker'
-import { InternalAxiosRequestConfig } from "axios/index";
+import { maskRequestConfig, maskResponse } from '../../src/logging/LogMasker'
+import { AxiosHeaders, InternalAxiosRequestConfig } from 'axios'
+import { AxiosResponse } from "axios/index";
 
 describe('LogMasker', function (): void {
   it('should mask request config headers', () => {
@@ -176,4 +176,31 @@ describe('LogMasker', function (): void {
 
     expect(maskRequestConfig(config)).toMatchObject(expectedConfig)
   })
+
+  it('should mask response headers', () => {
+    const config: AxiosResponse = {
+      headers: new AxiosHeaders({
+        Authorization: 'Bearer token',
+        'Content-Type': 'application/json',
+        auth: 'auth_value'
+      }),
+      data: {
+        field: 'some value'
+      },
+      config: {}
+    } as AxiosResponse
+
+    const expectedConfig = {
+      headers: {
+        Authorization: LoggingMessage.OMITTED,
+        auth: LoggingMessage.OMITTED,
+        'Content-Type': 'application/json'
+      },
+      data: {
+        field: 'some value'
+      }
+    }
+
+    expect(maskResponse(config)).toMatchObject(expectedConfig)
+  });
 })
