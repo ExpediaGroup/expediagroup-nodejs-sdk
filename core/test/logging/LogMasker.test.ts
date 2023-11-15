@@ -1,7 +1,6 @@
 import { LoggingMessage } from '../../src/constant/Logging'
 import { maskRequestConfig, maskResponse } from '../../src/logging/LogMasker'
-import { AxiosHeaders, InternalAxiosRequestConfig } from 'axios'
-import { AxiosResponse } from "axios/index";
+import { AxiosHeaders, AxiosResponse, InternalAxiosRequestConfig } from 'axios'
 
 describe('LogMasker', function (): void {
   it('should mask request config headers', () => {
@@ -178,7 +177,7 @@ describe('LogMasker', function (): void {
   })
 
   it('should mask response headers', () => {
-    const config: AxiosResponse = {
+    const response: AxiosResponse = {
       headers: new AxiosHeaders({
         Authorization: 'Bearer token',
         'Content-Type': 'application/json',
@@ -190,7 +189,7 @@ describe('LogMasker', function (): void {
       config: {}
     } as AxiosResponse
 
-    const expectedConfig = {
+    const expectedResponse = {
       headers: {
         Authorization: LoggingMessage.OMITTED,
         auth: LoggingMessage.OMITTED,
@@ -201,6 +200,45 @@ describe('LogMasker', function (): void {
       }
     }
 
-    expect(maskResponse(config)).toMatchObject(expectedConfig)
+    expect(maskResponse(response)).toMatchObject(expectedResponse)
   });
+
+  it('should do nothing when there is no body', () => {
+    const response: AxiosResponse = {
+      headers: new AxiosHeaders({
+        'Content-Type': 'application/json'
+      }),
+      config: {}
+    } as AxiosResponse
+
+    expect(maskResponse(response)).toMatchObject(response)
+  })
+
+  it('should response mask auth data', (): void => {
+    const response: AxiosResponse = {
+      headers: new AxiosHeaders({
+        'Content-Type': 'application/json',
+      }),
+      config: {
+        auth: {
+          username: 'some username',
+          password: 'some pass'
+        }
+      }
+    } as AxiosResponse
+
+    const expectedResponse = {
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      config: {
+        auth: {
+          username: LoggingMessage.OMITTED,
+          password: LoggingMessage.OMITTED
+        }
+      }
+    }
+
+    expect(maskResponse(response)).toMatchObject(expectedResponse)
+  })
 })

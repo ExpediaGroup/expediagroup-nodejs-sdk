@@ -28,7 +28,7 @@ export function maskRequestConfig(config: InternalAxiosRequestConfig<any>): Inte
   const clone: InternalAxiosRequestConfig<any> = _.cloneDeep(config)
   clone.headers = maskRequestConfigHeaders(clone.headers)
   clone.data = stringifyData(maskBodyFields(clone.data))
-  clone.auth = maskedAuthCredentials(clone.auth)
+  clone.auth = maskAuthCredentials(clone.auth)
   return clone
 }
 
@@ -36,7 +36,7 @@ export function maskResponse(config: AxiosResponse<any, any>): AxiosResponse<any
   const clone: AxiosResponse<any, any> = _.cloneDeep(config)
   clone.headers = maskResponseHeaders(clone.headers)
   clone.data = maskBodyFields(clone.data)
-  clone.config.auth = maskedAuthCredentials(clone.config.auth)
+  clone.config.auth = maskAuthCredentials(clone.config.auth)
   clone.config.data = LoggingMessage.OMITTED
   delete clone.request
   return clone
@@ -59,7 +59,7 @@ function maskRequestConfigHeaders(headers: AxiosRequestHeaders): AxiosRequestHea
   return clonedHeaders
 }
 
-function maskedAuthCredentials(auth: AxiosBasicCredentials | undefined): AxiosBasicCredentials | undefined {
+function maskAuthCredentials(auth: AxiosBasicCredentials | undefined): AxiosBasicCredentials | undefined {
   if (auth === undefined) {
     return auth
   }
