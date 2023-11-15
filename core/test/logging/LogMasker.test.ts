@@ -241,4 +241,128 @@ describe('LogMasker', function (): void {
 
     expect(maskResponse(response)).toMatchObject(expectedResponse)
   })
+
+  it('should mask response PCI-related body fields', () => {
+    const response: AxiosResponse = {
+      headers: new AxiosHeaders({
+        'Content-Type': 'application/json'
+      }),
+      config: {},
+      data: {
+        field1: {
+          pin: 'pin value',
+          access_token: 'access_token value',
+          card_number: 'card_number value',
+          security_code: 'security_code value',
+          account_number: 'account_number value',
+          card_avs_response: 'card_avs_response value',
+          card_cvv_response: 'card_cvv_response value'
+        },
+        field2: {
+          access_token: 'access_token value',
+          card_number: 'card_number value',
+          security_code: 'security_code value',
+          field3: {
+            account_number: 'account_number value',
+            card_avs_response: 'card_avs_response value',
+            card_cvv_response: 'card_cvv_response value',
+            some_field: 'some_field value'
+          }
+        }
+      }
+    } as AxiosResponse
+
+    const expectedResponse = {
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      data: {
+        field1: {
+          pin: LoggingMessage.OMITTED,
+          access_token: LoggingMessage.OMITTED,
+          card_number: LoggingMessage.OMITTED,
+          security_code: LoggingMessage.OMITTED,
+          account_number: LoggingMessage.OMITTED,
+          card_avs_response: LoggingMessage.OMITTED,
+          card_cvv_response: LoggingMessage.OMITTED
+        },
+        field2: {
+          access_token: LoggingMessage.OMITTED,
+          card_number: LoggingMessage.OMITTED,
+          security_code: LoggingMessage.OMITTED,
+          field3: {
+            account_number: LoggingMessage.OMITTED,
+            card_avs_response: LoggingMessage.OMITTED,
+            card_cvv_response: LoggingMessage.OMITTED,
+            some_field: 'some_field value'
+          }
+        }
+      }
+    }
+
+    expect(maskResponse(response)).toMatchObject(expectedResponse)
+  })
+
+  it('should mask number fields', () => {
+    const response: AxiosResponse = {
+      headers: new AxiosHeaders({
+        'Content-Type': 'application/json'
+      }),
+      config: {},
+      data: {
+        field1: {
+          number: 12345678901234
+        },
+        field2: {
+          number: 123456789012345
+        },
+        field3: {
+          number: 123456789012346
+        },
+        field4: {
+          number: '123456789012346'
+        },
+        field5: {
+          number: '12345678901234567'
+        },
+        field6: {
+          number: undefined
+        },
+        field7: {
+          number: null
+        }
+      }
+    } as AxiosResponse
+
+    const expectedResponse = {
+      headers: new AxiosHeaders({
+        'Content-Type': 'application/json'
+      }),
+      data: {
+        field1: {
+          number: 12345678901234
+        },
+        field2: {
+          number: LoggingMessage.OMITTED
+        },
+        field3: {
+          number: LoggingMessage.OMITTED
+        },
+        field4: {
+          number: LoggingMessage.OMITTED
+        },
+        field5: {
+          number: '12345678901234567'
+        },
+        field6: {
+          number: undefined
+        },
+        field7: {
+          number: null
+        }
+      }
+    }
+
+    expect(maskResponse(response)).toMatchObject(expectedResponse)
+  })
 })
