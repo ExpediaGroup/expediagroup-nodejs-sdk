@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > AccountTakeoverBadRequestErrorAllOfCauses
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / AccountTakeoverBadRequestErrorAllOfCauses
 
 # Class: AccountTakeoverBadRequestErrorAllOfCauses
 
@@ -11,6 +11,10 @@
 #### Parameters
 
 ▪ **accountTakeoverBadRequestErrorAllOfCauses**: [`AccountTakeoverBadRequestErrorAllOfCausesProperties`](../interfaces/AccountTakeoverBadRequestErrorAllOfCausesProperties.md)
+
+#### Returns
+
+[`AccountTakeoverBadRequestErrorAllOfCauses`](AccountTakeoverBadRequestErrorAllOfCauses.md)
 
 #### Source
 

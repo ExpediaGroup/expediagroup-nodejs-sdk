@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > Verify
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / Verify
 
 # Class: Verify
 
@@ -13,6 +13,10 @@ A verify operation represents the intent to verify the payment associated with t
 #### Parameters
 
 ▪ **verify**: [`VerifyProperties`](../interfaces/VerifyProperties.md)
+
+#### Returns
+
+[`Verify`](Verify.md)
 
 #### Source
 

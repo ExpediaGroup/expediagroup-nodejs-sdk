@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > AccountScreenRequest
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / AccountScreenRequest
 
 # Class: AccountScreenRequest
 
@@ -13,6 +13,10 @@ Information for account screening by Expedia\'s Fraud Prevention Service.
 #### Parameters
 
 ▪ **accountScreenRequest**: [`AccountScreenRequestProperties`](../interfaces/AccountScreenRequestProperties.md)
+
+#### Returns
+
+[`AccountScreenRequest`](AccountScreenRequest.md)
 
 #### Source
 

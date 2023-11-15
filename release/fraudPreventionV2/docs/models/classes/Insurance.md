@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > Insurance
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / Insurance
 
 # Class: Insurance
 
@@ -17,6 +17,10 @@ The `type` field value is used as a discriminator, with the following mapping: *
 #### Parameters
 
 ▪ **insurance**: [`InsuranceProperties`](../interfaces/InsuranceProperties.md)
+
+#### Returns
+
+[`Insurance`](Insurance.md)
 
 #### Overrides
 

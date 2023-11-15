@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > RailSegmentsOperatingCompany
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / RailSegmentsOperatingCompany
 
 # Class: RailSegmentsOperatingCompany
 
@@ -13,6 +13,10 @@ This attribute captures the name or identifier of the company responsible for op
 #### Parameters
 
 ▪ **railSegmentsOperatingCompany**: [`RailSegmentsOperatingCompanyProperties`](../interfaces/RailSegmentsOperatingCompanyProperties.md)
+
+#### Returns
+
+[`RailSegmentsOperatingCompany`](RailSegmentsOperatingCompany.md)
 
 #### Source
 

@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > OrderPurchaseUpdateNotFoundErrorCodeEnum
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / OrderPurchaseUpdateNotFoundErrorCodeEnum
 
 # Type alias: OrderPurchaseUpdateNotFoundErrorCodeEnum
 

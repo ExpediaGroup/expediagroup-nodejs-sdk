@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > BadRequestErrorAllOfCausesProperties
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / BadRequestErrorAllOfCausesProperties
 
 # Interface: BadRequestErrorAllOfCausesProperties
 

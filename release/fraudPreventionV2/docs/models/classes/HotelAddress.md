@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > HotelAddress
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / HotelAddress
 
 # Class: HotelAddress
 
@@ -13,6 +13,10 @@ Address of a hotel.
 #### Parameters
 
 ▪ **hotelAddress**: [`HotelAddressProperties`](../interfaces/HotelAddressProperties.md)
+
+#### Returns
+
+[`HotelAddress`](HotelAddress.md)
 
 #### Source
 

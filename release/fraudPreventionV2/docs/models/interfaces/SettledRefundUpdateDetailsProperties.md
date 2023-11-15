@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > SettledRefundUpdateDetailsProperties
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / SettledRefundUpdateDetailsProperties
 
 # Interface: SettledRefundUpdateDetailsProperties
 

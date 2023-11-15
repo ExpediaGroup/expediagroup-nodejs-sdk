@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > PaymentThreeDSCriteria
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / PaymentThreeDSCriteria
 
 # Class: PaymentThreeDSCriteria
 
@@ -13,6 +13,10 @@ Payment ThreeDS criteria attributes.
 #### Parameters
 
 ▪ **paymentThreeDSCriteria**: [`PaymentThreeDSCriteriaProperties`](../interfaces/PaymentThreeDSCriteriaProperties.md)
+
+#### Returns
+
+[`PaymentThreeDSCriteria`](PaymentThreeDSCriteria.md)
 
 #### Source
 

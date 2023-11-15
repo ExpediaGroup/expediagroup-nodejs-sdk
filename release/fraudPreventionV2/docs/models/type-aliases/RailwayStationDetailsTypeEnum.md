@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > RailwayStationDetailsTypeEnum
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / RailwayStationDetailsTypeEnum
 
 # Type alias: RailwayStationDetailsTypeEnum
 

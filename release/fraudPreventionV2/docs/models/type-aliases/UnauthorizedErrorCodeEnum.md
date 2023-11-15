@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > UnauthorizedErrorCodeEnum
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / UnauthorizedErrorCodeEnum
 
 # Type alias: UnauthorizedErrorCodeEnum
 

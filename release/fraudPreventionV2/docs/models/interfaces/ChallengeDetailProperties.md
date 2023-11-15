@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > ChallengeDetailProperties
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / ChallengeDetailProperties
 
 # Interface: ChallengeDetailProperties
 

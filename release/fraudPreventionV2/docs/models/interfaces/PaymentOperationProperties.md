@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > PaymentOperationProperties
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / PaymentOperationProperties
 
 # Interface: PaymentOperationProperties
 

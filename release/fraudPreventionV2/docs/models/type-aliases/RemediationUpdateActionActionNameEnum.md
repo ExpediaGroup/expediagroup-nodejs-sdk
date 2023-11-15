@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > RemediationUpdateActionActionNameEnum
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / RemediationUpdateActionActionNameEnum
 
 # Type alias: RemediationUpdateActionActionNameEnum
 

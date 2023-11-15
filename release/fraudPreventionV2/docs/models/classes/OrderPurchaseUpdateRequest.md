@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > OrderPurchaseUpdateRequest
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / OrderPurchaseUpdateRequest
 
 # Class: OrderPurchaseUpdateRequest
 
@@ -21,6 +21,10 @@ The `type` field value is used as a discriminator, with the following mapping: *
 #### Parameters
 
 ▪ **orderPurchaseUpdateRequest**: [`OrderPurchaseUpdateRequestProperties`](../interfaces/OrderPurchaseUpdateRequestProperties.md)
+
+#### Returns
+
+[`OrderPurchaseUpdateRequest`](OrderPurchaseUpdateRequest.md)
 
 #### Source
 

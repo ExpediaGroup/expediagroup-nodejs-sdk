@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > LoginTransactionDetails
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / LoginTransactionDetails
 
 # Class: LoginTransactionDetails
 
@@ -17,6 +17,10 @@ The `transaction_type` field value is used as a discriminator, with the followin
 #### Parameters
 
 ▪ **loginTransactionDetails**: [`LoginTransactionDetailsProperties`](../interfaces/LoginTransactionDetailsProperties.md)
+
+#### Returns
+
+[`LoginTransactionDetails`](LoginTransactionDetails.md)
 
 #### Overrides
 

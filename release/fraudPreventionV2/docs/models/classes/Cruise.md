@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > Cruise
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / Cruise
 
 # Class: Cruise
 
@@ -17,6 +17,10 @@ The `type` field value is used as a discriminator, with the following mapping: *
 #### Parameters
 
 ▪ **cruise**: [`CruiseProperties`](../interfaces/CruiseProperties.md)
+
+#### Returns
+
+[`Cruise`](Cruise.md)
 
 #### Overrides
 

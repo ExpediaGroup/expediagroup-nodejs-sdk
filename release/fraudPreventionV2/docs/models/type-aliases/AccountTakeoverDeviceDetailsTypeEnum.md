@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > AccountTakeoverDeviceDetailsTypeEnum
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / AccountTakeoverDeviceDetailsTypeEnum
 
 # Type alias: AccountTakeoverDeviceDetailsTypeEnum
 

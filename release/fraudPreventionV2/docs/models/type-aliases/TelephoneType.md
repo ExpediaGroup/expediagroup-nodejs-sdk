@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > TelephoneType
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / TelephoneType
 
 # Type alias: TelephoneType
 

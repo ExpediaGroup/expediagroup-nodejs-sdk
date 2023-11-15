@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > AuthorizeReversal
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / AuthorizeReversal
 
 # Class: AuthorizeReversal
 
@@ -13,6 +13,10 @@ Authorize Reversal operation on the payment. An authorize reversal operation rep
 #### Parameters
 
 ▪ **authorizeReversal**: [`AuthorizeReversalProperties`](../interfaces/AuthorizeReversalProperties.md)
+
+#### Returns
+
+[`AuthorizeReversal`](AuthorizeReversal.md)
 
 #### Source
 
