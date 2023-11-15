@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > AccountTransactionProperties
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / AccountTransactionProperties
 
 # Interface: AccountTransactionProperties
 

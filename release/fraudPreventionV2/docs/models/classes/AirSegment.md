@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > AirSegment
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / AirSegment
 
 # Class: AirSegment
 
@@ -11,6 +11,10 @@
 #### Parameters
 
 ▪ **airSegment**: [`AirSegmentProperties`](../interfaces/AirSegmentProperties.md)
+
+#### Returns
+
+[`AirSegment`](AirSegment.md)
 
 #### Source
 

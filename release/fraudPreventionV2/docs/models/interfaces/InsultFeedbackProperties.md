@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > InsultFeedbackProperties
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / InsultFeedbackProperties
 
 # Interface: InsultFeedbackProperties
 

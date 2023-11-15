@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > ChargebackFeedback
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / ChargebackFeedback
 
 # Class: ChargebackFeedback
 
@@ -17,6 +17,10 @@ Feedback from EG external partners if they receive a chargeback for a false nega
 #### Parameters
 
 ▪ **chargebackFeedback**: [`ChargebackFeedbackProperties`](../interfaces/ChargebackFeedbackProperties.md)
+
+#### Returns
+
+[`ChargebackFeedback`](ChargebackFeedback.md)
 
 #### Overrides
 

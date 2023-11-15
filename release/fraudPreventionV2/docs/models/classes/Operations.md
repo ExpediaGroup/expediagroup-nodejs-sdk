@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > Operations
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / Operations
 
 # Class: Operations
 
@@ -13,6 +13,10 @@ All operations related to a payment throughout its lifespan. An operation repres
 #### Parameters
 
 ▪ **operations**: [`OperationsProperties`](../interfaces/OperationsProperties.md)
+
+#### Returns
+
+[`Operations`](Operations.md)
 
 #### Source
 

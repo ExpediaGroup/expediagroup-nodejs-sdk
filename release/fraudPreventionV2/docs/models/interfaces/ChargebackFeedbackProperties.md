@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > ChargebackFeedbackProperties
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / ChargebackFeedbackProperties
 
 # Interface: ChargebackFeedbackProperties
 

@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > DeviceDetails
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / DeviceDetails
 
 # Class: DeviceDetails
 
@@ -11,6 +11,10 @@
 #### Parameters
 
 ▪ **deviceDetails**: [`DeviceDetailsProperties`](../interfaces/DeviceDetailsProperties.md)
+
+#### Returns
+
+[`DeviceDetails`](DeviceDetails.md)
 
 #### Source
 

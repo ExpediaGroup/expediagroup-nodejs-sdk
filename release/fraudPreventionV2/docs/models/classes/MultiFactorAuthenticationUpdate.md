@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > MultiFactorAuthenticationUpdate
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / MultiFactorAuthenticationUpdate
 
 # Class: MultiFactorAuthenticationUpdate
 
@@ -17,6 +17,10 @@ Information specific to a user\'s response to a Multi-Factor Authentication init
 #### Parameters
 
 ▪ **multiFactorAuthenticationUpdate**: [`MultiFactorAuthenticationUpdateProperties`](../interfaces/MultiFactorAuthenticationUpdateProperties.md)
+
+#### Returns
+
+[`MultiFactorAuthenticationUpdate`](MultiFactorAuthenticationUpdate.md)
 
 #### Overrides
 

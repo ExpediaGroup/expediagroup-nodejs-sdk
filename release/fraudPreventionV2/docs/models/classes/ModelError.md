@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > ModelError
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / ModelError
 
 # Class: ModelError
 
@@ -13,6 +13,10 @@ The object used to describe an error, containing both human-readable and machine
 #### Parameters
 
 ▪ **error**: [`ModelErrorProperties`](../interfaces/ModelErrorProperties.md)
+
+#### Returns
+
+[`ModelError`](ModelError.md)
 
 #### Source
 

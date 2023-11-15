@@ -1,6 +1,6 @@
-[@expediagroup/fraudpreventionv2-sdk](../index.md) > client
+[@expediagroup/fraudpreventionv2-sdk](../index.md) / client
 
-# Module: client
+# client
 
 ## Index
 

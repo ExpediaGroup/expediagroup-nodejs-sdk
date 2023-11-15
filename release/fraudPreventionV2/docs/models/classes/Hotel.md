@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > Hotel
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / Hotel
 
 # Class: Hotel
 
@@ -17,6 +17,10 @@ The `type` field value is used as a discriminator, with the following mapping: *
 #### Parameters
 
 ▪ **hotel**: [`HotelProperties`](../interfaces/HotelProperties.md)
+
+#### Returns
+
+[`Hotel`](Hotel.md)
 
 #### Overrides
 

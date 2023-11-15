@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > Car
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / Car
 
 # Class: Car
 
@@ -17,6 +17,10 @@ The `type` field value is used as a discriminator, with the following mapping: *
 #### Parameters
 
 ▪ **car**: [`CarProperties`](../interfaces/CarProperties.md)
+
+#### Returns
+
+[`Car`](Car.md)
 
 #### Overrides
 
