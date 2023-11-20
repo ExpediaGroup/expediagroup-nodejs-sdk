@@ -84,14 +84,14 @@ function maskBodyFields (body: any): any {
     return body
   }
   for (const field in body) {
-    body[field] = (LOG_MASKING_BODY_FIELDS.includes(field.toLowerCase()) || isNumberField(field, body[field]))
+    body[field] = (LOG_MASKING_BODY_FIELDS.includes(field.toLowerCase()) || isPaymentCardNumber(field, body[field]))
       ? LoggingMessage.OMITTED
       : maskBodyFields(body[field])
   }
   return body
 }
 
-function isNumberField (field: string, value: any): boolean {
+function isPaymentCardNumber (field: string, value: any): boolean {
   if (value === undefined || value === null) {
     return false
   }
