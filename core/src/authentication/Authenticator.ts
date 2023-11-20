@@ -24,10 +24,11 @@ import { LoggingMessage } from '../constant/Logging'
 import { ErrorMessage } from '../constant/ErrorMessage'
 import { Serializer } from '../serialization/Serializer'
 import { Authentication } from '../constant/Authentication'
-import { JsonObject, JsonProperty } from 'typescript-json-serializer'
 import { getLogger, SdkLogger } from '../logging/LoggerProvider'
-import { ExpediaGroupAuthError } from '../model/error/service/ExpediaGroupAuthError'
+import { JsonObject, JsonProperty } from 'typescript-json-serializer'
+import { maskRequestConfig, maskResponse } from '../logging/LogMasker'
 import { AxiosInstance, AxiosResponse, InternalAxiosRequestConfig } from 'axios'
+import { ExpediaGroupAuthError } from '../model/error/service/ExpediaGroupAuthError'
 import { LoggingMessageProvider } from '../constant/provider/LoggingMessageProvider'
 
 // eslint-disable-next-line @typescript-eslint/no-extraneous-class
@@ -55,7 +56,7 @@ class Authenticator {
   }
 
   use (configurations: Configurations): void {
-    this.axiosClient.interceptors.request.use(async (requestConfig) => {
+    this.axiosClient.interceptors.request.use(async (requestConfig: InternalAxiosRequestConfig<any>) => {
       if (!this.isAuthRequest(requestConfig, configurations) && this.bearerTokenInfo.isAboutToExpire()) {
         this.log.warn(LoggingMessage.TOKEN_EXPIRED)
         const tokenResponse: TokenResponse = await this.renewToken(configurations)
@@ -63,11 +64,11 @@ class Authenticator {
         this.axiosClient.defaults.headers.common[Constant.AUTHORIZATION] = auth
         requestConfig.headers.setAuthorization(auth)
       }
-      this.log.info(inspect(requestConfig))
+      this.log.info(inspect(maskRequestConfig(requestConfig)))
       return requestConfig
     })
     this.axiosClient.interceptors.response.use((response: AxiosResponse<any, any>) => {
-      this.log.info(inspect(response))
+      this.log.info(inspect(maskResponse(response)))
       return response
     })
   }
