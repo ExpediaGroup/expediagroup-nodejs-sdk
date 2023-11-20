@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [client](../index.md) > FraudPreventionV2Client
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [client](../index.md) / FraudPreventionV2Client
 
 # Class: FraudPreventionV2Client
 
@@ -15,6 +15,10 @@
 #### Parameters
 
 ▪ **configurations**: [`ClientConfigurations`](../../models/core/interfaces/ClientConfigurations.md)
+
+#### Returns
+
+[`FraudPreventionV2Client`](FraudPreventionV2Client.md)
 
 #### Overrides
 
@@ -44,6 +48,8 @@ An AccountUpdate request may be of one of the following types &#x60;MULTI_FACTOR
 A unique ID to uniquely identify a request/response cycle (optional, defaults to a random generated UUID)`<AccountUpdateResponse>` 
 
 #### Returns
+
+`Promise`\<[`AccountUpdateResponse`](../../models/classes/AccountUpdateResponse.md)\>
 
 Promise
 
@@ -108,6 +114,8 @@ A unique ID to uniquely identify a request/response cycle (optional, defaults to
 
 #### Returns
 
+`Promise`\<[`OrderPurchaseUpdateResponse`](../../models/classes/OrderPurchaseUpdateResponse.md)\>
+
 Promise
 
 #### Throws
@@ -169,6 +177,8 @@ A unique ID to uniquely identify a request/response cycle (optional, defaults to
 
 #### Returns
 
+`Promise`\<[`AccountScreenResponse`](../../models/classes/AccountScreenResponse.md)\>
+
 Promise
 
 #### Throws
@@ -229,6 +239,8 @@ The Order Purchase API gives a Fraud recommendation for a transaction. A recomme
 A unique ID to uniquely identify a request/response cycle (optional, defaults to a random generated UUID)`<OrderPurchaseScreenResponse>` 
 
 #### Returns
+
+`Promise`\<[`OrderPurchaseScreenResponse`](../../models/classes/OrderPurchaseScreenResponse.md)\>
 
 Promise
 

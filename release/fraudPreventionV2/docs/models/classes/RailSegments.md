@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > RailSegments
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / RailSegments
 
 # Class: RailSegments
 
@@ -11,6 +11,10 @@
 #### Parameters
 
 ▪ **railSegments**: [`RailSegmentsProperties`](../interfaces/RailSegmentsProperties.md)
+
+#### Returns
+
+[`RailSegments`](RailSegments.md)
 
 #### Source
 

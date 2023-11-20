@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > Refund
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / Refund
 
 # Class: Refund
 
@@ -13,6 +13,10 @@ Refund operation on the payment. A refund operation represents the intent to ref
 #### Parameters
 
 ▪ **refund**: [`RefundProperties`](../interfaces/RefundProperties.md)
+
+#### Returns
+
+[`Refund`](Refund.md)
 
 #### Source
 

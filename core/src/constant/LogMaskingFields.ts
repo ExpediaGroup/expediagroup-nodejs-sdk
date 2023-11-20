@@ -18,22 +18,17 @@
  * Do not edit the class manually.
  */
 
-import { Authentication } from './Authentication'
+export const LOG_MASKING_HEADERS: string[] = [
+  'authorization',
+  'auth'
+]
 
-const PCIRelatedFields: string[] = [
+export const LOG_MASKING_BODY_FIELDS: string[] = [
   'pin',
+  'access_token',
   'card_number',
   'security_code',
   'account_number',
   'card_avs_response',
   'card_cvv_response'
 ]
-
-export const LogMaskingRegex = {
-  AUTHORIZATION_REGEX: `(?<=(${Authentication.EAN}|${Authentication.BASIC}|${Authentication.BEARER})\\s)\\S+(?=(\\n|\\r|\\t))*(?=('|"))`,
-  AUTH_USERNAME_REGEX: `(?<=${Authentication.USERNAME}:\\s('|"))\\S+(?=('|"))`,
-  AUTH_PASSWORD_REGEX: `(?<=${Authentication.PASSWORD}:\\s('|"))\\S+(?=('|"))`,
-  ACCESS_TOKEN_REGEX: '(?<=access_token: (\'|"))\\S+(?=(\'|"))',
-  NUMBER_FIELD_REGEX: '(?<=[\'"]?number[\'"]?:\\s*[\'"])\\s*[^\\s\'"]{15,16}\\s*(?=([\'"]))',
-  PCI_FIELDS_REGEX: `(?<=['"]?(${PCIRelatedFields.join('|')})['"]?:\\s*['"])\\s*[^\\s'"]+\\s*(?=(['"]))`
-} as const

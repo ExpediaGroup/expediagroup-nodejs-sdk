@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > GatewayTimeoutErrorCodeEnum
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / GatewayTimeoutErrorCodeEnum
 
 # Type alias: GatewayTimeoutErrorCodeEnum
 

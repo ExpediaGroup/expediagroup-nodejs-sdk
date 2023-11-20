@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > BadGatewayError
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / BadGatewayError
 
 # Class: BadGatewayError
 
@@ -13,6 +13,10 @@ Indicates that the server received an invalid response from the upstream server.
 #### Parameters
 
 ▪ **badGatewayError**: [`BadGatewayErrorProperties`](../interfaces/BadGatewayErrorProperties.md)
+
+#### Returns
+
+[`BadGatewayError`](BadGatewayError.md)
 
 #### Source
 

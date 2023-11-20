@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > SettledRefundUpdate
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / SettledRefundUpdate
 
 # Class: SettledRefundUpdate
 
@@ -17,6 +17,10 @@ Data related to the settled refund that should be updated.
 #### Parameters
 
 ▪ **settledRefundUpdate**: [`SettledRefundUpdateProperties`](../interfaces/SettledRefundUpdateProperties.md)
+
+#### Returns
+
+[`SettledRefundUpdate`](SettledRefundUpdate.md)
 
 #### Overrides
 

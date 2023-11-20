@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > TooManyRequestsErrorProperties
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / TooManyRequestsErrorProperties
 
 # Interface: TooManyRequestsErrorProperties
 

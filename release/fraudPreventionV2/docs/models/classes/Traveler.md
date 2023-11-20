@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > Traveler
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / Traveler
 
 # Class: Traveler
 
@@ -11,6 +11,10 @@
 #### Parameters
 
 ▪ **traveler**: [`TravelerProperties`](../interfaces/TravelerProperties.md)
+
+#### Returns
+
+[`Traveler`](Traveler.md)
 
 #### Source
 

@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > PaymentOperation
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / PaymentOperation
 
 # Class: PaymentOperation
 
@@ -11,6 +11,10 @@
 #### Parameters
 
 ▪ **paymentOperation**: [`PaymentOperationProperties`](../interfaces/PaymentOperationProperties.md)
+
+#### Returns
+
+[`PaymentOperation`](PaymentOperation.md)
 
 #### Source
 

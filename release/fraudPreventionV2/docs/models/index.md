@@ -1,6 +1,6 @@
-[@expediagroup/fraudpreventionv2-sdk](../index.md) > models
+[@expediagroup/fraudpreventionv2-sdk](../index.md) / models
 
-# Module: models
+# models
 
 ## Index
 
@@ -226,6 +226,7 @@
 - [CreditCardCardTypeEnum](type-aliases/CreditCardCardTypeEnum.md)
 - [CustomerAccountAccountTypeEnum](type-aliases/CustomerAccountAccountTypeEnum.md)
 - [CustomerAccountAddressAddressTypeEnum](type-aliases/CustomerAccountAddressAddressTypeEnum.md)
+- [DirectDebitMandateTypeEnum](type-aliases/DirectDebitMandateTypeEnum.md)
 - [ForbiddenErrorCodeEnum](type-aliases/ForbiddenErrorCodeEnum.md)
 - [FraudDecision](type-aliases/FraudDecision.md)
 - [GatewayTimeoutErrorCodeEnum](type-aliases/GatewayTimeoutErrorCodeEnum.md)

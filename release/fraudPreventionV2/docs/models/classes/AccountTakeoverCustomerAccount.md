@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > AccountTakeoverCustomerAccount
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / AccountTakeoverCustomerAccount
 
 # Class: AccountTakeoverCustomerAccount
 
@@ -13,6 +13,10 @@ Information about a user\'s account.
 #### Parameters
 
 ▪ **accountTakeoverCustomerAccount**: [`AccountTakeoverCustomerAccountProperties`](../interfaces/AccountTakeoverCustomerAccountProperties.md)
+
+#### Returns
+
+[`AccountTakeoverCustomerAccount`](AccountTakeoverCustomerAccount.md)
 
 #### Source
 

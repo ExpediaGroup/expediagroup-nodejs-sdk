@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > InsultDetail
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / InsultDetail
 
 # Class: InsultDetail
 
@@ -13,6 +13,10 @@ Details related to the insult.
 #### Parameters
 
 ▪ **insultDetail**: [`InsultDetailProperties`](../interfaces/InsultDetailProperties.md)
+
+#### Returns
+
+[`InsultDetail`](InsultDetail.md)
 
 #### Source
 

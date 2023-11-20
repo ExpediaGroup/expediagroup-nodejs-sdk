@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > CreditCardCardTypeEnum
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / CreditCardCardTypeEnum
 
 # Type alias: CreditCardCardTypeEnum
 

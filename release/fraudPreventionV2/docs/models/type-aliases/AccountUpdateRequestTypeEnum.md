@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > AccountUpdateRequestTypeEnum
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / AccountUpdateRequestTypeEnum
 
 # Type alias: AccountUpdateRequestTypeEnum
 
