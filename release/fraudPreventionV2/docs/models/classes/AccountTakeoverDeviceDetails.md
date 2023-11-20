@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > AccountTakeoverDeviceDetails
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / AccountTakeoverDeviceDetails
 
 # Class: AccountTakeoverDeviceDetails
 
@@ -13,6 +13,10 @@ Information specific to the Partner\'s device through which a transaction was ma
 #### Parameters
 
 ▪ **accountTakeoverDeviceDetails**: [`AccountTakeoverDeviceDetailsProperties`](../interfaces/AccountTakeoverDeviceDetailsProperties.md)
+
+#### Returns
+
+[`AccountTakeoverDeviceDetails`](AccountTakeoverDeviceDetails.md)
 
 #### Source
 

@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > Capture
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / Capture
 
 # Class: Capture
 
@@ -13,6 +13,10 @@ Capture operation on the payment. A capture operation represents a notification 
 #### Parameters
 
 ▪ **capture**: [`CaptureProperties`](../interfaces/CaptureProperties.md)
+
+#### Returns
+
+[`Capture`](Capture.md)
 
 #### Source
 

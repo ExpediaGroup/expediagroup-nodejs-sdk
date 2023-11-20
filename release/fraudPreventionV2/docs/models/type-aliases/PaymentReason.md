@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > PaymentReason
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / PaymentReason
 
 # Type alias: PaymentReason
 

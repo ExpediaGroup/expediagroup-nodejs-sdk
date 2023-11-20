@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > ServiceUnavailableErrorCodeEnum
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / ServiceUnavailableErrorCodeEnum
 
 # Type alias: ServiceUnavailableErrorCodeEnum
 

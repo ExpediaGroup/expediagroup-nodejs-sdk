@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > Name
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / Name
 
 # Class: Name
 
@@ -13,6 +13,10 @@ Group of attributes intended to hold information about a customer or traveler\'s
 #### Parameters
 
 ▪ **name**: [`NameProperties`](../interfaces/NameProperties.md)
+
+#### Returns
+
+[`Name`](Name.md)
 
 #### Source
 

@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > AccountTakeoverBadRequestErrorAllOfCausesCodeEnum
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / AccountTakeoverBadRequestErrorAllOfCausesCodeEnum
 
 # Type alias: AccountTakeoverBadRequestErrorAllOfCausesCodeEnum
 

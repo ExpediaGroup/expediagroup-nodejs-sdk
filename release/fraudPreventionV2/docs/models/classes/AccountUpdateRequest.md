@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > AccountUpdateRequest
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / AccountUpdateRequest
 
 # Class: AccountUpdateRequest
 
@@ -18,6 +18,10 @@ The `type` field value is used as a discriminator, with the following mapping: *
 #### Parameters
 
 ▪ **accountUpdateRequest**: [`AccountUpdateRequestProperties`](../interfaces/AccountUpdateRequestProperties.md)
+
+#### Returns
+
+[`AccountUpdateRequest`](AccountUpdateRequest.md)
 
 #### Source
 

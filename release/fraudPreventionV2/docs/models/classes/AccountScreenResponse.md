@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > AccountScreenResponse
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / AccountScreenResponse
 
 # Class: AccountScreenResponse
 
@@ -13,6 +13,10 @@ Response for an account transaction provided by Expedia\'s Fraud Prevention Serv
 #### Parameters
 
 ▪ **accountScreenResponse**: [`AccountScreenResponseProperties`](../interfaces/AccountScreenResponseProperties.md)
+
+#### Returns
+
+[`AccountScreenResponse`](AccountScreenResponse.md)
 
 #### Source
 

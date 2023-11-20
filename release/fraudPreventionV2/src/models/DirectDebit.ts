@@ -28,15 +28,20 @@ import { PaymentProperties } from './Payment'
 @JsonObject({ constructorParams: [{}] })
 export class DirectDebit extends Payment {
     /**
-     * A code that identifies the financial institution for a specific bank account.
+     * A code that identifies the financial institution for a specific bank account. `routing_number` is required if given `INTER_COMPANY` or `ELV` as `brand`.
      */
     @JsonProperty({ name: 'routing_number' })
-    routingNumber: string
+    routingNumber?: string
     /**
      * Cleartext (unencrypted) DirectDebit bank account number associated with the payment instrument.
      */
     @JsonProperty({ name: 'account_number' })
     accountNumber: string
+    /**
+     * The `mandate_type` is required if given `brand` as `SEPA_ELV` under `DirectDebit`.  It is used for the wire transfer or direct debit transaction whose `routing_number` could not be provided or not supported.   Allows values:  - `ONE_OFF`  - `RECURRING`
+     */
+    @JsonProperty({ name: 'mandate_type' })
+    mandateType?: DirectDebitMandateTypeEnum
     /**
      * Telephone(s) associated with direct debit payment provider.
      */
@@ -63,12 +68,16 @@ export class DirectDebit extends Payment {
         })
         this.routingNumber = directDebit.routingNumber
         this.accountNumber = directDebit.accountNumber
+        this.mandateType = directDebit.mandateType
         this.telephones = directDebit.telephones
     }
 }
 
+export type DirectDebitMandateTypeEnum = 'ONE_OFF' | 'RECURRING'
+
 export interface DirectDebitProperties extends PaymentProperties {
-    routingNumber: string
+    routingNumber?: string
     accountNumber: string
+    mandateType?: DirectDebitMandateTypeEnum
     telephones: Array<Telephone>
 }

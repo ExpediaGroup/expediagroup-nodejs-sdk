@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > CruiseProperties
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / CruiseProperties
 
 # Interface: CruiseProperties
 

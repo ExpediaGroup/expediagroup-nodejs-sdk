@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > OrderUpdateProperties
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / OrderUpdateProperties
 
 # Interface: OrderUpdateProperties
 

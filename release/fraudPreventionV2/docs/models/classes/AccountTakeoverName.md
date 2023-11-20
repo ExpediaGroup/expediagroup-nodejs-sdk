@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > AccountTakeoverName
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / AccountTakeoverName
 
 # Class: AccountTakeoverName
 
@@ -13,6 +13,10 @@ Group of attributes intended to hold information about a customer or traveler\'\
 #### Parameters
 
 ▪ **accountTakeoverName**: [`AccountTakeoverNameProperties`](../interfaces/AccountTakeoverNameProperties.md)
+
+#### Returns
+
+[`AccountTakeoverName`](AccountTakeoverName.md)
 
 #### Source
 

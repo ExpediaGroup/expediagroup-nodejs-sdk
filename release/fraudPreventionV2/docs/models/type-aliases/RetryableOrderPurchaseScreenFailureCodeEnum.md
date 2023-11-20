@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > RetryableOrderPurchaseScreenFailureCodeEnum
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / RetryableOrderPurchaseScreenFailureCodeEnum
 
 # Type alias: RetryableOrderPurchaseScreenFailureCodeEnum
 

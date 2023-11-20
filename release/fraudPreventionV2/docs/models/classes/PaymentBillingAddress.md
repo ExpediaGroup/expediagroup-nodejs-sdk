@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > PaymentBillingAddress
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / PaymentBillingAddress
 
 # Class: PaymentBillingAddress
 
@@ -11,6 +11,10 @@
 #### Parameters
 
 ▪ **paymentBillingAddress**: [`PaymentBillingAddressProperties`](../interfaces/PaymentBillingAddressProperties.md)
+
+#### Returns
+
+[`PaymentBillingAddress`](PaymentBillingAddress.md)
 
 #### Source
 

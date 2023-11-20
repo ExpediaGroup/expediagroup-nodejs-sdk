@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > AccountUpdateNotFoundError
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / AccountUpdateNotFoundError
 
 # Class: AccountUpdateNotFoundError
 
@@ -13,6 +13,10 @@ Indicates that the API cannot find the resource that is either being requested o
 #### Parameters
 
 ▪ **accountUpdateNotFoundError**: [`AccountUpdateNotFoundErrorProperties`](../interfaces/AccountUpdateNotFoundErrorProperties.md)
+
+#### Returns
+
+[`AccountUpdateNotFoundError`](AccountUpdateNotFoundError.md)
 
 #### Source
 

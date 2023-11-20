@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > Air
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / Air
 
 # Class: Air
 
@@ -17,6 +17,10 @@ The `type` field value is used as a discriminator, with the following mapping: *
 #### Parameters
 
 ▪ **air**: [`AirProperties`](../interfaces/AirProperties.md)
+
+#### Returns
+
+[`Air`](Air.md)
 
 #### Overrides
 

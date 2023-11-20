@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > Status
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / Status
 
 # Type alias: Status
 

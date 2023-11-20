@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > TravelerProperties
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / TravelerProperties
 
 # Interface: TravelerProperties
 
