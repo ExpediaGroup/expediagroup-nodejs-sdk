@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > OrderPurchaseUpdateResponse
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / OrderPurchaseUpdateResponse
 
 # Class: OrderPurchaseUpdateResponse
 
@@ -11,6 +11,10 @@
 #### Parameters
 
 ▪ **orderPurchaseUpdateResponse**: [`OrderPurchaseUpdateResponseProperties`](../interfaces/OrderPurchaseUpdateResponseProperties.md)
+
+#### Returns
+
+[`OrderPurchaseUpdateResponse`](OrderPurchaseUpdateResponse.md)
 
 #### Source
 

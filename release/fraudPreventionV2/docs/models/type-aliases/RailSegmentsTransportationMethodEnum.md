@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > RailSegmentsTransportationMethodEnum
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / RailSegmentsTransportationMethodEnum
 
 # Type alias: RailSegmentsTransportationMethodEnum
 

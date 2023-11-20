@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > PaymentOutcome
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / PaymentOutcome
 
 # Class: PaymentOutcome
 
@@ -11,6 +11,10 @@
 #### Parameters
 
 ▪ **paymentOutcome**: [`PaymentOutcomeProperties`](../interfaces/PaymentOutcomeProperties.md)
+
+#### Returns
+
+[`PaymentOutcome`](PaymentOutcome.md)
 
 #### Source
 

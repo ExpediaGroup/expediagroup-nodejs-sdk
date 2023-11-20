@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > OrderUpdate
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / OrderUpdate
 
 # Class: OrderUpdate
 
@@ -17,6 +17,10 @@ Order related data that should be updated.
 #### Parameters
 
 ▪ **orderUpdate**: [`OrderUpdateProperties`](../interfaces/OrderUpdateProperties.md)
+
+#### Returns
+
+[`OrderUpdate`](OrderUpdate.md)
 
 #### Overrides
 

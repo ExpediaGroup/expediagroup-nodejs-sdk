@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > NotFoundErrorProperties
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / NotFoundErrorProperties
 
 # Interface: NotFoundErrorProperties
 

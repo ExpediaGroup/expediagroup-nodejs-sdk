@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > VerifyProperties
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / VerifyProperties
 
 # Interface: VerifyProperties
 

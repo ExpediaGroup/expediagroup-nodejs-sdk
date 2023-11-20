@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > DeviceDetailsProperties
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / DeviceDetailsProperties
 
 # Interface: DeviceDetailsProperties
 

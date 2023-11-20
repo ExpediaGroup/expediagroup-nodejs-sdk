@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > ChargebackDetailChargebackStatusEnum
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / ChargebackDetailChargebackStatusEnum
 
 # Type alias: ChargebackDetailChargebackStatusEnum
 

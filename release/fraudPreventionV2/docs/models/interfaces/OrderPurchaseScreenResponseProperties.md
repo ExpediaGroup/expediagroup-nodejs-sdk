@@ -1,4 +1,4 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) > [models](../index.md) > OrderPurchaseScreenResponseProperties
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / OrderPurchaseScreenResponseProperties
 
 # Interface: OrderPurchaseScreenResponseProperties
 
