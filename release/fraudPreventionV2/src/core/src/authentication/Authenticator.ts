@@ -26,7 +26,8 @@ import { Constant } from '../constant/Constant'
 import { ErrorMessage } from '../constant/ErrorMessage'
 import { LoggingMessage } from '../constant/Logging'
 import { LoggingMessageProvider } from '../constant/provider/LoggingMessageProvider'
-import { SdkLogger, getLogger } from '../logging/LoggerProvider'
+import { getLogger, SdkLogger } from '../logging/LoggerProvider'
+import { maskRequestConfig, maskResponse } from '../logging/LogMasker'
 import { ExpediaGroupAuthError } from '../model/error/service/ExpediaGroupAuthError'
 import { Serializer } from '../serialization/Serializer'
 
@@ -54,26 +55,28 @@ class Authenticator {
     constructor(readonly axiosClient: AxiosInstance) {}
 
     use(configurations: Configurations): void {
-        this.axiosClient.interceptors.request.use(async (requestConfig) => {
-            if (
-                !this.isAuthRequest(requestConfig, configurations) &&
-                this.bearerTokenInfo.isAboutToExpire()
-            ) {
-                this.log.warn(LoggingMessage.TOKEN_EXPIRED)
-                const tokenResponse: TokenResponse =
-                    await this.renewToken(configurations)
-                const auth: string = `${Authentication.BEARER} ${tokenResponse.accessToken}`
-                this.axiosClient.defaults.headers.common[
-                    Constant.AUTHORIZATION
-                ] = auth
-                requestConfig.headers.setAuthorization(auth)
-            }
-            this.log.info(inspect(requestConfig))
-            return requestConfig
-        })
+        this.axiosClient.interceptors.request.use(
+            async (requestConfig: InternalAxiosRequestConfig<any>) => {
+                if (
+                    !this.isAuthRequest(requestConfig, configurations) &&
+                    this.bearerTokenInfo.isAboutToExpire()
+                ) {
+                    this.log.warn(LoggingMessage.TOKEN_EXPIRED)
+                    const tokenResponse: TokenResponse =
+                        await this.renewToken(configurations)
+                    const auth: string = `${Authentication.BEARER} ${tokenResponse.accessToken}`
+                    this.axiosClient.defaults.headers.common[
+                        Constant.AUTHORIZATION
+                    ] = auth
+                    requestConfig.headers.setAuthorization(auth)
+                }
+                this.log.info(inspect(maskRequestConfig(requestConfig)))
+                return requestConfig
+            },
+        )
         this.axiosClient.interceptors.response.use(
             (response: AxiosResponse<any, any>) => {
-                this.log.info(inspect(response))
+                this.log.info(inspect(maskResponse(response)))
                 return response
             },
         )
