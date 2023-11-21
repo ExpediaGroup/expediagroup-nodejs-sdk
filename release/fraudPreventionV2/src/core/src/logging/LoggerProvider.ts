@@ -19,7 +19,6 @@
  */
 
 import { LoggingMessage } from '../constant/Logging'
-import { mask } from './LogMasker'
 import { ExpediaGroupLogger, Logger } from './Logger'
 
 export class SdkLogger {
@@ -38,7 +37,7 @@ export class SdkLogger {
     }
 
     private decorate(message: string, name: string): string {
-        return `${LoggingMessage.LOGGING_PREFIX} - ${name}: ${mask(message)}`
+        return `${LoggingMessage.LOGGING_PREFIX} - ${name}: ${message}`
     }
 }
 
