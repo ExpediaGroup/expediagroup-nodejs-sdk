@@ -54,6 +54,7 @@ export class PayPal extends Payment {
             verifiedAmount: payPal.verifiedAmount,
             threeDigitsSecureCriteria: payPal.threeDigitsSecureCriteria,
             operations: payPal.operations,
+            extensions: payPal.extensions,
         })
         this.payerId = payPal.payerId
         this.transactionId = payPal.transactionId
