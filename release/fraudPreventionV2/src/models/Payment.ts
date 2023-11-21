@@ -83,6 +83,11 @@ export class Payment {
         type: (property) => OperationsMapper.getType(property),
     })
     operations?: Operations
+    /**
+     * A key-value pair map to hold additional attributes.
+     */
+    @JsonProperty({ name: 'extensions' })
+    extensions?: { [key: string]: string }
 
     public constructor(payment: PaymentProperties) {
         this.brand = payment.brand
@@ -94,6 +99,7 @@ export class Payment {
         this.verifiedAmount = payment.verifiedAmount
         this.threeDigitsSecureCriteria = payment.threeDigitsSecureCriteria
         this.operations = payment.operations
+        this.extensions = payment.extensions
     }
 }
 
@@ -161,4 +167,5 @@ export interface PaymentProperties {
     verifiedAmount?: Amount
     threeDigitsSecureCriteria?: PaymentThreeDSCriteria
     operations?: Operations
+    extensions?: { [key: string]: string }
 }

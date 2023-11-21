@@ -65,6 +65,7 @@ export class DirectDebit extends Payment {
             verifiedAmount: directDebit.verifiedAmount,
             threeDigitsSecureCriteria: directDebit.threeDigitsSecureCriteria,
             operations: directDebit.operations,
+            extensions: directDebit.extensions,
         })
         this.routingNumber = directDebit.routingNumber
         this.accountNumber = directDebit.accountNumber
