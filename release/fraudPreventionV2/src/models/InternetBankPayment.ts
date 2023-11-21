@@ -61,6 +61,7 @@ export class InternetBankPayment extends Payment {
             threeDigitsSecureCriteria:
                 internetBankPayment.threeDigitsSecureCriteria,
             operations: internetBankPayment.operations,
+            extensions: internetBankPayment.extensions,
         })
         this.bankId = internetBankPayment.bankId
         this.bankBranchCode = internetBankPayment.bankBranchCode

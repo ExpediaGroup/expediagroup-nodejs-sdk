@@ -44,6 +44,7 @@ export class Points extends Payment {
             verifiedAmount: points.verifiedAmount,
             threeDigitsSecureCriteria: points.threeDigitsSecureCriteria,
             operations: points.operations,
+            extensions: points.extensions,
         })
         this.accountId = points.accountId
     }

@@ -100,6 +100,7 @@ export class CreditCard extends Payment {
             verifiedAmount: creditCard.verifiedAmount,
             threeDigitsSecureCriteria: creditCard.threeDigitsSecureCriteria,
             operations: creditCard.operations,
+            extensions: creditCard.extensions,
         })
         this.cardType = creditCard.cardType
         this.cardNumber = creditCard.cardNumber
