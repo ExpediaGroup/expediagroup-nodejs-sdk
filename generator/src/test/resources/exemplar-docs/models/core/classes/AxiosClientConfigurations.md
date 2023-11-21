@@ -1,6 +1,6 @@
-[@expediagroup/exemplar-sdk](../../../index.md) / [models](../../index.md) / [core](../index.md) / AxiosClientConfigurations
-
 # Class: AxiosClientConfigurations
+
+[core](../index.md).AxiosClientConfigurations
 
 ## Constructors
 

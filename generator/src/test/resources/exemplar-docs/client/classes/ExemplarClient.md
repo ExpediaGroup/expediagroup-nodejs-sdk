@@ -1,6 +1,6 @@
-[@expediagroup/exemplar-sdk](../../index.md) / [client](../index.md) / ExemplarClient
-
 # Class: ExemplarClient
+
+[client](../index.md).ExemplarClient
 
 ## Extends
 
@@ -22,7 +22,7 @@
 
 #### Overrides
 
-Client.constructor
+`Client.constructor`
 
 #### Source
 

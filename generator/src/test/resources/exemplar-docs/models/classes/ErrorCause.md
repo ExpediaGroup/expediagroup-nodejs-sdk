@@ -1,6 +1,6 @@
-[@expediagroup/exemplar-sdk](../../index.md) / [models](../index.md) / ErrorCause
-
 # Class: ErrorCause
+
+[models](../index.md).ErrorCause
 
 The object used to describe a cause for an error, containing both human-readable and in a machine-readable information.
 

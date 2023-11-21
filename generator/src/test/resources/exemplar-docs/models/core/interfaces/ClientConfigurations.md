@@ -1,6 +1,6 @@
-[@expediagroup/exemplar-sdk](../../../index.md) / [models](../../index.md) / [core](../index.md) / ClientConfigurations
-
 # Interface: ClientConfigurations
+
+[core](../index.md).ClientConfigurations
 
 ## Properties
 

@@ -1,6 +1,6 @@
-[@expediagroup/exemplar-sdk](../../index.md) / [models](../index.md) / GreetingProperties
-
 # Interface: GreetingProperties
+
+[models](../index.md).GreetingProperties
 
 ## Properties
 

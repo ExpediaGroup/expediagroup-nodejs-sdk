@@ -1,6 +1,6 @@
-[@expediagroup/exemplar-sdk](../../index.md) / [models](../index.md) / Greeting
-
 # Class: Greeting
+
+[models](../index.md).Greeting
 
 ## Constructors
 

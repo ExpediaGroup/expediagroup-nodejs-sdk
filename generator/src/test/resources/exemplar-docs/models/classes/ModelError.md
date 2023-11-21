@@ -1,6 +1,6 @@
-[@expediagroup/exemplar-sdk](../../index.md) / [models](../index.md) / ModelError
-
 # Class: ModelError
+
+[models](../index.md).ModelError
 
 The object used the describe an error, containing both human-readable and in a machine-readable information.
 

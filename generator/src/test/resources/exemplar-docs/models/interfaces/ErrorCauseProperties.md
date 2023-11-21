@@ -1,6 +1,6 @@
-[@expediagroup/exemplar-sdk](../../index.md) / [models](../index.md) / ErrorCauseProperties
-
 # Interface: ErrorCauseProperties
+
+[models](../index.md).ErrorCauseProperties
 
 ## Properties
 
