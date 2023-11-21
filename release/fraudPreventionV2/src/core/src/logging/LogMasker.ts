@@ -18,123 +18,115 @@
  * Do not edit the class manually.
  */
 
+import {
+    AxiosBasicCredentials,
+    AxiosHeaders,
+    AxiosRequestHeaders,
+    AxiosResponse,
+    AxiosResponseHeaders,
+    InternalAxiosRequestConfig,
+    RawAxiosResponseHeaders,
+} from 'axios'
+import _ from 'lodash'
+import {
+    LOG_MASKING_BODY_FIELDS,
+    LOG_MASKING_HEADERS,
+} from '../constant/LogMaskingFields'
 import { LoggingMessage } from '../constant/Logging'
-import { LogMaskingRegex } from '../constant/LogMaskingRegex'
+import { Serializer } from '../serialization/Serializer'
 
-export function mask(message: string): string {
-    return MaskProvider.masks.reduce(
-        (currentMessage: string, mask: Mask): string => {
-            return mask.mask(currentMessage)
-        },
-        message,
+export function maskRequestConfig(
+    config: InternalAxiosRequestConfig<any>,
+): InternalAxiosRequestConfig<any> {
+    const clone: InternalAxiosRequestConfig<any> = _.cloneDeep(config)
+    clone.headers = maskRequestConfigHeaders(clone.headers)
+    clone.data = stringifyData(maskBodyFields(clone.data))
+    clone.auth = maskAuthCredentials(clone.auth)
+    return clone
+}
+
+export function maskResponse(
+    config: AxiosResponse<any, any>,
+): AxiosResponse<any, any> {
+    const clone: AxiosResponse<any, any> = _.cloneDeep(config)
+    clone.headers = maskResponseHeaders(clone.headers)
+    clone.data = maskBodyFields(clone.data)
+    clone.config.auth = maskAuthCredentials(clone.config.auth)
+    clone.config.data = LoggingMessage.OMITTED
+    delete clone.request
+    return clone
+}
+
+function stringifyData(data: any): any {
+    if (data === undefined) {
+        return data
+    }
+    return JSON.stringify(Serializer.serialize(data))
+}
+
+function maskRequestConfigHeaders(
+    headers: AxiosRequestHeaders,
+): AxiosRequestHeaders {
+    const clonedHeaders: AxiosRequestHeaders = new AxiosHeaders()
+    for (const header in headers) {
+        clonedHeaders[header] = LOG_MASKING_HEADERS.includes(
+            header.toLowerCase(),
+        )
+            ? LoggingMessage.OMITTED
+            : headers[header]
+    }
+    return clonedHeaders
+}
+
+function maskAuthCredentials(
+    auth: AxiosBasicCredentials | undefined,
+): AxiosBasicCredentials | undefined {
+    if (auth === undefined) {
+        return auth
+    }
+    return {
+        username: LoggingMessage.OMITTED,
+        password: LoggingMessage.OMITTED,
+    }
+}
+
+function maskResponseHeaders(headers: ResponseHeaders): ResponseHeaders {
+    const clonedHeaders: ResponseHeaders = {}
+    for (const header in headers) {
+        clonedHeaders[header] = LOG_MASKING_HEADERS.includes(
+            header.toLowerCase(),
+        )
+            ? LoggingMessage.OMITTED
+            : headers[header]
+    }
+    return clonedHeaders
+}
+
+function maskBodyFields(body: any): any {
+    if (typeof body !== 'object') {
+        return body
+    }
+    for (const field in body) {
+        body[field] =
+            LOG_MASKING_BODY_FIELDS.includes(field.toLowerCase()) ||
+            isPaymentCardNumber(field, body[field])
+                ? LoggingMessage.OMITTED
+                : maskBodyFields(body[field])
+    }
+    return body
+}
+
+function isPaymentCardNumber(field: string, value: any): boolean {
+    if (value === undefined || value === null) {
+        return false
+    }
+    const s = value.toString()
+    const numberOfDigits = s.length
+    return (
+        field.toLowerCase() === 'number' &&
+        numberOfDigits >= 15 &&
+        numberOfDigits <= 16
     )
 }
 
-abstract class Mask {
-    protected abstract readonly regex: RegExp
-
-    mask(stringMessage: string): string {
-        while (stringMessage.match(this.regex) != null) {
-            stringMessage = stringMessage.replace(this.regex, (_) =>
-                this.maskSubstring(),
-            )
-        }
-        return stringMessage
-    }
-
-    protected maskSubstring(): string {
-        return LoggingMessage.OMITTED
-    }
-}
-
-class AuthTokenMask extends Mask {
-    private static readonly _instance: AuthTokenMask = new AuthTokenMask()
-
-    protected readonly regex: RegExp = new RegExp(
-        LogMaskingRegex.AUTHORIZATION_REGEX,
-    )
-
-    static get instance(): AuthTokenMask {
-        return this._instance
-    }
-
-    private constructor() {
-        super()
-    }
-}
-
-class AuthUsernameMask extends Mask {
-    private static readonly _instance: AuthUsernameMask = new AuthUsernameMask()
-
-    protected readonly regex: RegExp = new RegExp(
-        LogMaskingRegex.AUTH_USERNAME_REGEX,
-    )
-
-    static get instance(): AuthUsernameMask {
-        return this._instance
-    }
-}
-
-class AuthPasswordMask extends Mask {
-    private static readonly _instance: AuthPasswordMask = new AuthPasswordMask()
-
-    protected readonly regex: RegExp = new RegExp(
-        LogMaskingRegex.AUTH_PASSWORD_REGEX,
-    )
-
-    static get instance(): AuthPasswordMask {
-        return this._instance
-    }
-}
-
-class AccessTokenMask extends Mask {
-    private static readonly _instance: AccessTokenMask = new AccessTokenMask()
-
-    protected readonly regex: RegExp = new RegExp(
-        LogMaskingRegex.ACCESS_TOKEN_REGEX,
-    )
-
-    static get instance(): AccessTokenMask {
-        return this._instance
-    }
-}
-
-class NumberFieldMask extends Mask {
-    private static readonly _instance: NumberFieldMask = new NumberFieldMask()
-
-    protected readonly regex: RegExp = new RegExp(
-        LogMaskingRegex.NUMBER_FIELD_REGEX,
-    )
-
-    static get instance(): NumberFieldMask {
-        return this._instance
-    }
-}
-
-class PCIFieldsMask extends Mask {
-    private static readonly _instance: PCIFieldsMask = new PCIFieldsMask()
-
-    protected readonly regex: RegExp = new RegExp(
-        LogMaskingRegex.PCI_FIELDS_REGEX,
-    )
-
-    static get instance(): PCIFieldsMask {
-        return this._instance
-    }
-}
-
-// eslint-disable-next-line @typescript-eslint/no-extraneous-class
-class MaskProvider {
-    private static readonly _masks: Mask[] = [
-        AuthTokenMask.instance,
-        AuthUsernameMask.instance,
-        AuthPasswordMask.instance,
-        AccessTokenMask.instance,
-        NumberFieldMask.instance,
-        PCIFieldsMask.instance,
-    ]
-
-    static get masks(): Mask[] {
-        return this._masks
-    }
-}
+declare type ResponseHeaders = RawAxiosResponseHeaders | AxiosResponseHeaders

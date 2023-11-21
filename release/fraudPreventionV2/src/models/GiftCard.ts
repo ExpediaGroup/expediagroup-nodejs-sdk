@@ -54,6 +54,7 @@ export class GiftCard extends Payment {
             verifiedAmount: giftCard.verifiedAmount,
             threeDigitsSecureCriteria: giftCard.threeDigitsSecureCriteria,
             operations: giftCard.operations,
+            extensions: giftCard.extensions,
         })
         this.cardNumber = giftCard.cardNumber
         this.cardHolderName = giftCard.cardHolderName
