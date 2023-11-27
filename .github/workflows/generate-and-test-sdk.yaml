@@ -62,6 +62,8 @@ jobs:
           git add ./generator/src/test/resources/exemplar-docs/
           git commit -m "chore(docs): update docs" || echo "No changes"
           git push
+        env:
+          GH_TOKEN: ${{ github.token }}
       - uses: actions/labeler@v4
         with:
           sync-labels: true
