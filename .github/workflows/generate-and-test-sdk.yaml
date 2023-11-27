@@ -57,13 +57,16 @@ jobs:
         run: |
           rm -rf ./generator/src/test/resources/exemplar-docs/*
           cp -r ./generator/target/sdk/docs/* ./generator/src/test/resources/exemplar-docs/
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add ./generator/src/test/resources/exemplar-docs/
-          git commit -m "chore(docs): update docs" || echo "No changes"
-          git push
-        env:
-          GH_TOKEN: ${{ github.token }}
+          if git diff --quiet; then
+            echo "No docs changes."
+          else
+            git config --local user.email "github-actions[bot]@users.noreply.github.com"
+            git config --local user.name "github-actions[bot]"
+            git add ./generator/src/test/resources/exemplar-docs/
+            git commit -m "chore(docs): update docs"
+            git push
+            echo "Docs changes committed and pushed successfully."
+          fi
       - uses: actions/labeler@v4
         with:
           sync-labels: true
