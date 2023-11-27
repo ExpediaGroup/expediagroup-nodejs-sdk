@@ -1,6 +1,6 @@
-[@expediagroup/exemplar-sdk](../../index.md) / [client](../index.md) / ExemplarClient
-
 # Class: ExemplarClient
+
+[client](../index.md).ExemplarClient
 
 ## Extends
 
@@ -14,7 +14,7 @@
 
 #### Parameters
 
-▪ **configurations**: [`ClientConfigurations`](../../models/core/interfaces/ClientConfigurations.md)
+• **configurations**: [`ClientConfigurations`](../../models/core/interfaces/ClientConfigurations.md)
 
 #### Returns
 
@@ -22,7 +22,7 @@
 
 #### Overrides
 
-Client.constructor
+`Client.constructor`
 
 #### Source
 
@@ -38,7 +38,7 @@ Get a \&quot;Hello $partnerName\&quot; response for an authenticated request
 
 #### Parameters
 
-▪ **transactionId**: `string`= `undefined`
+• **transactionId**: `string`= `undefined`
 
 A unique ID to uniquely identify a request/response cycle (optional, defaults to a random generated UUID)`<Greeting>` 
 
