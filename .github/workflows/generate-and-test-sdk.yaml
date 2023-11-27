@@ -60,7 +60,7 @@ jobs:
       - name: Create PR
         uses: peter-evans/create-pull-request@v5
         with:
-          branch: "${GITHUB_REF##*/}"
+          branch: "${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}"
           commit-message: "chore(docs): update docs"
           add-paths: |
             ./generator/src/test/resources/exemplar-docs/*
