@@ -67,8 +67,6 @@ jobs:
             git push
             echo "Docs changes committed and pushed successfully."
           fi
-        env:
-          GH_TOKEN: ${{ github.token }}
       - uses: actions/labeler@v4
         with:
           sync-labels: true
