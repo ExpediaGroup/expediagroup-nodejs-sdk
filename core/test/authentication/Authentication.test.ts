@@ -3,6 +3,7 @@ import { Constant } from '../constant/Constant'
 import { TestClient } from '../helper/TestClient'
 import { StatusCode } from '../constant/StatusCode'
 import { ExpediaGroupAuthError } from '../../src/model/error/service/ExpediaGroupAuthError'
+import { Authentication } from '../../src/constant/Authentication'
 
 describe('Authentication', function () {
   it('should send an authentication request when token is expired', async function () {
@@ -17,6 +18,10 @@ describe('Authentication', function () {
     )
     expect(response.status).toEqual(StatusCode.OK)
     expect(response.data).toEqual(Constant.DATA)
+
+    expect(client.mockAdapter.history.post.length).toEqual(1)
+    expect(client.mockAdapter.history.post[0].headers?.['Content-Type']).toEqual(Authentication.APPLICATION_FORM_URL_ENCODED)
+    expect(client.mockAdapter.history.post[0].params?.grant_type).toEqual(Authentication.CLIENT_CREDENTIALS)
 
     expect(client.mockAdapter.history.get.length).toEqual(1)
     expect(client.mockAdapter.history.get[0].headers?.Authorization).toEqual('Bearer token')

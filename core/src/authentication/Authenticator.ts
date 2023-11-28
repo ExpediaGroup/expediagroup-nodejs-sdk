@@ -84,7 +84,11 @@ class Authenticator {
         method: Constant.POST,
         url: configurations.authEndpoint,
         headers: {
-          'User-Agent': configurations.userAgent
+          'User-Agent': configurations.userAgent,
+          'Content-Type': Authentication.APPLICATION_FORM_URL_ENCODED
+        },
+        params: {
+          grant_type: Authentication.CLIENT_CREDENTIALS
         },
         auth: {
           username: configurations.key,
