@@ -26,4 +26,6 @@ export const Authentication = {
     AUTHORIZATION: 'Authorization',
     USERNAME: 'username',
     PASSWORD: 'password',
+    CLIENT_CREDENTIALS: 'client_credentials',
+    APPLICATION_FORM_URL_ENCODED: 'application/x-www-form-urlencoded',
 } as const
