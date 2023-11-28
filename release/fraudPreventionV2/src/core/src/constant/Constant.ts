@@ -20,7 +20,7 @@
 
 export const Constant = {
     ENDPOINT: 'https://api.expediagroup.com/',
-    AUTH_ENDPOINT: 'https://api.expediagroup.com/identity/oauth2/v2/token/',
+    AUTH_ENDPOINT: 'https://api.expediagroup.com/identity/oauth2/v3/token/',
     TEN_SECONDS_IN_MILLIS: 10_000,
     POST: 'POST',
     AUTHORIZATION: 'Authorization',
