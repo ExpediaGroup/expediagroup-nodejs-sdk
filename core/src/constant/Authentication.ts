@@ -25,5 +25,7 @@ export const Authentication = {
   BEARER: 'Bearer',
   AUTHORIZATION: 'Authorization',
   USERNAME: 'username',
-  PASSWORD: 'password'
+  PASSWORD: 'password',
+  CLIENT_CREDENTIALS: 'client_credentials',
+  APPLICATION_FORM_URL_ENCODED: 'application/x-www-form-urlencoded'
 } as const
