@@ -1,6 +1,6 @@
-[@expediagroup/exemplar-sdk](../../../index.md) / [models](../../index.md) / [core](../index.md) / AxiosClientConfigurations
-
 # Class: AxiosClientConfigurations
+
+[core](../index.md).AxiosClientConfigurations
 
 ## Constructors
 
@@ -10,9 +10,9 @@
 
 #### Parameters
 
-▪ **endpoint**: `string`= `Constant.ENDPOINT`
+• **endpoint**: `string`= `Constant.ENDPOINT`
 
-▪ **requestTimeout**: `number`= `Constant.TEN_SECONDS_IN_MILLIS`
+• **requestTimeout**: `number`= `Constant.TEN_SECONDS_IN_MILLIS`
 
 #### Returns
 
