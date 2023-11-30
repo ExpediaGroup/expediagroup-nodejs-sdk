@@ -1,6 +1,6 @@
-[@expediagroup/exemplar-sdk](../../index.md) / [models](../index.md) / core
-
 # core
+
+[models](../index.md).core
 
 ## Index
 
