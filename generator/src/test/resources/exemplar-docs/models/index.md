@@ -1,5 +1,3 @@
-[@expediagroup/exemplar-sdk](../index.md) / models
-
 # models
 
 ## Index

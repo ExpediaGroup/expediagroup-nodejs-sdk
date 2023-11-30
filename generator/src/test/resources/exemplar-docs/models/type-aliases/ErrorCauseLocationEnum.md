@@ -1,6 +1,6 @@
-[@expediagroup/exemplar-sdk](../../index.md) / [models](../index.md) / ErrorCauseLocationEnum
-
 # Type alias: ErrorCauseLocationEnum
+
+[models](../index.md).ErrorCauseLocationEnum
 
 > **ErrorCauseLocationEnum**: `"header"` \| `"path"` \| `"query"` \| `"body"`
 

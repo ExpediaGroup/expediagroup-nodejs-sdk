@@ -1,6 +1,6 @@
-[@expediagroup/exemplar-sdk](../../../index.md) / [models](../../index.md) / [core](../index.md) / Client
-
 # Class: `abstract` Client
+
+[core](../index.md).Client
 
 ## Extended By
 

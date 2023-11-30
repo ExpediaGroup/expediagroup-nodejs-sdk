@@ -1,5 +1,3 @@
-[@expediagroup/exemplar-sdk](../index.md) / client
-
 # client
 
 ## Index
