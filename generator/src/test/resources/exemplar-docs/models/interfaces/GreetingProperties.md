@@ -6,4 +6,4 @@
 
 | Property | Type | Description | Source |
 | :------ | :------ | :------ | :------ |
-| `message`? | `string` | - | models/Greeting.ts:34 |
+| `message?` | `string` | - | models/Greeting.ts:34 |
