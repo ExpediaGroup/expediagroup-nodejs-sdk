@@ -10,7 +10,7 @@
 
 #### Parameters
 
-▪ **greeting**: [`GreetingProperties`](../interfaces/GreetingProperties.md)
+• **greeting**: [`GreetingProperties`](../interfaces/GreetingProperties.md)
 
 #### Returns
 
@@ -24,4 +24,4 @@ models/Greeting.ts:28
 
 | Property | Type | Description | Source |
 | :------ | :------ | :------ | :------ |
-| `message`? | `string` | - | models/Greeting.ts:26 |
+| `message?` | `string` | - | models/Greeting.ts:26 |
