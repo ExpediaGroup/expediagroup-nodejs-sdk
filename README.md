@@ -1,6 +1,6 @@
 # Expedia Group SDK for NodeJS
 
-The Expedia Group SDK for NodeJSs allows Expedia Group partners to easily build NodeJS applications that leverage the Expedia Group platform.
+The Expedia Group SDK for NodeJS allows Expedia Group partners to easily build NodeJS applications that leverage the Expedia Group platform.
 
 ## Contributing
 
