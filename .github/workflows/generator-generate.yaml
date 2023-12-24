@@ -39,11 +39,11 @@ jobs:
           npm run prepare-sdk
           npm run generate-docs
           rm -r node_modules
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: sdk
           path: generator/target/sdk
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: docs
           path: generator/target/sdk/docs
