@@ -39,6 +39,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: sdk
+          from-job: generate-sdk
           path: generator/target/sdk
       - name: Set up Node
         uses: actions/setup-node@v4
