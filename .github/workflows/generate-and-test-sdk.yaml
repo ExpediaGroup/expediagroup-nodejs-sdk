@@ -68,6 +68,6 @@ jobs:
             git push
             echo "Docs changes committed and pushed successfully."
           fi
-      - uses: actions/labeler@v4
+      - uses: actions/labeler@v5
         with:
           sync-labels: true
