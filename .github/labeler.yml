@@ -1,1 +1,3 @@
-Docs Changes: generator/src/test/resources/exemplar-docs/**/*
+Docs Changes:
+  - changed-files:
+      - any-glob-to-any-file: 'generator/src/test/resources/exemplar-docs/**/*'
