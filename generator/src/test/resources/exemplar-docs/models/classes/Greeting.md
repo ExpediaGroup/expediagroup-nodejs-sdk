@@ -22,6 +22,6 @@ models/Greeting.ts:28
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `message?` | `string` | - | models/Greeting.ts:26 |
+| Property | Type |
+| :------ | :------ |
+| `message?` | `string` |
