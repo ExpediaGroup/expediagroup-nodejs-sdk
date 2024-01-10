@@ -4,6 +4,6 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `message?` | `string` | - | models/Greeting.ts:34 |
+| Property | Type |
+| :------ | :------ |
+| `message?` | `string` |

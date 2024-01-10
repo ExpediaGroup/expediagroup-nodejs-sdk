@@ -24,7 +24,7 @@ core/src/client/AxiosClientConfigurations.ts:24
 
 ## Properties
 
-| Modifier | Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ | :------ |
-| `readonly` | `endpoint` | `string` | - | core/src/client/AxiosClientConfigurations.ts:25 |
-| `readonly` | `requestTimeout` | `number` | - | core/src/client/AxiosClientConfigurations.ts:26 |
+| Modifier | Property | Type |
+| :------ | :------ | :------ |
+| `readonly` | `endpoint` | `string` |
+| `readonly` | `requestTimeout` | `number` |
