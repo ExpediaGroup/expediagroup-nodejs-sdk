@@ -2,6 +2,6 @@
 
 # Class: `abstract` Client
 
-## Extended By
+## Extended by
 
 - [`ExemplarClient`](../../../client/classes/ExemplarClient.md)
