@@ -1,4 +1,4 @@
-[@expediagroup/exemplar-sdk](../../index.md) / [models](../index.md) / core
+[@expediagroup/exemplar-sdk](../../index.md) / [client](../index.md) / core
 
 # core
 

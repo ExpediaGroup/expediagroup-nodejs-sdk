@@ -4,10 +4,6 @@
 
 ## Index
 
-### Modules
-
-- [core](core/index.md)
-
 ### Classes
 
 - [ErrorCause](classes/ErrorCause.md)

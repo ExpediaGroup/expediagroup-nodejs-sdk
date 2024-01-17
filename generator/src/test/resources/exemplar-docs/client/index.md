@@ -4,6 +4,10 @@
 
 ## Index
 
+### Modules
+
+- [core](core/index.md)
+
 ### Classes
 
 - [ExemplarClient](classes/ExemplarClient.md)

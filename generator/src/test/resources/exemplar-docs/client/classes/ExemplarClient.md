@@ -4,7 +4,7 @@
 
 ## Extends
 
-- [`Client`](../../models/core/classes/Client.md)
+- [`Client`](../core/classes/Client.md)
 
 ## Constructors
 
@@ -14,7 +14,7 @@
 
 #### Parameters
 
-• **configurations**: [`ClientConfigurations`](../../models/core/interfaces/ClientConfigurations.md)
+• **configurations**: [`ClientConfigurations`](../core/interfaces/ClientConfigurations.md)
 
 #### Returns
 
