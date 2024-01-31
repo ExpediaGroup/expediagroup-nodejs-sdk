@@ -10,9 +10,9 @@
 
 #### Parameters
 
-• **endpoint**: `string`= `Constant.ENDPOINT`
+• `endpoint`: `string`= `Constant.ENDPOINT`
 
-• **requestTimeout**: `number`= `Constant.TEN_SECONDS_IN_MILLIS`
+• `requestTimeout`: `number`= `Constant.TEN_SECONDS_IN_MILLIS`
 
 #### Returns
 
@@ -24,7 +24,7 @@ core/src/client/AxiosClientConfigurations.ts:24
 
 ## Properties
 
-| Modifier | Property | Type |
+| Property | Modifier | Type |
 | :------ | :------ | :------ |
-| `readonly` | `endpoint` | `string` |
-| `readonly` | `requestTimeout` | `number` |
+| `endpoint` | `readonly` | `string` |
+| `requestTimeout` | `readonly` | `number` |
