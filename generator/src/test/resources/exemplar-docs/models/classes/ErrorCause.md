@@ -12,7 +12,7 @@ The object used to describe a cause for an error, containing both human-readable
 
 #### Parameters
 
-• `errorCause`: [`ErrorCauseProperties`](../interfaces/ErrorCauseProperties.md)
+• **errorCause**: [`ErrorCauseProperties`](../interfaces/ErrorCauseProperties.md)
 
 #### Returns
 
