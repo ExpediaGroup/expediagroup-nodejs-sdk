@@ -4,7 +4,7 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `code` | [`InternalServerErrorCodeEnum`](../type-aliases/InternalServerErrorCodeEnum.md) | - | models/InternalServerError.ts:59 |
-| `message` | `string` | - | models/InternalServerError.ts:60 |
+| Property | Type |
+| :------ | :------ |
+| `code` | [`InternalServerErrorCodeEnum`](../type-aliases/InternalServerErrorCodeEnum.md) |
+| `message` | `string` |

@@ -16,7 +16,7 @@ Refund related data. Update should be sent when refund is issued or settled. Amo
 
 #### Parameters
 
-▪ **refundUpdate**: [`RefundUpdateProperties`](../interfaces/RefundUpdateProperties.md)
+• **refundUpdate**: [`RefundUpdateProperties`](../interfaces/RefundUpdateProperties.md)
 
 #### Returns
 
@@ -32,7 +32,7 @@ models/RefundUpdate.ts:33
 
 ## Properties
 
-| Modifier | Property | Type | Description | Inheritance | Source |
-| :------ | :------ | :------ | :------ | :------ | :------ |
-| `public` | `riskId` | `string` | The `risk_id` provided by Expedia\'s Fraud Prevention Service in the `OrderPurchaseScreenResponse`. | [`OrderPurchaseUpdateRequest`](OrderPurchaseUpdateRequest.md).`riskId` | models/OrderPurchaseUpdateRequest.ts:32 |
-| `readonly` | `type` | `"REFUND_UPDATE"` | - | - | models/RefundUpdate.ts:31 |
+| Property | Modifier | Type | Description | Inherited from |
+| :------ | :------ | :------ | :------ | :------ |
+| `riskId` | `public` | `string` | The `risk_id` provided by Expedia\'s Fraud Prevention Service in the `OrderPurchaseScreenResponse`. | [`OrderPurchaseUpdateRequest`](OrderPurchaseUpdateRequest.md).`riskId` |
+| `type` | `readonly` | `"REFUND_UPDATE"` | - | - |

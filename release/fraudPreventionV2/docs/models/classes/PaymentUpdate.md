@@ -16,7 +16,7 @@ Payment related data that should be updated.
 
 #### Parameters
 
-▪ **paymentUpdate**: [`PaymentUpdateProperties`](../interfaces/PaymentUpdateProperties.md)
+• **paymentUpdate**: [`PaymentUpdateProperties`](../interfaces/PaymentUpdateProperties.md)
 
 #### Returns
 
@@ -32,8 +32,8 @@ models/PaymentUpdate.ts:39
 
 ## Properties
 
-| Modifier | Property | Type | Description | Inheritance | Source |
-| :------ | :------ | :------ | :------ | :------ | :------ |
-| `public` | `merchantOrderCode` | `string` | Reference code passed to acquiring bank at the time of payment. This code is the key ID that ties back to payments data at the payment level. | - | models/PaymentUpdate.ts:34 |
-| `public` | `riskId` | `string` | The `risk_id` provided by Expedia\'s Fraud Prevention Service in the `OrderPurchaseScreenResponse`. | [`OrderPurchaseUpdateRequest`](OrderPurchaseUpdateRequest.md).`riskId` | models/OrderPurchaseUpdateRequest.ts:32 |
-| `readonly` | `type` | `"PAYMENT_UPDATE"` | - | - | models/PaymentUpdate.ts:37 |
+| Property | Modifier | Type | Description | Inherited from |
+| :------ | :------ | :------ | :------ | :------ |
+| `merchantOrderCode` | `public` | `string` | Reference code passed to acquiring bank at the time of payment. This code is the key ID that ties back to payments data at the payment level. | - |
+| `riskId` | `public` | `string` | The `risk_id` provided by Expedia\'s Fraud Prevention Service in the `OrderPurchaseScreenResponse`. | [`OrderPurchaseUpdateRequest`](OrderPurchaseUpdateRequest.md).`riskId` |
+| `type` | `readonly` | `"PAYMENT_UPDATE"` | - | - |

@@ -4,7 +4,7 @@
 
 ## Extends
 
-- [`Client`](../../models/core/classes/Client.md)
+- [`Client`](../core/classes/Client.md)
 
 ## Constructors
 
@@ -14,7 +14,7 @@
 
 #### Parameters
 
-▪ **configurations**: [`ClientConfigurations`](../../models/core/interfaces/ClientConfigurations.md)
+• **configurations**: [`ClientConfigurations`](../core/interfaces/ClientConfigurations.md)
 
 #### Returns
 
@@ -22,7 +22,7 @@
 
 #### Overrides
 
-Client.constructor
+`Client.constructor`
 
 #### Source
 
@@ -39,13 +39,13 @@ The Account Update API is called when there is an account lifecycle transition s
 
 #### Parameters
 
-▪ **accountUpdateRequest**: [`AccountUpdateRequest`](../../models/classes/AccountUpdateRequest.md)
+• **accountUpdateRequest**: [`AccountUpdateRequest`](../../models/classes/AccountUpdateRequest.md)
 
 An AccountUpdate request may be of one of the following types &#x60;MULTI_FACTOR_AUTHENTICATION_UPDATE&#x60;, &#x60;REMEDIATION_UPDATE&#x60;.
 
-▪ **transactionId**: `string`= `undefined`
+• **transactionId**: `string`= `undefined`
 
-A unique ID to uniquely identify a request/response cycle (optional, defaults to a random generated UUID)`<AccountUpdateResponse>` 
+A unique ID to uniquely identify a request/response cycle (optional, defaults to a random generated UUID)`<AccountUpdateResponse>`
 
 #### Returns
 
@@ -104,13 +104,13 @@ The Order Purchase Update API is called when the status of the order has changed
 
 #### Parameters
 
-▪ **orderPurchaseUpdateRequest**: [`OrderPurchaseUpdateRequest`](../../models/classes/OrderPurchaseUpdateRequest.md)
+• **orderPurchaseUpdateRequest**: [`OrderPurchaseUpdateRequest`](../../models/classes/OrderPurchaseUpdateRequest.md)
 
 An OrderPurchaseUpdate request may be of one of the following types &#x60;ORDER_UPDATE&#x60;, &#x60;CHARGEBACK_FEEDBACK&#x60;, &#x60;INSULT_FEEDBACK&#x60;, &#x60;REFUND_UPDATE&#x60;, &#x60;PAYMENT_UPDATE&#x60;.
 
-▪ **transactionId**: `string`= `undefined`
+• **transactionId**: `string`= `undefined`
 
-A unique ID to uniquely identify a request/response cycle (optional, defaults to a random generated UUID)`<OrderPurchaseUpdateResponse>` 
+A unique ID to uniquely identify a request/response cycle (optional, defaults to a random generated UUID)`<OrderPurchaseUpdateResponse>`
 
 #### Returns
 
@@ -169,11 +169,11 @@ The Account Screen API gives a Fraud recommendation for an account transaction. 
 
 #### Parameters
 
-▪ **accountScreenRequest**: [`AccountScreenRequest`](../../models/classes/AccountScreenRequest.md)
+• **accountScreenRequest**: [`AccountScreenRequest`](../../models/classes/AccountScreenRequest.md)
 
-▪ **transactionId**: `string`= `undefined`
+• **transactionId**: `string`= `undefined`
 
-A unique ID to uniquely identify a request/response cycle (optional, defaults to a random generated UUID)`<AccountScreenResponse>` 
+A unique ID to uniquely identify a request/response cycle (optional, defaults to a random generated UUID)`<AccountScreenResponse>`
 
 #### Returns
 
@@ -232,11 +232,11 @@ The Order Purchase API gives a Fraud recommendation for a transaction. A recomme
 
 #### Parameters
 
-▪ **orderPurchaseScreenRequest**: [`OrderPurchaseScreenRequest`](../../models/classes/OrderPurchaseScreenRequest.md)
+• **orderPurchaseScreenRequest**: [`OrderPurchaseScreenRequest`](../../models/classes/OrderPurchaseScreenRequest.md)
 
-▪ **transactionId**: `string`= `undefined`
+• **transactionId**: `string`= `undefined`
 
-A unique ID to uniquely identify a request/response cycle (optional, defaults to a random generated UUID)`<OrderPurchaseScreenResponse>` 
+A unique ID to uniquely identify a request/response cycle (optional, defaults to a random generated UUID)`<OrderPurchaseScreenResponse>`
 
 #### Returns
 

@@ -12,7 +12,7 @@ This attribute captures the name or identifier of the company responsible for op
 
 #### Parameters
 
-▪ **railSegmentsOperatingCompany**: [`RailSegmentsOperatingCompanyProperties`](../interfaces/RailSegmentsOperatingCompanyProperties.md)
+• **railSegmentsOperatingCompany**: [`RailSegmentsOperatingCompanyProperties`](../interfaces/RailSegmentsOperatingCompanyProperties.md)
 
 #### Returns
 
@@ -24,6 +24,6 @@ models/RailSegmentsOperatingCompany.ts:34
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `marketingName`? | `string` | The name used by the transportation carrier for marketing purposes in the travel segment. Example: ARX, AMTRAC, ARRIVA | models/RailSegmentsOperatingCompany.ts:32 |
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| `marketingName?` | `string` | The name used by the transportation carrier for marketing purposes in the travel segment. Example: ARX, AMTRAC, ARRIVA |

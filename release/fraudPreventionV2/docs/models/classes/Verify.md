@@ -12,7 +12,7 @@ A verify operation represents the intent to verify the payment associated with t
 
 #### Parameters
 
-▪ **verify**: [`VerifyProperties`](../interfaces/VerifyProperties.md)
+• **verify**: [`VerifyProperties`](../interfaces/VerifyProperties.md)
 
 #### Returns
 
@@ -24,9 +24,9 @@ models/Verify.ts:50
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `amount`? | [`Amount`](Amount.md) | - | models/Verify.ts:41 |
-| `id`? | `string` | - | models/Verify.ts:36 |
-| `outcome`? | [`PaymentOutcome`](PaymentOutcome.md) | - | models/Verify.ts:46 |
-| `type`? | [`VerificationType`](../type-aliases/VerificationType.md) | - | models/Verify.ts:48 |
+| Property | Type |
+| :------ | :------ |
+| `amount?` | [`Amount`](Amount.md) |
+| `id?` | `string` |
+| `outcome?` | [`PaymentOutcome`](PaymentOutcome.md) |
+| `type?` | [`VerificationType`](../type-aliases/VerificationType.md) |

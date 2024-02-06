@@ -4,6 +4,6 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `riskId`? | `string` | - | models/AccountUpdateResponse.ts:37 |
+| Property | Type |
+| :------ | :------ |
+| `riskId?` | `string` |

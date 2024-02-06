@@ -12,7 +12,7 @@ Authorize operation on the payment. An authorize operation represents placing th
 
 #### Parameters
 
-▪ **authorize**: [`AuthorizeProperties`](../interfaces/AuthorizeProperties.md)
+• **authorize**: [`AuthorizeProperties`](../interfaces/AuthorizeProperties.md)
 
 #### Returns
 
@@ -24,8 +24,8 @@ models/Authorize.ts:47
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `amount`? | [`Amount`](Amount.md) | - | models/Authorize.ts:40 |
-| `id`? | `string` | - | models/Authorize.ts:35 |
-| `outcome`? | [`PaymentOutcome`](PaymentOutcome.md) | - | models/Authorize.ts:45 |
+| Property | Type |
+| :------ | :------ |
+| `amount?` | [`Amount`](Amount.md) |
+| `id?` | `string` |
+| `outcome?` | [`PaymentOutcome`](PaymentOutcome.md) |

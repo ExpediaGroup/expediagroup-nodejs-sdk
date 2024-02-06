@@ -4,8 +4,8 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `challengeDetail`? | [`ChallengeDetail`](../classes/ChallengeDetail.md) | - | models/CurrentUserSession.ts:57 |
-| `sessionId`? | `string` | - | models/CurrentUserSession.ts:55 |
-| `startDateTime`? | `Date` | - | models/CurrentUserSession.ts:56 |
+| Property | Type |
+| :------ | :------ |
+| `challengeDetail?` | [`ChallengeDetail`](../classes/ChallengeDetail.md) |
+| `sessionId?` | `string` |
+| `startDateTime?` | `Date` |

@@ -4,8 +4,8 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `amount`? | [`Amount`](../classes/Amount.md) | - | models/PaymentOperation.ts:53 |
-| `id`? | `string` | - | models/PaymentOperation.ts:52 |
-| `outcome`? | [`PaymentOutcome`](../classes/PaymentOutcome.md) | - | models/PaymentOperation.ts:54 |
+| Property | Type |
+| :------ | :------ |
+| `amount?` | [`Amount`](../classes/Amount.md) |
+| `id?` | `string` |
+| `outcome?` | [`PaymentOutcome`](../classes/PaymentOutcome.md) |

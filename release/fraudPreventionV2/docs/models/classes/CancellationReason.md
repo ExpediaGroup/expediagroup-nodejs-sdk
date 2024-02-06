@@ -12,7 +12,7 @@ Reason of order update cancellation.
 
 #### Parameters
 
-▪ **cancellationReason**: [`CancellationReasonProperties`](../interfaces/CancellationReasonProperties.md)
+• **cancellationReason**: [`CancellationReasonProperties`](../interfaces/CancellationReasonProperties.md)
 
 #### Returns
 
@@ -24,9 +24,9 @@ models/CancellationReason.ts:49
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `primaryReasonCode`? | `string` | Primary cancellation reason code. | models/CancellationReason.ts:32 |
-| `primaryReasonDescription`? | `string` | Primary cancellation reason code. Required if `order_status = CANCELLED`. | models/CancellationReason.ts:42 |
-| `subReasonCode`? | `string` | Substitute cancellation reason code. | models/CancellationReason.ts:37 |
-| `subReasonDescription`? | `string` | Substitute cancellation reason description. | models/CancellationReason.ts:47 |
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| `primaryReasonCode?` | `string` | Primary cancellation reason code. |
+| `primaryReasonDescription?` | `string` | Primary cancellation reason code. Required if `order_status = CANCELLED`. |
+| `subReasonCode?` | `string` | Substitute cancellation reason code. |
+| `subReasonDescription?` | `string` | Substitute cancellation reason description. |

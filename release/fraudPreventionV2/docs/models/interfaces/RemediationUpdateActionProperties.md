@@ -4,8 +4,8 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `actionName` | [`RemediationUpdateActionActionNameEnum`](../type-aliases/RemediationUpdateActionActionNameEnum.md) | - | models/RemediationUpdateAction.ts:60 |
-| `status` | [`RemediationUpdateActionStatusEnum`](../type-aliases/RemediationUpdateActionStatusEnum.md) | - | models/RemediationUpdateAction.ts:61 |
-| `updateEndDateTime`? | `Date` | - | models/RemediationUpdateAction.ts:62 |
+| Property | Type |
+| :------ | :------ |
+| `actionName` | [`RemediationUpdateActionActionNameEnum`](../type-aliases/RemediationUpdateActionActionNameEnum.md) |
+| `status` | [`RemediationUpdateActionStatusEnum`](../type-aliases/RemediationUpdateActionStatusEnum.md) |
+| `updateEndDateTime?` | `Date` |

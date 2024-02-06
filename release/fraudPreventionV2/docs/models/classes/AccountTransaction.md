@@ -12,7 +12,7 @@ Information for an account transaction.
 
 #### Parameters
 
-▪ **accountTransaction**: [`AccountTransactionProperties`](../interfaces/AccountTransactionProperties.md)
+• **accountTransaction**: [`AccountTransactionProperties`](../interfaces/AccountTransactionProperties.md)
 
 #### Returns
 
@@ -24,9 +24,9 @@ models/AccountTransaction.ts:63
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `customerAccount` | [`AccountTakeoverCustomerAccount`](AccountTakeoverCustomerAccount.md) | - | models/AccountTransaction.ts:55 |
-| `deviceDetails` | [`AccountTakeoverDeviceDetails`](AccountTakeoverDeviceDetails.md) | - | models/AccountTransaction.ts:49 |
-| `siteInfo` | [`AccountTakeoverSiteInfo`](AccountTakeoverSiteInfo.md) | - | models/AccountTransaction.ts:43 |
-| `transactionDetails` | [`AccountTakeoverTransactionDetails`](AccountTakeoverTransactionDetails.md) | - | models/AccountTransaction.ts:61 |
+| Property | Type |
+| :------ | :------ |
+| `customerAccount` | [`AccountTakeoverCustomerAccount`](AccountTakeoverCustomerAccount.md) |
+| `deviceDetails` | [`AccountTakeoverDeviceDetails`](AccountTakeoverDeviceDetails.md) |
+| `siteInfo` | [`AccountTakeoverSiteInfo`](AccountTakeoverSiteInfo.md) |
+| `transactionDetails` | [`AccountTakeoverTransactionDetails`](AccountTakeoverTransactionDetails.md) |

@@ -4,7 +4,7 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `currencyCode` | `string` | - | models/Amount.ts:44 |
-| `value` | `number` | - | models/Amount.ts:43 |
+| Property | Type |
+| :------ | :------ |
+| `currencyCode` | `string` |
+| `value` | `number` |

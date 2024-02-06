@@ -12,7 +12,7 @@ The current user session prior to this transaction, which contains details relat
 
 #### Parameters
 
-▪ **currentUserSession**: [`CurrentUserSessionProperties`](../interfaces/CurrentUserSessionProperties.md)
+• **currentUserSession**: [`CurrentUserSessionProperties`](../interfaces/CurrentUserSessionProperties.md)
 
 #### Returns
 
@@ -24,8 +24,8 @@ models/CurrentUserSession.ts:47
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `challengeDetail`? | [`ChallengeDetail`](ChallengeDetail.md) | - | models/CurrentUserSession.ts:45 |
-| `sessionId`? | `string` | Unique identifier for a user\'s session on their device | models/CurrentUserSession.ts:35 |
-| `startDateTime`? | `Date` | The local date and time a user\'s session started, in ISO-8601 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`. | models/CurrentUserSession.ts:40 |
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| `challengeDetail?` | [`ChallengeDetail`](ChallengeDetail.md) | - |
+| `sessionId?` | `string` | Unique identifier for a user\'s session on their device |
+| `startDateTime?` | `Date` | The local date and time a user\'s session started, in ISO-8601 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`. |

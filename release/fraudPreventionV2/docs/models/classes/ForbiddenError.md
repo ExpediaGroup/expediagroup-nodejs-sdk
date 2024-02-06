@@ -12,7 +12,7 @@ Indicates that the API cannot fulfill the request because while the client is co
 
 #### Parameters
 
-▪ **forbiddenError**: [`ForbiddenErrorProperties`](../interfaces/ForbiddenErrorProperties.md)
+• **forbiddenError**: [`ForbiddenErrorProperties`](../interfaces/ForbiddenErrorProperties.md)
 
 #### Returns
 
@@ -24,7 +24,7 @@ models/ForbiddenError.ts:39
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `code` | [`ForbiddenErrorCodeEnum`](../type-aliases/ForbiddenErrorCodeEnum.md) | Snake cased all caps error code interpreted from the HTTP status code that can programmatically be acted upon. | models/ForbiddenError.ts:32 |
-| `message` | `string` | A human-readable explanation of the error, specific to this error occurrence. | models/ForbiddenError.ts:37 |
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| `code` | [`ForbiddenErrorCodeEnum`](../type-aliases/ForbiddenErrorCodeEnum.md) | Snake cased all caps error code interpreted from the HTTP status code that can programmatically be acted upon. |
+| `message` | `string` | A human-readable explanation of the error, specific to this error occurrence. |

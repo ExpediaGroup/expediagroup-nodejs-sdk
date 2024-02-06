@@ -12,7 +12,7 @@ Indicates that the API cannot find the resource that is either being requested o
 
 #### Parameters
 
-▪ **accountUpdateNotFoundError**: [`AccountUpdateNotFoundErrorProperties`](../interfaces/AccountUpdateNotFoundErrorProperties.md)
+• **accountUpdateNotFoundError**: [`AccountUpdateNotFoundErrorProperties`](../interfaces/AccountUpdateNotFoundErrorProperties.md)
 
 #### Returns
 
@@ -24,7 +24,7 @@ models/AccountUpdateNotFoundError.ts:39
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `code` | [`AccountUpdateNotFoundErrorCodeEnum`](../type-aliases/AccountUpdateNotFoundErrorCodeEnum.md) | Snake cased all caps error code interpreted from the HTTP status code that can programmatically be acted upon. | models/AccountUpdateNotFoundError.ts:32 |
-| `message` | `string` | A human-readable explanation of the error, specific to this error occurrence. | models/AccountUpdateNotFoundError.ts:37 |
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| `code` | [`AccountUpdateNotFoundErrorCodeEnum`](../type-aliases/AccountUpdateNotFoundErrorCodeEnum.md) | Snake cased all caps error code interpreted from the HTTP status code that can programmatically be acted upon. |
+| `message` | `string` | A human-readable explanation of the error, specific to this error occurrence. |

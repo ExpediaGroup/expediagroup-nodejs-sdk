@@ -4,8 +4,8 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `code`? | `string` | - | models/PaymentOutcome.ts:48 |
-| `description`? | `string` | - | models/PaymentOutcome.ts:49 |
-| `status`? | [`PaymentStatus`](../type-aliases/PaymentStatus.md) | - | models/PaymentOutcome.ts:47 |
+| Property | Type |
+| :------ | :------ |
+| `code?` | `string` |
+| `description?` | `string` |
+| `status?` | [`PaymentStatus`](../type-aliases/PaymentStatus.md) |

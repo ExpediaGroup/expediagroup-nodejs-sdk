@@ -4,8 +4,8 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `displayedFlag` | `boolean` | - | models/ChallengeDetail.ts:55 |
-| `status` | [`ChallengeDetailStatusEnum`](../type-aliases/ChallengeDetailStatusEnum.md) | - | models/ChallengeDetail.ts:57 |
-| `type` | [`ChallengeDetailTypeEnum`](../type-aliases/ChallengeDetailTypeEnum.md) | - | models/ChallengeDetail.ts:56 |
+| Property | Type |
+| :------ | :------ |
+| `displayedFlag` | `boolean` |
+| `status` | [`ChallengeDetailStatusEnum`](../type-aliases/ChallengeDetailStatusEnum.md) |
+| `type` | [`ChallengeDetailTypeEnum`](../type-aliases/ChallengeDetailTypeEnum.md) |

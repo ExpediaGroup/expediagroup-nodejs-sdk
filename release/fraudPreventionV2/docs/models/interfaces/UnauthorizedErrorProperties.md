@@ -4,7 +4,7 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `code` | [`UnauthorizedErrorCodeEnum`](../type-aliases/UnauthorizedErrorCodeEnum.md) | - | models/UnauthorizedError.ts:59 |
-| `message` | `string` | - | models/UnauthorizedError.ts:60 |
+| Property | Type |
+| :------ | :------ |
+| `code` | [`UnauthorizedErrorCodeEnum`](../type-aliases/UnauthorizedErrorCodeEnum.md) |
+| `message` | `string` |

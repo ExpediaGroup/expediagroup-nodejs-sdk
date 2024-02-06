@@ -12,7 +12,7 @@ Indicates that the token sent in the \'Authorization\' header is either invalid 
 
 #### Parameters
 
-▪ **accountTakeoverUnauthorizedError**: [`AccountTakeoverUnauthorizedErrorProperties`](../interfaces/AccountTakeoverUnauthorizedErrorProperties.md)
+• **accountTakeoverUnauthorizedError**: [`AccountTakeoverUnauthorizedErrorProperties`](../interfaces/AccountTakeoverUnauthorizedErrorProperties.md)
 
 #### Returns
 
@@ -24,7 +24,7 @@ models/AccountTakeoverUnauthorizedError.ts:39
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `code` | [`AccountTakeoverUnauthorizedErrorCodeEnum`](../type-aliases/AccountTakeoverUnauthorizedErrorCodeEnum.md) | Snake cased all caps error code interpreted from the HTTP status code that can programmatically be acted upon. | models/AccountTakeoverUnauthorizedError.ts:32 |
-| `message` | `string` | A human-readable explanation of the error, specific to this error occurrence. | models/AccountTakeoverUnauthorizedError.ts:37 |
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| `code` | [`AccountTakeoverUnauthorizedErrorCodeEnum`](../type-aliases/AccountTakeoverUnauthorizedErrorCodeEnum.md) | Snake cased all caps error code interpreted from the HTTP status code that can programmatically be acted upon. |
+| `message` | `string` | A human-readable explanation of the error, specific to this error occurrence. |

@@ -4,6 +4,6 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `transaction` | [`AccountTransaction`](../classes/AccountTransaction.md) | - | models/AccountScreenRequest.ts:42 |
+| Property | Type |
+| :------ | :------ |
+| `transaction` | [`AccountTransaction`](../classes/AccountTransaction.md) |

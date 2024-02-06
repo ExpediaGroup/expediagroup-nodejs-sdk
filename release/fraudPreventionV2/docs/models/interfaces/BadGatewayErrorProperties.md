@@ -4,7 +4,7 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `code` | [`BadGatewayErrorCodeEnum`](../type-aliases/BadGatewayErrorCodeEnum.md) | - | models/BadGatewayError.ts:59 |
-| `message` | `string` | - | models/BadGatewayError.ts:60 |
+| Property | Type |
+| :------ | :------ |
+| `code` | [`BadGatewayErrorCodeEnum`](../type-aliases/BadGatewayErrorCodeEnum.md) |
+| `message` | `string` |

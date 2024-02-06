@@ -4,7 +4,7 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `refundIssuedAmount` | [`Amount`](../classes/Amount.md) | - | models/IssuedRefundUpdateDetails.ts:53 |
-| `refundIssuedDateTime` | `Date` | - | models/IssuedRefundUpdateDetails.ts:52 |
+| Property | Type |
+| :------ | :------ |
+| `refundIssuedAmount` | [`Amount`](../classes/Amount.md) |
+| `refundIssuedDateTime` | `Date` |

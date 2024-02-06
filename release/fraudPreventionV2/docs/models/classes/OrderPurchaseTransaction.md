@@ -10,7 +10,7 @@
 
 #### Parameters
 
-▪ **orderPurchaseTransaction**: [`OrderPurchaseTransactionProperties`](../interfaces/OrderPurchaseTransactionProperties.md)
+• **orderPurchaseTransaction**: [`OrderPurchaseTransactionProperties`](../interfaces/OrderPurchaseTransactionProperties.md)
 
 #### Returns
 
@@ -22,9 +22,9 @@ models/OrderPurchaseTransaction.ts:57
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `customerAccount` | [`CustomerAccount`](CustomerAccount.md) | - | models/OrderPurchaseTransaction.ts:50 |
-| `deviceDetails` | [`DeviceDetails`](DeviceDetails.md) | - | models/OrderPurchaseTransaction.ts:45 |
-| `siteInfo` | [`SiteInfo`](SiteInfo.md) | - | models/OrderPurchaseTransaction.ts:40 |
-| `transactionDetails` | [`TransactionDetails`](TransactionDetails.md) | - | models/OrderPurchaseTransaction.ts:55 |
+| Property | Type |
+| :------ | :------ |
+| `customerAccount` | [`CustomerAccount`](CustomerAccount.md) |
+| `deviceDetails` | [`DeviceDetails`](DeviceDetails.md) |
+| `siteInfo` | [`SiteInfo`](SiteInfo.md) |
+| `transactionDetails` | [`TransactionDetails`](TransactionDetails.md) |

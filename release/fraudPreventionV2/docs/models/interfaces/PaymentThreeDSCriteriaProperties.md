@@ -4,7 +4,7 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `probableFlag`? | `boolean` | - | models/PaymentThreeDSCriteria.ts:48 |
-| `transactionModel`? | `string` | - | models/PaymentThreeDSCriteria.ts:49 |
+| Property | Type |
+| :------ | :------ |
+| `probableFlag?` | `boolean` |
+| `transactionModel?` | `string` |

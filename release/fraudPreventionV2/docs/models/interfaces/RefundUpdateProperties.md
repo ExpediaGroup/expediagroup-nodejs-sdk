@@ -8,6 +8,6 @@
 
 ## Properties
 
-| Property | Type | Description | Inheritance | Source |
-| :------ | :------ | :------ | :------ | :------ |
-| `riskId` | `string` | - | [`OrderPurchaseUpdateRequestProperties`](OrderPurchaseUpdateRequestProperties.md).`riskId` | models/OrderPurchaseUpdateRequest.ts:42 |
+| Property | Type | Inherited from |
+| :------ | :------ | :------ |
+| `riskId` | `string` | [`OrderPurchaseUpdateRequestProperties`](OrderPurchaseUpdateRequestProperties.md).`riskId` |
