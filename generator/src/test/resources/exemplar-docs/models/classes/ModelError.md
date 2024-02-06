@@ -12,7 +12,7 @@ The object used the describe an error, containing both human-readable and in a m
 
 #### Parameters
 
-• `error`: [`ModelErrorProperties`](../interfaces/ModelErrorProperties.md)
+• **error**: [`ModelErrorProperties`](../interfaces/ModelErrorProperties.md)
 
 #### Returns
 

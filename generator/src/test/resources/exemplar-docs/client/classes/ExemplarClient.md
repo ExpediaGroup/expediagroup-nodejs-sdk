@@ -14,7 +14,7 @@
 
 #### Parameters
 
-• `configurations`: [`ClientConfigurations`](../core/interfaces/ClientConfigurations.md)
+• **configurations**: [`ClientConfigurations`](../core/interfaces/ClientConfigurations.md)
 
 #### Returns
 
@@ -38,7 +38,7 @@ Get a \&quot;Hello $partnerName\&quot; response for an authenticated request
 
 #### Parameters
 
-• `transactionId`: `string`= `undefined`
+• **transactionId**: `string`= `undefined`
 
 A unique ID to uniquely identify a request/response cycle (optional, defaults to a random generated UUID)`<Greeting>`
 
