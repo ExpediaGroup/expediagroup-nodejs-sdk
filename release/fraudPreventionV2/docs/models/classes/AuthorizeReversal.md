@@ -12,7 +12,7 @@ Authorize Reversal operation on the payment. An authorize reversal operation rep
 
 #### Parameters
 
-▪ **authorizeReversal**: [`AuthorizeReversalProperties`](../interfaces/AuthorizeReversalProperties.md)
+• **authorizeReversal**: [`AuthorizeReversalProperties`](../interfaces/AuthorizeReversalProperties.md)
 
 #### Returns
 
@@ -24,8 +24,8 @@ models/AuthorizeReversal.ts:47
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `amount`? | [`Amount`](Amount.md) | - | models/AuthorizeReversal.ts:40 |
-| `id`? | `string` | - | models/AuthorizeReversal.ts:35 |
-| `outcome`? | [`PaymentOutcome`](PaymentOutcome.md) | - | models/AuthorizeReversal.ts:45 |
+| Property | Type |
+| :------ | :------ |
+| `amount?` | [`Amount`](Amount.md) |
+| `id?` | `string` |
+| `outcome?` | [`PaymentOutcome`](PaymentOutcome.md) |

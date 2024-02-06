@@ -12,7 +12,7 @@ Data that describes issued refund that should be updated.
 
 #### Parameters
 
-▪ **issuedRefundUpdateDetails**: [`IssuedRefundUpdateDetailsProperties`](../interfaces/IssuedRefundUpdateDetailsProperties.md)
+• **issuedRefundUpdateDetails**: [`IssuedRefundUpdateDetailsProperties`](../interfaces/IssuedRefundUpdateDetailsProperties.md)
 
 #### Returns
 
@@ -24,7 +24,7 @@ models/IssuedRefundUpdateDetails.ts:42
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `refundIssuedAmount` | [`Amount`](Amount.md) | - | models/IssuedRefundUpdateDetails.ts:40 |
-| `refundIssuedDateTime` | `Date` | Date and time when the 3rd party payment processor confirmed that a previously submitted payment refund has issued at the participating financial institutions. | models/IssuedRefundUpdateDetails.ts:35 |
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| `refundIssuedAmount` | [`Amount`](Amount.md) | - |
+| `refundIssuedDateTime` | `Date` | Date and time when the 3rd party payment processor confirmed that a previously submitted payment refund has issued at the participating financial institutions. |

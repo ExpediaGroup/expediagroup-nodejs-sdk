@@ -4,7 +4,7 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `code` | [`RetryableOrderPurchaseUpdateFailureCodeEnum`](../type-aliases/RetryableOrderPurchaseUpdateFailureCodeEnum.md) | - | models/RetryableOrderPurchaseUpdateFailure.ts:61 |
-| `message` | `string` | - | models/RetryableOrderPurchaseUpdateFailure.ts:62 |
+| Property | Type |
+| :------ | :------ |
+| `code` | [`RetryableOrderPurchaseUpdateFailureCodeEnum`](../type-aliases/RetryableOrderPurchaseUpdateFailureCodeEnum.md) |
+| `message` | `string` |

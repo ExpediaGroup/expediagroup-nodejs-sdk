@@ -8,7 +8,7 @@
 
 ## Properties
 
-| Property | Type | Description | Inheritance | Source |
-| :------ | :------ | :------ | :------ | :------ |
-| `merchantOrderCode` | `string` | - | - | models/PaymentUpdate.ts:49 |
-| `riskId` | `string` | - | [`OrderPurchaseUpdateRequestProperties`](OrderPurchaseUpdateRequestProperties.md).`riskId` | models/OrderPurchaseUpdateRequest.ts:42 |
+| Property | Type | Inherited from |
+| :------ | :------ | :------ |
+| `merchantOrderCode` | `string` | - |
+| `riskId` | `string` | [`OrderPurchaseUpdateRequestProperties`](OrderPurchaseUpdateRequestProperties.md).`riskId` |

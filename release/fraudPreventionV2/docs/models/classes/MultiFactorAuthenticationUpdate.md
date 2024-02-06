@@ -16,7 +16,7 @@ Information specific to a user\'s response to a Multi-Factor Authentication init
 
 #### Parameters
 
-▪ **multiFactorAuthenticationUpdate**: [`MultiFactorAuthenticationUpdateProperties`](../interfaces/MultiFactorAuthenticationUpdateProperties.md)
+• **multiFactorAuthenticationUpdate**: [`MultiFactorAuthenticationUpdateProperties`](../interfaces/MultiFactorAuthenticationUpdateProperties.md)
 
 #### Returns
 
@@ -32,8 +32,8 @@ models/MultiFactorAuthenticationUpdate.ts:43
 
 ## Properties
 
-| Modifier | Property | Type | Description | Inheritance | Source |
-| :------ | :------ | :------ | :------ | :------ | :------ |
-| `public` | `multiFactorAuthenticationAttempts` | [`MultiFactorAuthenticationAttempt`](MultiFactorAuthenticationAttempt.md)[] | - | - | models/MultiFactorAuthenticationUpdate.ts:38 |
-| `public` | `riskId` | `string` | The `risk_id` provided by Expedia\'s Fraud Prevention Service in the `AccountScreenResponse`. | [`AccountUpdateRequest`](AccountUpdateRequest.md).`riskId` | models/AccountUpdateRequest.ts:32 |
-| `readonly` | `type` | `"MULTI_FACTOR_AUTHENTICATION_UPDATE"` | - | - | models/MultiFactorAuthenticationUpdate.ts:41 |
+| Property | Modifier | Type | Description | Inherited from |
+| :------ | :------ | :------ | :------ | :------ |
+| `multiFactorAuthenticationAttempts` | `public` | [`MultiFactorAuthenticationAttempt`](MultiFactorAuthenticationAttempt.md)[] | - | - |
+| `riskId` | `public` | `string` | The `risk_id` provided by Expedia\'s Fraud Prevention Service in the `AccountScreenResponse`. | [`AccountUpdateRequest`](AccountUpdateRequest.md).`riskId` |
+| `type` | `readonly` | `"MULTI_FACTOR_AUTHENTICATION_UPDATE"` | - | - |

@@ -4,7 +4,7 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `code` | [`AccountUpdateNotFoundErrorCodeEnum`](../type-aliases/AccountUpdateNotFoundErrorCodeEnum.md) | - | models/AccountUpdateNotFoundError.ts:61 |
-| `message` | `string` | - | models/AccountUpdateNotFoundError.ts:62 |
+| Property | Type |
+| :------ | :------ |
+| `code` | [`AccountUpdateNotFoundErrorCodeEnum`](../type-aliases/AccountUpdateNotFoundErrorCodeEnum.md) |
+| `message` | `string` |

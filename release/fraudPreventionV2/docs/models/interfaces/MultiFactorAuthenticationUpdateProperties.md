@@ -8,7 +8,7 @@
 
 ## Properties
 
-| Property | Type | Description | Inheritance | Source |
-| :------ | :------ | :------ | :------ | :------ |
-| `multiFactorAuthenticationAttempts` | [`MultiFactorAuthenticationAttempt`](../classes/MultiFactorAuthenticationAttempt.md)[] | - | - | models/MultiFactorAuthenticationUpdate.ts:56 |
-| `riskId` | `string` | - | [`AccountUpdateRequestProperties`](AccountUpdateRequestProperties.md).`riskId` | models/AccountUpdateRequest.ts:44 |
+| Property | Type | Inherited from |
+| :------ | :------ | :------ |
+| `multiFactorAuthenticationAttempts` | [`MultiFactorAuthenticationAttempt`](../classes/MultiFactorAuthenticationAttempt.md)[] | - |
+| `riskId` | `string` | [`AccountUpdateRequestProperties`](AccountUpdateRequestProperties.md).`riskId` |

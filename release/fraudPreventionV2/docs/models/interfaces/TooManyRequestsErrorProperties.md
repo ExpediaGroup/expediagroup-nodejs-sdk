@@ -4,7 +4,7 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `code` | [`TooManyRequestsErrorCodeEnum`](../type-aliases/TooManyRequestsErrorCodeEnum.md) | - | models/TooManyRequestsError.ts:59 |
-| `message` | `string` | - | models/TooManyRequestsError.ts:60 |
+| Property | Type |
+| :------ | :------ |
+| `code` | [`TooManyRequestsErrorCodeEnum`](../type-aliases/TooManyRequestsErrorCodeEnum.md) |
+| `message` | `string` |

@@ -4,7 +4,7 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `code` | [`NotFoundErrorCodeEnum`](../type-aliases/NotFoundErrorCodeEnum.md) | - | models/NotFoundError.ts:59 |
-| `message` | `string` | - | models/NotFoundError.ts:60 |
+| Property | Type |
+| :------ | :------ |
+| `code` | [`NotFoundErrorCodeEnum`](../type-aliases/NotFoundErrorCodeEnum.md) |
+| `message` | `string` |

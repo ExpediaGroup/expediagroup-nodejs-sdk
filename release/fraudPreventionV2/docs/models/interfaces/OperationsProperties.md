@@ -4,10 +4,10 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `authorize`? | [`Authorize`](../classes/Authorize.md) | - | models/Operations.ts:79 |
-| `authorizeReversal`? | [`AuthorizeReversal`](../classes/AuthorizeReversal.md) | - | models/Operations.ts:80 |
-| `capture`? | [`Capture`](../classes/Capture.md) | - | models/Operations.ts:81 |
-| `refunds`? | [`Refund`](../classes/Refund.md)[] | - | models/Operations.ts:82 |
-| `verify`? | [`Verify`](../classes/Verify.md) | - | models/Operations.ts:78 |
+| Property | Type |
+| :------ | :------ |
+| `authorize?` | [`Authorize`](../classes/Authorize.md) |
+| `authorizeReversal?` | [`AuthorizeReversal`](../classes/AuthorizeReversal.md) |
+| `capture?` | [`Capture`](../classes/Capture.md) |
+| `refunds?` | [`Refund`](../classes/Refund.md)[] |
+| `verify?` | [`Verify`](../classes/Verify.md) |

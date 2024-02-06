@@ -16,7 +16,7 @@ Data related to the issued refund that should be updated.
 
 #### Parameters
 
-▪ **issuedRefundUpdate**: [`IssuedRefundUpdateProperties`](../interfaces/IssuedRefundUpdateProperties.md)
+• **issuedRefundUpdate**: [`IssuedRefundUpdateProperties`](../interfaces/IssuedRefundUpdateProperties.md)
 
 #### Returns
 
@@ -32,9 +32,9 @@ models/IssuedRefundUpdate.ts:41
 
 ## Properties
 
-| Modifier | Property | Type | Description | Inheritance | Source |
-| :------ | :------ | :------ | :------ | :------ | :------ |
-| `public` | `refundDetails`? | [`IssuedRefundUpdateDetails`](IssuedRefundUpdateDetails.md) | - | - | models/IssuedRefundUpdate.ts:36 |
-| `readonly` | `refundStatus` | `"ISSUED"` | - | - | models/IssuedRefundUpdate.ts:39 |
-| `public` | `riskId` | `string` | The `risk_id` provided by Expedia\'s Fraud Prevention Service in the `OrderPurchaseScreenResponse`. | [`RefundUpdate`](RefundUpdate.md).`riskId` | models/OrderPurchaseUpdateRequest.ts:32 |
-| `readonly` | `type` | `"REFUND_UPDATE"` | - | [`RefundUpdate`](RefundUpdate.md).`type` | models/RefundUpdate.ts:31 |
+| Property | Modifier | Type | Description | Inherited from |
+| :------ | :------ | :------ | :------ | :------ |
+| `refundDetails?` | `public` | [`IssuedRefundUpdateDetails`](IssuedRefundUpdateDetails.md) | - | - |
+| `refundStatus` | `readonly` | `"ISSUED"` | - | - |
+| `riskId` | `public` | `string` | The `risk_id` provided by Expedia\'s Fraud Prevention Service in the `OrderPurchaseScreenResponse`. | [`RefundUpdate`](RefundUpdate.md).`riskId` |
+| `type` | `readonly` | `"REFUND_UPDATE"` | - | [`RefundUpdate`](RefundUpdate.md).`type` |

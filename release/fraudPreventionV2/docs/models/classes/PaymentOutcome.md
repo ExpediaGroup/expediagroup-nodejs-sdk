@@ -10,7 +10,7 @@
 
 #### Parameters
 
-▪ **paymentOutcome**: [`PaymentOutcomeProperties`](../interfaces/PaymentOutcomeProperties.md)
+• **paymentOutcome**: [`PaymentOutcomeProperties`](../interfaces/PaymentOutcomeProperties.md)
 
 #### Returns
 
@@ -22,8 +22,8 @@ models/PaymentOutcome.ts:39
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `code`? | `string` | A mnemonic code for the payment processing. | models/PaymentOutcome.ts:32 |
-| `description`? | `string` | A short description providing additional explanation regarding the mnemonic code. | models/PaymentOutcome.ts:37 |
-| `status`? | [`PaymentStatus`](../type-aliases/PaymentStatus.md) | - | models/PaymentOutcome.ts:27 |
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| `code?` | `string` | A mnemonic code for the payment processing. |
+| `description?` | `string` | A short description providing additional explanation regarding the mnemonic code. |
+| `status?` | [`PaymentStatus`](../type-aliases/PaymentStatus.md) | - |

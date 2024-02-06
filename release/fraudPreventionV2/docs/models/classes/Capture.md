@@ -12,7 +12,7 @@ Capture operation on the payment. A capture operation represents a notification 
 
 #### Parameters
 
-▪ **capture**: [`CaptureProperties`](../interfaces/CaptureProperties.md)
+• **capture**: [`CaptureProperties`](../interfaces/CaptureProperties.md)
 
 #### Returns
 
@@ -24,8 +24,8 @@ models/Capture.ts:47
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `amount`? | [`Amount`](Amount.md) | - | models/Capture.ts:40 |
-| `id`? | `string` | - | models/Capture.ts:35 |
-| `outcome`? | [`PaymentOutcome`](PaymentOutcome.md) | - | models/Capture.ts:45 |
+| Property | Type |
+| :------ | :------ |
+| `amount?` | [`Amount`](Amount.md) |
+| `id?` | `string` |
+| `outcome?` | [`PaymentOutcome`](PaymentOutcome.md) |

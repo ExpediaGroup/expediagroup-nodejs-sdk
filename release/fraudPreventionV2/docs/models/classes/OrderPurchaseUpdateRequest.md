@@ -4,7 +4,7 @@
 
 The `type` field value is used as a discriminator, with the following mapping: * `ORDER_UPDATE`: `OrderUpdate` * `CHARGEBACK_FEEDBACK`: `ChargebackFeedback` * `INSULT_FEEDBACK`: `InsultFeedback` * `REFUND_UPDATE`: `RefundUpdate` * `PAYMENT_UPDATE`: `PaymentUpdate`
 
-## Extended By
+## Extended by
 
 - [`ChargebackFeedback`](ChargebackFeedback.md)
 - [`InsultFeedback`](InsultFeedback.md)
@@ -20,7 +20,7 @@ The `type` field value is used as a discriminator, with the following mapping: *
 
 #### Parameters
 
-▪ **orderPurchaseUpdateRequest**: [`OrderPurchaseUpdateRequestProperties`](../interfaces/OrderPurchaseUpdateRequestProperties.md)
+• **orderPurchaseUpdateRequest**: [`OrderPurchaseUpdateRequestProperties`](../interfaces/OrderPurchaseUpdateRequestProperties.md)
 
 #### Returns
 
@@ -32,6 +32,6 @@ models/OrderPurchaseUpdateRequest.ts:34
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `riskId` | `string` | The `risk_id` provided by Expedia\'s Fraud Prevention Service in the `OrderPurchaseScreenResponse`. | models/OrderPurchaseUpdateRequest.ts:32 |
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| `riskId` | `string` | The `risk_id` provided by Expedia\'s Fraud Prevention Service in the `OrderPurchaseScreenResponse`. |

@@ -12,7 +12,7 @@ Indicates that the API encountered an unexpected condition that prevented it fro
 
 #### Parameters
 
-▪ **internalServerError**: [`InternalServerErrorProperties`](../interfaces/InternalServerErrorProperties.md)
+• **internalServerError**: [`InternalServerErrorProperties`](../interfaces/InternalServerErrorProperties.md)
 
 #### Returns
 
@@ -24,7 +24,7 @@ models/InternalServerError.ts:39
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `code` | [`InternalServerErrorCodeEnum`](../type-aliases/InternalServerErrorCodeEnum.md) | Snake cased all caps error code interpreted from the HTTP status code that can programmatically be acted upon. | models/InternalServerError.ts:32 |
-| `message` | `string` | A human-readable explanation of the error, specific to this error occurrence. | models/InternalServerError.ts:37 |
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| `code` | [`InternalServerErrorCodeEnum`](../type-aliases/InternalServerErrorCodeEnum.md) | Snake cased all caps error code interpreted from the HTTP status code that can programmatically be acted upon. |
+| `message` | `string` | A human-readable explanation of the error, specific to this error occurrence. |

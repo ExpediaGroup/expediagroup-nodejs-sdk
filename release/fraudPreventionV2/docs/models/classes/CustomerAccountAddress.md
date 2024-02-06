@@ -10,7 +10,7 @@
 
 #### Parameters
 
-▪ **customerAccountAddress**: [`CustomerAccountAddressProperties`](../interfaces/CustomerAccountAddressProperties.md)
+• **customerAccountAddress**: [`CustomerAccountAddressProperties`](../interfaces/CustomerAccountAddressProperties.md)
 
 #### Returns
 
@@ -22,12 +22,12 @@ models/CustomerAccountAddress.ts:58
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `addressLine1` | `string` | Address line 1 of the address provided. | models/CustomerAccountAddress.ts:31 |
-| `addressLine2`? | `string` | Address line 2 of the address provided. | models/CustomerAccountAddress.ts:36 |
-| `addressType`? | [`CustomerAccountAddressAddressTypeEnum`](../type-aliases/CustomerAccountAddressAddressTypeEnum.md) | - | models/CustomerAccountAddress.ts:26 |
-| `city` | `string` | City of the address provided. | models/CustomerAccountAddress.ts:41 |
-| `countryCode` | `string` | ISO alpha-3 country code of the address provided. | models/CustomerAccountAddress.ts:56 |
-| `state` | `string` | The two-characters ISO code for the state or province of the address. | models/CustomerAccountAddress.ts:46 |
-| `zipCode` | `string` | Zip code of the address provided. | models/CustomerAccountAddress.ts:51 |
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| `addressLine1` | `string` | Address line 1 of the address provided. |
+| `addressLine2?` | `string` | Address line 2 of the address provided. |
+| `addressType?` | [`CustomerAccountAddressAddressTypeEnum`](../type-aliases/CustomerAccountAddressAddressTypeEnum.md) | - |
+| `city` | `string` | City of the address provided. |
+| `countryCode` | `string` | ISO alpha-3 country code of the address provided. |
+| `state` | `string` | The two-characters ISO code for the state or province of the address. |
+| `zipCode` | `string` | Zip code of the address provided. |

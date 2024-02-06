@@ -4,9 +4,9 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `amount`? | [`Amount`](../classes/Amount.md) | - | models/Verify.ts:60 |
-| `id`? | `string` | - | models/Verify.ts:59 |
-| `outcome`? | [`PaymentOutcome`](../classes/PaymentOutcome.md) | - | models/Verify.ts:61 |
-| `type`? | [`VerificationType`](../type-aliases/VerificationType.md) | - | models/Verify.ts:62 |
+| Property | Type |
+| :------ | :------ |
+| `amount?` | [`Amount`](../classes/Amount.md) |
+| `id?` | `string` |
+| `outcome?` | [`PaymentOutcome`](../classes/PaymentOutcome.md) |
+| `type?` | [`VerificationType`](../type-aliases/VerificationType.md) |

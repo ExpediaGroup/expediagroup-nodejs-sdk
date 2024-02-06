@@ -12,7 +12,7 @@ Group of attributes intended to hold information about email address associated 
 
 #### Parameters
 
-▪ **email**: [`EmailProperties`](../interfaces/EmailProperties.md)
+• **email**: [`EmailProperties`](../interfaces/EmailProperties.md)
 
 #### Returns
 
@@ -24,6 +24,6 @@ models/Email.ts:34
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `emailAddress`? | `string` | Full email address including the alias, @ symbol, domain, and root domain. | models/Email.ts:32 |
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| `emailAddress?` | `string` | Full email address including the alias, @ symbol, domain, and root domain. |

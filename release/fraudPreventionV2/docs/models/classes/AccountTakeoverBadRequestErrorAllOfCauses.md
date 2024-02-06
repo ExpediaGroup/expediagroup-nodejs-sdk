@@ -10,7 +10,7 @@
 
 #### Parameters
 
-▪ **accountTakeoverBadRequestErrorAllOfCauses**: [`AccountTakeoverBadRequestErrorAllOfCausesProperties`](../interfaces/AccountTakeoverBadRequestErrorAllOfCausesProperties.md)
+• **accountTakeoverBadRequestErrorAllOfCauses**: [`AccountTakeoverBadRequestErrorAllOfCausesProperties`](../interfaces/AccountTakeoverBadRequestErrorAllOfCausesProperties.md)
 
 #### Returns
 
@@ -22,8 +22,8 @@ models/AccountTakeoverBadRequestErrorAllOfCauses.ts:35
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `code`? | [`AccountTakeoverBadRequestErrorAllOfCausesCodeEnum`](../type-aliases/AccountTakeoverBadRequestErrorAllOfCausesCodeEnum.md) | - | models/AccountTakeoverBadRequestErrorAllOfCauses.ts:26 |
-| `field`? | `string` | A JSON Path expression indicating which field, in the request body, caused the error. | models/AccountTakeoverBadRequestErrorAllOfCauses.ts:31 |
-| `message`? | `string` | - | models/AccountTakeoverBadRequestErrorAllOfCauses.ts:33 |
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| `code?` | [`AccountTakeoverBadRequestErrorAllOfCausesCodeEnum`](../type-aliases/AccountTakeoverBadRequestErrorAllOfCausesCodeEnum.md) | - |
+| `field?` | `string` | A JSON Path expression indicating which field, in the request body, caused the error. |
+| `message?` | `string` | - |

@@ -4,6 +4,6 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `emailAddress`? | `string` | - | models/Email.ts:40 |
+| Property | Type |
+| :------ | :------ |
+| `emailAddress?` | `string` |

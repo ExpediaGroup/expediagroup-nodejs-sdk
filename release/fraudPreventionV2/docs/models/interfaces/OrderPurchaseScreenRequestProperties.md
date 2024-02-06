@@ -4,6 +4,6 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `transaction` | [`OrderPurchaseTransaction`](../classes/OrderPurchaseTransaction.md) | - | models/OrderPurchaseScreenRequest.ts:41 |
+| Property | Type |
+| :------ | :------ |
+| `transaction` | [`OrderPurchaseTransaction`](../classes/OrderPurchaseTransaction.md) |

@@ -2,14 +2,14 @@
 
 # Interface: AccountTakeoverTransactionDetailsProperties
 
-## Extended By
+## Extended by
 
 - [`LoginTransactionDetailsProperties`](LoginTransactionDetailsProperties.md)
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `currentUserSession`? | [`CurrentUserSession`](../classes/CurrentUserSession.md) | - | models/AccountTakeoverTransactionDetails.ts:63 |
-| `transactionDateTime` | `Date` | - | models/AccountTakeoverTransactionDetails.ts:61 |
-| `transactionId` | `string` | - | models/AccountTakeoverTransactionDetails.ts:62 |
+| Property | Type |
+| :------ | :------ |
+| `currentUserSession?` | [`CurrentUserSession`](../classes/CurrentUserSession.md) |
+| `transactionDateTime` | `Date` |
+| `transactionId` | `string` |

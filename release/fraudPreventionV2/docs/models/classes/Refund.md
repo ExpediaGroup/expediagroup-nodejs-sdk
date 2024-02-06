@@ -12,7 +12,7 @@ Refund operation on the payment. A refund operation represents the intent to ref
 
 #### Parameters
 
-▪ **refund**: [`RefundProperties`](../interfaces/RefundProperties.md)
+• **refund**: [`RefundProperties`](../interfaces/RefundProperties.md)
 
 #### Returns
 
@@ -24,8 +24,8 @@ models/Refund.ts:47
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `amount`? | [`Amount`](Amount.md) | - | models/Refund.ts:40 |
-| `id`? | `string` | - | models/Refund.ts:35 |
-| `outcome`? | [`PaymentOutcome`](PaymentOutcome.md) | - | models/Refund.ts:45 |
+| Property | Type |
+| :------ | :------ |
+| `amount?` | [`Amount`](Amount.md) |
+| `id?` | `string` |
+| `outcome?` | [`PaymentOutcome`](PaymentOutcome.md) |

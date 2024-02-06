@@ -4,11 +4,11 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `currentOrderStatus` | [`TransactionDetailsCurrentOrderStatusEnum`](../type-aliases/TransactionDetailsCurrentOrderStatusEnum.md) | - | models/TransactionDetails.ts:88 |
-| `orderId` | `string` | - | models/TransactionDetails.ts:87 |
-| `orderType` | [`TransactionDetailsOrderTypeEnum`](../type-aliases/TransactionDetailsOrderTypeEnum.md) | - | models/TransactionDetails.ts:89 |
-| `payments`? | [`Payment`](../classes/Payment.md)[] | - | models/TransactionDetails.ts:92 |
-| `travelProducts` | [`TravelProduct`](../classes/TravelProduct.md)[] | - | models/TransactionDetails.ts:90 |
-| `travelers` | [`Traveler`](../classes/Traveler.md)[] | - | models/TransactionDetails.ts:91 |
+| Property | Type |
+| :------ | :------ |
+| `currentOrderStatus` | [`TransactionDetailsCurrentOrderStatusEnum`](../type-aliases/TransactionDetailsCurrentOrderStatusEnum.md) |
+| `orderId` | `string` |
+| `orderType` | [`TransactionDetailsOrderTypeEnum`](../type-aliases/TransactionDetailsOrderTypeEnum.md) |
+| `payments?` | [`Payment`](../classes/Payment.md)[] |
+| `travelProducts` | [`TravelProduct`](../classes/TravelProduct.md)[] |
+| `travelers` | [`Traveler`](../classes/Traveler.md)[] |

@@ -16,7 +16,7 @@ Data related to the settled refund that should be updated.
 
 #### Parameters
 
-▪ **settledRefundUpdate**: [`SettledRefundUpdateProperties`](../interfaces/SettledRefundUpdateProperties.md)
+• **settledRefundUpdate**: [`SettledRefundUpdateProperties`](../interfaces/SettledRefundUpdateProperties.md)
 
 #### Returns
 
@@ -32,9 +32,9 @@ models/SettledRefundUpdate.ts:41
 
 ## Properties
 
-| Modifier | Property | Type | Description | Inheritance | Source |
-| :------ | :------ | :------ | :------ | :------ | :------ |
-| `public` | `refundDetails`? | [`SettledRefundUpdateDetails`](SettledRefundUpdateDetails.md) | - | - | models/SettledRefundUpdate.ts:36 |
-| `readonly` | `refundStatus` | `"SETTLED"` | - | - | models/SettledRefundUpdate.ts:39 |
-| `public` | `riskId` | `string` | The `risk_id` provided by Expedia\'s Fraud Prevention Service in the `OrderPurchaseScreenResponse`. | [`RefundUpdate`](RefundUpdate.md).`riskId` | models/OrderPurchaseUpdateRequest.ts:32 |
-| `readonly` | `type` | `"REFUND_UPDATE"` | - | [`RefundUpdate`](RefundUpdate.md).`type` | models/RefundUpdate.ts:31 |
+| Property | Modifier | Type | Description | Inherited from |
+| :------ | :------ | :------ | :------ | :------ |
+| `refundDetails?` | `public` | [`SettledRefundUpdateDetails`](SettledRefundUpdateDetails.md) | - | - |
+| `refundStatus` | `readonly` | `"SETTLED"` | - | - |
+| `riskId` | `public` | `string` | The `risk_id` provided by Expedia\'s Fraud Prevention Service in the `OrderPurchaseScreenResponse`. | [`RefundUpdate`](RefundUpdate.md).`riskId` |
+| `type` | `readonly` | `"REFUND_UPDATE"` | - | [`RefundUpdate`](RefundUpdate.md).`type` |

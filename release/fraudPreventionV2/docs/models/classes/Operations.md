@@ -12,7 +12,7 @@ All operations related to a payment throughout its lifespan. An operation repres
 
 #### Parameters
 
-▪ **operations**: [`OperationsProperties`](../interfaces/OperationsProperties.md)
+• **operations**: [`OperationsProperties`](../interfaces/OperationsProperties.md)
 
 #### Returns
 
@@ -24,10 +24,10 @@ models/Operations.ts:68
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `authorize`? | [`Authorize`](Authorize.md) | - | models/Operations.ts:51 |
-| `authorizeReversal`? | [`AuthorizeReversal`](AuthorizeReversal.md) | - | models/Operations.ts:56 |
-| `capture`? | [`Capture`](Capture.md) | - | models/Operations.ts:61 |
-| `refunds`? | [`Refund`](Refund.md)[] | - | models/Operations.ts:66 |
-| `verify`? | [`Verify`](Verify.md) | - | models/Operations.ts:46 |
+| Property | Type |
+| :------ | :------ |
+| `authorize?` | [`Authorize`](Authorize.md) |
+| `authorizeReversal?` | [`AuthorizeReversal`](AuthorizeReversal.md) |
+| `capture?` | [`Capture`](Capture.md) |
+| `refunds?` | [`Refund`](Refund.md)[] |
+| `verify?` | [`Verify`](Verify.md) |

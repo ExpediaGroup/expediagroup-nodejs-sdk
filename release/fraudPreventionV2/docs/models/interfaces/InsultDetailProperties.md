@@ -4,6 +4,6 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `insultReportedDateTime`? | `Date` | - | models/InsultDetail.ts:40 |
+| Property | Type |
+| :------ | :------ |
+| `insultReportedDateTime?` | `Date` |

@@ -4,9 +4,9 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `customerAccount` | [`CustomerAccount`](../classes/CustomerAccount.md) | - | models/OrderPurchaseTransaction.ts:70 |
-| `deviceDetails` | [`DeviceDetails`](../classes/DeviceDetails.md) | - | models/OrderPurchaseTransaction.ts:69 |
-| `siteInfo` | [`SiteInfo`](../classes/SiteInfo.md) | - | models/OrderPurchaseTransaction.ts:68 |
-| `transactionDetails` | [`TransactionDetails`](../classes/TransactionDetails.md) | - | models/OrderPurchaseTransaction.ts:71 |
+| Property | Type |
+| :------ | :------ |
+| `customerAccount` | [`CustomerAccount`](../classes/CustomerAccount.md) |
+| `deviceDetails` | [`DeviceDetails`](../classes/DeviceDetails.md) |
+| `siteInfo` | [`SiteInfo`](../classes/SiteInfo.md) |
+| `transactionDetails` | [`TransactionDetails`](../classes/TransactionDetails.md) |

@@ -4,10 +4,10 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `acquirerReferenceNumber` | `string` | - | models/SettledRefundUpdateDetails.ts:75 |
-| `refundDepositDateTime` | `Date` | - | models/SettledRefundUpdateDetails.ts:74 |
-| `refundSettledAmount` | [`Amount`](../classes/Amount.md) | - | models/SettledRefundUpdateDetails.ts:77 |
-| `refundSettlementDateTime` | `Date` | - | models/SettledRefundUpdateDetails.ts:73 |
-| `settlementId` | `string` | - | models/SettledRefundUpdateDetails.ts:76 |
+| Property | Type |
+| :------ | :------ |
+| `acquirerReferenceNumber` | `string` |
+| `refundDepositDateTime` | `Date` |
+| `refundSettledAmount` | [`Amount`](../classes/Amount.md) |
+| `refundSettlementDateTime` | `Date` |
+| `settlementId` | `string` |

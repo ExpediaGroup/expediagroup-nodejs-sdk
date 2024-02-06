@@ -4,7 +4,7 @@
 
 The `type` field value is used as a discriminator, with the following mapping: * `MULTI_FACTOR_AUTHENTICATION_UPDATE`: `MultiFactorAuthenticationUpdate` * `REMEDIATION_UPDATE`: `RemediationUpdate`
 
-## Extended By
+## Extended by
 
 - [`MultiFactorAuthenticationUpdate`](MultiFactorAuthenticationUpdate.md)
 - [`RemediationUpdate`](RemediationUpdate.md)
@@ -17,7 +17,7 @@ The `type` field value is used as a discriminator, with the following mapping: *
 
 #### Parameters
 
-▪ **accountUpdateRequest**: [`AccountUpdateRequestProperties`](../interfaces/AccountUpdateRequestProperties.md)
+• **accountUpdateRequest**: [`AccountUpdateRequestProperties`](../interfaces/AccountUpdateRequestProperties.md)
 
 #### Returns
 
@@ -29,6 +29,6 @@ models/AccountUpdateRequest.ts:34
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `riskId` | `string` | The `risk_id` provided by Expedia\'s Fraud Prevention Service in the `AccountScreenResponse`. | models/AccountUpdateRequest.ts:32 |
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| `riskId` | `string` | The `risk_id` provided by Expedia\'s Fraud Prevention Service in the `AccountScreenResponse`. |

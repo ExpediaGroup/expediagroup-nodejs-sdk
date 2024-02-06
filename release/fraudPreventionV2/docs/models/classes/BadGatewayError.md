@@ -12,7 +12,7 @@ Indicates that the server received an invalid response from the upstream server.
 
 #### Parameters
 
-▪ **badGatewayError**: [`BadGatewayErrorProperties`](../interfaces/BadGatewayErrorProperties.md)
+• **badGatewayError**: [`BadGatewayErrorProperties`](../interfaces/BadGatewayErrorProperties.md)
 
 #### Returns
 
@@ -24,7 +24,7 @@ models/BadGatewayError.ts:39
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `code` | [`BadGatewayErrorCodeEnum`](../type-aliases/BadGatewayErrorCodeEnum.md) | Snake cased all caps error code interpreted from the HTTP status code that can programmatically be acted upon. | models/BadGatewayError.ts:32 |
-| `message` | `string` | A human-readable explanation of the error, specific to this error occurrence. | models/BadGatewayError.ts:37 |
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| `code` | [`BadGatewayErrorCodeEnum`](../type-aliases/BadGatewayErrorCodeEnum.md) | Snake cased all caps error code interpreted from the HTTP status code that can programmatically be acted upon. |
+| `message` | `string` | A human-readable explanation of the error, specific to this error occurrence. |

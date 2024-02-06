@@ -4,9 +4,9 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `brandName` | `string` | - | models/AccountTakeoverSiteInfo.ts:66 |
-| `locale`? | `string` | - | models/AccountTakeoverSiteInfo.ts:64 |
-| `name`? | `string` | - | models/AccountTakeoverSiteInfo.ts:65 |
-| `placementName`? | [`AccountTakeoverSiteInfoPlacementNameEnum`](../type-aliases/AccountTakeoverSiteInfoPlacementNameEnum.md) | - | models/AccountTakeoverSiteInfo.ts:67 |
+| Property | Type |
+| :------ | :------ |
+| `brandName` | `string` |
+| `locale?` | `string` |
+| `name?` | `string` |
+| `placementName?` | [`AccountTakeoverSiteInfoPlacementNameEnum`](../type-aliases/AccountTakeoverSiteInfoPlacementNameEnum.md) |

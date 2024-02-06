@@ -12,7 +12,7 @@ Information for account screening by Expedia\'s Fraud Prevention Service.
 
 #### Parameters
 
-▪ **accountScreenRequest**: [`AccountScreenRequestProperties`](../interfaces/AccountScreenRequestProperties.md)
+• **accountScreenRequest**: [`AccountScreenRequestProperties`](../interfaces/AccountScreenRequestProperties.md)
 
 #### Returns
 
@@ -24,6 +24,6 @@ models/AccountScreenRequest.ts:36
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `transaction` | [`AccountTransaction`](AccountTransaction.md) | - | models/AccountScreenRequest.ts:34 |
+| Property | Type |
+| :------ | :------ |
+| `transaction` | [`AccountTransaction`](AccountTransaction.md) |

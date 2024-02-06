@@ -16,7 +16,7 @@ Information specific to remediation actions initiated by the Partner\'s system t
 
 #### Parameters
 
-▪ **remediationUpdate**: [`RemediationUpdateProperties`](../interfaces/RemediationUpdateProperties.md)
+• **remediationUpdate**: [`RemediationUpdateProperties`](../interfaces/RemediationUpdateProperties.md)
 
 #### Returns
 
@@ -32,8 +32,8 @@ models/RemediationUpdate.ts:42
 
 ## Properties
 
-| Modifier | Property | Type | Description | Inheritance | Source |
-| :------ | :------ | :------ | :------ | :------ | :------ |
-| `public` | `remediationUpdateActions` | [`RemediationUpdateAction`](RemediationUpdateAction.md)[] | - | - | models/RemediationUpdate.ts:37 |
-| `public` | `riskId` | `string` | The `risk_id` provided by Expedia\'s Fraud Prevention Service in the `AccountScreenResponse`. | [`AccountUpdateRequest`](AccountUpdateRequest.md).`riskId` | models/AccountUpdateRequest.ts:32 |
-| `readonly` | `type` | `"REMEDIATION_UPDATE"` | - | - | models/RemediationUpdate.ts:40 |
+| Property | Modifier | Type | Description | Inherited from |
+| :------ | :------ | :------ | :------ | :------ |
+| `remediationUpdateActions` | `public` | [`RemediationUpdateAction`](RemediationUpdateAction.md)[] | - | - |
+| `riskId` | `public` | `string` | The `risk_id` provided by Expedia\'s Fraud Prevention Service in the `AccountScreenResponse`. | [`AccountUpdateRequest`](AccountUpdateRequest.md).`riskId` |
+| `type` | `readonly` | `"REMEDIATION_UPDATE"` | - | - |

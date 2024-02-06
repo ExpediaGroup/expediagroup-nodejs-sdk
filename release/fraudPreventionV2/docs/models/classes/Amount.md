@@ -10,7 +10,7 @@
 
 #### Parameters
 
-▪ **amount**: [`AmountProperties`](../interfaces/AmountProperties.md)
+• **amount**: [`AmountProperties`](../interfaces/AmountProperties.md)
 
 #### Returns
 
@@ -22,7 +22,7 @@ models/Amount.ts:36
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `currencyCode` | `string` | The ISO  alpha-3 country code for the amount currency. | models/Amount.ts:34 |
-| `value` | `number` | The amount required in payment for the product/order in local currency (including any taxes and fees). | models/Amount.ts:29 |
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| `currencyCode` | `string` | The ISO  alpha-3 country code for the amount currency. |
+| `value` | `number` | The amount required in payment for the product/order in local currency (including any taxes and fees). |

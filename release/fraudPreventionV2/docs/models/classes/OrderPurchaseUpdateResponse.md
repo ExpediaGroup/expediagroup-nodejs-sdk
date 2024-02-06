@@ -10,7 +10,7 @@
 
 #### Parameters
 
-▪ **orderPurchaseUpdateResponse**: [`OrderPurchaseUpdateResponseProperties`](../interfaces/OrderPurchaseUpdateResponseProperties.md)
+• **orderPurchaseUpdateResponse**: [`OrderPurchaseUpdateResponseProperties`](../interfaces/OrderPurchaseUpdateResponseProperties.md)
 
 #### Returns
 
@@ -22,6 +22,6 @@ models/OrderPurchaseUpdateResponse.ts:31
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `riskId`? | `string` | Unique identifier of transaction that was updated. | models/OrderPurchaseUpdateResponse.ts:29 |
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| `riskId?` | `string` | Unique identifier of transaction that was updated. |
