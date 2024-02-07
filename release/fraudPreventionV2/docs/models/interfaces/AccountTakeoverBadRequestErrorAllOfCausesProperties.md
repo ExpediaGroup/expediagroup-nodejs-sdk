@@ -4,8 +4,8 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `code`? | [`AccountTakeoverBadRequestErrorAllOfCausesCodeEnum`](../type-aliases/AccountTakeoverBadRequestErrorAllOfCausesCodeEnum.md) | - | models/AccountTakeoverBadRequestErrorAllOfCauses.ts:50 |
-| `field`? | `string` | - | models/AccountTakeoverBadRequestErrorAllOfCauses.ts:51 |
-| `message`? | `string` | - | models/AccountTakeoverBadRequestErrorAllOfCauses.ts:52 |
+| Property | Type |
+| :------ | :------ |
+| `code?` | [`AccountTakeoverBadRequestErrorAllOfCausesCodeEnum`](../type-aliases/AccountTakeoverBadRequestErrorAllOfCausesCodeEnum.md) |
+| `field?` | `string` |
+| `message?` | `string` |

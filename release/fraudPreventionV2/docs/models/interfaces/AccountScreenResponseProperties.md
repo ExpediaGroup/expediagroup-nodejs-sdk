@@ -4,7 +4,7 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `decision`? | [`AccountTakeoverFraudDecision`](../type-aliases/AccountTakeoverFraudDecision.md) | - | models/AccountScreenResponse.ts:45 |
-| `riskId`? | `string` | - | models/AccountScreenResponse.ts:44 |
+| Property | Type |
+| :------ | :------ |
+| `decision?` | [`AccountTakeoverFraudDecision`](../type-aliases/AccountTakeoverFraudDecision.md) |
+| `riskId?` | `string` |

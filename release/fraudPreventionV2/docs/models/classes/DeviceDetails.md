@@ -10,7 +10,7 @@
 
 #### Parameters
 
-▪ **deviceDetails**: [`DeviceDetailsProperties`](../interfaces/DeviceDetailsProperties.md)
+• **deviceDetails**: [`DeviceDetailsProperties`](../interfaces/DeviceDetailsProperties.md)
 
 #### Returns
 
@@ -22,8 +22,8 @@ models/DeviceDetails.ts:41
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `deviceBox`? | `string` | Device related information retrieved from TrustWidget. | models/DeviceDetails.ts:34 |
-| `ipAddress` | `string` | IP address of the device used for booking. | models/DeviceDetails.ts:39 |
-| `source`? | `string` | Source of the device_box. Default value is `TrustWidget`. | models/DeviceDetails.ts:29 |
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| `deviceBox?` | `string` | Device related information retrieved from TrustWidget. |
+| `ipAddress` | `string` | IP address of the device used for booking. |
+| `source?` | `string` | Source of the device_box. Default value is `TrustWidget`. |

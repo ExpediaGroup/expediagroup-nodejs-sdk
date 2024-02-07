@@ -10,7 +10,7 @@
 
 #### Parameters
 
-▪ **orderPurchaseScreenRequest**: [`OrderPurchaseScreenRequestProperties`](../interfaces/OrderPurchaseScreenRequestProperties.md)
+• **orderPurchaseScreenRequest**: [`OrderPurchaseScreenRequestProperties`](../interfaces/OrderPurchaseScreenRequestProperties.md)
 
 #### Returns
 
@@ -22,6 +22,6 @@ models/OrderPurchaseScreenRequest.ts:33
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `transaction` | [`OrderPurchaseTransaction`](OrderPurchaseTransaction.md) | - | models/OrderPurchaseScreenRequest.ts:31 |
+| Property | Type |
+| :------ | :------ |
+| `transaction` | [`OrderPurchaseTransaction`](OrderPurchaseTransaction.md) |

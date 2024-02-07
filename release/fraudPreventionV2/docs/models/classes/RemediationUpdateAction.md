@@ -12,7 +12,7 @@ Information specific to the remediation action initiated by the Partner\'s syste
 
 #### Parameters
 
-▪ **remediationUpdateAction**: [`RemediationUpdateActionProperties`](../interfaces/RemediationUpdateActionProperties.md)
+• **remediationUpdateAction**: [`RemediationUpdateActionProperties`](../interfaces/RemediationUpdateActionProperties.md)
 
 #### Returns
 
@@ -24,8 +24,8 @@ models/RemediationUpdateAction.ts:44
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `actionName` | [`RemediationUpdateActionActionNameEnum`](../type-aliases/RemediationUpdateActionActionNameEnum.md) | The categorized remediation action initiated by the Partner\'\'s system to a user. Possible values are: - `PASSWORD_RESET` - Applicable if this event is the result of a password reset by the Partner\'\'s system. - `DISABLE_ACCOUNT` - Applicable if this event is the result of disabling an account by the Partner\'\'s system. - `TERMINATE_ALL_SESSIONS` - Applicable if this event is the result of terminating all active user sessions of an account by the Partner\'\'s system. | models/RemediationUpdateAction.ts:32 |
-| `status` | [`RemediationUpdateActionStatusEnum`](../type-aliases/RemediationUpdateActionStatusEnum.md) | The status of the remediation action.   - `SUCCESS` - Applicable if the Partner\'\'s system was successfully able to perform the remediation action.   - `FAILED` - Applicable if the Partner\'\'s system failed to perform the remediation action. | models/RemediationUpdateAction.ts:37 |
-| `updateEndDateTime`? | `Date` | The local date and time the remediation action to a user ended in the Partner\'s system, in ISO-8601 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`. | models/RemediationUpdateAction.ts:42 |
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| `actionName` | [`RemediationUpdateActionActionNameEnum`](../type-aliases/RemediationUpdateActionActionNameEnum.md) | The categorized remediation action initiated by the Partner\'\'s system to a user. Possible values are: - `PASSWORD_RESET` - Applicable if this event is the result of a password reset by the Partner\'\'s system. - `DISABLE_ACCOUNT` - Applicable if this event is the result of disabling an account by the Partner\'\'s system. - `TERMINATE_ALL_SESSIONS` - Applicable if this event is the result of terminating all active user sessions of an account by the Partner\'\'s system. |
+| `status` | [`RemediationUpdateActionStatusEnum`](../type-aliases/RemediationUpdateActionStatusEnum.md) | The status of the remediation action.   - `SUCCESS` - Applicable if the Partner\'\'s system was successfully able to perform the remediation action.   - `FAILED` - Applicable if the Partner\'\'s system failed to perform the remediation action. |
+| `updateEndDateTime?` | `Date` | The local date and time the remediation action to a user ended in the Partner\'s system, in ISO-8601 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`. |

@@ -2,13 +2,13 @@
 
 # Interface: AccountUpdateRequestProperties
 
-## Extended By
+## Extended by
 
 - [`MultiFactorAuthenticationUpdateProperties`](MultiFactorAuthenticationUpdateProperties.md)
 - [`RemediationUpdateProperties`](RemediationUpdateProperties.md)
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `riskId` | `string` | - | models/AccountUpdateRequest.ts:44 |
+| Property | Type |
+| :------ | :------ |
+| `riskId` | `string` |

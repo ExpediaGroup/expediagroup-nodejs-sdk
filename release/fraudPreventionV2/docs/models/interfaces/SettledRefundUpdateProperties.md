@@ -8,7 +8,7 @@
 
 ## Properties
 
-| Property | Type | Description | Inheritance | Source |
-| :------ | :------ | :------ | :------ | :------ |
-| `refundDetails`? | [`SettledRefundUpdateDetails`](../classes/SettledRefundUpdateDetails.md) | - | - | models/SettledRefundUpdate.ts:50 |
-| `riskId` | `string` | - | [`RefundUpdateProperties`](RefundUpdateProperties.md).`riskId` | models/OrderPurchaseUpdateRequest.ts:42 |
+| Property | Type | Inherited from |
+| :------ | :------ | :------ |
+| `refundDetails?` | [`SettledRefundUpdateDetails`](../classes/SettledRefundUpdateDetails.md) | - |
+| `riskId` | `string` | [`RefundUpdateProperties`](RefundUpdateProperties.md).`riskId` |

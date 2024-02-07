@@ -12,7 +12,7 @@ The object used to describe an error, containing both human-readable and machine
 
 #### Parameters
 
-▪ **error**: [`ModelErrorProperties`](../interfaces/ModelErrorProperties.md)
+• **error**: [`ModelErrorProperties`](../interfaces/ModelErrorProperties.md)
 
 #### Returns
 
@@ -24,7 +24,7 @@ models/ModelError.ts:39
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `code` | [`ModelErrorCodeEnum`](../type-aliases/ModelErrorCodeEnum.md) | Snake cased all caps error code interpreted from the HTTP status code that can programmatically be acted upon. | models/ModelError.ts:32 |
-| `message` | `string` | A human-readable explanation of the error, specific to this error occurrence. | models/ModelError.ts:37 |
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| `code` | [`ModelErrorCodeEnum`](../type-aliases/ModelErrorCodeEnum.md) | Snake cased all caps error code interpreted from the HTTP status code that can programmatically be acted upon. |
+| `message` | `string` | A human-readable explanation of the error, specific to this error occurrence. |

@@ -4,7 +4,7 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `code` | [`RetryableOrderPurchaseScreenFailureCodeEnum`](../type-aliases/RetryableOrderPurchaseScreenFailureCodeEnum.md) | - | models/RetryableOrderPurchaseScreenFailure.ts:61 |
-| `message` | `string` | - | models/RetryableOrderPurchaseScreenFailure.ts:62 |
+| Property | Type |
+| :------ | :------ |
+| `code` | [`RetryableOrderPurchaseScreenFailureCodeEnum`](../type-aliases/RetryableOrderPurchaseScreenFailureCodeEnum.md) |
+| `message` | `string` |

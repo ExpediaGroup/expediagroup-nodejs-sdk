@@ -10,7 +10,7 @@
 
 #### Parameters
 
-▪ **accountUpdateResponse**: [`AccountUpdateResponseProperties`](../interfaces/AccountUpdateResponseProperties.md)
+• **accountUpdateResponse**: [`AccountUpdateResponseProperties`](../interfaces/AccountUpdateResponseProperties.md)
 
 #### Returns
 
@@ -22,6 +22,6 @@ models/AccountUpdateResponse.ts:31
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `riskId`? | `string` | Unique identifier of transaction that was updated. | models/AccountUpdateResponse.ts:29 |
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| `riskId?` | `string` | Unique identifier of transaction that was updated. |

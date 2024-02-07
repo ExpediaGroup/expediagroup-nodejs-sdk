@@ -12,7 +12,7 @@ Indicates that the API cannot find the resource that is either being requested o
 
 #### Parameters
 
-▪ **orderPurchaseUpdateNotFoundError**: [`OrderPurchaseUpdateNotFoundErrorProperties`](../interfaces/OrderPurchaseUpdateNotFoundErrorProperties.md)
+• **orderPurchaseUpdateNotFoundError**: [`OrderPurchaseUpdateNotFoundErrorProperties`](../interfaces/OrderPurchaseUpdateNotFoundErrorProperties.md)
 
 #### Returns
 
@@ -24,7 +24,7 @@ models/OrderPurchaseUpdateNotFoundError.ts:39
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `code` | [`OrderPurchaseUpdateNotFoundErrorCodeEnum`](../type-aliases/OrderPurchaseUpdateNotFoundErrorCodeEnum.md) | Snake cased all caps error code interpreted from the HTTP status code that can programmatically be acted upon. | models/OrderPurchaseUpdateNotFoundError.ts:32 |
-| `message` | `string` | A human-readable explanation of the error, specific to this error occurrence. | models/OrderPurchaseUpdateNotFoundError.ts:37 |
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| `code` | [`OrderPurchaseUpdateNotFoundErrorCodeEnum`](../type-aliases/OrderPurchaseUpdateNotFoundErrorCodeEnum.md) | Snake cased all caps error code interpreted from the HTTP status code that can programmatically be acted upon. |
+| `message` | `string` | A human-readable explanation of the error, specific to this error occurrence. |

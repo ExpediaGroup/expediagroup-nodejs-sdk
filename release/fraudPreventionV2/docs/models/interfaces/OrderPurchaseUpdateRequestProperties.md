@@ -2,7 +2,7 @@
 
 # Interface: OrderPurchaseUpdateRequestProperties
 
-## Extended By
+## Extended by
 
 - [`ChargebackFeedbackProperties`](ChargebackFeedbackProperties.md)
 - [`InsultFeedbackProperties`](InsultFeedbackProperties.md)
@@ -12,6 +12,6 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `riskId` | `string` | - | models/OrderPurchaseUpdateRequest.ts:42 |
+| Property | Type |
+| :------ | :------ |
+| `riskId` | `string` |

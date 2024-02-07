@@ -1,4 +1,4 @@
-[@expediagroup/exemplar-sdk](../../../index.md) / [models](../../index.md) / [core](../index.md) / AxiosClientConfigurations
+[@expediagroup/exemplar-sdk](../../../index.md) / [client](../../index.md) / [core](../index.md) / AxiosClientConfigurations
 
 # Class: AxiosClientConfigurations
 
@@ -24,7 +24,7 @@ core/src/client/AxiosClientConfigurations.ts:24
 
 ## Properties
 
-| Modifier | Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ | :------ |
-| `readonly` | `endpoint` | `string` | - | core/src/client/AxiosClientConfigurations.ts:25 |
-| `readonly` | `requestTimeout` | `number` | - | core/src/client/AxiosClientConfigurations.ts:26 |
+| Property | Modifier | Type |
+| :------ | :------ | :------ |
+| `endpoint` | `readonly` | `string` |
+| `requestTimeout` | `readonly` | `number` |

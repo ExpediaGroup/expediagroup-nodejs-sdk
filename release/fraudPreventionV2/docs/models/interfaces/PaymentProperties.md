@@ -2,7 +2,7 @@
 
 # Interface: PaymentProperties
 
-## Extended By
+## Extended by
 
 - [`CreditCardProperties`](CreditCardProperties.md)
 - [`DirectDebitProperties`](DirectDebitProperties.md)
@@ -13,15 +13,15 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `authorizedAmount`? | [`Amount`](../classes/Amount.md) | - | models/Payment.ts:166 |
-| `billingAddress` | [`PaymentBillingAddress`](../classes/PaymentBillingAddress.md) | - | models/Payment.ts:164 |
-| `billingEmailAddress` | `string` | - | models/Payment.ts:165 |
-| `billingName` | [`Name`](../classes/Name.md) | - | models/Payment.ts:163 |
-| `brand` | [`PaymentBrandEnum`](../type-aliases/PaymentBrandEnum.md) | - | models/Payment.ts:161 |
-| `extensions`? | `object` | - | models/Payment.ts:170 |
-| `operations`? | [`Operations`](../classes/Operations.md) | - | models/Payment.ts:169 |
-| `reason`? | [`PaymentReason`](../type-aliases/PaymentReason.md) | - | models/Payment.ts:162 |
-| `threeDigitsSecureCriteria`? | [`PaymentThreeDSCriteria`](../classes/PaymentThreeDSCriteria.md) | - | models/Payment.ts:168 |
-| `verifiedAmount`? | [`Amount`](../classes/Amount.md) | - | models/Payment.ts:167 |
+| Property | Type |
+| :------ | :------ |
+| `authorizedAmount?` | [`Amount`](../classes/Amount.md) |
+| `billingAddress` | [`PaymentBillingAddress`](../classes/PaymentBillingAddress.md) |
+| `billingEmailAddress` | `string` |
+| `billingName` | [`Name`](../classes/Name.md) |
+| `brand` | [`PaymentBrandEnum`](../type-aliases/PaymentBrandEnum.md) |
+| `extensions?` | `Object` |
+| `operations?` | [`Operations`](../classes/Operations.md) |
+| `reason?` | [`PaymentReason`](../type-aliases/PaymentReason.md) |
+| `threeDigitsSecureCriteria?` | [`PaymentThreeDSCriteria`](../classes/PaymentThreeDSCriteria.md) |
+| `verifiedAmount?` | [`Amount`](../classes/Amount.md) |

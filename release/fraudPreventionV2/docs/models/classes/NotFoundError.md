@@ -12,7 +12,7 @@ Indicates that the API cannot find the resource that is either being requested o
 
 #### Parameters
 
-▪ **notFoundError**: [`NotFoundErrorProperties`](../interfaces/NotFoundErrorProperties.md)
+• **notFoundError**: [`NotFoundErrorProperties`](../interfaces/NotFoundErrorProperties.md)
 
 #### Returns
 
@@ -24,7 +24,7 @@ models/NotFoundError.ts:39
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `code` | [`NotFoundErrorCodeEnum`](../type-aliases/NotFoundErrorCodeEnum.md) | Snake cased all caps error code interpreted from the HTTP status code that can programmatically be acted upon. | models/NotFoundError.ts:32 |
-| `message` | `string` | A human-readable explanation of the error, specific to this error occurrence. | models/NotFoundError.ts:37 |
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| `code` | [`NotFoundErrorCodeEnum`](../type-aliases/NotFoundErrorCodeEnum.md) | Snake cased all caps error code interpreted from the HTTP status code that can programmatically be acted upon. |
+| `message` | `string` | A human-readable explanation of the error, specific to this error occurrence. |

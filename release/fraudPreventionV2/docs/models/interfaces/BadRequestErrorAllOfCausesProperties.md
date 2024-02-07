@@ -4,8 +4,8 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `code`? | [`BadRequestErrorAllOfCausesCodeEnum`](../type-aliases/BadRequestErrorAllOfCausesCodeEnum.md) | - | models/BadRequestErrorAllOfCauses.ts:50 |
-| `field`? | `string` | - | models/BadRequestErrorAllOfCauses.ts:51 |
-| `message`? | `string` | - | models/BadRequestErrorAllOfCauses.ts:52 |
+| Property | Type |
+| :------ | :------ |
+| `code?` | [`BadRequestErrorAllOfCausesCodeEnum`](../type-aliases/BadRequestErrorAllOfCausesCodeEnum.md) |
+| `field?` | `string` |
+| `message?` | `string` |

@@ -4,16 +4,16 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `accountRole`? | [`AccountTakeoverCustomerAccountAccountRoleEnum`](../type-aliases/AccountTakeoverCustomerAccountAccountRoleEnum.md) | - | models/AccountTakeoverCustomerAccount.ts:121 |
-| `accountType` | [`AccountTakeoverCustomerAccountAccountTypeEnum`](../type-aliases/AccountTakeoverCustomerAccountAccountTypeEnum.md) | - | models/AccountTakeoverCustomerAccount.ts:120 |
-| `activeFlag` | `boolean` | - | models/AccountTakeoverCustomerAccount.ts:128 |
-| `address`? | [`CustomerAccountAddress`](../classes/CustomerAccountAddress.md) | - | models/AccountTakeoverCustomerAccount.ts:126 |
-| `emailAddress` | `string` | - | models/AccountTakeoverCustomerAccount.ts:124 |
-| `loyaltyMemberId`? | `string` | - | models/AccountTakeoverCustomerAccount.ts:129 |
-| `name`? | [`AccountTakeoverName`](../classes/AccountTakeoverName.md) | - | models/AccountTakeoverCustomerAccount.ts:122 |
-| `registeredTime` | `Date` | - | models/AccountTakeoverCustomerAccount.ts:127 |
-| `telephones`? | [`Telephone`](../classes/Telephone.md)[] | - | models/AccountTakeoverCustomerAccount.ts:125 |
-| `userId` | `string` | - | models/AccountTakeoverCustomerAccount.ts:119 |
-| `username` | `string` | - | models/AccountTakeoverCustomerAccount.ts:123 |
+| Property | Type |
+| :------ | :------ |
+| `accountRole?` | [`AccountTakeoverCustomerAccountAccountRoleEnum`](../type-aliases/AccountTakeoverCustomerAccountAccountRoleEnum.md) |
+| `accountType` | [`AccountTakeoverCustomerAccountAccountTypeEnum`](../type-aliases/AccountTakeoverCustomerAccountAccountTypeEnum.md) |
+| `activeFlag` | `boolean` |
+| `address?` | [`CustomerAccountAddress`](../classes/CustomerAccountAddress.md) |
+| `emailAddress` | `string` |
+| `loyaltyMemberId?` | `string` |
+| `name?` | [`AccountTakeoverName`](../classes/AccountTakeoverName.md) |
+| `registeredTime` | `Date` |
+| `telephones?` | [`Telephone`](../classes/Telephone.md)[] |
+| `userId` | `string` |
+| `username` | `string` |

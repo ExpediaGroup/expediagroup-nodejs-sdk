@@ -12,7 +12,7 @@ Indicates that the token sent in the \'Authorization\' header is either invalid 
 
 #### Parameters
 
-▪ **unauthorizedError**: [`UnauthorizedErrorProperties`](../interfaces/UnauthorizedErrorProperties.md)
+• **unauthorizedError**: [`UnauthorizedErrorProperties`](../interfaces/UnauthorizedErrorProperties.md)
 
 #### Returns
 
@@ -24,7 +24,7 @@ models/UnauthorizedError.ts:39
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `code` | [`UnauthorizedErrorCodeEnum`](../type-aliases/UnauthorizedErrorCodeEnum.md) | Snake cased all caps error code interpreted from the HTTP status code that can programmatically be acted upon. | models/UnauthorizedError.ts:32 |
-| `message` | `string` | A human-readable explanation of the error, specific to this error occurrence. | models/UnauthorizedError.ts:37 |
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| `code` | [`UnauthorizedErrorCodeEnum`](../type-aliases/UnauthorizedErrorCodeEnum.md) | Snake cased all caps error code interpreted from the HTTP status code that can programmatically be acted upon. |
+| `message` | `string` | A human-readable explanation of the error, specific to this error occurrence. |

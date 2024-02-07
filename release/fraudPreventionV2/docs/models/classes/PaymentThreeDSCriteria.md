@@ -12,7 +12,7 @@ Payment ThreeDS criteria attributes.
 
 #### Parameters
 
-▪ **paymentThreeDSCriteria**: [`PaymentThreeDSCriteriaProperties`](../interfaces/PaymentThreeDSCriteriaProperties.md)
+• **paymentThreeDSCriteria**: [`PaymentThreeDSCriteriaProperties`](../interfaces/PaymentThreeDSCriteriaProperties.md)
 
 #### Returns
 
@@ -24,7 +24,7 @@ models/PaymentThreeDSCriteria.ts:39
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `probableFlag`? | `boolean` | This is a flag passed that indicates that this transaction could potentially go through 3DS. | models/PaymentThreeDSCriteria.ts:32 |
-| `transactionModel`? | `string` | Model used to process payment transaction. | models/PaymentThreeDSCriteria.ts:37 |
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| `probableFlag?` | `boolean` | This is a flag passed that indicates that this transaction could potentially go through 3DS. |
+| `transactionModel?` | `string` | Model used to process payment transaction. |

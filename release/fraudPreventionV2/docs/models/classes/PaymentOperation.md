@@ -10,7 +10,7 @@
 
 #### Parameters
 
-▪ **paymentOperation**: [`PaymentOperationProperties`](../interfaces/PaymentOperationProperties.md)
+• **paymentOperation**: [`PaymentOperationProperties`](../interfaces/PaymentOperationProperties.md)
 
 #### Returns
 
@@ -22,8 +22,8 @@ models/PaymentOperation.ts:44
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `amount`? | [`Amount`](Amount.md) | - | models/PaymentOperation.ts:37 |
-| `id`? | `string` | - | models/PaymentOperation.ts:32 |
-| `outcome`? | [`PaymentOutcome`](PaymentOutcome.md) | - | models/PaymentOperation.ts:42 |
+| Property | Type |
+| :------ | :------ |
+| `amount?` | [`Amount`](Amount.md) |
+| `id?` | `string` |
+| `outcome?` | [`PaymentOutcome`](PaymentOutcome.md) |

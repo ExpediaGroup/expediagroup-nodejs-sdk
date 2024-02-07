@@ -12,7 +12,7 @@ Response for an account transaction provided by Expedia\'s Fraud Prevention Serv
 
 #### Parameters
 
-▪ **accountScreenResponse**: [`AccountScreenResponseProperties`](../interfaces/AccountScreenResponseProperties.md)
+• **accountScreenResponse**: [`AccountScreenResponseProperties`](../interfaces/AccountScreenResponseProperties.md)
 
 #### Returns
 
@@ -24,7 +24,7 @@ models/AccountScreenResponse.ts:37
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `decision`? | [`AccountTakeoverFraudDecision`](../type-aliases/AccountTakeoverFraudDecision.md) | - | models/AccountScreenResponse.ts:35 |
-| `riskId`? | `string` | Unique identifier assigned to the transaction by Expedia\'s Fraud Prevention Service. | models/AccountScreenResponse.ts:33 |
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| `decision?` | [`AccountTakeoverFraudDecision`](../type-aliases/AccountTakeoverFraudDecision.md) | - |
+| `riskId?` | `string` | Unique identifier assigned to the transaction by Expedia\'s Fraud Prevention Service. |

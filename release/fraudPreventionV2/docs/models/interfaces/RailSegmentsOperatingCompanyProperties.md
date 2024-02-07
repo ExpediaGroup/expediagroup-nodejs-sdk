@@ -4,6 +4,6 @@
 
 ## Properties
 
-| Property | Type | Description | Source |
-| :------ | :------ | :------ | :------ |
-| `marketingName`? | `string` | - | models/RailSegmentsOperatingCompany.ts:42 |
+| Property | Type |
+| :------ | :------ |
+| `marketingName?` | `string` |
