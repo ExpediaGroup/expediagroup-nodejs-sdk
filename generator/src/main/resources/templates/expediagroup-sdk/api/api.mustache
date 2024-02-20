@@ -24,11 +24,11 @@ export class {{classname}} extends Client {
         super({...configurations, userAgent: {{classname}}.userAgent})
     }
 
-    private static createHeaders(transactionId: string) {
+    private static createHeaders() {
         return {
             'Content-Type': 'application/json',
             'User-Agent': {{classname}}.userAgent,
-            'transaction-id': transactionId,
+            'transaction-id': uuid(),
             'x-sdk-title': {{classname}}.sdkTitle
         }
     }
@@ -40,7 +40,7 @@ export class {{classname}} extends Client {
      {{#queryParams}}* @param {{{paramName}}} {{description}}{{^required}} (optional{{#defaultValue}}, defaults to {{{.}}}{{/defaultValue}}){{/required}}{{#required}}{{#defaultValue}} (defaults to {{{.}}}){{/defaultValue}}{{/required}}
      {{/queryParams}}{{#bodyParams}}* @param {{{paramName}}} {{description}}{{^required}} (optional{{#defaultValue}}, defaults to {{{.}}}{{/defaultValue}}){{/required}}{{#required}}{{#defaultValue}} (defaults to {{{.}}}){{/defaultValue}}{{/required}}
      {{/bodyParams}}{{#formParams}}* @param {{{paramName}}} {{description}}{{^required}} (optional{{#defaultValue}}, defaults to {{{.}}}{{/defaultValue}}){{/required}}{{#required}}{{#defaultValue}} (defaults to {{{.}}}){{/defaultValue}}{{/required}}
-     {{/formParams}}* @param transactionId A unique ID to uniquely identify a request/response cycle (optional, defaults to a random generated UUID)<{{{returnType}}}{{^returnType}}void{{/returnType}}>{{#responses}}{{^is2xx}}
+     {{/formParams}}<{{{returnType}}}{{^returnType}}void{{/returnType}}>{{#responses}}{{^is2xx}}
      * @throws ExpediaGroupApi{{{dataType}}}{{/is2xx}}{{/responses}}
      * @return Promise
      */
@@ -48,7 +48,7 @@ export class {{classname}} extends Client {
         {{#returnProperty}}let responsePromise = {{/returnProperty}}this.axiosClient.request({
             method: '{{httpMethod}}',
             url: '{{#removeLeadingSlash}}{{path}}{{/removeLeadingSlash}}'{{#bodyParam}},
-            headers: {{classname}}.createHeaders(transactionId),
+            headers: {{classname}}.createHeaders(),
             data: Serializer.serialize({{{paramName}}}){{/bodyParam}}
         }).catch(error => {
             if (error instanceof ExpediaGroupError) throw error
