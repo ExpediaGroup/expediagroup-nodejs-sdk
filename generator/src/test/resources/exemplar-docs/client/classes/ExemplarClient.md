@@ -32,15 +32,10 @@ client/apis/ExemplarClient.ts:45
 
 ### greetings()
 
-> **greetings**(`transactionId`): `Promise`\<[`Greeting`](../../models/classes/Greeting.md)\>
+> **greetings**(): `Promise`\<[`Greeting`](../../models/classes/Greeting.md)\>
 
 Get a \&quot;Hello $partnerName\&quot; response for an authenticated request
-
-#### Parameters
-
-• **transactionId**: `string`= `undefined`
-
-A unique ID to uniquely identify a request/response cycle (optional, defaults to a random generated UUID)`<Greeting>`
+`<Greeting>`
 
 #### Returns
 
