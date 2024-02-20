@@ -2,7 +2,7 @@
 
 # Type alias: TravelProductType
 
-> **TravelProductType**: `"CRUISE"` \| `"AIR"` \| `"CAR"` \| `"INSURANCE"` \| `"HOTEL"` \| `"RAIL"`
+> **TravelProductType**: `"CRUISE"` \| `"AIR"` \| `"CAR"` \| `"INSURANCE"` \| `"HOTEL"` \| `"RAIL"` \| `"ACTIVITY"`
 
 Type of product.
 

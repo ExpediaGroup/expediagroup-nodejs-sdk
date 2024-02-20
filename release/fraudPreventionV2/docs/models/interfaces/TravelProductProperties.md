@@ -4,6 +4,7 @@
 
 ## Extended by
 
+- [`ActivityProperties`](ActivityProperties.md)
 - [`AirProperties`](AirProperties.md)
 - [`CarProperties`](CarProperties.md)
 - [`CruiseProperties`](CruiseProperties.md)

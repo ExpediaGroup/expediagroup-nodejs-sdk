@@ -1,6 +1,6 @@
-[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / Hotel
+[@expediagroup/fraudpreventionv2-sdk](../../index.md) / [models](../index.md) / Activity
 
-# Class: Hotel
+# Class: Activity
 
 The `type` field value is used as a discriminator, with the following mapping: * `CRUISE`: `Cruise` * `AIR`: `Air` * `CAR`: `Car` * `INSURANCE`: `Insurance` * `HOTEL`: `Hotel` * `RAIL`: `Rail` * `ACTIVITY`: `Activity`
 
@@ -10,17 +10,17 @@ The `type` field value is used as a discriminator, with the following mapping: *
 
 ## Constructors
 
-### new Hotel(hotel)
+### new Activity(activity)
 
-> **new Hotel**(`hotel`): [`Hotel`](Hotel.md)
+> **new Activity**(`activity`): [`Activity`](Activity.md)
 
 #### Parameters
 
-• **hotel**: [`HotelProperties`](../interfaces/HotelProperties.md)
+• **activity**: [`ActivityProperties`](../interfaces/ActivityProperties.md)
 
 #### Returns
 
-[`Hotel`](Hotel.md)
+[`Activity`](Activity.md)
 
 #### Overrides
 
@@ -28,22 +28,24 @@ The `type` field value is used as a discriminator, with the following mapping: *
 
 #### Source
 
-models/Hotel.ts:69
+models/Activity.ts:88
 
 ## Properties
 
 | Property | Modifier | Type | Description | Inherited from |
 | :------ | :------ | :------ | :------ | :------ |
-| `address` | `public` | [`HotelAddress`](HotelAddress.md) | - | - |
-| `checkinTime` | `public` | `Date` | Local date and time of the hotel check-in, in ISO-8601 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`. | - |
-| `checkoutTime` | `public` | `Date` | Local date and time of the hotel check-out, in ISO-8601 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`. | - |
-| `hotelId` | `public` | `string` | Unique hotel identifier assigned by the partner. | - |
-| `hotelName` | `public` | `string` | Name of the hotel. | - |
+| `activityDescription` | `public` | `string` | This field provides additional details or a brief explanation of the specific activity. | - |
+| `availablePolicy?` | `public` | [`AvailablePolicy`](AvailablePolicy.md) | - | - |
+| `categoryName` | `public` | `string` | This field categorizes various types of activities available within the product. It allows API consumers to assign descriptive labels or keywords representing the nature of each activity. Possible category name values include: * `Adventures`: This category includes activities such as hiking, zip-lining, rock climbing, bungee jumping, and other adventurous pursuits. * `Air, Balloon & Helicopter Tours`: This category offers activities like hot air balloon rides, helicopter tours, and aerial sightseeing experiences. * `Cruises & Water Tours`: This includes options such as boat cruises, yacht tours, river rafting, snorkeling, and diving expeditions.  * `Nightlife`: This category encompasses activities like clubbing, pub crawls, live music events, and cultural performances. These activities predominantly occur during the evening or nighttime. | - |
+| `coordinates` | `public` | [`Coordinates`](Coordinates.md) | - | - |
+| `endDateTime?` | `public` | `Date` | The field represents the end time of an activity, using the ISO-8601 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`. | - |
 | `inventorySource` | `public` | [`TravelProductInventorySourceEnum`](../type-aliases/TravelProductInventorySourceEnum.md) | Identifies the business model through which the supply is being sold. Merchant/Agency. * `MERCHANT` is used when Partner is the merchant of record for this order. * `AGENCY` is used when this order is through an agency booking. | [`TravelProduct`](TravelProduct.md).`inventorySource` |
 | `inventoryType` | `public` | `string` | Type of inventory. Ensure attributes mentioned in dictionary below are set to corresponding values only. `inventory_type` has the following mapping with TravelProduct `type` attribute: *       inventory_type            :      type * ------------------------------------------------------ *  `Cruise`                       : `CRUISE` *  `Air`                          : `AIR` *  `Car`                          : `CAR` *  `Insurance`                    : `INSURANCE` *  `Hotel`                        : `HOTEL` *  `Rail`                         : `RAIL` *  `Activity`                     : `ACTIVITY` | [`TravelProduct`](TravelProduct.md).`inventoryType` |
+| `isPassbook?` | `public` | `boolean` | Indicates whether a QR code is required for an activity, serving as proof of reservation or purchase. This includes digital tickets saved on mobile applications such as Google Pay, Apple Wallet, or similar services provided by activity organizers. | - |
 | `payLater?` | `public` | `boolean` | The attribute serves as a boolean indicator that significantly influences the handling of payment information during the fraud prevention process: * When \'pay_later\' is set to \'true\':   - This configuration signals that payment information is optional for the booking. Travelers are given the choice to defer payment until they arrive at the rental counter following the completion of the booking.   - It is imperative for partners to explicitly set this attribute to \'true\' when payment information can be optional for a particular booking scenario. * When \'pay_later\' is set to \'false\':   - In this mode, the attribute mandates the inclusion of payment information during the order purchase screen request. Travelers are required to provide payment details.   - Partners must exercise caution and ensure they supply the necessary payment information, as failure to do so in cases where \'pay_later\' is set to \'false\' will result in a \'Bad Request\' error. This error helps maintain the consistency and accuracy of the fraud prevention process and payment handling. | [`TravelProduct`](TravelProduct.md).`payLater` |
 | `price` | `public` | [`Amount`](Amount.md) | - | [`TravelProduct`](TravelProduct.md).`price` |
-| `priceWithheld?` | `public` | `boolean` | Identifies if the product price was withheld from the customer during the booking process. | - |
-| `roomCount?` | `public` | `number` | Total number of rooms booked within the hotel product collection. | - |
+| `startDateTime?` | `public` | `Date` | The field represents the start time of an activity, using the ISO-8601 date and time format `yyyy-MM-ddTHH:mm:ss.SSSZ`. | - |
+| `supplyProvider` | `public` | [`SupplyProvider`](SupplyProvider.md) | - | - |
+| `tickets` | `public` | [`Ticket`](Ticket.md)[] | - | - |
 | `travelersReferences?` | `public` | `string`[] | List of travelerGuids who are part of the traveling party on the order for the product. Information for each product and its required travelers should be provided in the API request. If the product booking does not require accompanying quest information then that does not need to be provided in the API request. Example: * For Air products, all travelers\' details are required to complete the booking. * For Hotel products, typically the details on the person checking-in is required. * For Car products, typically only the primary driver information is required. If multiple traveler details are in the itinerary, this structure allows to fill up traveler details once in the `travelers` section, and then associate individual products to the respective travelers. This association is made using `traveler_id` field. A GUID can be generated for each object in the `travelers` section. The same GUID can be provided in the `traveler_references` below. The `travelers` array should have at least one `traveler` object, and each `traveler` object should have a `traveler_id` which is not necessarily an account id. Example: *   Travelers * ------------ *  A - GUID1 *  B - GUID2 *  C - GUID3 * *   Products * ------------ * Air *   [GUID1, GUID2, GUID3] * Hotel *   [GUID1] * Car *   [GUID3] * Rail *   [GUID2] * Activity *   [GUID1] * The example above demonstrates the association of travelers with various products. * All three travelers (A, B, and C) are associated with the Air product. * Traveler A is associated with the Hotel and Activity products. * Traveler C is associated with the Car product. * Traveler B is associated with the Rail product. | [`TravelProduct`](TravelProduct.md).`travelersReferences` |
-| `type` | `readonly` | `"HOTEL"` | - | - |
+| `type` | `readonly` | `"ACTIVITY"` | - | - |

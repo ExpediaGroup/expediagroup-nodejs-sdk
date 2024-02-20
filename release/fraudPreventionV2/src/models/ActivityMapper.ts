@@ -18,30 +18,9 @@
  * Do not edit the class manually.
  */
 import { Activity } from './Activity'
-import { Air } from './Air'
-import { Car } from './Car'
-import { Cruise } from './Cruise'
-import { Hotel } from './Hotel'
-import { Insurance } from './Insurance'
-import { Rail } from './Rail'
-import { TravelProduct } from './TravelProduct'
 
-export class TravelProductMapper {
-    static subTypes = new Map<string, any>([
-        ['ACTIVITY', Activity],
-        ['AIR', Air],
-        ['CAR', Car],
-        ['CRUISE', Cruise],
-        ['HOTEL', Hotel],
-        ['INSURANCE', Insurance],
-        ['RAIL', Rail],
-    ])
-
-    static getType(property) {
-        let discriminator = property.type
-        if (TravelProductMapper.subTypes.has(discriminator)) {
-            return TravelProductMapper.subTypes.get(discriminator)
-        }
-        return TravelProduct
+export class ActivityMapper {
+    static getType(_) {
+        return Activity
     }
 }

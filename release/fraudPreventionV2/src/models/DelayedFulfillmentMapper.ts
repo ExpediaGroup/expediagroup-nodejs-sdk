@@ -17,15 +17,10 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { DelayedFulfillment } from './DelayedFulfillment'
 
-/**
- * Type of product.
- */
-export type TravelProductType =
-    | 'CRUISE'
-    | 'AIR'
-    | 'CAR'
-    | 'INSURANCE'
-    | 'HOTEL'
-    | 'RAIL'
-    | 'ACTIVITY'
+export class DelayedFulfillmentMapper {
+    static getType(_) {
+        return DelayedFulfillment
+    }
+}

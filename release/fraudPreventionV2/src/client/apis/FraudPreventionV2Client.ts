@@ -49,7 +49,7 @@ export class FraudPreventionV2Client extends Client {
     private static readonly nodeVersion: string = process.version
     private static readonly operatingSystemName: string = platform()
     private static readonly operatingSystemVersion: string = release()
-    private static readonly userAgent: string = `${this.sdkTitle}/4.4.0 (Node.js ${this.nodeVersion} ${this.operatingSystemName} ${this.operatingSystemVersion})`
+    private static readonly userAgent: string = `${this.sdkTitle}/5.0.0 (Node.js ${this.nodeVersion} ${this.operatingSystemName} ${this.operatingSystemVersion})`
 
     constructor(configurations: ClientConfigurations) {
         super({
@@ -58,11 +58,11 @@ export class FraudPreventionV2Client extends Client {
         })
     }
 
-    private static createHeaders(transactionId: string) {
+    private static createHeaders() {
         return {
             'Content-Type': 'application/json',
             'User-Agent': FraudPreventionV2Client.userAgent,
-            'transaction-id': transactionId,
+            'transaction-id': uuid(),
             'x-sdk-title': FraudPreventionV2Client.sdkTitle,
         }
     }
@@ -71,7 +71,7 @@ export class FraudPreventionV2Client extends Client {
      * Send an update as a result of an account screen transaction
      * The Account Update API is called when there is an account lifecycle transition such as a challenge outcome, account restoration, or remediation action completion. For example, if a user\&#39;s account is disabled, deleted, or restored, the Account Update API is called to notify Expedia Group about the change. The Account Update API is also called when a user responds to a login Multi-Factor Authentication based on a Fraud recommendation.
      * @param accountUpdateRequest An AccountUpdate request may be of one of the following types &#x60;MULTI_FACTOR_AUTHENTICATION_UPDATE&#x60;, &#x60;REMEDIATION_UPDATE&#x60;.
-     * @param transactionId A unique ID to uniquely identify a request/response cycle (optional, defaults to a random generated UUID)<AccountUpdateResponse>
+     <AccountUpdateResponse>
      * @throws ExpediaGroupApiAccountTakeoverBadRequestError
      * @throws ExpediaGroupApiAccountTakeoverUnauthorizedError
      * @throws ExpediaGroupApiForbiddenError
@@ -85,13 +85,12 @@ export class FraudPreventionV2Client extends Client {
      */
     notifyWithAccountUpdate(
         accountUpdateRequest: AccountUpdateRequest,
-        transactionId: string = uuid(),
     ): Promise<AccountUpdateResponse> {
         let responsePromise = this.axiosClient
             .request({
                 method: 'POST',
                 url: 'fraud-prevention/v2/account/update',
-                headers: FraudPreventionV2Client.createHeaders(transactionId),
+                headers: FraudPreventionV2Client.createHeaders(),
                 data: Serializer.serialize(accountUpdateRequest),
             })
             .catch((error) => {
@@ -112,9 +111,9 @@ export class FraudPreventionV2Client extends Client {
     }
     /**
      * Send an update for a transaction
-     * The Order Purchase Update API is called when the status of the order has changed.  For example, if the customer cancels the reservation, changes reservation in any way, or adds additional products or travelers to the reservation, the Order Purchase Update API is called to notify Expedia Group about the change.  The Order Purchase Update API is also called when the merchant cancels or changes an order based on a Fraud recommendation.
-     * @param orderPurchaseUpdateRequest An OrderPurchaseUpdate request may be of one of the following types &#x60;ORDER_UPDATE&#x60;, &#x60;CHARGEBACK_FEEDBACK&#x60;, &#x60;INSULT_FEEDBACK&#x60;, &#x60;REFUND_UPDATE&#x60;, &#x60;PAYMENT_UPDATE&#x60;.
-     * @param transactionId A unique ID to uniquely identify a request/response cycle (optional, defaults to a random generated UUID)<OrderPurchaseUpdateResponse>
+     * The Order Purchase Update API is called when the status of the order has changed.  For example, if the customer cancels the reservation, changes reservation in any way, or adds additional products or travelers to the reservation, the Order Purchase Update API is called to notify Expedia Group about the change.  The Order Purchase Update API is also called when the merchant cancels or changes an order based on a Fraud recommendation. 
+     * @param orderPurchaseUpdateRequest An OrderPurchaseUpdate request may be of one of the following types &#x60;ORDER_UPDATE&#x60;, &#x60;CHARGEBACK_FEEDBACK&#x60;, &#x60;INSULT_FEEDBACK&#x60;, &#x60;REFUND_UPDATE&#x60;, &#x60;PAYMENT_UPDATE&#x60;. 
+     <OrderPurchaseUpdateResponse>
      * @throws ExpediaGroupApiBadRequestError
      * @throws ExpediaGroupApiUnauthorizedError
      * @throws ExpediaGroupApiForbiddenError
@@ -128,13 +127,12 @@ export class FraudPreventionV2Client extends Client {
      */
     notifyWithOrderUpdate(
         orderPurchaseUpdateRequest: OrderPurchaseUpdateRequest,
-        transactionId: string = uuid(),
     ): Promise<OrderPurchaseUpdateResponse> {
         let responsePromise = this.axiosClient
             .request({
                 method: 'POST',
                 url: 'fraud-prevention/v2/order/purchase/update',
-                headers: FraudPreventionV2Client.createHeaders(transactionId),
+                headers: FraudPreventionV2Client.createHeaders(),
                 data: Serializer.serialize(orderPurchaseUpdateRequest),
             })
             .catch((error) => {
@@ -156,8 +154,8 @@ export class FraudPreventionV2Client extends Client {
     /**
      * Run fraud screening for one transaction
      * The Account Screen API gives a Fraud recommendation for an account transaction. A recommendation can be ACCEPT, CHALLENGE, or REJECT. A transaction is marked as CHALLENGE whenever there are insufficient signals to recommend ACCEPT or REJECT. These CHALLENGE incidents are manually reviewed, and a corrected recommendation is made asynchronously.
-     * @param accountScreenRequest
-     * @param transactionId A unique ID to uniquely identify a request/response cycle (optional, defaults to a random generated UUID)<AccountScreenResponse>
+     * @param accountScreenRequest 
+     <AccountScreenResponse>
      * @throws ExpediaGroupApiAccountTakeoverBadRequestError
      * @throws ExpediaGroupApiAccountTakeoverUnauthorizedError
      * @throws ExpediaGroupApiForbiddenError
@@ -171,13 +169,12 @@ export class FraudPreventionV2Client extends Client {
      */
     screenAccount(
         accountScreenRequest: AccountScreenRequest,
-        transactionId: string = uuid(),
     ): Promise<AccountScreenResponse> {
         let responsePromise = this.axiosClient
             .request({
                 method: 'POST',
                 url: 'fraud-prevention/v2/account/screen',
-                headers: FraudPreventionV2Client.createHeaders(transactionId),
+                headers: FraudPreventionV2Client.createHeaders(),
                 data: Serializer.serialize(accountScreenRequest),
             })
             .catch((error) => {
@@ -195,9 +192,9 @@ export class FraudPreventionV2Client extends Client {
     }
     /**
      * Run fraud screening for one transaction
-     * The Order Purchase API gives a Fraud recommendation for a transaction. A recommendation can be Accept, Reject, or Review. A transaction is marked as Review whenever there are insufficient signals to recommend Accept or Reject. These incidents are manually reviewed, and a corrected recommendation is made asynchronously.
-     * @param orderPurchaseScreenRequest
-     * @param transactionId A unique ID to uniquely identify a request/response cycle (optional, defaults to a random generated UUID)<OrderPurchaseScreenResponse>
+     * The Order Purchase API gives a Fraud recommendation for a transaction. A recommendation can be Accept, Reject, or Review. A transaction is marked as Review whenever there are insufficient signals to recommend Accept or Reject. These incidents are manually reviewed, and a corrected recommendation is made asynchronously. 
+     * @param orderPurchaseScreenRequest 
+     <OrderPurchaseScreenResponse>
      * @throws ExpediaGroupApiBadRequestError
      * @throws ExpediaGroupApiUnauthorizedError
      * @throws ExpediaGroupApiForbiddenError
@@ -211,13 +208,12 @@ export class FraudPreventionV2Client extends Client {
      */
     screenOrder(
         orderPurchaseScreenRequest: OrderPurchaseScreenRequest,
-        transactionId: string = uuid(),
     ): Promise<OrderPurchaseScreenResponse> {
         let responsePromise = this.axiosClient
             .request({
                 method: 'POST',
                 url: 'fraud-prevention/v2/order/purchase/screen',
-                headers: FraudPreventionV2Client.createHeaders(transactionId),
+                headers: FraudPreventionV2Client.createHeaders(),
                 data: Serializer.serialize(orderPurchaseScreenRequest),
             })
             .catch((error) => {

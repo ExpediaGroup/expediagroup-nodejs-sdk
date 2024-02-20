@@ -17,15 +17,24 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { DelayedFulfillment } from './DelayedFulfillment'
+import { DelayedFulfillmentMapper } from './DelayedFulfillmentMapper'
 
-/**
- * Type of product.
- */
-export type TravelProductType =
-    | 'CRUISE'
-    | 'AIR'
-    | 'CAR'
-    | 'INSURANCE'
-    | 'HOTEL'
-    | 'RAIL'
-    | 'ACTIVITY'
+import { JsonObject, JsonProperty } from 'typescript-json-serializer'
+
+@JsonObject({ constructorParams: [{}] })
+export class AvailablePolicy {
+    @JsonProperty({
+        name: 'delayed_fulfillment',
+        type: (property) => DelayedFulfillmentMapper.getType(property),
+    })
+    delayedFulfillment?: DelayedFulfillment
+
+    public constructor(availablePolicy: AvailablePolicyProperties) {
+        this.delayedFulfillment = availablePolicy.delayedFulfillment
+    }
+}
+
+export interface AvailablePolicyProperties {
+    delayedFulfillment?: DelayedFulfillment
+}
