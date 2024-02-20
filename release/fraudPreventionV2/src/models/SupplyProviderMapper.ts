@@ -17,15 +17,10 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { SupplyProvider } from './SupplyProvider'
 
-/**
- * Type of product.
- */
-export type TravelProductType =
-    | 'CRUISE'
-    | 'AIR'
-    | 'CAR'
-    | 'INSURANCE'
-    | 'HOTEL'
-    | 'RAIL'
-    | 'ACTIVITY'
+export class SupplyProviderMapper {
+    static getType(_) {
+        return SupplyProvider
+    }
+}

@@ -17,15 +17,10 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { Coordinates } from './Coordinates'
 
-/**
- * Type of product.
- */
-export type TravelProductType =
-    | 'CRUISE'
-    | 'AIR'
-    | 'CAR'
-    | 'INSURANCE'
-    | 'HOTEL'
-    | 'RAIL'
-    | 'ACTIVITY'
+export class CoordinatesMapper {
+    static getType(_) {
+        return Coordinates
+    }
+}

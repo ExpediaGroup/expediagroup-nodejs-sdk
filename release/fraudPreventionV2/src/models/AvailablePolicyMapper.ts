@@ -17,15 +17,10 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { AvailablePolicy } from './AvailablePolicy'
 
-/**
- * Type of product.
- */
-export type TravelProductType =
-    | 'CRUISE'
-    | 'AIR'
-    | 'CAR'
-    | 'INSURANCE'
-    | 'HOTEL'
-    | 'RAIL'
-    | 'ACTIVITY'
+export class AvailablePolicyMapper {
+    static getType(_) {
+        return AvailablePolicy
+    }
+}

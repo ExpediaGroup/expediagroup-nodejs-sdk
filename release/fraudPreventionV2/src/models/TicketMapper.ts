@@ -17,15 +17,10 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { Ticket } from './Ticket'
 
-/**
- * Type of product.
- */
-export type TravelProductType =
-    | 'CRUISE'
-    | 'AIR'
-    | 'CAR'
-    | 'INSURANCE'
-    | 'HOTEL'
-    | 'RAIL'
-    | 'ACTIVITY'
+export class TicketMapper {
+    static getType(_) {
+        return Ticket
+    }
+}
