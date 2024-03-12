@@ -41,11 +41,11 @@
 
         <!-- Versions -->
         <kotlin.version>1.9.23</kotlin.version>
-        <openapi-generator.version>7.3.0</openapi-generator.version>
+        <openapi-generator.version>7.4.0</openapi-generator.version>
 
         <!-- Plugin Versions -->
         <exec-maven-plugin.version>3.2.0</exec-maven-plugin.version>
-        <ktlint-plugin.version>3.1.1</ktlint-plugin.version>
+        <ktlint-plugin.version>3.2.0</ktlint-plugin.version>
         <maven-compiler-plugin.version>3.12.1</maven-compiler-plugin.version>
         <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
         <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
