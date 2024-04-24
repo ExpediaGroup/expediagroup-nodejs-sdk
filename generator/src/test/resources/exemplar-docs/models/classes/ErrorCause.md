@@ -6,7 +6,7 @@ The object used to describe a cause for an error, containing both human-readable
 
 ## Constructors
 
-### new ErrorCause(errorCause)
+### new ErrorCause()
 
 > **new ErrorCause**(`errorCause`): [`ErrorCause`](ErrorCause.md)
 

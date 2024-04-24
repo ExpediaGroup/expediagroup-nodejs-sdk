@@ -6,7 +6,7 @@ The object used the describe an error, containing both human-readable and in a m
 
 ## Constructors
 
-### new ModelError(error)
+### new ModelError()
 
 > **new ModelError**(`error`): [`ModelError`](ModelError.md)
 
