@@ -40,7 +40,7 @@
         <sdkVersion>0.0.1-SNAPSHOT</sdkVersion>
 
         <!-- Versions -->
-        <kotlin.version>1.9.23</kotlin.version>
+        <kotlin.version>1.9.24</kotlin.version>
         <openapi-generator.version>7.5.0</openapi-generator.version>
 
         <!-- Plugin Versions -->
