@@ -13,7 +13,7 @@
     "prettier": "3.3.0",
     "prettier-plugin-organize-imports": "3.2.4",
     "typedoc": "0.25.13",
-    "typedoc-plugin-markdown": "4.0.1",
+    "typedoc-plugin-markdown": "4.0.3",
     "typedoc-plugin-missing-exports": "2.3.0"
   }
 }
