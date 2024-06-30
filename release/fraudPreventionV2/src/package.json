@@ -14,7 +14,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@types/lodash": "4.14.202",
+    "@types/lodash": "4.17.6",
     "@types/node": "20.11.19",
     "@types/uuid": "9.0.8",
     "axios": "1.6.8",
