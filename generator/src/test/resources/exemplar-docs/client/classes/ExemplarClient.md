@@ -8,7 +8,7 @@
 
 ## Constructors
 
-### new ExemplarClient(configurations)
+### new ExemplarClient()
 
 > **new ExemplarClient**(`configurations`): [`ExemplarClient`](ExemplarClient.md)
 
@@ -35,7 +35,7 @@ client/apis/ExemplarClient.ts:45
 > **greetings**(): `Promise`\<[`Greeting`](../../models/classes/Greeting.md)\>
 
 Get a \&quot;Hello $partnerName\&quot; response for an authenticated request
-`<Greeting>`
+<Greeting>
 
 #### Returns
 
