@@ -4,7 +4,7 @@
 
 ## Constructors
 
-### new Greeting(greeting)
+### new Greeting()
 
 > **new Greeting**(`greeting`): [`Greeting`](Greeting.md)
 
