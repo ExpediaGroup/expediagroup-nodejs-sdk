@@ -4,16 +4,16 @@
     "access": "public"
   },
   "dependencies": {
-    "@types/node": "20.14.9",
-    "@types/uuid": "9.0.8",
-    "uuid": "9.0.1",
+    "@types/node": "20.14.11",
+    "@types/uuid": "10.0.0",
+    "uuid": "10.0.0",
     "typescript-json-serializer": "6.0.1"
   },
   "devDependencies": {
-    "prettier": "3.3.0",
-    "prettier-plugin-organize-imports": "3.2.4",
+    "prettier": "3.3.3",
+    "prettier-plugin-organize-imports": "4.0.0",
     "typedoc": "0.25.13",
-    "typedoc-plugin-markdown": "4.0.1",
+    "typedoc-plugin-markdown": "4.0.3",
     "typedoc-plugin-missing-exports": "2.3.0"
   }
 }
