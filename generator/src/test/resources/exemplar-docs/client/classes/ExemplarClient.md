@@ -24,7 +24,7 @@
 
 `Client.constructor`
 
-#### Source
+#### Defined in
 
 client/apis/ExemplarClient.ts:45
 
@@ -51,6 +51,6 @@ ExpediaGroupApiError
 
 ExpediaGroupApiError
 
-#### Source
+#### Defined in
 
 client/apis/ExemplarClient.ts:66

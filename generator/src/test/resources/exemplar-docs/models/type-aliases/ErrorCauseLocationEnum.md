@@ -1,9 +1,9 @@
 [@expediagroup/exemplar-sdk](../../index.md) / [models](../index.md) / ErrorCauseLocationEnum
 
-# Type alias: ErrorCauseLocationEnum
+# Type Alias: ErrorCauseLocationEnum
 
 > **ErrorCauseLocationEnum**: `"header"` \| `"path"` \| `"query"` \| `"body"`
 
-## Source
+## Defined in
 
 models/ErrorCause.ts:63
