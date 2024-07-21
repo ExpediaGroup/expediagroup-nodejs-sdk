@@ -4,10 +4,10 @@
 
 ## Properties
 
-| Property | Type |
-| :------ | :------ |
-| `detail` | `string` |
-| `location?` | [`ErrorCauseLocationEnum`](../type-aliases/ErrorCauseLocationEnum.md) |
-| `name?` | `string` |
-| `type` | `string` |
-| `value?` | `string` |
+| Property | Type | Defined in |
+| ------ | ------ | ------ |
+| `detail` | `string` | models/ErrorCause.ts:67 |
+| `location?` | [`ErrorCauseLocationEnum`](../type-aliases/ErrorCauseLocationEnum.md) | models/ErrorCause.ts:68 |
+| `name?` | `string` | models/ErrorCause.ts:69 |
+| `type` | `string` | models/ErrorCause.ts:66 |
+| `value?` | `string` | models/ErrorCause.ts:70 |
