@@ -4,8 +4,8 @@
 
 ## Properties
 
-| Property | Type |
-| :------ | :------ |
-| `causes?` | [`ErrorCause`](../classes/ErrorCause.md)[] |
-| `detail` | `string` |
-| `type` | `string` |
+| Property | Type | Defined in |
+| ------ | ------ | ------ |
+| `causes?` | [`ErrorCause`](../classes/ErrorCause.md)[] | models/ModelError.ts:60 |
+| `detail` | `string` | models/ModelError.ts:59 |
+| `type` | `string` | models/ModelError.ts:58 |
