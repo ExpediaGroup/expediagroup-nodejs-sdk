@@ -4,7 +4,7 @@
 
 ## Constructors
 
-### new Greeting(greeting)
+### new Greeting()
 
 > **new Greeting**(`greeting`): [`Greeting`](Greeting.md)
 
@@ -16,12 +16,12 @@
 
 [`Greeting`](Greeting.md)
 
-#### Source
+#### Defined in
 
 models/Greeting.ts:28
 
 ## Properties
 
-| Property | Type |
-| :------ | :------ |
-| `message?` | `string` |
+| Property | Type | Defined in |
+| ------ | ------ | ------ |
+| `message?` | `string` | models/Greeting.ts:26 |

@@ -4,27 +4,27 @@
 
 ## Constructors
 
-### new AxiosClientConfigurations(endpoint, requestTimeout)
+### new AxiosClientConfigurations()
 
 > **new AxiosClientConfigurations**(`endpoint`, `requestTimeout`): [`AxiosClientConfigurations`](AxiosClientConfigurations.md)
 
 #### Parameters
 
-• **endpoint**: `string`= `Constant.ENDPOINT`
+• **endpoint**: `string` = `Constant.ENDPOINT`
 
-• **requestTimeout**: `number`= `Constant.TEN_SECONDS_IN_MILLIS`
+• **requestTimeout**: `number` = `Constant.TEN_SECONDS_IN_MILLIS`
 
 #### Returns
 
 [`AxiosClientConfigurations`](AxiosClientConfigurations.md)
 
-#### Source
+#### Defined in
 
 core/src/client/AxiosClientConfigurations.ts:24
 
 ## Properties
 
-| Property | Modifier | Type |
-| :------ | :------ | :------ |
-| `endpoint` | `readonly` | `string` |
-| `requestTimeout` | `readonly` | `number` |
+| Property | Modifier | Type | Default value | Defined in |
+| ------ | ------ | ------ | ------ | ------ |
+| `endpoint` | `readonly` | `string` | `Constant.ENDPOINT` | core/src/client/AxiosClientConfigurations.ts:25 |
+| `requestTimeout` | `readonly` | `number` | `Constant.TEN_SECONDS_IN_MILLIS` | core/src/client/AxiosClientConfigurations.ts:26 |
