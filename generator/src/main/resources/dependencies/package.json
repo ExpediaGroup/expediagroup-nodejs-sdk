@@ -4,7 +4,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@types/node": "22.0.0",
+    "@types/node": "22.1.0",
     "@types/uuid": "10.0.0",
     "uuid": "10.0.0",
     "typescript-json-serializer": "6.0.1"
