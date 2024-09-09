@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "clean": "rm -rf .openapi-generator apis auth http types",
-    "build": "which prettier && prettier --version && prettier --log-level debug models/error/ApiError.ts",
+    "build": "ls -a",
     "fetch-core": "mkdir -p core/src && cp -r ../../../core/src ./core/ && cp -r ../../../core/index.ts ./core/index.ts",
     "merge-packages": "npm install -g merge-packages && npx merge-packages -o package.json package.json ../../src/main/resources/dependencies/package.json ../../../core/package.json",
     "generate-docs": "npx typedoc",
