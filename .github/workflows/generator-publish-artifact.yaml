@@ -19,7 +19,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18.14.1
+          node-version-file: '.nvmrc'
           registry-url: 'https://registry.npmjs.org'
       - name: Release
         working-directory: generator/sdk
