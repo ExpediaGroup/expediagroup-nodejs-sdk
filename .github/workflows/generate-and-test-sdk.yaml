@@ -29,6 +29,7 @@ jobs:
         with:
           name: sdk
           path: generator/target/sdk
+          include-hidden-files: true
   verify-generated-sdk:
     runs-on: ubuntu-latest
     needs: generate-sdk
@@ -39,12 +40,11 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: sdk
-          from-job: generate-sdk
           path: generator/target/sdk
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18.14.1
+          node-version-file: '.nvmrc'
       - name: verify generated sdk
         working-directory: ./generator/target/sdk
         run: |
