@@ -4,7 +4,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@types/node": "22.5.5",
+    "@types/node": "22.7.4",
     "@types/uuid": "10.0.0",
     "uuid": "10.0.0",
     "typescript-json-serializer": "6.0.1"
@@ -13,7 +13,7 @@
     "prettier": "3.3.3",
     "prettier-plugin-organize-imports": "4.1.0",
     "typedoc": "0.26.7",
-    "typedoc-plugin-markdown": "4.2.8",
+    "typedoc-plugin-markdown": "4.2.9",
     "typedoc-plugin-missing-exports": "3.0.0"
   }
 }
