@@ -12,7 +12,7 @@
   "devDependencies": {
     "prettier": "3.3.3",
     "prettier-plugin-organize-imports": "4.1.0",
-    "typedoc": "0.26.10",
+    "typedoc": "0.26.11",
     "typedoc-plugin-markdown": "4.2.9",
     "typedoc-plugin-missing-exports": "3.0.0"
   }
