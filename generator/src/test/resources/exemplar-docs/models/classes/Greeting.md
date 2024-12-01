@@ -10,7 +10,9 @@
 
 #### Parameters
 
-• **greeting**: [`GreetingProperties`](../interfaces/GreetingProperties.md)
+##### greeting
+
+[`GreetingProperties`](../interfaces/GreetingProperties.md)
 
 #### Returns
 

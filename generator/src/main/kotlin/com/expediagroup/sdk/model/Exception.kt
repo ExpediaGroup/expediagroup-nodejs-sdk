@@ -15,8 +15,17 @@
  */
 package com.expediagroup.sdk.model
 
-open class GeneratorException(message: String, cause: Throwable? = null) : RuntimeException(message, cause)
+open class GeneratorException(
+    message: String,
+    cause: Throwable? = null,
+) : RuntimeException(message, cause)
 
-class ClientGenerationException(message: String, cause: Throwable? = null) : GeneratorException(message, cause)
+class ClientGenerationException(
+    message: String,
+    cause: Throwable? = null,
+) : GeneratorException(message, cause)
 
-class PreProcessingException(message: String, cause: Throwable? = null) : GeneratorException(message, cause)
+class PreProcessingException(
+    message: String,
+    cause: Throwable? = null,
+) : GeneratorException(message, cause)

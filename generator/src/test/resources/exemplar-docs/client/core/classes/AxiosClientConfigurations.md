@@ -10,9 +10,13 @@
 
 #### Parameters
 
-• **endpoint**: `string` = `Constant.ENDPOINT`
+##### endpoint
 
-• **requestTimeout**: `number` = `Constant.TEN_SECONDS_IN_MILLIS`
+`string` = `Constant.ENDPOINT`
+
+##### requestTimeout
+
+`number` = `Constant.TEN_SECONDS_IN_MILLIS`
 
 #### Returns
 
