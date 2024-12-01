@@ -66,11 +66,12 @@ val mustacheHelpers =
                 model.parentModel?.let {
                     val discriminators: MutableList<String> = getDiscriminators(model)
                     writer.write("super({\n")
-                    it.allVars.filterNot { variable ->
-                        variable.isDiscriminator || discriminators.contains(variable.baseName)
-                    }.forEach { variable ->
-                        writer.write("${variable.name}: ${model.classVarName}.${variable.name},\n")
-                    }
+                    it.allVars
+                        .filterNot { variable ->
+                            variable.isDiscriminator || discriminators.contains(variable.baseName)
+                        }.forEach { variable ->
+                            writer.write("${variable.name}: ${model.classVarName}.${variable.name},\n")
+                        }
                     writer.write("})")
                 }
             }
