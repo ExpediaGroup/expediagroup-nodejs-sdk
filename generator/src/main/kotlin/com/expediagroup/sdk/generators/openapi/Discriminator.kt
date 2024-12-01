@@ -23,15 +23,14 @@ internal data class Discriminator(
     val value: String,
 )
 
-internal fun getParentDiscriminator(model: CodegenModel): Discriminator? {
-    return model.parentModel?.discriminator?.let {
+internal fun getParentDiscriminator(model: CodegenModel): Discriminator? =
+    model.parentModel?.discriminator?.let {
         Discriminator(
             it.propertyBaseName,
             it.propertyName,
             it.mappedModels.find { mappedModel -> mappedModel.modelName.equals(model.classname) }!!.mappingName,
         )
     }
-}
 
 internal fun getDiscriminators(model: CodegenModel): MutableList<String> {
     val discriminators: MutableList<String> = model.parentModel?.let { getDiscriminators(model.parentModel) } ?: mutableListOf()
