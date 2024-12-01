@@ -14,7 +14,9 @@
 
 #### Parameters
 
-• **configurations**: [`ClientConfigurations`](../core/interfaces/ClientConfigurations.md)
+##### configurations
+
+[`ClientConfigurations`](../core/interfaces/ClientConfigurations.md)
 
 #### Returns
 
