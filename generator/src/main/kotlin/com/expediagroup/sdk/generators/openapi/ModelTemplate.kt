@@ -18,7 +18,10 @@ package com.expediagroup.sdk.generators.openapi
 import org.openapitools.codegen.api.TemplateDefinition
 import org.openapitools.codegen.api.TemplateFileType.Model
 
-class ModelTemplate(templateFile: String, destinationFilename: String) : TemplateDefinition(templateFile, destinationFilename) {
+class ModelTemplate(
+    templateFile: String,
+    destinationFilename: String,
+) : TemplateDefinition(templateFile, destinationFilename) {
     init {
         templateType = Model
     }
