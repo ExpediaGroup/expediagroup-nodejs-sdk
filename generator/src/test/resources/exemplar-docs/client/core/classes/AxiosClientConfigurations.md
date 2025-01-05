@@ -2,11 +2,15 @@
 
 # Class: AxiosClientConfigurations
 
+Defined in: core/src/client/AxiosClientConfigurations.ts:23
+
 ## Constructors
 
 ### new AxiosClientConfigurations()
 
 > **new AxiosClientConfigurations**(`endpoint`, `requestTimeout`): [`AxiosClientConfigurations`](AxiosClientConfigurations.md)
+
+Defined in: core/src/client/AxiosClientConfigurations.ts:24
 
 #### Parameters
 
@@ -22,13 +26,9 @@
 
 [`AxiosClientConfigurations`](AxiosClientConfigurations.md)
 
-#### Defined in
-
-core/src/client/AxiosClientConfigurations.ts:24
-
 ## Properties
 
 | Property | Modifier | Type | Default value | Defined in |
 | ------ | ------ | ------ | ------ | ------ |
-| `endpoint` | `readonly` | `string` | `Constant.ENDPOINT` | core/src/client/AxiosClientConfigurations.ts:25 |
-| `requestTimeout` | `readonly` | `number` | `Constant.TEN_SECONDS_IN_MILLIS` | core/src/client/AxiosClientConfigurations.ts:26 |
+| <a id="endpoint-1"></a> `endpoint` | `readonly` | `string` | `Constant.ENDPOINT` | core/src/client/AxiosClientConfigurations.ts:25 |
+| <a id="requesttimeout-1"></a> `requestTimeout` | `readonly` | `number` | `Constant.TEN_SECONDS_IN_MILLIS` | core/src/client/AxiosClientConfigurations.ts:26 |

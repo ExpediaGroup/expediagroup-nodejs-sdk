@@ -2,8 +2,10 @@
 
 # Interface: GreetingProperties
 
+Defined in: models/Greeting.ts:33
+
 ## Properties
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| `message?` | `string` | models/Greeting.ts:34 |
+| <a id="message"></a> `message?` | `string` | models/Greeting.ts:34 |

@@ -2,20 +2,18 @@
 
 # models
 
-## Index
-
-### Classes
+## Classes
 
 - [ErrorCause](classes/ErrorCause.md)
 - [Greeting](classes/Greeting.md)
 - [ModelError](classes/ModelError.md)
 
-### Interfaces
+## Interfaces
 
 - [ErrorCauseProperties](interfaces/ErrorCauseProperties.md)
 - [GreetingProperties](interfaces/GreetingProperties.md)
 - [ModelErrorProperties](interfaces/ModelErrorProperties.md)
 
-### Type Aliases
+## Type Aliases
 
 - [ErrorCauseLocationEnum](type-aliases/ErrorCauseLocationEnum.md)
