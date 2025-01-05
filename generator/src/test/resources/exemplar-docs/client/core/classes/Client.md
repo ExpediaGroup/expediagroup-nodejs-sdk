@@ -2,6 +2,8 @@
 
 # Class: `abstract` Client
 
+Defined in: core/src/client/Client.ts:28
+
 ## Extended by
 
 - [`ExemplarClient`](../../classes/ExemplarClient.md)

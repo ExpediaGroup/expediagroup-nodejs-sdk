@@ -2,13 +2,11 @@
 
 # core
 
-## Index
-
-### Classes
+## Classes
 
 - [AxiosClientConfigurations](classes/AxiosClientConfigurations.md)
 - [Client](classes/Client.md)
 
-### Interfaces
+## Interfaces
 
 - [ClientConfigurations](interfaces/ClientConfigurations.md)

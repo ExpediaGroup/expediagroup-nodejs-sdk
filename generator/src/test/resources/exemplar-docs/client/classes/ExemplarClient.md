@@ -2,6 +2,8 @@
 
 # Class: ExemplarClient
 
+Defined in: client/apis/ExemplarClient.ts:37
+
 ## Extends
 
 - [`Client`](../core/classes/Client.md)
@@ -11,6 +13,8 @@
 ### new ExemplarClient()
 
 > **new ExemplarClient**(`configurations`): [`ExemplarClient`](ExemplarClient.md)
+
+Defined in: client/apis/ExemplarClient.ts:45
 
 #### Parameters
 
@@ -26,15 +30,13 @@
 
 `Client.constructor`
 
-#### Defined in
-
-client/apis/ExemplarClient.ts:45
-
 ## Methods
 
 ### greetings()
 
 > **greetings**(): `Promise`\<[`Greeting`](../../models/classes/Greeting.md)\>
+
+Defined in: client/apis/ExemplarClient.ts:66
 
 Get a \&quot;Hello $partnerName\&quot; response for an authenticated request
 <Greeting>
@@ -52,7 +54,3 @@ ExpediaGroupApiError
 #### Throws
 
 ExpediaGroupApiError
-
-#### Defined in
-
-client/apis/ExemplarClient.ts:66

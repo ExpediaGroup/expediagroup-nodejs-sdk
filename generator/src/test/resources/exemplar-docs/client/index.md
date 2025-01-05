@@ -2,12 +2,10 @@
 
 # client
 
-## Index
-
-### Modules
+## Modules
 
 - [core](core/index.md)
 
-### Classes
+## Classes
 
 - [ExemplarClient](classes/ExemplarClient.md)

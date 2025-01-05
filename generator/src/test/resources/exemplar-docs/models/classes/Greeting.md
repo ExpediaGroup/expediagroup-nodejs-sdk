@@ -2,11 +2,15 @@
 
 # Class: Greeting
 
+Defined in: models/Greeting.ts:24
+
 ## Constructors
 
 ### new Greeting()
 
 > **new Greeting**(`greeting`): [`Greeting`](Greeting.md)
+
+Defined in: models/Greeting.ts:28
 
 #### Parameters
 
@@ -18,12 +22,8 @@
 
 [`Greeting`](Greeting.md)
 
-#### Defined in
-
-models/Greeting.ts:28
-
 ## Properties
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| `message?` | `string` | models/Greeting.ts:26 |
+| <a id="message"></a> `message?` | `string` | models/Greeting.ts:26 |

@@ -2,12 +2,14 @@
 
 # Interface: ClientConfigurations
 
+Defined in: core/src/client/Client.ts:64
+
 ## Properties
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| `authEndpoint?` | `string` | core/src/client/Client.ts:66 |
-| `endpoint?` | `string` | core/src/client/Client.ts:65 |
-| `key` | `string` | core/src/client/Client.ts:67 |
-| `requestTimeout?` | `number` | core/src/client/Client.ts:69 |
-| `secret` | `string` | core/src/client/Client.ts:68 |
+| <a id="authendpoint"></a> `authEndpoint?` | `string` | core/src/client/Client.ts:66 |
+| <a id="endpoint"></a> `endpoint?` | `string` | core/src/client/Client.ts:65 |
+| <a id="key"></a> `key` | `string` | core/src/client/Client.ts:67 |
+| <a id="requesttimeout"></a> `requestTimeout?` | `number` | core/src/client/Client.ts:69 |
+| <a id="secret"></a> `secret` | `string` | core/src/client/Client.ts:68 |
