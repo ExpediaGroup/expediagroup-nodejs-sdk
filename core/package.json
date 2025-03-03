@@ -12,7 +12,7 @@
     "axios": "1.8.1",
     "winston": "3.17.0",
     "lodash": "4.17.21",
-    "@types/lodash": "4.17.15",
+    "@types/lodash": "4.17.16",
     "typescript-json-serializer": "6.0.1"
   },
   "devDependencies": {
