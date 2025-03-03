@@ -6,11 +6,11 @@
   "dependencies": {
     "@types/node": "22.13.4",
     "@types/uuid": "10.0.0",
-    "uuid": "11.0.5",
+    "uuid": "11.1.0",
     "typescript-json-serializer": "6.0.1"
   },
   "devDependencies": {
-    "prettier": "3.5.1",
+    "prettier": "3.5.3",
     "prettier-plugin-organize-imports": "4.1.0",
     "typedoc": "0.27.7",
     "typedoc-plugin-markdown": "4.4.2",
