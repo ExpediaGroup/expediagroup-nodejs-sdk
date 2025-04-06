@@ -8,9 +8,9 @@ The object used the describe an error, containing both human-readable and in a m
 
 ## Constructors
 
-### new ModelError()
+### Constructor
 
-> **new ModelError**(`error`): [`ModelError`](ModelError.md)
+> **new ModelError**(`error`): `ModelError`
 
 Defined in: models/ModelError.ts:50
 
@@ -22,7 +22,7 @@ Defined in: models/ModelError.ts:50
 
 #### Returns
 
-[`ModelError`](ModelError.md)
+`ModelError`
 
 ## Properties
 
