@@ -8,9 +8,9 @@ The object used to describe a cause for an error, containing both human-readable
 
 ## Constructors
 
-### new ErrorCause()
+### Constructor
 
-> **new ErrorCause**(`errorCause`): [`ErrorCause`](ErrorCause.md)
+> **new ErrorCause**(`errorCause`): `ErrorCause`
 
 Defined in: models/ErrorCause.ts:54
 
@@ -22,7 +22,7 @@ Defined in: models/ErrorCause.ts:54
 
 #### Returns
 
-[`ErrorCause`](ErrorCause.md)
+`ErrorCause`
 
 ## Properties
 
