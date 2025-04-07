@@ -6,9 +6,9 @@ Defined in: models/Greeting.ts:24
 
 ## Constructors
 
-### new Greeting()
+### Constructor
 
-> **new Greeting**(`greeting`): [`Greeting`](Greeting.md)
+> **new Greeting**(`greeting`): `Greeting`
 
 Defined in: models/Greeting.ts:28
 
@@ -20,7 +20,7 @@ Defined in: models/Greeting.ts:28
 
 #### Returns
 
-[`Greeting`](Greeting.md)
+`Greeting`
 
 ## Properties
 
