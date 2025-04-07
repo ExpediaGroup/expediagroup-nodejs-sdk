@@ -10,9 +10,9 @@ Defined in: client/apis/ExemplarClient.ts:37
 
 ## Constructors
 
-### new ExemplarClient()
+### Constructor
 
-> **new ExemplarClient**(`configurations`): [`ExemplarClient`](ExemplarClient.md)
+> **new ExemplarClient**(`configurations`): `ExemplarClient`
 
 Defined in: client/apis/ExemplarClient.ts:45
 
@@ -24,7 +24,7 @@ Defined in: client/apis/ExemplarClient.ts:45
 
 #### Returns
 
-[`ExemplarClient`](ExemplarClient.md)
+`ExemplarClient`
 
 #### Overrides
 
