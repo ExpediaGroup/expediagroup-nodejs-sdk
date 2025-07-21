@@ -36,6 +36,6 @@ jobs:
       - name: Install Dependencies
         run: npm install
       - name: Run Pull Request Title Validation
-        uses: JulienKode/pull-request-name-linter-action@v0.5.0
+        uses: JulienKode/pull-request-name-linter-action@v19.0.0
       - name: Run Latest Commit Message Validation
         run: git log -1 --pretty=format:"%s" | npx commitlint --config commitlint.config.js --verbose
